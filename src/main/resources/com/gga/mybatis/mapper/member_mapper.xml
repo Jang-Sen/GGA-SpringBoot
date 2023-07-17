@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.gga.repository.MemberMapper">
+
+	<!--	<select id="select" parameterType="map" resultType="com.gga.vo.MemberVo">-->
+	<!--		SELECT RNO, ID, NAME, MDATE -->
+	<!--					FROM (SELECT ROWNUM RNO, ID, NAME, TO_CHAR(MDATE,'YYYY-MM-DD') MDATE -->
+	<!--					FROM (SELECT ID, NAME, MDATE FROM GGA_MEMBER-->
+	<!--					ORDER BY MDATE DESC))-->
+	<!--					WHERE RNO BETWEEN #{start} AND #{end}-->
+	<!--	</select>-->
+	<!--	-->
+	<select id="idCheck" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM GGA_MEMBER WHERE ID = #{id}
+	</select>
+	<!--	-->
+	<!--	<select id="select2">-->
+	<!--		SELECT ROWNUM RNO, ID, NAME, CARNUM, TO_CHAR(MDATE, 'YYYY-MM-DD') MDATE-->
+	<!--            	FROM (SELECT ID, NAME, CARNUM, MDATE-->
+	<!--            	FROM GGA_MEMBER ORDER BY MDATE DESC)-->
+	<!--	</select>-->
+
+	<select id="login" parameterType="com.springboot.gga.dto.MemberDto" resultType="com.springboot.gga.dto.SessionDto">
+		SELECT COUNT(*) LOGINRESULT, NAME, ID FROM GGA_MEMBER WHERE ID = #{id} AND PASS = #{pass} GROUP BY NAME, ID
+	</select>
+
+	<select id="selectMypage" parameterType="String" resultType="com.springboot.gga.dto.MemberDto">
+		SELECT ID, PASS, NAME, BIRTH, GENDER, TEL, PHONE, EMAIL, CARNUM, GENRE, MDATE
+		FROM GGA_MEMBER
+		WHERE ID = #{id}
+	</select>
+	<!--	-->
+	<update id="updateMypage" parameterType="com.springboot.gga.dto.MemberDto">
+		UPDATE GGA_MEMBER SET PASS = #{pass}, TEL = #{tel}, PHONE = #{phone}, EMAIL = #{email}, CARNUM = #{carnum}
+		WHERE ID = #{id}
+	</update>
+	<!--	-->
+	<!--	<insert id="join" parameterType="com.springboot.gga.dto.MemberDto">-->
+	<!--		INSERT INTO GGA_MEMBER(ID, PASS, NAME, BIRTH, GENDER, TEL, PHONE, EMAIL, CARNUM, GENRE, MDATE)-->
+	<!--            VALUES(#{id}, #{pass}, #{name}, #{birth}, #{gender}, #{tel}, #{phone}, #{email}, #{carnum}, #{genreList}, SYSDATE)-->
+	<!--	</insert>-->
+	<!--	-->
+	<!--	<delete id="delete" parameterType="String">-->
+	<!--		DELETE FROM GGA_MEMBER WHERE ID = #{id}-->
+	<!--	</delete>-->
+	<!--	-->
+	<!--	<select id="findId" parameterType="com.gga.vo.MemberVo" resultType="String">-->
+	<!--		SELECT ID FROM GGA_MEMBER WHERE NAME = #{name} AND BIRTH = #{birth} AND PHONE = #{phone}-->
+	<!--	</select>-->
+	<!--	-->
+	<!--	<select id="findPw" parameterType="com.gga.vo.MemberVo" resultType="String">-->
+	<!--		SELECT PASS FROM GGA_MEMBER WHERE ID = #{id} AND NAME = #{name} AND BIRTH = #{birth} AND PHONE = #{phone}-->
+	<!--	</select>-->
+
+</mapper>

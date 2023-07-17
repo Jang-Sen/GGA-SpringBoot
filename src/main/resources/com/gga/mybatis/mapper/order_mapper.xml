@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.springboot.gga.repository.OrderMapper">
+
+	<select id="seatlist" resultType="com.springboot.gga.dto.SeatDto">
+		select sid, snumber, status from gga_seat
+	</select>
+	
+	
+<update id="resetSeat" parameterType="java.lang.String">
+    UPDATE gga_seat
+    SET status = 'seat'
+    WHERE snumber = #{seatNumber}
+	</update>
+
+	<update id="updateseatstatus" parameterType="java.lang.String">
+    UPDATE gga_seat
+    SET status = 'seat occupied'
+    WHERE snumber = #{seatNumber}
+	</update>
+	
+<delete id="deleteorder" parameterType="java.lang.String">
+	delete from gga_ordercon  
+				where oconid = #{oconid, jdbcType=VARCHAR}
+	</delete>
+
+
+
+	<select id="orderconlist" parameterType="java.lang.String" resultType="com.springboot.gga.dto.OrderconDto">
+	select oconid, movieid, movieordertitle, price,seat, otime, odate,
+				oname, ocarnum,  oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter, id
+				from GGA_ordercon where oconid = #{oconid, jdbcType=VARCHAR}
+	</select>
+	<select id="selectOrderconuid" parameterType="java.lang.String" resultType="com.springboot.gga.dto.OrderconDto">
+	select oconid, movieid, movieordertitle, price,seat, otime, odate,
+				oname, ocarnum,  oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter
+				from GGA_ordercon where merchantuid = #{merchantuid}
+	</select>
+
+	<select id="getOid" resultType="java.lang.String">
+		select 'o_'||ltrim(to_char(sysdate,'yymmdd'))||ltrim(to_char(sequ_gga_order_oid.nextval,'0000')) oid from dual
+
+	</select>
+
+	<select id="select" parameterType="java.lang.String" resultType="com.springboot.gga.dto.OrderDto">
+		select oid, movieid, price, seat, otime, odate, id, oname, ocarnum, oemail,
+			   ophone, orderdate, movieordertitle, movieorderposter from gga_order where oid = #{oid}
+	</select>
+
+	<!--<select id="selectOrdercon" resultType="com.springboot.gga.dto.OrderconDto">
+	select oconid, movieid, movieordertitle, price, seat, otime, odate,
+				oname, ocarnum,  oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter, id
+				from GGA_ordercon
+	</select>-->
+	<select id="selectOrderconMypage" parameterType="java.lang.String" resultType="com.springboot.gga.dto.OrderconDto">
+	select oconid, movieid, movieordertitle, price, seat, otime, odate,
+				oname, ocarnum,  oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter, id
+				from GGA_ordercon where id = #{id, jdbcType=VARCHAR}
+	</select>
+	
+	<insert id="insertocon" parameterType="com.springboot.gga.dto.OrderconDto">
+  INSERT INTO GGA_ordercon (oconid, movieid, movieordertitle, price, seat, otime, odate,
+    oname, ocarnum, oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter)
+  VALUES ('OC_'|| DBMS_RANDOM.STRING('X', 15), #{movieid}, #{movieordertitle}, #{price}, #{seat}, #{otime}, #{odate},
+    #{oname}, #{ocarnum}, #{oemail}, #{ophone}, #{orderdate}, #{impuid}, #{merchantuid}, #{pgtype}, #{movieorderposter})
+</insert>
+	
+	<select id="selectorderconDto" parameterType="java.lang.String" resultType="com.springboot.gga.dto.OrderDto">
+	select oid, movieid, price, seat, otime, odate, id, oname, ocarnum, oemail, 
+	ophone, orderdate, movieordertitle, movieorderposter from gga_order where oid = #{oid}
+	</select>
+	
+	<insert id="insertpriceseat" parameterType="com.springboot.gga.dto.OrderDto">
+	update gga_order set price = #{price}, seat= #{seat}
+				where oid = #{oid}
+	</insert>
+	
+	<insert id="insertOrderDto" parameterType="com.springboot.gga.dto.OrderDto" >
+  INSERT INTO gga_order(movieid, otime, odate, oname, ocarnum, oemail, ophone, orderdate, oid, movieordertitle, movieorderposter)
+  VALUES (#{movieid}, #{otime}, #{odate}, #{oname}, #{ocarnum}, #{oemail}, #{ophone}, sysdate, #{oid}, #{movieordertitle}, #{movieorderposter})
+	</insert>
+
+	<select id="searchSeat" parameterType="java.lang.String" resultType="com.springboot.gga.dto.SeatDto">
+
+		select sid, snumber, status from gga_seat where snumber =#{seatNumber}
+
+	</select>
+
+	
+	
+</mapper>

@@ -1,0 +1,2382 @@
+/********************************
+		Header CSS
+*********************************/
+.btnjoinproc {
+	border: 1px solid white;
+	background: white;
+}
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header{
+	font-family: 'GangwonEdu_OTFBoldA';
+	background-image:url("http://localhost:9000/images/bgheaderai.png");
+	background-repeat:no-repeat;
+	/* background-size:1000px 150px; */
+ 	background-size: 100%; 
+/* 	background-position:center; */
+	height:300px;
+	/* margin-bottom: 70px; */
+} 
+header a{
+	color:white;
+}
+
+header input{
+	width:200px;
+	heigth:30px;
+	margin-right:15px;
+	border-radius: 5px;
+	border: 0px;
+	padding-left:5px;
+	opacity:80%;
+}
+
+header button{
+	padding:0px 10px;
+	height:25px;
+	background: white;
+	border-radius:5px;
+	border-color:lightgray;
+	color: gray;
+}
+
+.header_section1 {
+  display: flex;
+  justify-content: space-between;
+/*   align-items: center; */
+  /* padding: 20px; */
+}
+
+.header_section1 img {
+	margin-top:30px;
+	margin-left:30px;
+  width: 120px;
+  height: 100px;
+}
+
+
+.header_menu {
+ margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header_menu li {
+	float:left;
+	list-style-type: none;
+  margin-right: 20px;
+}
+
+.header_menu li:last-child {
+  margin-right: 0;
+}
+
+.header_menu li a {
+	color:white;
+font-size:11pt;
+  text-decoration: none;
+}
+
+.header_menu2 {
+	width:480px;
+	float:left;
+	position:relative;
+	top: -50px;
+	left:590px;
+	
+}
+
+.header_menu2 li {
+	float:left;
+	list-style-type: none;
+    margin-right: 30px;
+    color:white;
+}
+.header_menu2 li:hover {
+	cursor:pointer;
+
+	}
+
+.header_menu2 li a {
+	text-decoration:none;
+	
+}
+
+.header_menu2 > li:last-child {
+	/* float:right; */
+}
+
+.header_menu2 li:last-child {
+  margin-right: 0;
+}
+
+.mov_search {
+	width:300px;
+	clear:both;
+	position:relative;
+	left:720px;
+	top: -40px;
+}
+.d-flex input{
+	font-size:12pt;
+	
+}
+.d-flex button p{
+	font-size:12pt;
+}
+
+
+/*******************************
+ �궡 �젙蹂� �닔�젙 �럹�씠吏�
+*************************************/
+
+.mypage_title img{
+	width:350px;
+	height:100px;
+	
+}
+
+.content {
+	font-family: 'GangwonEdu_OTFBoldA';
+	/* display:flex; */
+	/* padding:20px; */
+}
+.mp_update ul li label{
+	border:1px solid red;
+	background-color:mediumaquamarine;
+	border:1px solid mediumaquamarine;
+	border-radius:4px;
+	text-align:center;
+	font-weight:800;
+	width:150px;
+	color:white;
+	padding:5px 10px;
+	}
+.mp_update ul li:first-child {
+	margin-top:40px;
+
+	}
+.mp_update ul li {
+	list-style-type:none;
+	margin-top:15px; 
+}
+.mp_update ul li input{
+	margin-left:20px;
+	margin-right:20px;
+	width:200px;
+	border:1px solid lightgray;
+	border-radius:4px;
+	padding:5px 10px;
+}
+.mp_update ul li:nth-child(2) input, .mp_update ul li:nth-child(3) input{
+	width:300px;
+	}
+.mp_update ul li input[name='gender']{
+	margin-left:20px;
+	margin-right:10px;
+	width:15px;
+}
+.mp_update ul li input[name='tel']{
+	margin-left:20px;
+	margin-right:10px;
+	width:15px;
+}
+.mp_update ul li input[name='phone2'], .mp_update ul li input[name='phone3']{
+	width:100px;
+}
+.mp_update ul li input[name='genre']{
+	margin-left:20px;
+	margin-right:10px;
+	width:15px;
+}
+.mp_update ul li textarea{
+	border:1px solid lightgray;
+	margin-left:20px;
+	width:500px;
+	height:100px;
+}
+.mp_update ul li select {
+	margin-left:10px;
+	margin-right:10px;
+	padding:10px 10px;
+	border:1px solid lightgray;
+	border-radius:4px;
+	
+}
+.myorder_text a img {
+	width:120px;
+	height:50px;
+}
+
+
+/*                            �넚吏��썒 留덉씠�럹�씠吏� �뵒�옄�씤 5�썡19�씪 */
+
+div.content section.mypage { /* section 怨좎젙 */
+	width:980px; height:200px;
+	margin:auto;
+	text-align:center;
+	border-bottom: 1px solid lightgray;
+}
+div.content section.mypage div.mypage_header { /* 留덉씠�럹�씠吏� ���씠�� �쁺�뿭  */
+/* margin:10px; */
+/* 	float:left; */
+text-align:left;
+}
+
+div.content section.mypage div.mypage_header img { /* 留덉씠�럹�씠吏� �씠誘몄� �쁺�뿭  */
+	width:300px;
+}
+
+div.content section.mypage div.mypage_menu_info { /* 硫붾돱 div �쐞移� �쁺�뿭 */
+	margin-left: 20px;
+/* 	margin:0px 0px 0px 60px; */
+	position:relative;
+/* 	top:40px;
+	left:30px;
+	right:20px; */
+	display:inline-block;
+}
+
+div.content section.mypage div.mypage_menu_info { /* �씤�룷 �삤�뜑 �쐞移� */
+	font-size:30pt;
+	 float:left; 
+	/* margin:70px; */
+} 
+.mypage_menu_info a{
+	margin-left:30px;
+	text-decoration:none;
+	color:gray;
+}
+div.content section.mypage2 { /* section 고정 */
+	width:980px; height:130px;
+	margin:auto;
+	text-align:center;
+	border-bottom: 1px solid lightgray;
+}
+div.content section.mypage2 div.mypage_header { /* 마이페이지 타이틀 영역  */
+/* margin:10px; */
+/* 	float:left; */
+text-align:left;
+}
+
+div.content section.mypage2 div.mypage_header img { /* 마이페이지 이미지 영역  */
+	width:300px;
+}
+
+div.content section.mypage2 div.mypage_menu_info { /* 메뉴 div 위치 영역 */
+	margin-left: 20px;
+/* 	margin:0px 0px 0px 60px; */
+	position:relative;
+/* 	top:40px;
+	left:30px;
+	right:20px; */
+	display:inline-block;
+}
+
+div.content section.mypage2 div.mypage_menu_info { /* 인포 오더 위치 */
+	font-size:30pt;
+	 float:left; 
+	/* margin:70px; */
+} 
+.mypage_menu_info a{
+	margin-left:30px;
+	text-decoration:none;
+	color:gray;
+}
+.allticket_back{
+	margin-top:30px;
+	width: 980px; height:200px;
+	margin:auto;
+	text-align:center;
+	display:block;
+}
+
+/*                           내 예매 내역                           */
+
+div.content section.myorder { /* section 고정 */
+margin-top:30px;
+	width: 1200px; height:450px;
+	margin:auto;
+	text-align:center;
+	/* border-bottom: 5px double black; */
+}
+div.content section.myorder2 { /* section 고정 */
+	width: 1200px; height:100%;
+	margin:auto;
+	text-align:center;
+	margin-bottom:50px;
+	/* border-bottom: 5px double black; */
+}
+div.content section.myorder div.myorder_header h1 { /* My예매  타이틀 영역 */
+	position:relative;
+	left:100px;
+	margin:30px;
+	float:left;
+	font-size:20pt;
+}
+div.content section.myorder div.myorder_header h5 { /* My예매  타이틀 영역 */
+	position:relative;
+	right:100px;
+	float:right;
+	padding:10px; margin:10px;
+	margin-top:20px; 
+}
+div.content section.myorder div.myorder_text { /* My예매 정보 유무 출력 */
+	position:relative;
+	display:inline-block;
+	top: 80px;
+}
+div.content section.myorder div.myorder_text span { /* 정보 유무 글씨  */
+	text-align:center;
+	color:tomato;
+}
+
+div.content section.myorder div.myorder_add:nth-child(5) {
+	position:relative;
+	float:right;
+	bottom:500px;
+}
+div.content section.myorder2 div.myorder_header h1 { /* My예매  타이틀 영역 */
+	position:relative;
+	left:100px;
+	margin:30px;
+	float:left;
+	font-size:20pt;
+}
+div.content section.myorder2 div.myorder_header h5 { /* My예매  타이틀 영역 */
+	position:relative;
+	right:100px;
+	float:right;
+	padding:10px; margin:10px;
+	margin-top:20px; 
+}
+div.content section.myorder2 div.myorder_text { /* My예매 정보 유무 출력 */
+	position:relative;
+	display:inline-block;
+	top: 80px;
+}
+div.content section.myorder2 div.myorder_text span { /* 정보 유무 글씨  */
+	text-align:center;
+	color:tomato;
+}
+
+div.content section.myorder2 div.myorder_add:nth-child(5) {
+	position:relative;
+	float:right;
+	bottom:500px;
+}
+
+div.content section.myorder2 div.myorder_add { /* 영화 포스터 */
+	border:3px groove lightgray;
+	background:lightgray;
+	border-radius:3px;
+	display:inline-block;
+	width:220px; height:330px;
+	position:relative;
+	float:left;
+	right: 5px; top:65px;
+	opacity:1.0;
+	margin-top:20px;
+	margin-left:20px;
+}
+div.content section.myorder2 div.myorder_add { /* 영화 포스터 */
+	border:3px groove lightgray;
+	background:lightgray;
+	border-radius:3px;
+	display:inline-block;
+	width:220px; height:330px;
+	position:relative;
+	float:left;
+	right: 5px; top:65px;
+	opacity:1.0;
+	margin-top:20px;
+	margin-left:20px;
+}
+div.content section.myorder div.myorder_add:hover { /* 칸 커서 이벤트  */
+	opacity:0.5;
+}
+	
+div.content section.myorder div.myorder_add img ,
+div.content section.myorder div.myorder_add_plus img  { /* 이미지 크기 & 위치 */
+
+border:3px groove lightgray;
+	background:lightgray;
+	border-radius:3px;
+	display:inline-block;
+	position:relative;
+	float:left;
+	opacity:1.0;
+	position:relative;
+	width:220px; height:330px;
+	/* top:120px; */
+	opacity:1.0;
+}
+div.content section.myorder2 div.myorder_add img ,
+div.content section.myorder2 div.myorder_add_plus img  { /* 이미지 크기 & 위치 */
+
+border:3px groove lightgray;
+	background:lightgray;
+	border-radius:3px;
+	display:inline-block;
+	position:relative;
+	float:left;
+	opacity:1.0;
+	position:relative;
+	width:220px; height:330px;
+	/* top:120px; */
+	opacity:1.0;
+}
+div.content section.myorder div.myorder_add img:hover, 
+div.content section.myorder div.myorder_add_plus img:hover { /* 플러스 버튼 커서 이벤트 */
+	opacity:0.3;
+	cursor:pointer;
+}
+div.content section.myorder div.myorder_add2 img ,
+div.content section.myorder div.myorder_add_plus img  { /* 이미지 크기 & 위치 */
+	top:65px;
+	background:lightgray;
+	border-radius:3px;
+	display:inline-block;
+	position:relative;
+	float:left;
+	opacity:1.0;
+	position:relative;
+	width:220px; height:330px; 
+	/* top:120px; */
+	opacity:1.0;
+	margin-top:20px;
+	margin-left:20px;
+}
+div.content section.myorder div.myorder_add2 img:hover, 
+div.content section.myorder div.myorder_add_plus img:hover { /* 플러스 버튼 커서 이벤트 */
+	opacity:0.3;
+	cursor:pointer;
+}
+div.content section.myorder2 div.myorder_add3 img ,
+div.content section.myorder2 div.myorder_add_plus img  { /* 이미지 크기 & 위치 */
+	top:40px;
+	background:lightgray;
+	border-radius:3px;
+	display:inline-block;
+	position:relative;
+	float:left;
+	opacity:1.0;
+	position:relative;
+	width:220px; height:330px;
+	/* top:120px; */
+	opacity:1.0;
+	margin-top:50px;
+	margin-left:20px;
+	margin-bottom:10px;
+}
+div.content section.myorder2 div.myorder_add3 img:hover, 
+div.content section.myorder2 div.myorder_add_plus img:hover { /* 플러스 버튼 커서 이벤트 */
+	opacity:0.3;
+	cursor:pointer;
+}
+.myorder_all{
+	color:gray;
+}
+
+/* div.content section.myorder div.myorder_add_plus img { 플러스 이미지 (마지막)
+	position:relative;
+	right:40px; top:115px;
+} */
+
+
+/*                   My review                */
+
+div.content section.myreview { /* section 怨좎젙 */
+	border-top:1px solid lightgray;
+	width:980px; height:460px;
+	margin:auto;
+	text-align:center;
+}
+
+div.content section.myreview div.myreview_header h1 { /* My由щ럭  ���씠�� �쁺�뿭 */
+	margin:30px;
+	float:left;
+	font-size:20pt;
+}
+
+div.content section.myreview table {
+	margin-left:60px;
+}
+
+/**************************
+seat
+******************************/
+
+.seatcontainer{
+	justify-content: center;
+  align-items: center;
+	
+}
+.seatcontainer > .container, .seatcontainer > .container2{
+	justify-content: center;
+  align-items: center;
+	text-align: center;
+}
+.seatcontainer + footer {
+	margin-top:20px;
+	display:block;
+	}
+	
+.seatbtn{
+	border:1px solid white;
+	background-color:white;
+}
+.seatbtn img{
+	width:100px;
+	height:50px;
+}
+/*********************************
+mypage ticket
+********************************/
+#allticket_back{
+	background-color:white;
+	border:1px solid white;
+}
+#allticket_back img{
+margin-top:80px;
+	width:150px;
+	height:80px;
+	}
+#allticket_back img:hover{
+	cursor:pointer;
+	}
+.openmypage{
+	margin-top:25px;
+	margin-left:300px;
+	background-color:white;
+	border:1px solid white;
+}
+.openmypage img{
+	width:150px;
+	height:80px;
+	}
+.openmypage img:hover{
+cursor:pointer;
+}	
+.openallticket{
+	margin-top:25px;
+	margin-left:300px;
+	background-color:white;
+	border:1px solid white;
+}
+.openallticket img{
+	width:150px;
+	height:80px;
+	}
+.refundticket{
+	margin-left:25px;
+	background-color:white;
+	border:1px solid white;
+	
+}
+.refundticket img{
+	width:150px;
+	height:80px;
+}
+
+/*******************************
+ �뜝�럩�뤂�뜝�럩�쐸�뤆�룊�삕�뜝�럩肉� �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
+*************************************/
+
+.join_title img{
+	width:350px;
+	height:100px;
+	
+}
+
+.join {
+	font-family: 'GangwonEdu_OTFBoldA';
+	/* display:flex; */
+	/* padding:20px; */
+}
+.join ul li label{
+	background-color:mediumaquamarine;
+	border:1px solid mediumaquamarine;
+	border-radius:4px;
+	text-align:center;
+	font-weight:800;
+	width:150px;
+	color:white;
+	padding:5px 10px;
+	}
+.join ul li:first-child {
+	margin-top:40px;
+
+	}
+.join ul li {
+	list-style-type:none;
+	margin-top:15px; 
+}
+.join ul li input{
+	margin-left:20px;
+	margin-right:20px;
+	width:200px;
+	border:1px solid lightgray;
+	border-radius:4px;
+	padding:5px 10px;
+}
+.join ul li:nth-child(2) input, .join ul li:nth-child(3) input{
+	width:300px;
+	}
+.join ul li input[name='gender']{
+	margin-left:20px;
+	margin-right:10px;
+	width:15px;
+}
+.join ul li input[name='tel']{
+	margin-left:20px;
+	margin-right:10px;
+	width:15px;
+}
+.join ul li input[name='phone2'], .join ul li input[name='phone3']{
+	width:100px;
+}
+.join ul li input[name='genre']{
+	margin-left:20px;
+	margin-right:10px;
+	width:15px;
+}
+.join ul li textarea{
+	border:1px solid lightgray;
+	margin-left:20px;
+	width:500px;
+	height:100px;
+}
+.join ul li select {
+	margin-left:10px;
+	margin-right:10px;
+	padding:10px 10px;
+	border:1px solid lightgray;
+	border-radius:4px;
+	
+}
+.joinbtn{
+	display:inline-block;
+	margin-top:30px;
+	margin-left:350px;
+}
+.joinbtn img{
+	width:130px;
+	justify-content: center; 
+ 	align-items: center; 
+	margin:auto; 
+}
+
+/*******************************
+ �슖�돦裕꾬옙�쟽�뜝�럩逾� �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
+*************************************/
+  .container{
+	font-family: 'GangwonEdu_OTFBoldA';
+} 
+
+.login_title img{
+	width:330px;
+	height:100px;
+	
+}
+.loginForm{
+	margin:auto;
+	justify-content: center;
+ 	align-items: center;
+	
+}
+.login {
+	font-family: 'GangwonEdu_OTFBoldA';
+	display:flex;
+	padding:20px;
+	text-align:center;
+}
+.login ul li {
+	list-style-type:none;
+		margin-top:30px;
+}
+.login ul li label{
+	background-color:mediumaquamarine;
+	border:1px solid mediumaquamarine;
+	border-radius:4px;
+	text-align:center;
+	font-weight:800;
+	width:150px;
+	color:white;
+	padding:5px 10px;
+	}
+.login ul li input{
+	margin-left:20px;
+	width:250px;
+	border:1px solid lightgray;
+	border-radius:4px;
+	padding:5px 10px;
+}
+
+.login .loginbtnbtn{
+	margin-right:20px;
+	width:130px;
+	
+}
+.login ul li span a{
+	margin-right:20px;
+	font-size:15px;
+	text-decoration:none;
+	color:gray;
+	
+}
+.idCheckbtn{
+	width:80px;
+	padding:5px 10px;
+	color:gray;
+	background-color:whitesmoke;
+	border:1px solid whitesmoke;
+	border-radius:4px;
+}
+/*******************************
+ �뜝�럩援숂춯�엪�삕 �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
+*************************************/
+
+/*                �뜝�룞�삕占쎄슈�뜝�띁�닱筌뤾쑴踰� - �뜝�럥苑딁춯�쉻�삕�뜝�럩�쐪 05-02                            */
+
+/* �뜝�룞�삕占쎄슈�뜝�띁�닱筌뤾쑴踰� - �뜝�럥�걫嶺뚯쉻�삕 */
+div.content section.coron_1 { /* section 占썩뫁伊숋옙�젧  */
+	border:1px solid red;
+	width:1000px; height:600px;
+	margin:auto;
+}
+div.content section.coron_1 div { /* div relative */
+	clear:both;
+	position:relative;
+}
+div.content section.coron_1 div img {
+	width:100%;
+	position:absolute;
+}
+div.content section.coron_1 div.con {
+	color:purple;
+	font-size:50pt;
+	text-align:center;
+	margin-top:130px;
+}
+/* �뜝�룞�삕占쎄슈�뜝�띁�닱筌뤾쑴踰� - �뜝�럡���뜝�럩�뮔 */
+	.ask_title img{
+	width:280px;
+	height:100px;
+	}
+div.container section.coron_2 { /* section 占썩뫁伊숋옙�젧  */
+	width:1000px; height:300px;
+	margin:auto;
+	position:relative;
+	display:flex;
+	justify-content: center;
+  align-items: center;
+	
+}
+/* div.container section.coron_2 div {
+	border:1px solid blue;
+	width:28%; height:30%;
+	display:inline-block;
+	text-align:center;
+	margin:15px;
+} */
+
+div.container section.coron_2 div:nth-child(4) {
+	border:1px solid red;
+	margin-left:150px;
+	width:70%;
+	text-align:left;
+}
+div.coron_input {
+	padding-top:50px;
+	margin-left:40px;
+	display:lnline-block;
+}
+.coron_input ul li input{
+	margin-left:15px;
+	margin-right:15px;
+}
+.coron_input ul li input#cname,
+.coron_input ul li input#csize {
+	width:260px;
+}
+.coron_input ul li input#cphone1,
+.coron_input ul li input#cphone2,
+.coron_input ul li input#cphone3 {
+	width:140px;
+}
+.coron_input ul li:nth-child(4) label {
+	position:relative;
+	bottom:78px;
+}
+.coron_input textarea{
+	margin-left:15px;
+	width:516px;
+	height:100px;
+	border:1px solid lightgray;
+}
+.corondetail img{
+	display:block;
+	width:1000px;
+}
+.coronbtn{
+	margin-left:20px;
+	width:200px;
+	height:100px;
+	border:1px solid white;
+	background-color:white;
+}
+.coronbtn img{
+	width:180px;
+	height:80px;
+	margin:auto;
+}
+/*admin*/
+.admin_index_title img{
+	width:480px;
+	height:130px;
+	margin-bottom:30px;
+	
+}
+.admin_index_btn a img{
+	width:300px;
+	
+}
+.admin_index_btn a:nth-child(1){
+	margin-left:180px;
+	width:300px;
+	
+}
+.admin_index_btn a:nth-child(4){
+	margin-left:180px;
+	width:300px;
+	
+}
+.admin_board_list_title img{
+	width:350px;
+	height:110px;
+	float:left;
+	
+}
+/*store*/
+.store_title img{
+	width:300px;
+	height:130px;
+	display:block;
+}
+.cartbtn img{
+	width:135px;
+}
+.cartbtn2 img{
+	width:135px;
+}
+.cartbtn:hover{
+	cursor:pointer;
+}
+.cartbtn2:hover{
+	cursor:pointer;
+}
+.store_cart {
+	margin-left:870px;
+	margin-bottom:20px;
+	
+}
+.store_cart img{
+	width:60px;
+	height:60px;
+	
+}
+.buybtn{
+	display:flex;
+}
+.cartkakaobtn{
+	background:white;
+	border:1px solid white;
+	display:flex;
+}
+.cartkakaobtn img{
+	
+	width:120px;	
+}
+#keepshoppinggocart{
+	display:flex;
+	backgroung-color:white;
+	
+}
+#keepshoppinggocart button:first-child{
+	margin-left:60px;
+}
+
+#keepshoppinggocart button{
+	backgroung-color:white;
+	border:1px solid white;
+	float:center;
+	margin-left:20px;
+	margin-bottom:20px;
+}
+.modal-body p {
+	margin-top:20px;
+	text-align:center;
+}
+#keepshoppinggocart button img{
+	width:180px;
+	background-color:white;
+}
+.cartcardbtn{
+	display:inline-block;
+	background-color:white;
+	border:1px solid white;
+}
+.cartcardbtn img{
+	width:150px;
+	
+} 
+.buycartmodal_footer{
+	display:flex;
+	flex-direction: row; /*�닔�룊 �젙�젹*/
+      align-items: center;
+      justify-content: center;
+      margin-bottom:30px;
+}
+#emptycart{
+	margin-top:50px;
+	margin-bottom:50px;
+	text-align:center;
+	
+}
+.emptycartclass{
+	text-align:center;
+	margin-bottom:50px;
+}
+.emptycartclass img{
+	width:200px;
+}
+.emptycartclass:hover{
+	cursor:pointer;
+}
+.emptycartimg{
+	margin-top:20px;
+	margin-left:280px;
+	width:520px;
+	height:150px;
+	margin-bottom:40px;
+}
+.modal{
+	font-family: 'GangwonEdu_OTFBoldA';
+	
+}
+/*.table-image {
+
+  thead {
+    td, th {
+      border: 0;
+      !* color: #666; *!
+      font-size: 0.8rem;
+    }
+  }
+
+  td, th {
+    vertical-align: middle;
+    text-align: center;
+
+  }
+}*/
+.buycartbtn {
+	background:white;
+	
+}
+.price {
+  margin-left: 1rem;
+}
+
+.modal-footer button {
+	border: 1px solid white;
+	background-color:white;
+  padding-top: 0rem;
+}
+.modal-footer button:hover{
+	background-color:white;
+	border: 1px solid white;
+}
+.modal-footer button img{
+	width:150px;
+	height:70px;
+}
+#cartclosebtn{
+	padding:3px 10px;
+	border:1px solid white;
+	border-radius:4px;
+}
+.cartclosebtn2{
+	padding:3px 10px;
+	border:1px solid white;
+	border-radius:4px;
+	
+}
+#store_cart {
+	background-color:white;
+	border:1px solid white;
+}
+.storebtns{
+	display:flex;
+}
+
+#qtyinput{
+	width:40px;
+}
+.carttotalprice{
+	margin-top:15px;
+	margin-right:20px;
+	text-align:right;
+}
+.cartitemdelete{
+	background-color:tomato;
+	color:white;
+	padding:3px 10px;
+	border:1px solid white;
+	border-radius:4px;
+}
+
+/*�뜝�럩援숂춯�엪�삕*/
+
+ 		.cont-select {
+ 		display:inline-block;
+            position: relative;
+            margin-left:80px;
+            margin-top:120px;
+            width: 200px;
+        }
+
+        .btn-select {
+        list-style-type:circle;
+            width: 100%;
+            padding: 13px 30px 13px 14px;
+/*             font-size: 15px; */
+            line-height: 15px;
+            background-color: #fff;
+            border: 1px solid #C4C4C4;
+            box-sizing: border-box;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+        /*     background: url("images/icon-Triangle-down.png") center right 14px no-repeat; */
+            /* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .btn-select:hover,
+        .btn-select:focus {
+            border: 1px solid #9B51E0;
+            outline: 3px solid #F8E4FF;
+        }
+
+        .list-member {
+       		background-color:white;
+            display: none;
+            position: absolute;
+            width: 100%;
+            top: 49px;
+            left: 0;
+            border: 1px solid #C4C4C4;
+            box-sizing: border-box;
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+
+        .btn-select.on {
+           /*  background: url("images/icon-Triangle-up.png") center right 14px no-repeat; */
+        }
+
+        .btn-select.on+.list-member {
+            display: block;
+        }
+
+        .list-member li {
+        	list-style-type:circle;
+            height: 40px;
+            padding: 5px 8px;
+            box-sizing: border-box;
+        }
+
+        .list-member li button {
+            width: 100%;
+            padding: 7px 10px;
+            border: none;
+            background-color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            /* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .list-member li button:hover,
+        .list-member li button:focus {
+            background-color: #F8E4FF;
+        }
+        
+            .time-select{
+            display:inline-block;
+            position: relative;
+            margin-left:40px;
+            margin-top:20px;
+            width: 100px;
+        
+        }
+        
+         .btn-timeselect {
+        list-style-type:circle;
+            width: 100%;
+            padding: 13px 30px 13px 14px;
+/*             font-size: 15px; */
+            line-height: 15px;
+            background-color: #fff;
+            border: 1px solid #C4C4C4;
+            box-sizing: border-box;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+        /*     background: url("images/icon-Triangle-down.png") center right 14px no-repeat; */
+            /* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .btn-timeselect:hover,
+        .btn-timeselect:focus {
+            border: 1px solid #9B51E0;
+            outline: 3px solid #F8E4FF;
+        }
+
+        .list-ordertime {
+        background-color:white;
+            display: none;
+            position: absolute;
+            width: 100%;
+            top: 49px;
+            left: 0;
+            border: 1px solid #C4C4C4;
+            box-sizing: border-box;
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+
+        .btn-timeselect.on {
+           /*  background: url("images/icon-Triangle-up.png") center right 14px no-repeat; */
+        }
+
+        .btn-timeselect.on+.list-ordertime {
+            display: block;
+        }
+
+        .list-member li {
+        	list-style-type:circle;
+            height: 40px;
+            padding: 5px 8px;
+            box-sizing: border-box;
+        }
+
+        .list-ordertime li button {
+            width: 100%;
+            padding: 7px 10px;
+            border: none;
+            background-color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            /* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .list-ordertime li button:hover,
+        .list-ordertime li button:focus {
+            background-color: #F8E4FF;
+        }
+
+.order_title img{
+width:160px;
+height:100px;
+
+}
+
+.ticket_title{
+	margin-left:100px;
+	
+}
+
+
+.ticket_bac1{
+	line-height:normal;
+margin-top:50px; 
+  display : block;
+  text-decoration : none;
+  color : rgb(37, 37, 37);
+  font-size: 15px;
+ padding : 12px 20px; 
+	background-image:url("http://localhost:9000/images/ticket2.png");
+	background-repeat: no-repeat;
+	background-size: 1000px 300px;
+	height:300px;
+}
+.ticket_bac1 select:first-child{
+	margin-top:130px;
+}
+.ticket_bac1 select{
+	display:inline-block;
+height:20pt;
+border:1px solid #ddd;
+color:gray;
+border-radius:3px;
+margin-left:20px;
+margin-top:20px;
+line-height: normal;
+vertical-align: middle;
+}
+
+	
+.ticket_bac1 input{
+	width:150px;
+	height:45px;
+margin-left:40px;
+margin-top:10px;
+border:1px solid #ddd;
+border-radius:8px;
+padding:3px;
+}
+.ticket_bac1 input:hover,.ticket_bac1 input:focus{
+	
+border: 1px solid #9B51E0;
+outline: 3px solid #F8E4FF;
+}
+
+
+.ticket_price{
+	display:inline-block;
+	margin-left:550px;
+	margin-top:40px;
+}
+
+.ticket_bac2{
+	margin-top:50px;
+  display : block;
+  text-decoration : none;
+  color : rgb(37, 37, 37);
+  font-size: 15px;
+  padding : 12px 20px;
+	background-image:url("http://localhost:9000/images/ticket2.png");
+	background-repeat: no-repeat;
+	background-size: 1000px 300px;
+	height:300px;
+}
+
+.ticket_bac2 ul li input{
+width:30%;
+border:1px solid #ddd;
+border-radius:4px;
+
+}
+.ticket_bac2 li{
+margin-left:60px;
+margin-top:10px;
+text-decoration : none;
+list-style-type:none;
+}
+.ticket_bac2 li:first-child{
+margin-top:100px;
+}
+.ticket_bac2 li label{
+width:50px;
+}
+.ticket_button {
+	display:inline-block;
+	margin-left:400px;
+	margin-top:35px;
+}
+.ticket_button img {
+	width:180px;
+	height:80px;
+}
+.kakaopay_button{
+	margin-top:40px;
+	display:inline-block;
+	margin-left:50px;
+}
+.kakaopay_button img{
+	margin-top:20px;
+	width:100px;
+	height:40px;
+}
+.kakaopay_button:hover{
+	cursor:pointer;
+	
+}
+
+.ticket_button:hover{
+	cursor:pointer;
+}
+
+.btn_style{
+margin-top:30px;
+padding:20px 10px;
+width:200px;
+font-size:15px;
+font-weight:700;
+border: 1px solid white;
+border-radius:4px;
+}
+	
+	
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+	
+.ticket_button> a > img{
+	margin-top:30px;
+	width:200px;
+	height:80px;
+	
+}
+/**********************************
+ �뜝�럩援숂춯�씞�걠占쎈걦占쎈쇀�뜝占� �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
+*************************************/
+
+.ordercon_title img{
+width:250px;
+height:100px;
+
+}
+.ticketcon_bac1{
+  margin-top:50px;
+  display : block;
+  text-decoration : none;
+  color : rgb(37, 37, 37); 
+  font-size: 15px;
+ 	padding : 12px 20px; 
+	background-image:url("http://localhost:9000/images/ticket2.png");
+	background-repeat: no-repeat;
+	background-size: 1000px 300px;
+	height:300px;
+
+}
+
+
+.ticketcon_bac2{
+margin-top:50px;
+  display : block;
+  text-decoration : none;
+color : rgb(37, 37, 37);
+  font-size: 15px;
+  padding : 12px 20px;
+	background-image:url("http://localhost:9000/images/ticket2.png");
+	background-repeat: no-repeat;
+	background-size: 1000px 300px;
+	height:300px;
+
+}
+.ticketcon_bac1 p {
+display:inline;
+
+} 
+.ticketcon_bac1 label:first-child{
+margin-top:100px;
+
+}
+.ticketcon_bac1 label{
+width:100px;
+margin-left:80px;
+margin-top:10px;
+
+}
+.ticketcon_bac2 p {
+display:inline;
+	
+
+}
+.ticketcon_bac2 label:first-child{
+margin-top:100px;
+
+}
+.ticketcon_bac2 label{
+width:100px;
+margin-left:80px;
+margin-top:15px;
+
+}
+
+/***************************
+	�뇦猿딆뒩占쎈뻣�뜝�럥�냷 �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
+*****************************/
+.writebtn img,
+.writebtncancel img{
+	width:110px;
+	height:50px;
+}
+
+.board_title{
+	text-align:left;
+	
+}
+.board_title img{
+	width:300px;
+	height:100px;
+	}
+section.board div.board_choose {
+	margin-left:500px;
+	margin-top:20px;
+	display:inline-block;
+} 
+/***************************
+	占썩뫀踰듿뜝�룞�삕亦낆���삕�뜮占�
+*****************************/
+.notice{
+	margin-top:30px;
+	
+}
+.admin_notice_list_title img{
+	width:500px;
+	height:100px;
+	float:left;
+}
+.movie_manager_title img{
+		width:500px;
+	height:100px;
+	float:left;
+	
+}
+.moviemanager button{
+	background-color:white;
+	border:1px solid white;
+	
+}
+.moviemanager table tr td a{
+	text-decoration:none;
+	color:gray;
+}
+.addmoviebtn {
+	float:right;
+	
+}
+.moviemanager button img{
+	width:110px;
+	height:50px;
+	
+}
+.admin_member_title img{
+	width:500px;
+	height:100px;
+	float:left;
+	margin-bottom:30px;
+	
+}
+/***************************
+	faq
+*****************************/
+.faq{
+	margin-top:30px;
+}
+/***************************
+	�뜝�룞�삕占쎄슈�뜝�띁�닱筌뤾쑴踰�
+*****************************/
+.coron_2{
+	font-family: 'GangwonEdu_OTFBoldA';
+	
+}
+div.coron_input{
+	margin-right:200px;
+	position:relative;
+	right:10px;
+	bottom:30px;
+} 
+.coron_input ul li:nth-child(2) input{
+	width:100px;
+}
+.coron_input ul li {
+	list-style-type:none;
+	margin-top:10px;
+	
+}
+.coron_input ul li input {
+	border: 1px solid lightgray;
+	border-radius:4px;
+	padding:5px 10px;
+	}
+.coron_input ul li label{
+	background-color:mediumaquamarine;
+	border:1px solid mediumaquamarine;
+	border-radius:4px;
+	text-align:center;
+	font-weight:800;
+	width:150px;
+	color:white;
+	padding:5px 10px;
+}
+/***************************
+	�뜝�럩寃ュ뜝�럩�꼨 �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
+*****************************/
+
+
+
+.movie_titleimg img{
+width:300px;
+height:100px;
+}
+.btn-outline-secondary{
+	width:140px;
+	height:50px;
+	margin-left:20px;
+	margin-top:20px;
+	margin-bottom:20px;
+	
+}
+.btn-outline-secondary2{
+	width:110px;
+	height:48px;
+	margin-left:10px;
+	margin-top:20px;
+	margin-bottom:20px;
+
+	}
+/***************************
+	index
+*****************************/
+.ggamovietitle img{
+	width:400px;
+	height:100px;
+}
+
+.mapimg{
+	width:200px;
+	height:120px;
+}
+.mapimg img{
+	width:250px;
+	height:100px;	
+}
+.nowtitle img{
+		width:250px;
+	height:100px;	
+	
+}
+	
+/***************************
+	commons style sheet
+*****************************/
+.orderbtn{
+	width:150px;
+	height:50px;
+	
+}
+
+.headerorderbtn img{
+	width:150px;
+	height:50px;
+}
+
+ * {
+	margin:0px; padding:0px;
+} 
+/* .bd-placeholder-img {
+   font-size: 1.125rem;
+   text-anchor: middle;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   user-select: none;
+} */
+
+/*    @media (min-width: 768px) {
+   .bd-placeholder-img-lg {
+     font-size: 3.5rem;
+   }
+ } 
+
+  .b-example-divider {
+   height: 3rem;
+   background-color: rgba(0, 0, 0, .1);
+   border: solid rgba(0, 0, 0, .15);
+   border-width: 1px 0;
+   box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+ }  
+
+.b-example-vr {
+   flex-shrink: 0;
+   width: 1.5rem;
+   height: 100vh;
+ }
+
+.bi {
+   vertical-align: -.125em;
+   fill: currentColor;
+ } */
+
+.nav-scroller {
+   position: relative;
+   z-index: 2;
+   height: 2.75rem;
+   overflow-y: hidden;
+ }
+
+.nav-scroller .nav {
+   display: flex;
+   flex-wrap: nowrap;
+  padding-bottom: 1rem; 
+   margin-top: -1px; 
+   overflow-x: auto;
+   text-align: center;
+   white-space: nowrap;
+   -webkit-overflow-scrolling: touch;
+ }  
+a{
+ 	font-size:20px;
+}
+
+ .li1{
+ 	text-decoration: none;
+ 	font-size:15px;
+ 	color:gray;
+ 	margin-left:10px;
+}
+
+ .a1{
+	padding:p-2;
+	color:secondary;
+} 
+
+
+/*                      �뜝�럥苑딁춯�쉻�삕�뜝�럩�쐪 : �뜝�럩寃ュ뜝�럩�꼨 �뜝�럡留믣뜝�럡�돪�뜝�럩�꼨嶺뚮〕�삕 : MovieInfo               */
+
+/* section 1 */
+div.content section.movie_info1 { /* section 占썩뫁伊숋옙�젧  */
+	/* border:1px solid red; */
+	width:1000px; height:800px;
+	margin:auto;
+}
+div.content section.movie_info1 div { /* div relative */
+	clear:both;
+	 position:relative; 
+	display:inline-block;
+}
+div.content section.movie_info1 div img { /* 嶺뚮∥�뾼占쎈데 �뜝�럥竊쀥뜝�럥裕욃뜝�럡�댉 �뜝�럩逾졿쾬�꼶梨룟뜝占� default:�댖怨뺣샍占쎈쭋4*/
+	width:400px;
+}
+div.content section.movie_info1 div:nth-child(2) { /* �뜝�럩�젷嶺뚮쪋�삕,�뤆�룆큔�뙴�냵�삕甕곤옙 �뜝�럡留믣뜝�럡�돪 �뜝�럩�젧�솻洹⑥삕 �뜝�럥�돫嶺뚮쪋�삕 */
+	position:relative;
+	display:inline-block;
+	padding:20px;
+	left:0px;
+	top:1%;
+	bottom:30%;
+	width:150px; height:650px;
+}
+div.content section.movie_info1 div:nth-child(2) nav ul li{ /* �뜝�럡留믣뜝�럡�돪�뜝�럩�젧�솻洹⑥삕 �뼨�먯삕�뜝�럥�럞 �뜝�럥�꺏�뜝�럩�겱�뜝�럩逾� */
+	padding:5px;
+	list-style-type:none;
+}
+div.content section.movie_info1 div:nth-child(2) nav ul li label { /* �뜝�럡留믣뜝�럡�돪�뜝�럩�젧�솻洹⑥삕 �뜝�럩逾х뵓怨ㅼ삕 �뜝�럥�꺏�뜝�럩�겱�뜝�럩逾� */
+	display:inline-block;
+	color:black;
+	border-radius:4px;
+	padding:10px 30px;
+	font-size:10pt;
+	font-weight:700;
+	float:left;
+	width:100px;
+	text-align:center;
+	margin: 0px 7px 40px 0px;
+	clear:both;
+	background:lightgray;
+}
+div.content section.movie_info1 div:last-child { /* �뜝�럩援숂춯�씞�걢�뇡占썹뼨�먯삕 �뵓怨뚯뫓占쎈괏 �뜝�럩留꾤뇖�궪�삕  */
+	display:block;
+	margin-left:100px;
+	padding:20px;
+}
+div.content section.movie_info1 div:last-child button { /* �뜝�럩援숂춯�씞�걢�뇡占썹뼨�먯삕 �뵓怨뚯뫓占쎈괏 �뜝�럥�꺏�뜝�럩�겱�뜝�럩逾� */
+	border:3px double white;
+	padding:5px 40px;
+	background:tomato;
+	border-radius:30px;
+	color:white;
+	font-size:16pt;
+}
+div.content section.movie_info1 div:last-child button:hover { /* �뜝�럩援숂춯�씞�걢�뇡占썹뼨�먯삕 �뵓怨뚯뫓占쎈괏 �뜝�럩逾좂뵓寃밸걢占쎈콦 */
+	background:red;
+}
+div.content section.movie_info1 div:nth-child(3) { /* �뜝�럡留믣뜝�럡�돪�뜝�럩�젧�솻洹⑥삕 �뜝�럡��占쎄껀�뜝占� �뜝�럡���뜝�럩�뮔 */
+	width:300px; height:700px;
+	margin-top:10px;
+	margin-left:10px;
+}
+div.content section.movie_info1 div:nth-child(3) table { /* �뜝�럡��占쎄껀�뜝占� �뜝�럡���뜝�럩�뮔 �뜝�럥占쎈���삕占쎈턄占쎈눀�뜝占� �뜝�럡�뀬�뜝�럩逾좂춯�빢�삕 */
+	padding:2px;
+	height:90%;
+	margin-top:70px;
+	font-size:15pt;
+	border-collapse:collapse;
+}
+div.content section.movie_info1 div:nth-child(3) tr {
+	border:1px solid white;
+}
+
+/* section 2 */
+
+div.content section.movie_info2 { /* section 占썩뫁伊숋옙�젧  */
+	/* border:1px solid orange; */
+	width:1000px; height:800px;
+	margin:auto;
+}
+div.content section.movie_info2 div:first-child {
+	/* border:1px double gray; */
+	border-radius:5px;
+	width:1000px; height:200px;
+	padding:10px;
+	margin:50px 0; 
+}
+div.content section.movie_info2 td {	/*  占쎈꽞占쎌뒩�몴占� �뜝�럩寃ュ뜝�럩�꼨�뜝�럡�맟嶺뚮쪋�삕 占쎄껀�뜝�띂寃ュ뜝占� */
+	text-align:center;
+	width:1000px; height:180px;
+	margin-left:80px;
+	font-weight:800;
+} 
+div.content section.movie_info2 table{
+	margin:auto;	
+}
+/* div.content section.movie_info2 div:first-child { �뜝�럩寃ュ뜝�럩�꼨�뜝�럡�맟嶺뚮쪋�삕 �뜝�럥占쎈���삕占쎈턄占쎈눀�뜝占� �뜝�럡�뀬�뜝�럩逾좂춯�빢�삕 
+	width:1150px; height:200px;
+	padding:10px;
+	margin:50px;
+}
+div.content section.movie_info2 div:first-child table { 
+}
+div.content section.movie_info2 td {   �뜝�럩�뮡嶺뚋우삕 �뜝�럩寃ュ뜝�럩�꼨�뜝�럡���뜝�럩�뮔 占쎄껀�뜝�띂寃ュ뜝占� 
+	padding:80px;
+	width:800px;
+}
+div.content section.movie_info2 th {	占쎈꽞占쎌뒩�몴占� �뜝�럩寃ュ뜝�럩�꼨�뜝�럡�맟嶺뚮쪋�삕 占쎄껀�뜝�띂寃ュ뜝占�
+	padding:50px;
+} */
+div.content section.movie_info2 div:nth-child(2) iframe { /* �뜝�럩援숋옙�뫁伊싷옙�졅 �뜝�럩寃ュ뜝�럡留� �뜝�럩留꾤뇖�궪�삕 */ /* �뜝�럡苡욜뼨轅명�∽옙裕� �뜝�럥�뒆�뜝�럩�읉�뜝�럩肉� �뜝�럥�닱�뜝�럥�뱺  */
+	margin:0px;
+}
+
+/*               section 3                */
+div.content section.movie_info3 { /* section 占썩뫁伊숋옙�젧  */
+	/* border:1px solid yellow; */
+	width:1000px; height:400px;
+	margin:auto;
+}
+
+div.content section.movie_info3 div { /* �뜝�럩逾졿쾬�꼶梨룟뜝占� �뛾�룆踰∽옙裕� �뜝�럩留꾤뇖�궪�삕  */
+	display:inline-block;
+	margin:100px 0px;
+	float:left;
+
+}
+div.content section.movie_info3 div img { /* �뜝�럩逾졿쾬�꼶梨룟뜝占� 占쎄껀占쎈쐡占쎈뼫嶺뚮ㅏ援욆뜎洹욌뎨�뜝占� */
+	opacity:0.7;
+}
+div.content section.movie_info3 div img:hover { /* �뜝�럩逾졿쾬�꼶梨룟뜝占� �뜝�럩逾좂뵓寃밸걢占쎈콦 嶺뚳퐣瑗띰옙遊� */
+	opacity:1.0;
+}
+.still_cut { /* �뜝�럥裕욃뜝�럥堉�占쎈슪�삕 �뼨�먯삕�뜝�럥�럞 */
+	/* border:3px double red;
+	position:relative; */
+	margin:0 auto;
+	text-align:center;
+/* 	left:400px;
+	width:200px;
+	bottom:430px;
+	font-style:italic;
+	font-size:20pt;
+	font-family:Neoneon;
+	color:red;
+	text-align:center; */
+}
+
+/***************************
+	�뜝�럩沅롳옙紐댐옙瑗뱄옙�쓡�뜝�럩逾좂춯�쉻�삕
+*****************************/
+
+.error img{
+	margin-left:100px;
+}
+.gohomebtn{
+	border: 1px solid white;
+	background:white;
+	margin-left:300px;
+}
+
+.gohomebtn img{
+	width:160px;
+	height:70px;
+	}
+
+/***************************
+	footer
+*****************************/
+
+footer .container{
+	margin-top:100px;
+}
+.footernav{
+	border-top:1px solid lightgray;
+	
+}
+
+.footernav a{
+	margin-top:10px;
+	text-decoration:none;
+	font-size:12pt;
+}
+
+
+
+/*******
+ �궇�뵪 api - �뿬湲곕��꽣蹂대궡�빞�븿
+*******/
+
+div.section4 div.col-3{ /* �궇�뵪�쁺�뿭 div */
+	position:relative;
+	float:left;
+	width:300px;	height:800px;
+	left:0px;
+}
+div.section4 div.col-9 { /* 吏��룄�쁺�뿭  div */
+	border:2px solid black;
+	border-radius:3px;
+	width:680px; height:405px;
+}
+div.section4 div.weather_api { /* api�쁺�뿭 div */
+	border:1px groove black;
+	border-radius : 5px;
+	background-image:url("http://localhost:9000/images/weatherbackground.jpg");
+	height:50%;
+}
+div.section4 div.weather_api div.weather_icon { /* �궇�뵪 �븘�씠肄� div */
+	width:120px; height:120px;
+	margin:10px 0px 0px 30px;
+}
+div.section4 div.weather_api div button { /* �궇吏� 踰꾪듉 */
+	/* border:1px groove #0080c0; */
+	border:none;
+	display: inline-block;
+	background:none;
+	margin: 20px 10px 0px 10px;
+	font-size:12pt;
+	color:white;
+	font-weight:700;
+	float:top;
+}
+div.section4 div.weather_api div button:hover { /* �궇吏� 踰꾪듉 �씠踰ㅽ듃 */
+	color: blue;
+}
+div.section4 div.weather_api img { /* �궇�뵪 �븘�씠肄�  */
+	position:relative;
+	left:48px; top:20px;
+	width:120px; height:120px;
+}
+div.section4 div#weather_icon div:nth-child(2) { /* �궇�뵪 �쁺�뿭 div  */
+	position:relative;
+	right:20px; top:30px;
+	width:200%; float:left;
+	height:110%;
+}
+div.section4 div#weather_icon div#weather_info ul li{ /* �궇�뵪 �긽�꽭 怨듯넻 */
+	list-style-type:none;
+	text-align:center;	
+	color:white;
+	margin:5px 0px;
+}
+div.section4 div#weather_icon div#weather_info ul li:nth-child(2),
+div.section4 div#weather_icon div#weather_info ul li:nth-child(3) { /* �궇�뵪, �뭾�냽  */
+	font-style:italic;
+	font-weight:200;
+	font-size:18pt;
+}
+div.section4 div#weather_icon div#weather_info ul li:first-child { /* 湲곗삩 */
+	font-size:40pt;
+	font-weight:700;
+}
+
+/*******
+ 	李⑦�怨� �삤�꽭�슂
+*******/
+
+div.section4 div.card {
+	position:relative;
+	right:680px;
+	margin-top:10px;
+	width:955px; height:50px;
+}
+
+
+
+/*******************
+	�럠湲�李� - css - �넚吏��썒
+*******************/
+
+section.board form table.comment_box tr textarea {
+	border:1px solid lightgray;
+	margin-bottom:5px;
+	width:96.5%; height:100%;
+}
+section.board form table.comment_box {
+	border:1px solid black;
+	width: 880px; height:30%;
+	margin-top:20px;
+}
+section.board form table.comment_box tr:first-child {
+	background-image:url("http://localhost:9000/images/commentbackground2.PNG");
+}
+
+section.board form table.comment_box tr td:first-child,
+section.board form table.comment_box tr td:nth-child(3) {
+	border: 1px solid gray;
+	padding:10px;
+	width:150px;	
+}
+section.board form table.table th {
+	width:20%;
+	background-image:url("http://localhost:9000/images/commentbackground.PNG");
+}
+section.board form table.comment_box td {
+	border:1px solid gray;
+}
+section.board form table.comment_box div{
+	height:30px;
+}
+
+/* �럠湲� �깦�뵆 �씠誘몄� */
+section.board img#commentSample {
+	border:1px solid red;
+	filter: blur(3px);
+}
+section.board div#commentLogin {
+	position:relative;
+	bottom:70px;
+}
+section.board div#commentLogin a {
+	text-decoration-line:none;
+	font-size:18pt;
+	color: #13dbcc;
+}
+section.board form button.btn {
+	width:100px; height:40px;
+}
+
+section.board table.comment_box tr td input[name="sid"],
+section.board table.comment_box tr td input[name="commentSid"] {
+	text-align:center;
+}
+
+section.board table.table tr th {
+	text-align:center;
+}
+section.board table.table tr:nth-child(2) span {
+	position:relative;
+	bottom:15px;
+}
+
+div#coron_btn section.enroll button { /* 보내줘야함 */
+	display:block;
+	margin:auto;
+}
+
+
+section.board table#board_table div.maxSize,
+section.myreview table#boardMaster div.maxSize{ /* @ */
+	display:inline-block;
+	width:350px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	position:relative;
+	top:11px;
+} 
+
+section.board form#commentForm table.comment_box tr td:nth-child(2) textarea{ 
+	position:relative;
+	height:80px;
+	bottom:40px;	
+	resize:none;
+}
+section.board form#commentForm table.comment_box tr td:nth-child(2) {
+	position:relative;
+	top:50px;
+}
+section.board form#commentForm table.comment_box tr img:hover {
+	background: gray;	
+}
+section.board form#commentForm table.comment_box tr img {
+	border: 1px solid lightgray;
+	display:inline-block;
+	width:25px; height:25px;
+	float:right;
+	margin-top:30px;
+	margin-right:5px;
+	padding:2px;
+	border-radius:3px;
+	position:relative;
+	bottom:15px;
+}
+section.board form#commentForm table.comment_box tr td a:nth-child(3) img {
+	position:relative;
+	bottom:43px;
+	right:30px;
+}
+section.board form#commentForm table.comment_box tr td a:nth-child(3) img:hover{
+	background: powderblue;
+}
+section.board form#commentForm table.comment_box tr td a:nth-child(4) img:hover{
+	background: red;
+}
+section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment1,
+section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment2, 
+section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment3,
+section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment4,
+section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment5 {
+	position:relative;
+	bottom:43px;
+	margin-left:5px;
+	height:55px;
+}	
+	
+section.board form#commentForm table.comment_box div.hiddenEdit {
+	width:460px; height:70px;
+}
+section.board form#commentForm table.comment_box div#commentArea{
+	width:570px; height:60px;
+	position:relative;
+	bottom:35px;
+	text-align:center;
+}
+/* mypage - 리뷰 영역 */
+section.myreview table#boardMaster div.maxSize { /* @ */
+	text-align:left;
+}
+
+section.myreview table#boardMaster tr td:nth-child(2) {
+	text-align:left;
+	word-spacing : 3px;
+}
+
+/* 통합검색 페이지 - 송지웅 0613 */
+
+/* 결과물 없을때 모양 */
+section.indexSearch {
+	width:1000px; height:auto;
+	margin:auto;
+}
+
+section.indexSearch div.noneResultGuide {
+	border-top:2px solid gray;
+	position:relative;
+	bottom:190px;
+	padding:10px;
+}
+section.indexSearch div.noneResultGuide span {
+	position:relative;
+	left:285px; top:0px;
+	color:gray;
+	font-size:12pt;
+}
+
+section.indexSearch div.noneResult img {
+	position:relative;
+	left:350px; bottom:190px;
+	width:300px; height:400px;
+}
+section.indexSearch div.noneResult span.result1 {
+	padding:5px;
+	display:block;
+	position:relative;
+	bottom:200px;
+	text-align:center;
+	font-weight:700;
+	font-size:20pt;
+}
+section.indexSearch div.noneResult span.result2 {
+	position:relative;
+	left:315px;
+	bottom:220px;
+	font-size:15pt;
+}
+
+/* 영화 검색 영역 */
+
+section.indexSearch div.movieSearch {
+	height:auto;
+}
+section.indexSearch div.movieSearchTitle {
+	border-bottom:3px solid lightgray;
+	height:130px;	
+}
+section.indexSearch div.movieSearch img {
+	width:300px;
+	height:120px;
+}
+section.indexSearch div.movieSearchResult {
+	height:450px;
+}
+section.indexSearch div.movieSearchInfo {
+	border:2px groove black;
+	height:384.5px; width:234px;
+	margin:20px 0px 0px 30px;	
+	display:inline-block;
+	border-radius:4px;
+}
+section.indexSearch div.movieSearchResult div.movieSearchInfo a#movieTitle {
+	width:auto;
+	display:block;
+	font-size:14pt;
+	font-weight:700;
+	text-align:center;
+	color:#0fc4ff;
+	text-shadow:2px 2px 2px black;
+	padding:8px;
+	text-decoration-line:none;
+}
+section.indexSearch div.movieSearchResult div.movieSearchInfo p {
+	text-align:center;
+	color:gray;
+	font-style:italic;
+	padding:2px;
+	font-weight:700;
+}
+section.indexSearch div.movieSearchResult a#moreResult {
+	position:relative;
+	left:40px; bottom:150px;/* top:50px; */ 
+	font-size:12pt;
+	color:gray;
+	text-decoration-line:none;
+	font-style:italic;
+	font-weight:700;
+}
+section.indexSearch div.movieSearchResult a:hover {
+	color:black;
+	font-weight:700;
+}
+section.indexSearch div.movieSearchResult div.movieSearchInfo img {
+	height:300px; width:230px;
+}
+
+/* 통합검색 공지사항 영역 */
+section.indexSearch div.noticeSearch {
+	height:auto;
+}
+section.indexSearch div.noticeSearch div.noticeSearchResult div.noticeSearchTitle {
+	margin-top:60px;
+	border-bottom:3px solid lightgray;
+	height:110px;	
+}
+section.indexSearch div.noticeSearchResult div.noticeSearchTitle img {
+	width:250px;
+	height:100px;
+	
+}
+section.indexSearch div.noticeSearchResult table {
+	border:1px solid lightgray;
+	margin:20px 0px 5px 17px;
+	width:96.5%; height:100%;
+	text-align:center;
+}
+section.indexSearch div.noticeSearchResult table th {
+	padding:5px;
+	background-image:url("http://localhost:9000/images/commentbackground2.PNG");
+}
+section.indexSearch div.noticeSearchResult table th:first-child,
+section.indexSearch div.noticeSearchResult table td:first-child,
+section.indexSearch div.noticeSearchResult table td:nth-child(3),
+section.indexSearch div.noticeSearchResult table th:nth-child(3) {
+	border-right:1px solid lightgray;
+	width:10px;
+}
+section.indexSearch table td {
+	font-weight:700;	
+}
+section.indexSearch div.noticeSearchResult table td:nth-child(2) a{
+	text-decoration-line:none;
+	font-size:14pt;
+}
+section.indexSearch div.noticeSearchResult table td:nth-child(2){
+	text-align:left;
+	padding:5px;
+}
+section.indexSearch div.noticeSearchResult table td:nth-child(1),
+section.indexSearch div.boardSearchResult table td:nth-child(1){
+	color:gray;
+	font-style:italic;
+	font-weight:700;	
+}
+section.indexSearch div.noticeSearchResult table td:nth-child(2),
+section.indexSearch div.noticeSearchResult table th:nth-child(2) {
+	border-right:1px solid lightgray;
+	width:150px;
+}
+section.indexSearch div.noticeSearchResult table th:nth-child(4) {
+	width:20px;
+}
+
+section.indexSearch div.noticeSearchResult table td {
+	border-top:1px solid lightgray;
+}
+
+section.indexSearch div.noticeSearchResult span {
+	display:block;
+	text-align:center;
+	font-size:13pt;
+	color:gray;
+	text-decoration-line:none;
+	font-style:italic;
+	font-weight:700;
+}
+section.indexSearch div.noticeSearchResult a#moreResult2 {
+	position:relative;
+	left:280px;
+	font-size:11pt;
+	color:gray;
+	text-decoration-line:none;
+	font-style:italic;
+	font-weight:700;
+}
+
+/* 통합검색 보드 영역  */
+section.indexSearch div.boardSearch {
+	height:auto;
+}
+section.indexSearch div.boardSearch div.boardSearchResult div.boardSearchTitle {
+	margin-top:60px;
+	border-bottom:3px solid lightgray;
+	height:110px;	
+}
+section.indexSearch div.boardSearchResult div.boardSearchTitle img {
+	width:200px;
+	height:100px;
+	
+}
+section.indexSearch div.boardSearchResult table {
+	border:1px solid lightgray;
+	margin:20px 0px 5px 17px;
+	width:96.5%; height:100%;
+	text-align:center;
+}
+section.indexSearch div.boardSearchResult table th {
+	padding:5px;
+	background-image:url("http://localhost:9000/images/commentbackground2.PNG");
+}
+section.indexSearch div.boardSearchResult table td,
+section.indexSearch div.boardSearchResult table th {
+	border-right:1px solid lightgray;
+	width:10px;
+}
+section.indexSearch div.boardSearchResult table td:nth-child(2){
+	text-align:left;
+	padding:5px;
+}
+section.indexSearch div.boardSearchResult table td:nth-child(2),
+section.indexSearch div.boarSearchResult table th:nth-child(2) {
+	border-right:1px solid lightgray;
+	width:150px;
+}
+section.indexSearch div.boardSearchResult table th:last-child{
+	width:20px;
+}
+section.indexSearch div.boardSearchResult table th:nth-child(4) {
+	width:20px;
+}
+
+section.indexSearch div.boardSearchResult table td {
+	border-top:1px solid lightgray;
+}
+
+section.indexSearch div.boardSearchResult span {
+	display:block;
+	text-align:center;
+	font-size:13pt;
+	color:gray;
+	text-decoration-line:none;
+	font-style:italic;
+	font-weight:700;
+}
+section.indexSearch div.boardSearchResult a#moreResult2 {
+	position:relative;
+	left:280px;
+	font-size:11pt;
+	color:gray;
+	text-decoration-line:none;
+	font-style:italic;
+	font-weight:700;
+}
+section.indexSearch div.boardSearch a {
+	text-decoration-line:none;
+}
+section.indexSearch div.boardSearch div#boardSearchBox {
+	display: inline-block;
+}
+
+/* 통합검색 스토어 영역 */
+section.indexSearch div.movieSearch div#storeSearchTitle {
+	margin-top:50px;
+}
+section.indexSearch div.movieSearchResult div#storeSearchInfo img {
+	border-bottom:2px dotted lightgray;
+}
+section.indexSearch div.movieSearchResult div#storeSearchInfo a#movieTitle {
+	font-size:18pt;
+	margin:10px;
+}
+
+/* 통합검색 정렬 P태그 */
+section.indexSearch div.noticeSearch p{
+	display:inline-block;
+	position:relative;
+	top:47px; left:630px;
+	color:gray;
+	font-size:10pt;
+	font-weight:700;
+	font-style:italic;
+}
+section.indexSearch div.boardSearch p {
+	display:inline-block;
+	position:relative;
+	top:47px; left:680px;
+	color:gray;
+	font-size:10pt;
+	font-weight:700;
+	font-style:italic;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.springboot.gga.repository.BoardMapper">
+	
+<!--	<select id="commentMasterRowCount" parameterType="String" resultType="int">-->
+<!--		SELECT COUNT(*) FROM GGA_BOARD WHERE MID = #{id} -->
+<!--	-->
+<!--	</select>-->
+<!--	-->
+<!--	<select id="commentMaster" parameterType="map" resultType="com.gga.vo.BoardVo">-->
+<!--		SELECT RNO,BTITLE,BHITS,BDATE,MID,MOVIENAME,BID FROM -->
+<!--		(SELECT ROWNUM RNO,BTITLE,BHITS,TO_CHAR(BDATE, 'YYYY.MM.DD') BDATE,MID,MOVIENAME,BID FROM -->
+<!--		(SELECT BTITLE,BHITS,BDATE,MID,MOVIENAME,BID FROM GGA_BOARD) WHERE MID = #{id}) WHERE RNO BETWEEN #{startCount} AND #{endCount}-->
+<!--	</select>-->
+<!--	-->
+<!--	<update id="commentUpdate" parameterType="map">-->
+<!--		UPDATE GGA_BOARD_COMMENT SET BCCONTENT=#{updateComment} WHERE BCID=#{bcid}	-->
+<!--	</update>-->
+<!--	-->
+<!--	<delete id="commentDelete" parameterType="String">-->
+<!--		DELETE FROM GGA_BOARD_COMMENT WHERE BCID=#{bcid}-->
+<!--	</delete>-->
+<!--	-->
+<!--	<select id="commentSelect" parameterType="String" resultType="String">-->
+<!--		SELECT BID FROM GGA_BOARD_COMMENT WHERE BCID = #{bcid}-->
+<!--	</select>-->
+<!--	-->
+<!--	<insert id="commentInsert" parameterType="com.gga.vo.BoardCommentVo">-->
+<!--		INSERT INTO GGA_BOARD_COMMENT(BCID,BID,SID,BCCONTENT,BCDATE) -->
+<!--		VALUES('bc_'||LTRIM(TO_CHAR(SEQU_GGA_BOARD_COMMENT_BCID.NEXTVAL,'0000')),#{bid, jdbcType=VARCHAR},#{sid},#{bccontent},SYSDATE)-->
+<!--	</insert>-->
+<!--	-->
+<!--	<select id="commentCount" parameterType="java.lang.String" resultType="int">-->
+<!--		SELECT COUNT(*) FROM GGA_BOARD_COMMENT WHERE BID = #{bid, jdbcType=VARCHAR}-->
+<!--	</select>-->
+<!--	-->
+<!--	<select id="comment" parameterType="map" resultType="com.gga.vo.BoardCommentVo">-->
+<!--		SELECT RNO, BCID, BID, SID, BCCONTENT, BCDATE FROM-->
+<!--			(SELECT ROWNUM RNO , BCID, BID, SID, BCCONTENT, TO_CHAR(BCDATE, 'YYYY.MM.DD') BCDATE FROM -->
+<!--				(SELECT BCID, BID, SID, BCCONTENT, BCDATE FROM GGA_BOARD_COMMENT WHERE BID = #{bid, jdbcType=VARCHAR} ORDER BY BCDATE DESC))-->
+<!--		WHERE RNO BETWEEN #{startCount} AND #{endCount}-->
+<!--	</select>-->
+
+	<select id="list" parameterType="com.springboot.gga.dto.PageDto" resultType="com.springboot.gga.dto.BoardDto">
+		SELECT RNO, BID, BTITLE, BCONTENT, Bhits, MID, MOVIENAME, BDATE
+			FROM (SELECT ROWNUM RNO, BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, TO_CHAR(BDATE, 'YYYY-MM-DD') BDATE FROM
+				(SELECT BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, BDATE FROM GGA_BOARD ORDER BY BDATE DESC))
+				WHERE RNO BETWEEN #{startCount} AND #{endCount}
+	</select>
+
+	<insert id="insert" parameterType="com.springboot.gga.dto.BoardDto">
+		INSERT INTO GGA_BOARD(BID,BTITLE,SCORE,BCONTENT,Bhits,MID,MOVIENAME,BDATE)
+			VALUES('b_'||LTRIM(TO_CHAR(SEQU_GGA_BOARD_BID.NEXTVAL, '0000')),#{btitle},#{score},#{bcontent},0,#{mid, jdbcType=VARCHAR},#{movieName},SYSDATE)
+	</insert>
+
+	<select id="content" parameterType="String" resultType="com.springboot.gga.dto.BoardDto">
+		SELECT BID,BTITLE,SCORE,BCONTENT,Bhits,MID,MOVIENAME,BDATE FROM GGA_BOARD WHERE BID=#{bid}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		DELETE FROM GGA_BOARD WHERE BID=#{bid}
+	</delete>
+
+	<update id="update" parameterType="com.springboot.gga.dto.BoardDto">
+		UPDATE GGA_BOARD SET BTITLE=#{btitle}, MOVIENAME=#{movieName}, SCORE=#{score}, BCONTENT=#{bcontent} WHERE BID=#{bid}
+	</update>
+
+<!--	<select id="searchList" parameterType="map" resultType="com.gga.vo.BoardVo">-->
+<!--		SELECT RNO, BID, BTITLE, BCONTENT, Bhits, MID, MOVIENAME, BDATE-->
+<!--			FROM (SELECT ROWNUM RNO, BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, TO_CHAR(BDATE, 'YYYY-MM-DD') BDATE FROM-->
+<!--				(SELECT BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, BDATE FROM GGA_BOARD ORDER BY BDATE DESC)WHERE BTITLE LIKE '%'||#{btitle}||'%')-->
+<!--				WHERE RNO BETWEEN #{startCount} AND #{endCount}-->
+<!--	</select>-->
+<!--	-->
+<!--	<select id="updateHits" parameterType="String">-->
+<!--		UPDATE GGA_BOARD SET BHITS=BHITS+1 WHERE BID =#{bid}-->
+<!--	</select>-->
+<!--	-->
+<!--	<select id="searchRowCount" parameterType="String" resultType="int">-->
+<!--		SELECT COUNT(*) FROM GGA_BOARD WHERE BTITLE LIKE '%'||#{btitle}||'%'-->
+<!--	</select>-->
+<!--	-->
+<!--	<select id="totalRowCount" resultType="int">-->
+<!--		SELECT COUNT(*) FROM GGA_BOARD-->
+<!--	</select>-->
+
+	<select id="getOldFile" parameterType="String" resultType="String">
+		SELECT gsfile FROM GGA_BOARD WHERE BID = #{bid}
+	</select>
+	
+	
+	
+	
+	
+</mapper>
