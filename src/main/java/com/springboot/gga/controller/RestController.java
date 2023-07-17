@@ -32,6 +32,40 @@ public class RestController {
     @Autowired
     private CartService cartService;
 
+    @Autowired
+    OrderService orderService;
+    @GetMapping("orderconProc/{impuid}/{merchantuid}/{pgtype}/{oid}")
+    public String orderconProc(@PathVariable String impuid, @PathVariable String merchantuid, @PathVariable String pgtype,@PathVariable String oid){
+        OrderDto orderDto = orderService.select(oid);
+
+        int result =  orderService.insertocon(impuid, merchantuid, pgtype,orderDto);
+        return String.valueOf(result);
+    }
+
+    @GetMapping("seatProc/{seat}/{price}/{oid}")
+    public String seatProc(@PathVariable String seat, @PathVariable String price, @PathVariable String oid) {
+        int realresult = 0;
+        int result = 1;
+        SeatDto seatDto = new SeatDto();
+        String[] seatList = seat.split(",");
+        for (String seatNumber : seatList) {
+            seatDto = orderService.searchSeat(seatNumber);
+            if (!"seat".equals(seatDto.getStatus())) {
+                result = 0;
+                break;
+            }
+        }
+        if (result == 1) {
+            orderService.insertpriceseat(seat, price, oid);
+            realresult = 1;
+        } else {
+            System.out.println("ordercontroller  좌석 불가능함");
+            realresult = 0;
+        }
+        return String.valueOf(realresult);
+
+    }
+
     @GetMapping("board_list/{page}")
     public Map board_list(@PathVariable String page){
         Map map = new HashMap();

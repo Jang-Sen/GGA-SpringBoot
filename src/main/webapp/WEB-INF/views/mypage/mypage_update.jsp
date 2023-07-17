@@ -90,7 +90,7 @@
 					</li>
 				</ul>
 				<div class="container text-center">
-					<a href="/mypage.do">
+					<a href="/mypage">
 						<button type="button" class="btn btn-outline-secondary">취소</button></a>
 					<button type="submit" id="updatebtn" class= "btn btn-outline-secondary">저장</button>
 				</div>

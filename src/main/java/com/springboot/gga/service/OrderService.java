@@ -77,6 +77,7 @@ public class OrderService {
         orderconDto.setOrderdate(orderDto.getOrderdate());
         orderconDto.setOemail(orderDto.getOemail());
         orderconDto.setMerchantuid(merchantuid);
+        orderconDto.setId(orderDto.getId());
 
        /* Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("movieid", orderDto.getMovieid());

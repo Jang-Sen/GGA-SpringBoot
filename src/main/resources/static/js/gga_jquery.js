@@ -68,38 +68,37 @@ $(document).ready(function(){
 	
 	 $(".mypage_ticket").click(function() {
 	 var oconid = $(this).data('oconid');
-	 location.replace("http://localhost:9000/gga_plz/mypage_ticket.do?oconid="+oconid);
+	 location.replace("http://localhost:9000/mypage_ticket/"+oconid+"/");
 	                    	});
 	 $(".mypage_ticket2").click(function() {
  var oconid = $(this).data('oconid');
- location.replace("http://localhost:9000/gga_plz/mypage_ticket2.do?oconid="+oconid);
+ location.replace("http://localhost:9000/mypage_ticket2/"+oconid+"/");
                     	});
 	                    	
 	 $(".openmypage").click(function() {
-	 location.replace("http://localhost:9000/gga_plz/mypage.do");
+	 location.replace("http://localhost:9000/mypage");
 	                    	});
 	 $(".openmypage2").click(function() {
- location.replace("http://localhost:9000/gga_plz/mypage.do");
+ location.replace("http://localhost:9000/mypage");
                     	});
  $(".openallticket").click(function() {
- location.replace("http://localhost:9000/gga_plz/mypage_allticket.do");
+ location.replace("http://localhost:9000/mypage_allticket");
                     	});
 	                    	
 	$(".refundticket").click(function() {
-	
-			function getParameterValue(parameterName) {
-	 		 var params = new URLSearchParams(window.location.search);
-	  		return params.get(parameterName);
-				}
-			
-			var oconid = getParameterValue('oconid');
+
+		var oconid = $(".forrefundoconid").data('id');
+		var id = $(".ticket_userid").data('id');
+
+		alert(oconid);
 	 		 var result = confirm("정말 예매를 취소하시겠습니까?");
+
 	  		if (result) {
 	  		jQuery.ajax({
-	 			url: "http://localhost:9000/gga_plz/mypage_ticket_refund.do?oconid="+oconid	
+	 			url: "http://localhost:9000/mypage_ticket_refund/"+oconid+"/"
 	 			}).done(function(){
 	  			alert("환불이 완료되었습니다.");
-	  			location.replace("http://localhost:9000/gga_plz/mypage.do");
+	  			location.replace("http://localhost:9000/mypage/"+id+"/");
 	  			});
 	    
 	  		}
@@ -320,62 +319,26 @@ $(document).ready(function(){
 	/**********************************
 	 희정짱 order 부분!!
 	 **********************************/
-	/*/!*예매 버튼이 눌릴 때 예매번호 생성해서 폼에 같이 넘기기*!/
+	//!*예매 버튼이 눌릴 때 예매번호 생성해서 폼에 같이 넘기기*!/
 		$("#indexOrderBtn").click(function(){
-		var oid = "";
-		$.ajax({
-			url:"http://localhost:9000/oidProc",
-			success:function(result){
-				oid = result;
-				location.replace("http://localhost:9000/order/"+oid+"/");
-			}
-	});
+			location.replace("http://localhost:9000/order/");
 	});
 
 		$("#mypagegoorder").click(function(){
-		var oid = "";
-		$.ajax({
-			url:"http://localhost:9000/oidProc",
-			success:function(result){
-				oid = result;
-				location.replace("http://localhost:9000/order/"+oid+"/");
-			}
-	});
+				location.replace("http://localhost:9000/order/");
 	});
 
-		/!*$(".headerorderbtn").click(function(){
-			alert("예매!");
-			var oid = "";
-			$.ajax({
-				url:"http://localhost:9000/oidProc",
-				success:function(result){
-					oid = result;
-					location.replace("http://localhost:9000/order/"+oid+"/");
-				}
+		$(".headerorderbtn").click(function(){
+
+					location.replace("http://localhost:9000/order/");
+
 		});
-		});	*!/
-	$(".headerorderbtn").click(function() {
-		var oid = "";
-		alert("예매!!");
-		$.ajax({
-			url: "http://localhost:9000/oidProc",
-			async: true,
-		}).done(function(result) {
-			oid = result;
-			window.location.href = "http://localhost:9000/order/" + oid+"/";
-		});
-	});
 
 		$(".headerorderbtn1").click(function(){
-			var oid = "";
-			$.ajax({
-				url:"http://localhost:9000/oidProc",
-				success:function(result){
-					oid = result;
-					location.replace("http://localhost:9000/order/"+oid+"/"+movieid+"/");
-				}
+
+			location.replace("http://localhost:9000/order/"+movieid+"/");
+
 		});
-		});*/
 
 	/*
      * 좌석 선택
@@ -532,10 +495,10 @@ $(document).ready(function(){
      * */
 	$("#orderformbtn").click(function(){
 
-		/*	if($("#orderid").val()==""){
+			if($("#orderid").val()==""){
 				alert("로그인 해주세요.");
-				$(location).attr("href", "http://localhost:9000/login.do");
-			}else */
+				$(location).attr("href", "http://localhost:9000/login/");
+			}else
 		if($("#movieid").val()==""){
 			alert("영화를 선택해 주세요.");
 			$(".orderseltitle").focus();

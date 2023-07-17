@@ -23,7 +23,7 @@
     WHERE snumber = #{seatNumber}
 	</update>
 	
-<delete id="deleteorder" parameterType="java.lang.String">
+<delete id="deleteOrdercon" parameterType="java.lang.String">
 	delete from gga_ordercon  
 				where oconid = #{oconid, jdbcType=VARCHAR}
 	</delete>
@@ -37,8 +37,14 @@
 	</select>
 	<select id="selectOrderconuid" parameterType="java.lang.String" resultType="com.springboot.gga.dto.OrderconDto">
 	select oconid, movieid, movieordertitle, price,seat, otime, odate,
-				oname, ocarnum,  oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter
+				oname, ocarnum,  oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter, id
 				from GGA_ordercon where merchantuid = #{merchantuid}
+	</select>
+
+	<select id="selectOrderconlist" parameterType="java.lang.String" resultType="com.springboot.gga.dto.OrderconDto">
+		select oconid, movieid, movieordertitle, price,seat, otime, odate,
+			   oname, ocarnum,  oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter, id
+		from GGA_ordercon where oconid = #{oconid}
 	</select>
 
 	<select id="getOid" resultType="java.lang.String">
@@ -51,22 +57,27 @@
 			   ophone, orderdate, movieordertitle, movieorderposter from gga_order where oid = #{oid}
 	</select>
 
-	<!--<select id="selectOrdercon" resultType="com.springboot.gga.dto.OrderconDto">
+	<select id="selectOrdercon" resultType="com.springboot.gga.dto.OrderconDto">
 	select oconid, movieid, movieordertitle, price, seat, otime, odate,
 				oname, ocarnum,  oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter, id
 				from GGA_ordercon
-	</select>-->
+	</select>
+
+
+
+
+
 	<select id="selectOrderconMypage" parameterType="java.lang.String" resultType="com.springboot.gga.dto.OrderconDto">
 	select oconid, movieid, movieordertitle, price, seat, otime, odate,
 				oname, ocarnum,  oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter, id
-				from GGA_ordercon where id = #{id, jdbcType=VARCHAR}
+				from GGA_ordercon where id = #{id}
 	</select>
 	
 	<insert id="insertocon" parameterType="com.springboot.gga.dto.OrderconDto">
   INSERT INTO GGA_ordercon (oconid, movieid, movieordertitle, price, seat, otime, odate,
-    oname, ocarnum, oemail, ophone, orderdate, impuid, merchantuid, pgtype, movieorderposter)
+    oname, ocarnum, oemail, ophone, orderdate, impuid, merchantuid, pgtype,movieorderposter, id)
   VALUES ('OC_'|| DBMS_RANDOM.STRING('X', 15), #{movieid}, #{movieordertitle}, #{price}, #{seat}, #{otime}, #{odate},
-    #{oname}, #{ocarnum}, #{oemail}, #{ophone}, #{orderdate}, #{impuid}, #{merchantuid}, #{pgtype}, #{movieorderposter})
+    #{oname}, #{ocarnum}, #{oemail}, #{ophone}, #{orderdate}, #{impuid}, #{merchantuid}, #{pgtype}, #{movieorderposter}, #{id})
 </insert>
 	
 	<select id="selectorderconDto" parameterType="java.lang.String" resultType="com.springboot.gga.dto.OrderDto">
@@ -80,8 +91,8 @@
 	</insert>
 	
 	<insert id="insertOrderDto" parameterType="com.springboot.gga.dto.OrderDto" >
-  INSERT INTO gga_order(movieid, otime, odate, oname, ocarnum, oemail, ophone, orderdate, oid, movieordertitle, movieorderposter)
-  VALUES (#{movieid}, #{otime}, #{odate}, #{oname}, #{ocarnum}, #{oemail}, #{ophone}, sysdate, #{oid}, #{movieordertitle}, #{movieorderposter})
+  INSERT INTO gga_order(movieid, otime, odate, oname, ocarnum, oemail, ophone, orderdate, oid, movieordertitle, movieorderposter, id)
+  VALUES (#{movieid}, #{otime}, #{odate}, #{oname}, #{ocarnum}, #{oemail}, #{ophone}, sysdate, #{oid}, #{movieordertitle}, #{movieorderposter}, #{id})
 	</insert>
 
 	<select id="searchSeat" parameterType="java.lang.String" resultType="com.springboot.gga.dto.SeatDto">
