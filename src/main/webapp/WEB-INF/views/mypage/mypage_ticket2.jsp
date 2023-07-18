@@ -63,7 +63,10 @@
 			<p class="ticket_orderseat">${orderconDto.seat}</p>
 			<label>예매번호 :</label>
 			<p class="ticket_ordernum">${orderconDto.oconid}</p><br>
+			<input type="hidden" class="forrefundoconid" data-id="${orderconDto.oconid}">
 			<input type="hidden" class="ticket_impuid" data-id="${orderconDto.impuid}">
+			<input type="hidden" class="ticket_userid" data-id="${orderconDto.id}">
+
 		
 		</div>
 		

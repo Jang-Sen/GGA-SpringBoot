@@ -65,7 +65,7 @@
 							<a href="http://localhost:9000/logout">로그아웃</a>
 						</li>
 						<li>
-							<a href="http://localhost:9000/mypage">마이페이지</a>
+							<a href="http://localhost:9000/mypage/${svo.id}/">마이페이지</a>
 						</li>
 					<c:if test="${ svo.id == 'admin' }">
 						<li>
