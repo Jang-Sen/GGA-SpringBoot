@@ -1,6 +1,7 @@
 package com.springboot.gga.controller;
 
 import com.springboot.gga.dto.MemberDto;
+import com.springboot.gga.service.CouponService;
 import com.springboot.gga.service.JoinService;
 //import net.nurigo.sdk.NurigoApp;
 //import net.nurigo.sdk.message.exception.NurigoMessageNotReceivedException;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Random;
 
@@ -21,6 +23,8 @@ public class JoinController {
 
     @Autowired
     private JoinService joinService;
+    @Autowired
+    private CouponService couponService;
 
 
     // 회원가입 휴대폰 인증 - 토큰소진 - 시연일까지 사용금지 !!!
@@ -54,7 +58,7 @@ public class JoinController {
 
     // 회원가입 완료 작업
     @PostMapping("join")
-    public String join_proc(MemberDto memberDto, Model model){
+    public String join_proc(MemberDto memberDto, Model model, RedirectAttributes redirectAttributes){
         String viewName = "";
         int joinResult = joinService.join(memberDto);
 

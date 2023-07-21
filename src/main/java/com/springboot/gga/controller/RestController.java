@@ -54,24 +54,24 @@ public class RestController {
         String result = memberService.passCheck(memberDto);
         return result;
     }
-    @GetMapping("orderconProc/{impuid}/{merchantuid}/{pgtype}/{oid}")
-    public String orderconProc(@PathVariable String impuid, @PathVariable String merchantuid, @PathVariable String pgtype,@PathVariable String oid){
-    @PostMapping("orderconProc")
-    public void orderconProc(@RequestParam String oid,
-                               @RequestParam String couponid,
-                               @RequestParam String finalAmount,
-                               @RequestParam String couponName,
-                               @RequestParam String impuid,
-                               @RequestParam String merchantuid,
-                               @RequestParam String paymethodcon){
+//    @GetMapping("orderconProc/{impuid}/{merchantuid}/{pgtype}/{oid}")
+//    public String orderconProc(@PathVariable String impuid, @PathVariable String merchantuid, @PathVariable String pgtype,@PathVariable String oid) {
+        @PostMapping("orderconProc")
+        public void orderconProc (@RequestParam String oid,
+                @RequestParam String couponid,
+                @RequestParam String finalAmount,
+                @RequestParam String couponName,
+                @RequestParam String impuid,
+                @RequestParam String merchantuid,
+                @RequestParam String paymethodcon){
 
 
-        OrderDto orderDto = orderService.select(oid);
+            OrderDto orderDto = orderService.select(oid);
 
-        orderService.insertocon(impuid, merchantuid, paymethodcon,orderDto, couponid, finalAmount, couponName);
+            orderService.insertocon(impuid, merchantuid, paymethodcon, orderDto, couponid, finalAmount, couponName);
 
-    }
-
+        }
+//    }
     @GetMapping("seatProc/{seat}/{price}/{oid}")
     public String seatProc(@PathVariable String seat, @PathVariable String price, @PathVariable String oid) {
         int realresult = 0;

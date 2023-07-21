@@ -182,7 +182,6 @@ $(document).ready(function(){
 			success : function(result){
 				if(result == "1"){
 //
-					alert("맞음");
 					alert("본인 인증 성공!!")
 					location.href= "http://localhost:9000/mypage_update/"+$("#mypageSuccess").val();
 				}else {
