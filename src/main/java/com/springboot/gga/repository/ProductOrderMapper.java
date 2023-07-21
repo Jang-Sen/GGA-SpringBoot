@@ -13,4 +13,10 @@ public interface ProductOrderMapper {
     ProductOrderDto selectOne(String orderNumber);
 
     List<ProductOrderDto> myList(String id);
+
+    int insertList(List<Map<String, Object>> paramList);
+
+    List<ProductOrderDto> selectList(String poid);
+
+    List<ProductOrderDto> searchDateList(Map param);
 }

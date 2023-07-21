@@ -17,4 +17,6 @@ public interface CouponMapper {
 
     int updateAdd(Map param);
     int updateCancel(Map param);
+
+    int updateListAdd(String[] couponidArray);
 }

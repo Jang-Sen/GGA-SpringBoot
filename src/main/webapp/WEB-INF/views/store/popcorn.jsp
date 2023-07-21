@@ -52,6 +52,17 @@
     text-align: center;
 }
 </style>
+<script>
+    $(document).ready(function (){
+        $('.productbuybtn').click(function () {
+            var result = confirm('정말로 결제하시겠습니까?');
+            var pid = $(this).attr('id');
+            if (result) {
+                window.location.href = '/product_order/'+pid;
+            }
+        });
+    });
+</script>
 <body>
 	<!-- header -->
 	<header>
@@ -73,28 +84,34 @@
                 <a href="http://localhost:9000/store/beverage" class="nav-link"><span class="text-black text-decoration-none" style="font-size: 21px;">음료</span></a>
                 <span class="mx-3"></span>
                 <a href="http://localhost:9000/store/card" class="nav-link"><span class="text-black text-decoration-none" style="font-size: 21px;">상품권</span></a>
+                <c:choose>
+                    <c:when test="${svo == null }">
+                        <div class="store_cart">
+                            <a href="http://localhost:9000/login?redirectURL=/store/popcorn">
+                                <img src="http://localhost:9000/images/cartimg.png">
+                            </a></div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="store_cart">
+                            <span>
+                                <button type="button" id="store_cart" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#cartModal">
+                                    <img src="${count > 0 ? 'http://localhost:9000/images/cartimg2.png' : 'http://localhost:9000/images/cartimg.png'}">
+                                </button>
+                            </span>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
             </nav>
-            <hr>
+            <hr style="margin-top: -2px;">
 		</div>
 		<br>
-		<c:choose>
-			<c:when test="${svo == null }">
-				<div class="store_cart">
-					    		<a href="http://localhost:9000/login">
-									<img src="http://localhost:9000/images/cartimg.png">
-								</a></div>
-							</c:when>
-			<c:otherwise>
-				<div class="store_cart"><button type="button" id="store_cart" class="btn btn-success" data-toggle="modal" data-target="#cartModal">
-				<img src="http://localhost:9000/images/cartimg.png"></button></div>
-			</c:otherwise>
-		</c:choose>
+
         <div class="row">
             <c:forEach var="product" items="${list}">
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                         <div class="card-img-container">
-                            <img src="http://localhost:9000/upload/${product.gsfile}" alt="Product Image" class="bd-placeholder-img card-img-top" width="100%" height="300px">
+                            <img src="http://localhost:9000/upload/${product.gsfile}" alt="Product Image" class="card-img-top">
                         </div>
                         <div class="card-body">
                             <h4>상품명: ${product.pname}</h4>
@@ -102,24 +119,22 @@
                             <div class="storebtns">
                                 <c:choose>
                                     <c:when test="${svo == null }">
-                                        <a href="http://localhost:9000/login">
+                                        <a href="http://localhost:9000/login?redirectURL=/store/popcorn">
                                             <img class="cartbtnimg" style="width: 135px" src="http://localhost:9000/images/cartbtn.png">
                                         </a>
                                     </c:when>
                                     <c:otherwise>
-                                        <a class="cartbtn" data-id="P_0001" id="popcorncombobtn">
+                                        <a class="cartbtn" <%--id="popcorncombobtn"--%> id="${product.pid}">
                                             <img class="cartbtnimg" src="http://localhost:9000/images/cartbtn.png"></a>
                                     </c:otherwise>
                                 </c:choose>
                                 <c:choose>
                                     <c:when test="${svo == null }">
-                                        <a class="cartbtn2" href="http://localhost:9000/login">
-                                            <img src="http://localhost:9000/images/buybtn.png">
-                                        </a>
+                                        <a class="cartbtn2" class="productbuybtn" href="http://localhost:9000/login?redirectURL=/store/popcorn">
+                                            <img src="http://localhost:9000/images/buybtn.png"></a>
                                     </c:when>
                                     <c:otherwise>
-                                        <a id="buybtn" class="cartbtn2" data-id="P_0001" data-price="15000" data-pname="팝콘 콤보"
-                                           data-gfile="comboset.png">
+                                        <a class="cartbtn2" class="productbuybtn" id="${product.pid}">
                                             <img src="http://localhost:9000/images/buybtn.png"></a>
                                     </c:otherwise>
                                 </c:choose>

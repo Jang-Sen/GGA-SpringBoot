@@ -5,6 +5,49 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.springboot.gga.repository.ProductOrderMapper">
+
+    <select id="searchDateList" parameterType="Map" resultType="com.springboot.gga.dto.ProductOrderDto">
+        SELECT po.poid, po.couponid, po.id, po.qty, po.podate, c.couponname, c.discount, p.pprice, p.pname, p.gsfile
+        FROM gga_product_order po
+                 LEFT JOIN gga_coupon c ON po.couponid = c.couponid
+                 LEFT JOIN gga_product p ON po.pid = p.pid
+        WHERE po.id = #{id}
+          AND po.podate <![CDATA[>=]]> TO_DATE(#{startDate}, 'YYYY-MM-DD') AND po.podate <![CDATA[<=]]> TO_DATE(#{endDate}, 'YYYY-MM-DD') + 1
+        ORDER BY po.podate DESC
+
+    </select>
+
+    <select id="selectList" parameterType="String" resultType="com.springboot.gga.dto.ProductOrderDto">
+        SELECT po.poid, po.couponid, po.id, po.qty, po.podate, c.couponname, c.discount, p.pprice, p.pname, p.gsfile
+        FROM gga_product_order po
+                 LEFT JOIN gga_coupon c ON po.couponid = c.couponid
+                 LEFT JOIN gga_product p ON po.pid = p.pid
+        WHERE po.poid = #{poid}
+        ORDER BY po.podate DESC
+    </select>
+
+    <insert id="insertList" parameterType="list">
+        <foreach collection="list" item="list" open="INSERT ALL" close="SELECT * FROM DUAL" separator=" ">
+            INTO gga_product_order (cid, couponid, id, poid, podate, qty, pid)
+            VALUES (
+            #{list.cid},
+            <choose>
+                <when test="list.couponid != null and list.couponid != ''">
+                    #{list.couponid},
+                </when>
+                <otherwise>
+                    null,
+                </otherwise>
+            </choose>
+            #{list.id},
+            #{list.poid},
+            sysdate,
+            #{list.qty},
+            #{list.pid}
+            )
+        </foreach>
+    </insert>
+
     <insert id="insertOne" parameterType="Map" useGeneratedKeys="true" keyProperty="poid" keyColumn="poid">
         insert into gga_product_order(poid, pid, couponid, id, qty, finalprice, podate, couponname)
         values(#{poid}, #{pid},
@@ -14,24 +57,24 @@
         <if test="couponid != null">
             #{couponid},
         </if>
-               #{id}, 1, #{finalAmount}, sysdate, #{couponname})
+        #{id}, 1, #{finalAmount}, sysdate, #{couponname})
     </insert>
 
     <select id="selectOne" parameterType="String" resultType="com.springboot.gga.dto.ProductOrderDto">
         SELECT po.poid, po.pid, po.couponid, po.id, po.qty, po.finalprice, po.podate, po.couponname,
-               p.pname, p.GSFILE
+               p.pname, p.gsfile
         FROM gga_product_order po
                  INNER JOIN gga_product p ON po.pid = p.pid
         WHERE po.poid = #{poid}
     </select>
 
     <select id="myList" parameterType="String" resultType="com.springboot.gga.dto.ProductOrderDto">
-        SELECT po.poid, po.pid, po.couponid, po.id, po.qty, po.finalprice, po.podate, po.couponname,
-               p.pname, p.GSFILE
+        SELECT po.poid, po.couponid, po.id, po.qty, po.podate, c.couponname, c.discount, p.pprice, p.pname, p.gsfile
         FROM gga_product_order po
-                 INNER JOIN gga_product p ON po.pid = p.pid
+                 LEFT JOIN gga_coupon c ON po.couponid = c.couponid
+                 LEFT JOIN gga_product p ON po.pid = p.pid
         WHERE po.id = #{id}
-        order by po.podate desc
+        ORDER BY po.podate DESC
     </select>
 
 </mapper>

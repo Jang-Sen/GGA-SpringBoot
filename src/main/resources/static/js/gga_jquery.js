@@ -111,7 +111,7 @@ $(document).ready(function(){
 		
 	
 	function reloadModalContent() {  
-	   $('#CartModal .modal-content').load('cartModal.do', function() {
+	   $('#CartModal .modal-content').load('/cartModal', function() {
 	      $('#CartModal').modal('show');
 	      
 	
@@ -127,22 +127,37 @@ $(document).ready(function(){
 	});
 		
 	   $("#store_cart").click(function(){
-	  	 $('#CartModal .modal-content').load('cartModal.do');
+	  	 $('#CartModal .modal-content').load('/cartModal');
 		 $('#CartModal').modal('show');
 	 });
-	  
-	  $(".cartbtn").click(function() {
-	  		var pid = $(this).data('id');
-	
-		  $.ajax({
-		    url: "cart_insert_proc.do?pid="+pid,
-		    success: function(result) {
-	
-		      $('#buyModal').modal('show');
-		      
-		    }
-		  });
-		  return false;
+
+	$(".cartbtn").click(function() {
+		var pid = $(this).attr('id');
+
+		$.ajax({
+			url: "/search_cart/"+pid,
+			success: function (result){
+				if (result == 0) {
+					$.ajax({
+						url: "/cart_insert/"+pid,
+						success: function(insertResult) {
+
+							$('#buyModal').modal('show');
+						}
+					});
+				} else {
+					alert("이미 장바구니에 존재하는 제품입니다");
+					return false;
+				}
+			}
+		});
+
+
+		return false;
+	});
+
+	$('#buyModal').on('hidden.bs.modal', function (e) {
+		location.reload(); // 모달 닫힐 때 페이지 리로드
 	});
 	
 	
@@ -151,10 +166,9 @@ $(document).ready(function(){
 	 });
 	  $("#gocartbtn").click(function(){
 		 $('#buyModal').modal('hide');
-	
-		 $('#CartModal .modal-content').load('cartModal.do');
+		 $('#CartModal .modal-content').load('/cartModal');
 		 $('#CartModal').modal('show');
-		 
+
 	 });
 	 
 	
@@ -162,14 +176,14 @@ $(document).ready(function(){
 		 $('#buyModal').modal('hide');
 	 });
 	  
-	$(".cartbtn2").click(function(){
+/*	$(".cartbtn2").click(function(){
 		 $('#buycartModal').modal('show');
 		 $("#cartkakaopay").data('price',$(this).data('price'));
 		 $("#cartkakaopay").data('id',$(this).data('id'));
 		 $("#cartkakaopay").data('gfile',$(this).data('gfile'));
 		 $("#cartkakaopay").data('pname',$(this).data('pname'));
 		 $("#cartcardpay").data('price',$(this).data('price'));
-	 });
+	 });*/
 
 	  $("#cartclosebtn3").click(function(){
 		 $('#buycartModal').modal('hide');

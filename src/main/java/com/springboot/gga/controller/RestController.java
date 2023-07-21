@@ -184,4 +184,91 @@ public class RestController {
         return String.valueOf(cartService.insert(param));
     }
 
+
+    @GetMapping("cart_delete/{pid}")
+    public String cart_delete(@PathVariable String pid, HttpSession session) {
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        Map param = new HashMap<>();
+        param.put("id", svo.getId());
+        param.put("pid", pid);
+        return String.valueOf(cartService.deleteOne(param));
+    }
+
+    @GetMapping("search_cart/{pid}")
+    public String search_cart(@PathVariable String pid, HttpSession session) {
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        Map param = new HashMap<>();
+        param.put("id", svo.getId());
+        param.put("pid", pid);
+        return String.valueOf(cartService.searchCart(param));
+    }
+
+    @GetMapping("cart_update/{qty}/{pid}")
+    public String cart_update(@PathVariable String qty,
+                              @PathVariable String pid,
+                              HttpSession session) {
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+
+        Map param = new HashMap<>();
+        param.put("qty", qty);
+        param.put("pid", pid);
+        param.put("id", svo.getId());
+
+        return String.valueOf(cartService.update(param));
+    }
+
+    @PostMapping("/productorderlist")
+    public String productorderlist(ProductOrderDto productOrderDto, HttpSession session) {
+        String[] cidArray = productOrderDto.getCidArray().toArray(new String[0]);
+        String[] couponidArray = productOrderDto.getCouponidArray().toArray(new String[0]);
+        String[] qtyArray = productOrderDto.getQtyArray().toArray(new String[0]);
+        String[] pidArray = productOrderDto.getPidArray().toArray(new String[0]);
+
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        String orderNumber = generateOrderNumber();
+
+
+        List<Map<String, Object>> paramList = new ArrayList<>();
+        for (int i = 0; i < cidArray.length; i++) {
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("cid", cidArray[i]);
+            paramMap.put("couponid", couponidArray[i]);
+            paramMap.put("qty", qtyArray[i]);
+            paramMap.put("pid", pidArray[i]);
+            paramMap.put("id", svo.getId());
+            paramMap.put("poid", orderNumber);
+            paramList.add(paramMap);
+        }
+
+        int insertResult = productOrderService.insertList(paramList); //결제 완료
+
+        if (!couponidAllElementsEmpty(couponidArray)) {
+            int updateResult = couponService.updateListAdd(couponidArray); // 쿠폰 사용 업데이트
+        } else {
+        }
+        int deleteResult = cartService.deleteList(cidArray); // 장바구니 삭제
+        return orderNumber;
+    }
+
+    private boolean couponidAllElementsEmpty(String[] couponidArray) {
+        for (String element : couponidArray) {
+            if (!element.isEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @GetMapping("product_date_search/{startDate}/{endDate}")
+    public List<ProductOrderDto> product_date_search(@PathVariable String startDate,
+                                                     @PathVariable String endDate,
+                                                     HttpSession session) {
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        Map param = new HashMap<>();
+        param.put("id", svo.getId());
+        param.put("startDate", startDate);
+        param.put("endDate", endDate);
+        List<ProductOrderDto> list = productOrderService.searchDateList(param);
+        return list;
+    }
 }
