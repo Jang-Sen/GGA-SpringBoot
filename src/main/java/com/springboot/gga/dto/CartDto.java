@@ -7,4 +7,6 @@ public class CartDto {
 
     int rno, qty;
     String pid, id, cid, pname, pprice, gfile, gsfile, pcategory;
+    String[] cidArray, pidArray, pnameArray, ppriceArray, qtyArray, gsfileArray;
+
 }

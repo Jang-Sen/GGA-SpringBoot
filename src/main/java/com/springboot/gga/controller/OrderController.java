@@ -1,22 +1,29 @@
 package com.springboot.gga.controller;
 
-import com.springboot.gga.dto.OrderDto;
-import com.springboot.gga.dto.OrderconDto;
-import com.springboot.gga.dto.SeatDto;
+import com.springboot.gga.dto.*;
+import com.springboot.gga.service.CouponService;
 import com.springboot.gga.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class OrderController {
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private CouponService couponService;
 
 
 
@@ -25,14 +32,9 @@ public class OrderController {
     public String ordercon(@PathVariable String merchantuid, Model model){
         OrderconDto orderconDto = new OrderconDto();
         orderconDto = orderService.selectOrderconuid(merchantuid);
-        //System.out.println("merchantuid 중간확인"+orderconDto.getMerchantuid());
-        //System.out.println("merchantuid 중간확인"+orderconDto.getSeat());
 
         String seat = orderconDto.getSeat();
-        //System.out.println("seat중간확인"+seat);
-
         String[] seatList = seat.split(",");
-        //System.out.println("seatList[0]"+seatList[0]);
 
         int result = 1;
         for(String seatNumber : seatList) {
@@ -53,6 +55,40 @@ public class OrderController {
     @GetMapping("seat")
     public String seat(){
         return "/order/seat";
+    }
+
+    @GetMapping("order_pay/{oid}")
+    public String order_pay(@PathVariable String oid, Model model, HttpSession session){
+        OrderDto orderDto = new OrderDto();
+        orderDto = orderService.select(oid);
+        String id = orderDto.getId();
+        model.addAttribute("orderDto",orderDto);
+
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+
+        String used = "0";
+        Map param = new HashMap<>();
+        param.put("used", used);
+        param.put("id", svo.getId());
+        param.put("ccategory","movie");
+        List<CouponDto> couponList = couponService.list(param);
+
+        ArrayList<OrderconDto> orderconDto = orderService.selectOrderconMypage(id);
+        if (orderconDto.isEmpty()){
+            Map param2 = new HashMap<>();
+            param2.put("used", used);
+            param2.put("id", svo.getId());
+            param2.put("ccategory","moviefirst");
+            List<CouponDto> couponList2 = couponService.list(param2);
+
+            couponList.addAll(couponList2);
+        }
+
+        session.setAttribute("svo", svo);
+        model.addAttribute("couponList", couponList);
+        model.addAttribute("userid", svo.getId());
+
+        return "/order/order_pay";
     }
 
 

@@ -2,6 +2,8 @@ package com.springboot.gga.controller;
 
 import com.springboot.gga.dto.PageDto;
 import com.springboot.gga.dto.ProductDto;
+import com.springboot.gga.dto.SessionDto;
+import com.springboot.gga.service.CartService;
 import com.springboot.gga.service.FileService;
 import com.springboot.gga.service.PageService;
 import com.springboot.gga.service.ProductService;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -25,13 +28,14 @@ public class ProductController {
     private PageService pageService;
     @Autowired
     private FileService fileUploadService;
+    @Autowired
+    private CartService cartService;
 
     /**
      * admin store page controller
      */
     @PostMapping("admin_product_delete")
     public String admin_product_delete(ProductDto productDto) throws Exception {
-        log.info("productDto = {} ", productDto);
         String oldgsfile = productDto.getGsfile();
         if (productService.delete(productDto.getPid()) == 1) {
             if (!oldgsfile.equals("")) fileUploadService.fileDelete(oldgsfile);
@@ -96,15 +100,27 @@ public class ProductController {
      * store page controller
      */
     @GetMapping("store/combo")
-    public String combo(Model model){
+    public String combo(Model model, HttpSession session){
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        if (svo != null) {
+            int count = cartService.count(svo.getId());
+            model.addAttribute("count", count);
+        }
+
         String pcategory = "combo(콤보)";
         List<ProductDto> list = productService.categoryList(pcategory);
+
         model.addAttribute("list", list);
         return "store/combo";
     }
 
     @GetMapping("store/popcorn")
-    public String popcorn(Model model){
+    public String popcorn(Model model, HttpSession session){
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        if (svo != null) {
+            int count = cartService.count(svo.getId());
+            model.addAttribute("count", count);
+        }
         String pcategory = "popcorn(팝콘)";
         List<ProductDto> list = productService.categoryList(pcategory);
         model.addAttribute("list", list);
@@ -112,7 +128,12 @@ public class ProductController {
     }
 
     @GetMapping("store/beverage")
-    public String beverage(Model model){
+    public String beverage(Model model, HttpSession session){
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        if (svo != null) {
+            int count = cartService.count(svo.getId());
+            model.addAttribute("count", count);
+        }
         String pcategory = "beverage(음료)";
         List<ProductDto> list = productService.categoryList(pcategory);
         model.addAttribute("list", list);
@@ -120,11 +141,15 @@ public class ProductController {
     }
 
     @GetMapping("store/card")
-    public String card(Model model){
+    public String card(Model model, HttpSession session){
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        if (svo != null) {
+            int count = cartService.count(svo.getId());
+            model.addAttribute("count", count);
+        }
         String pcategory = "card(상품권)";
         List<ProductDto> list = productService.categoryList(pcategory);
         model.addAttribute("list", list);
         return "store/card";
     }
-
 }

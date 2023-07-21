@@ -48,18 +48,43 @@
 			/* margin-left:55px; */
 			height:50px;
 			width:160px;
-			} 
+			}
+.image-wrapper {
+    text-align: center;
+}
 </style>
+<script>
+    $(document).on('click', '#productcartorder', function (){
+        var cartDto = {
+            cidArray: $('.cid').map(function() { return $(this).val(); }).get(),
+            pidArray: $('.pid').map(function() { return $(this).val(); }).get(),
+            pnameArray: $('.pname').map(function() { return $(this).val(); }).get(),
+            ppriceArray: $('.pprice').map(function() { return $(this).val(); }).get(),
+            qtyArray: $('.qtyy').map(function() { return $(this).val(); }).get(),
+            gsfileArray: $('.gsfile').map(function() { return $(this).val(); }).get(),
+        };
+       /* alert(data.cidArray);
+        alert(data.pidArray);
+        alert(data.pnameArray);
+        alert(data.ppriceArray);
+        alert(data.qtyArray);
+        alert(data.gsfileArray);*/
+        let result = confirm('정말로 결제하시겠습니까?');
+        if (result) {
+            window.location.href = '/productorderlist/'+cartDto.cidArray;
+        }
+    });
+</script>
 <body>
-	
-	
+
 	 <c:if test="${not empty list}">
 	<!-- content -->
       <div class="modal-header border-bottom-0">
+
         <h5 class="modal-title" id="exampleModalLabel">
           장바구니
         </h5>
-        <button type="button" class="cartclosebtn" data-dismiss="modal" aria-label="Close" id="cartclosebtn">
+        <button type="button" class="cartclosebtn" data-bs-dismiss="modal" aria-label="Close" id="cartclosebtn">
           X
         </button>
       </div>
@@ -80,13 +105,16 @@
           <c:forEach var="cart" items="${list}">
             <tr>
               <td class="w-25">
-                <img src="http://localhost:9000/upload/${cart.gsfile}" class="img-fluid img-thumbnail" alt="Sheep">
+                  <div class="image-wrapper">
+                    <img src="http://localhost:9000/upload/${cart.gsfile}" class="img-fluid img-thumbnail" alt="Sheep" style="max-width: 70%; max-height: 200px; border: none;">
+                  </div>
               </td>
               <td>${cart.pname}</td>
               <td>${cart.pprice}</td>
               <td class="qty"><input type="text" class="form-control" id="qtyinput" data-id="${cart.pid}" value="${cart.qty}"></td>
-              <td class="cartpprice">${cart.totalprice}</td>
-              <c:set var= "total" value="${total + cart.totalprice}"/>
+                <c:set var="cartTotal" value="${cart.pprice * cart.qty}" />
+              <td class="cartpprice">${cartTotal}</td>
+             <%-- <c:set var= "total" value="${total + cart.totalprice}"/>--%>
               <td>
                 <button type="button" class="cartitemdelete" data-id="${cart.pid}">삭제</button>
               </td>
@@ -96,31 +124,33 @@
 		          <input type="hidden" class="pname" value="${cart.pname}">
 		          <input type="hidden" class="pprice" value="${cart.pprice}">
 		          <input type="hidden" class="qtyy" value="${cart.qty}">
-		          <input type="hidden" class="gfile" value="${cart.gfile}">
+		          <input type="hidden" class="gsfile" value="${cart.gsfile}">
             </c:forEach>
           </tbody>
         </table> 
         <div class="carttotalprice justify-content-end">
-          <h5>합계: <span class="totaltotalprice" id="totaltotalprice"><c:out value="${total}"/></span></h5>
+          <%--<h5>합계: <span class="totaltotalprice" id="totaltotalprice"><c:out value="${total}"/></span></h5>--%>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" id="modalkakaopay" class="btn btn-success" data-dismiss="modal">
+        <button type="button" <%--id="modalkakaopay" --%> id="productcartorder" class="btn btn-success" data-bs-dismiss="modal">
     <img src="http://localhost:9000/images/kakaopay.png"></button>
-        <button type="button" id="modalcardpay" class="btn btn-success" data-dismiss="modal">
+        <button type="button" id="modalcardpay" class="btn btn-success" data-bs-dismiss="modal">
     <img src="http://localhost:9000/images/cardpay.png"></button>
+
       </div>
 			
 			
 	 </c:if>
-  <c:if test="${empty list}">		
+  <c:if test="${empty list}">
+
 			
 			
       <div class="modal-header border-bottom-0">
         <h5 class="modal-title" id="exampleModalLabel">
           장바구니
         </h5>
-        <button type="button" class="cartclosebtn" data-dismiss="modal" aria-label="Close" id="cartclosebtn">
+        <button type="button" class="cartclosebtn" data-bs-dismiss="modal" aria-label="Close" id="cartclosebtn">
           X
         </button>
       </div>

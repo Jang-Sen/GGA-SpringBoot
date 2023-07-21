@@ -22,6 +22,10 @@
   }
 }
 
+.grayscale {
+	filter: grayscale(1);
+}
+
 @media (min-width: 992px) {
   .container {
     width: 1000px;
@@ -112,6 +116,28 @@
 
 
 </style>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// "mypage_ticket" 클래스를 가진 모든 <a> 요소들을 선택합니다.
+			const mypageTickets = document.querySelectorAll('.mypage_ticket');
+
+			// 현재 날짜를 타임스탬프로 가져옵니다.
+			const currentDate = new Date().getTime();
+
+			mypageTickets.forEach(function (ticket) {
+				// 각 요소의 "data-date" 속성 값을 가져옵니다. (형식: "YYYY-MM-DD")
+				const ticketDate = new Date(ticket.getAttribute('data-date')).getTime();
+
+				// "data-date" 값을 현재 날짜와 비교하여 이전이라면 그레이스케일 효과를 적용합니다.
+				if (ticketDate < currentDate) {
+					// 해당 <a> 요소에 있는 이미지를 선택하고 "grayscale" 클래스를 추가합니다.
+					const ticketImage = ticket.querySelector('img');
+					ticketImage.classList.add('grayscale');
+				}
+			});
+		});
+
+	</script>
 </head>
 <body>
 	<!-- Header -->
@@ -153,7 +179,7 @@
 			</div>
 			 <c:forEach var="orderconVo" items="${ticketlist}" end="3"> 
 				<div class="myorder_add2">
-				<a class="mypage_ticket" data-oconid="${orderconVo.oconid}">
+				<a class="mypage_ticket" data-oconid="${orderconVo.oconid}" data-date="${orderconVo.odate}">
 					<img src="http://localhost:9000/images/${orderconVo.movieorderposter}.jpg">
 				</a>
 				</div>			

@@ -59,7 +59,7 @@ public class OrderService {
         return orderMapper.selectOrderconuid(merchantuid);
     };
 
-    public int insertocon(String impuid, String merchantuid, String pgtype, OrderDto orderDto) {
+    public int insertocon(String impuid, String merchantuid, String pgtype, OrderDto orderDto, String couponid, String finalAmount, String couponName) {
 
         OrderconDto orderconDto = new OrderconDto();
         orderconDto.setImpuid(impuid);
@@ -78,24 +78,9 @@ public class OrderService {
         orderconDto.setOemail(orderDto.getOemail());
         orderconDto.setMerchantuid(merchantuid);
         orderconDto.setId(orderDto.getId());
-
-       /* Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put("movieid", orderDto.getMovieid());
-        paramMap.put("movieordertitle", orderDto.getMovieordertitle());
-        paramMap.put("price", orderDto.getPrice());
-        paramMap.put("seat", orderDto.getSeat());
-        paramMap.put("otime", orderDto.getOtime());
-        paramMap.put("odate", orderDto.getOdate());
-        paramMap.put("oname", orderDto.getOname());
-        paramMap.put("ocarnum", orderDto.getOcarnum());
-        paramMap.put("oemail", orderDto.getOemail());
-        paramMap.put("ophone", orderDto.getOphone());
-        paramMap.put("orderdate", orderDto.getOrderdate());
-        paramMap.put("impuid", impuid);
-        paramMap.put("merchantuid", merchantuid);
-        paramMap.put("pgtype", pgtype);
-        paramMap.put("movieorderposter", orderDto.getMovieorderposter());*/
-        //paramMap.put("id", orderDto.getId());
+        orderconDto.setCouponid(couponid);
+        orderconDto.setFinalAmount(finalAmount);
+        orderconDto.setCouponName(couponName);
 
         return orderMapper.insertocon(orderconDto);
     }

@@ -61,21 +61,18 @@ public class JoinController {
         if(joinResult == 1) {
             model.addAttribute("joinResult","ok");
             if(memberDto.getId() == memberDto.getEmail()){
-
+               viewName = "redirect:/mypage/"+memberDto.getId();
 // 네이버 로그인 성공했을때 이미 회원인지아닌지 체크 마이페이지 표기 다름(해결)
-
-
-                viewName = "redirect:/mypage/"+memberDto.getId();
             }else{
-                viewName = "/login/login";
-            }
+                redirectAttributes.addFlashAttribute("joinResult","ok");
+                couponService.insertInit1(memberDto.getId());
+                couponService.insertInit2(memberDto.getId());
+                couponService.insertInit3(memberDto.getId());
+                couponService.insertInit4(memberDto.getId());
+                couponService.insertInit5(memberDto.getId());
+                viewName = "redirect:/login";
+             }
         }
         return viewName;
     }
-
-
-
-
-
-
 }

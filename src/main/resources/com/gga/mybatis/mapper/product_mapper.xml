@@ -7,8 +7,8 @@
 <mapper namespace="com.springboot.gga.repository.ProductMapper">
 
 	<select id="searchList" parameterType="Map" resultType="com.springboot.gga.dto.ProductDto">
-			select rownum rno, pid, pname, pprice, GFILE, GSFILE, pcategory from
-				(select pid, pname, pprice, GFILE, GSFILE, pcategory from gga_product order by pid desc)
+		select rownum rno, pid, pname, pprice, gfile, gsfile, pcategory from
+		(select pid, pname, pprice, gfile, gsfile, pcategory from gga_product order by pid desc)
 		where
 		<choose>
 			<when test="searchType == 'pname'">
@@ -25,32 +25,32 @@
 	</select>
 
 	<select id="categoryList" parameterType="String" resultType="com.springboot.gga.dto.ProductDto">
-		select pid, pname, pprice, GFILE, GSFILE, pcategory from gga_product where pcategory=#{pcategory}
+		select pid, pname, pprice, gfile, gsfile, pcategory from gga_product where pcategory=#{pcategory}
 	</select>
 
 	<select id="list" resultType="com.springboot.gga.dto.ProductDto" parameterType="com.springboot.gga.dto.PageDto">
-		select rno,  pid, pname, pprice, GFILE, GSFILE, pcategory from
-			(select rownum rno, pid, pname, pprice, GFILE, GSFILE, pcategory from
-				(select pid, pname, pprice, GFILE, GSFILE, pcategory from gga_product order by pid desc))
+		select rno,  pid, pname, pprice, gfile, gsfile, pcategory from
+			(select rownum rno, pid, pname, pprice, gfile, gsfile, pcategory from
+				(select pid, pname, pprice, gfile, gsfile, pcategory from gga_product order by pid desc))
 		WHERE RNO BETWEEN #{startCount} AND #{endCount}
 	</select>
 
 	<select id="content" parameterType="String" resultType="com.springboot.gga.dto.ProductDto">
-		select pid, pname, pprice, GFILE, GSFILE, pcategory from gga_product where pid=#{pid}
+		select pid, pname, pprice, gfile, gsfile, pcategory from gga_product where pid=#{pid}
 	</select>
 
 	<update id="update" parameterType="com.springboot.gga.dto.ProductDto">
 		update gga_product
-		set pname=#{pname}, pprice=#{pprice}, pcategory=#{pcategory}, GFILE=#{gfile, jdbcType=VARCHAR}, GSFILE=#{gsfile, jdbcType=VARCHAR}
+		set pname=#{pname}, pprice=#{pprice}, pcategory=#{pcategory}, gfile=#{gfile, jdbcType=VARCHAR}, gsfile=#{gsfile, jdbcType=VARCHAR}
 		where pid=#{pid}
 	</update>
-	
+
 
 	<insert id="insert" parameterType="com.springboot.gga.dto.ProductDto">
-		insert into gga_product(pid, pname, pprice, GFILE, GSFILE, pcategory)
+		insert into gga_product(pid, pname, pprice, gfile, gsfile, pcategory)
 		values('P_'||to_char(sequ_gga_product.nextval, 'fm0000'), #{pname}, #{pprice}, #{gfile, jdbcType=VARCHAR},#{gsfile, jdbcType=VARCHAR}, #{pcategory})
 	</insert>
-	
+
 	<delete id="delete" parameterType="String">
 		delete from gga_product where pid=#{pid}
 	</delete>

@@ -25,4 +25,16 @@ public class ProductOrderService {
     public List<ProductOrderDto> myList(String id) {
         return productOrderMapper.myList(id);
     }
+
+    public int insertList(List<Map<String, Object>> paramList) {
+        return productOrderMapper.insertList(paramList);
+    }
+
+    public List<ProductOrderDto> selectList(String poid) {
+        return productOrderMapper.selectList(poid);
+    }
+
+    public List<ProductOrderDto> searchDateList(Map param) {
+        return productOrderMapper.searchDateList(param);
+    }
 }

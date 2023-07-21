@@ -111,7 +111,7 @@ $(document).ready(function(){
 		
 	
 	function reloadModalContent() {  
-	   $('#CartModal .modal-content').load('cartModal.do', function() {
+	   $('#CartModal .modal-content').load('/cartModal', function() {
 	      $('#CartModal').modal('show');
 	      
 	
@@ -127,22 +127,37 @@ $(document).ready(function(){
 	});
 		
 	   $("#store_cart").click(function(){
-	  	 $('#CartModal .modal-content').load('cartModal.do');
+	  	 $('#CartModal .modal-content').load('/cartModal');
 		 $('#CartModal').modal('show');
 	 });
-	  
-	  $(".cartbtn").click(function() {
-	  		var pid = $(this).data('id');
-	
-		  $.ajax({
-		    url: "cart_insert_proc.do?pid="+pid,
-		    success: function(result) {
-	
-		      $('#buyModal').modal('show');
-		      
-		    }
-		  });
-		  return false;
+
+	$(".cartbtn").click(function() {
+		var pid = $(this).attr('id');
+
+		$.ajax({
+			url: "/search_cart/"+pid,
+			success: function (result){
+				if (result == 0) {
+					$.ajax({
+						url: "/cart_insert/"+pid,
+						success: function(insertResult) {
+
+							$('#buyModal').modal('show');
+						}
+					});
+				} else {
+					alert("이미 장바구니에 존재하는 제품입니다");
+					return false;
+				}
+			}
+		});
+
+
+		return false;
+	});
+
+	$('#buyModal').on('hidden.bs.modal', function (e) {
+		location.reload(); // 모달 닫힐 때 페이지 리로드
 	});
 	
 	
@@ -151,10 +166,9 @@ $(document).ready(function(){
 	 });
 	  $("#gocartbtn").click(function(){
 		 $('#buyModal').modal('hide');
-	
-		 $('#CartModal .modal-content').load('cartModal.do');
+		 $('#CartModal .modal-content').load('/cartModal');
 		 $('#CartModal').modal('show');
-		 
+
 	 });
 	 
 	
@@ -162,14 +176,14 @@ $(document).ready(function(){
 		 $('#buyModal').modal('hide');
 	 });
 	  
-	$(".cartbtn2").click(function(){
+/*	$(".cartbtn2").click(function(){
 		 $('#buycartModal').modal('show');
 		 $("#cartkakaopay").data('price',$(this).data('price'));
 		 $("#cartkakaopay").data('id',$(this).data('id'));
 		 $("#cartkakaopay").data('gfile',$(this).data('gfile'));
 		 $("#cartkakaopay").data('pname',$(this).data('pname'));
 		 $("#cartcardpay").data('price',$(this).data('price'));
-	 });
+	 });*/
 
 	  $("#cartclosebtn3").click(function(){
 		 $('#buycartModal').modal('hide');
@@ -399,6 +413,32 @@ $(document).ready(function(){
 		}
 
 	});
+
+	$("#seatpaybtn").click(function(){
+		var seatcom = $("#seatcom").html();
+		var seattotal = $("#seattotal").html();
+		var oid = $("#oidinput").val();
+		if (seatcom == "") {
+			alert("좌석을 선택해 주세요.");
+		} else {
+			$.ajax({
+				url: "http://localhost:9000/seatProc/" + seatcom + "/" + seattotal + "/" + oid+"/",
+				async: false,
+			}).done(function(data) {
+				if (data == '0') {
+					// 반환된 int 값이 0인 경우의 처리 로직
+					alert("이미 선택된 좌석입니다.");
+				} else if (data == '1') {
+					location.replace("http://localhost:9000/order_pay/"+oid);
+				}
+
+				});
+		}
+
+
+	});
+
+
 	$("#seatkakaobtn").click(function() {
 		var seatcom = $("#seatcom").html();
 		var seattotal = $("#seattotal").html();
@@ -519,9 +559,13 @@ $(document).ready(function(){
 			alert("차량번호를 입력해 주세요.")
 			$("#ocarnum").focus();
 			return false;
-		}else if($("#oemail").val()==""){
+		}else if($("#email1").val()=="") {
 			alert("이메일을 입력해 주세요.")
-			$("#oemail").focus();
+			$("#email1").focus();
+			return false;
+		}else if($("#email2").val()==""){
+			alert("이메일 뒷자리를 입력해 주세요.")
+			$("#email2").focus();
 			return false;
 		}else if($("#ophone").val()==""){
 			alert("전화번호를 입력해 주세요.")

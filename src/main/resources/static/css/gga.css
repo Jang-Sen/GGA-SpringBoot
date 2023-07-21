@@ -873,23 +873,24 @@ div.coron_input {
 .cartbtn img{
 	width:135px;
 }
-.cartbtn2 img{
-	width:135px;
-}
 .cartbtn:hover{
 	cursor:pointer;
 }
 .cartbtn2:hover{
 	cursor:pointer;
 }
+.cartbtn2 img{
+	width:135px;
+}
 .store_cart {
-	margin-left:870px;
-	margin-bottom:20px;
-
+	margin-left:600px;
+	margin-top: -20px;
 }
 .store_cart img{
 	width:60px;
 	height:60px;
+	padding: 0px;
+	margin: 0px;
 
 }
 .buybtn{
@@ -1219,19 +1220,19 @@ div.coron_input {
 
 .ticket_bac1{
 	line-height:normal;
-	margin-top:50px;
-	display : block;
-	text-decoration : none;
-	color : rgb(37, 37, 37);
-	font-size: 15px;
-	padding : 12px 20px;
+/*margin-top:20px;*/
+  display : block;
+  text-decoration : none;
+  color : rgb(37, 37, 37);
+  font-size: 15px;
+ padding : 12px 20px; 
 	background-image:url("http://localhost:9000/images/ticket2.png");
 	background-repeat: no-repeat;
 	background-size: 1000px 300px;
 	height:300px;
 }
 .ticket_bac1 select:first-child{
-	margin-top:130px;
+	margin-top:30px;
 }
 .ticket_bac1 select{
 	display:inline-block;
