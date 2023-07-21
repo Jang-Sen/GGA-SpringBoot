@@ -6,10 +6,10 @@
 	background: white;
 }
 @font-face {
-    font-family: 'GangwonEdu_OTFBoldA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'GangwonEdu_OTFBoldA';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 header{
@@ -17,11 +17,11 @@ header{
 	background-image:url("http://localhost:9000/images/bgheaderai.png");
 	background-repeat:no-repeat;
 	/* background-size:1000px 150px; */
- 	background-size: 100%; 
-/* 	background-position:center; */
+	background-size: 100%;
+	/* 	background-position:center; */
 	height:300px;
 	/* margin-bottom: 70px; */
-} 
+}
 header a{
 	color:white;
 }
@@ -46,41 +46,41 @@ header button{
 }
 
 .header_section1 {
-  display: flex;
-  justify-content: space-between;
-/*   align-items: center; */
-  /* padding: 20px; */
+	display: flex;
+	justify-content: space-between;
+	/*   align-items: center; */
+	/* padding: 20px; */
 }
 
 .header_section1 img {
 	margin-top:30px;
 	margin-left:30px;
-  width: 120px;
-  height: 100px;
+	width: 120px;
+	height: 100px;
 }
 
 
 .header_menu {
- margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
 }
 
 .header_menu li {
 	float:left;
 	list-style-type: none;
-  margin-right: 20px;
+	margin-right: 20px;
 }
 
 .header_menu li:last-child {
-  margin-right: 0;
+	margin-right: 0;
 }
 
 .header_menu li a {
 	color:white;
-font-size:11pt;
-  text-decoration: none;
+	font-size:11pt;
+	text-decoration: none;
 }
 
 .header_menu2 {
@@ -89,23 +89,23 @@ font-size:11pt;
 	position:relative;
 	top: -50px;
 	left:590px;
-	
+
 }
 
 .header_menu2 li {
 	float:left;
 	list-style-type: none;
-    margin-right: 30px;
-    color:white;
+	margin-right: 30px;
+	color:white;
 }
 .header_menu2 li:hover {
 	cursor:pointer;
 
-	}
+}
 
 .header_menu2 li a {
 	text-decoration:none;
-	
+
 }
 
 .header_menu2 > li:last-child {
@@ -113,7 +113,7 @@ font-size:11pt;
 }
 
 .header_menu2 li:last-child {
-  margin-right: 0;
+	margin-right: 0;
 }
 
 .mov_search {
@@ -125,7 +125,7 @@ font-size:11pt;
 }
 .d-flex input{
 	font-size:12pt;
-	
+
 }
 .d-flex button p{
 	font-size:12pt;
@@ -139,7 +139,7 @@ font-size:11pt;
 .mypage_title img{
 	width:350px;
 	height:100px;
-	
+
 }
 
 .content {
@@ -157,14 +157,14 @@ font-size:11pt;
 	width:150px;
 	color:white;
 	padding:5px 10px;
-	}
+}
 .mp_update ul li:first-child {
 	margin-top:40px;
 
-	}
+}
 .mp_update ul li {
 	list-style-type:none;
-	margin-top:15px; 
+	margin-top:15px;
 }
 .mp_update ul li input{
 	margin-left:20px;
@@ -176,13 +176,13 @@ font-size:11pt;
 }
 .mp_update ul li:nth-child(2) input, .mp_update ul li:nth-child(3) input{
 	width:300px;
-	}
+}
 .mp_update ul li input[name='gender']{
 	margin-left:20px;
 	margin-right:10px;
 	width:15px;
 }
-.mp_update ul li input[name='tel']{
+.mp_update ul li input[name='telCheck']{
 	margin-left:20px;
 	margin-right:10px;
 	width:15px;
@@ -207,7 +207,7 @@ font-size:11pt;
 	padding:10px 10px;
 	border:1px solid lightgray;
 	border-radius:4px;
-	
+
 }
 .myorder_text a img {
 	width:120px;
@@ -224,9 +224,9 @@ div.content section.mypage { /* section 怨좎젙 */
 	border-bottom: 1px solid lightgray;
 }
 div.content section.mypage div.mypage_header { /* 留덉씠�럹�씠吏� ���씠�� �쁺�뿭  */
-/* margin:10px; */
-/* 	float:left; */
-text-align:left;
+	/* margin:10px; */
+	/* 	float:left; */
+	text-align:left;
 }
 
 div.content section.mypage div.mypage_header img { /* 留덉씠�럹�씠吏� �씠誘몄� �쁺�뿭  */
@@ -235,19 +235,19 @@ div.content section.mypage div.mypage_header img { /* 留덉씠�럹�씠吏�
 
 div.content section.mypage div.mypage_menu_info { /* 硫붾돱 div �쐞移� �쁺�뿭 */
 	margin-left: 20px;
-/* 	margin:0px 0px 0px 60px; */
+	/* 	margin:0px 0px 0px 60px; */
 	position:relative;
-/* 	top:40px;
-	left:30px;
-	right:20px; */
+	/* 	top:40px;
+        left:30px;
+        right:20px; */
 	display:inline-block;
 }
 
 div.content section.mypage div.mypage_menu_info { /* �씤�룷 �삤�뜑 �쐞移� */
 	font-size:30pt;
-	 float:left; 
+	float:left;
 	/* margin:70px; */
-} 
+}
 .mypage_menu_info a{
 	margin-left:30px;
 	text-decoration:none;
@@ -260,9 +260,9 @@ div.content section.mypage2 { /* section 고정 */
 	border-bottom: 1px solid lightgray;
 }
 div.content section.mypage2 div.mypage_header { /* 마이페이지 타이틀 영역  */
-/* margin:10px; */
-/* 	float:left; */
-text-align:left;
+	/* margin:10px; */
+	/* 	float:left; */
+	text-align:left;
 }
 
 div.content section.mypage2 div.mypage_header img { /* 마이페이지 이미지 영역  */
@@ -271,19 +271,19 @@ div.content section.mypage2 div.mypage_header img { /* 마이페이지 이미지
 
 div.content section.mypage2 div.mypage_menu_info { /* 메뉴 div 위치 영역 */
 	margin-left: 20px;
-/* 	margin:0px 0px 0px 60px; */
+	/* 	margin:0px 0px 0px 60px; */
 	position:relative;
-/* 	top:40px;
-	left:30px;
-	right:20px; */
+	/* 	top:40px;
+        left:30px;
+        right:20px; */
 	display:inline-block;
 }
 
 div.content section.mypage2 div.mypage_menu_info { /* 인포 오더 위치 */
 	font-size:30pt;
-	 float:left; 
+	float:left;
 	/* margin:70px; */
-} 
+}
 .mypage_menu_info a{
 	margin-left:30px;
 	text-decoration:none;
@@ -300,7 +300,7 @@ div.content section.mypage2 div.mypage_menu_info { /* 인포 오더 위치 */
 /*                           내 예매 내역                           */
 
 div.content section.myorder { /* section 고정 */
-margin-top:30px;
+	margin-top:30px;
 	width: 1200px; height:450px;
 	margin:auto;
 	text-align:center;
@@ -325,7 +325,7 @@ div.content section.myorder div.myorder_header h5 { /* My예매  타이틀 영�
 	right:100px;
 	float:right;
 	padding:10px; margin:10px;
-	margin-top:20px; 
+	margin-top:20px;
 }
 div.content section.myorder div.myorder_text { /* My예매 정보 유무 출력 */
 	position:relative;
@@ -354,7 +354,7 @@ div.content section.myorder2 div.myorder_header h5 { /* My예매  타이틀 영�
 	right:100px;
 	float:right;
 	padding:10px; margin:10px;
-	margin-top:20px; 
+	margin-top:20px;
 }
 div.content section.myorder2 div.myorder_text { /* My예매 정보 유무 출력 */
 	position:relative;
@@ -401,11 +401,11 @@ div.content section.myorder2 div.myorder_add { /* 영화 포스터 */
 div.content section.myorder div.myorder_add:hover { /* 칸 커서 이벤트  */
 	opacity:0.5;
 }
-	
+
 div.content section.myorder div.myorder_add img ,
 div.content section.myorder div.myorder_add_plus img  { /* 이미지 크기 & 위치 */
 
-border:3px groove lightgray;
+	border:3px groove lightgray;
 	background:lightgray;
 	border-radius:3px;
 	display:inline-block;
@@ -420,7 +420,7 @@ border:3px groove lightgray;
 div.content section.myorder2 div.myorder_add img ,
 div.content section.myorder2 div.myorder_add_plus img  { /* 이미지 크기 & 위치 */
 
-border:3px groove lightgray;
+	border:3px groove lightgray;
 	background:lightgray;
 	border-radius:3px;
 	display:inline-block;
@@ -432,7 +432,7 @@ border:3px groove lightgray;
 	/* top:120px; */
 	opacity:1.0;
 }
-div.content section.myorder div.myorder_add img:hover, 
+div.content section.myorder div.myorder_add img:hover,
 div.content section.myorder div.myorder_add_plus img:hover { /* 플러스 버튼 커서 이벤트 */
 	opacity:0.3;
 	cursor:pointer;
@@ -447,13 +447,13 @@ div.content section.myorder div.myorder_add_plus img  { /* 이미지 크기 & �
 	float:left;
 	opacity:1.0;
 	position:relative;
-	width:220px; height:330px; 
+	width:220px; height:330px;
 	/* top:120px; */
 	opacity:1.0;
 	margin-top:20px;
 	margin-left:20px;
 }
-div.content section.myorder div.myorder_add2 img:hover, 
+div.content section.myorder div.myorder_add2 img:hover,
 div.content section.myorder div.myorder_add_plus img:hover { /* 플러스 버튼 커서 이벤트 */
 	opacity:0.3;
 	cursor:pointer;
@@ -475,7 +475,7 @@ div.content section.myorder2 div.myorder_add_plus img  { /* 이미지 크기 & �
 	margin-left:20px;
 	margin-bottom:10px;
 }
-div.content section.myorder2 div.myorder_add3 img:hover, 
+div.content section.myorder2 div.myorder_add3 img:hover,
 div.content section.myorder2 div.myorder_add_plus img:hover { /* 플러스 버튼 커서 이벤트 */
 	opacity:0.3;
 	cursor:pointer;
@@ -515,19 +515,19 @@ seat
 
 .seatcontainer{
 	justify-content: center;
-  align-items: center;
-	
+	align-items: center;
+
 }
 .seatcontainer > .container, .seatcontainer > .container2{
 	justify-content: center;
-  align-items: center;
+	align-items: center;
 	text-align: center;
 }
 .seatcontainer + footer {
 	margin-top:20px;
 	display:block;
-	}
-	
+}
+
 .seatbtn{
 	border:1px solid white;
 	background-color:white;
@@ -544,13 +544,13 @@ mypage ticket
 	border:1px solid white;
 }
 #allticket_back img{
-margin-top:80px;
+	margin-top:80px;
 	width:150px;
 	height:80px;
-	}
+}
 #allticket_back img:hover{
 	cursor:pointer;
-	}
+}
 .openmypage{
 	margin-top:25px;
 	margin-left:300px;
@@ -560,10 +560,10 @@ margin-top:80px;
 .openmypage img{
 	width:150px;
 	height:80px;
-	}
+}
 .openmypage img:hover{
-cursor:pointer;
-}	
+	cursor:pointer;
+}
 .openallticket{
 	margin-top:25px;
 	margin-left:300px;
@@ -573,12 +573,12 @@ cursor:pointer;
 .openallticket img{
 	width:150px;
 	height:80px;
-	}
+}
 .refundticket{
 	margin-left:25px;
 	background-color:white;
 	border:1px solid white;
-	
+
 }
 .refundticket img{
 	width:150px;
@@ -592,7 +592,7 @@ cursor:pointer;
 .join_title img{
 	width:350px;
 	height:100px;
-	
+
 }
 
 .join {
@@ -609,14 +609,14 @@ cursor:pointer;
 	width:150px;
 	color:white;
 	padding:5px 10px;
-	}
+}
 .join ul li:first-child {
 	margin-top:40px;
 
-	}
+}
 .join ul li {
 	list-style-type:none;
-	margin-top:15px; 
+	margin-top:15px;
 }
 .join ul li input{
 	margin-left:20px;
@@ -628,7 +628,7 @@ cursor:pointer;
 }
 .join ul li:nth-child(2) input, .join ul li:nth-child(3) input{
 	width:300px;
-	}
+}
 .join ul li input[name='gender']{
 	margin-left:20px;
 	margin-right:10px;
@@ -659,7 +659,7 @@ cursor:pointer;
 	padding:10px 10px;
 	border:1px solid lightgray;
 	border-radius:4px;
-	
+
 }
 .joinbtn{
 	display:inline-block;
@@ -668,28 +668,28 @@ cursor:pointer;
 }
 .joinbtn img{
 	width:130px;
-	justify-content: center; 
- 	align-items: center; 
-	margin:auto; 
+	justify-content: center;
+	align-items: center;
+	margin:auto;
 }
 
 /*******************************
  �슖�돦裕꾬옙�쟽�뜝�럩逾� �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
 *************************************/
-  .container{
+.container{
 	font-family: 'GangwonEdu_OTFBoldA';
-} 
+}
 
 .login_title img{
 	width:330px;
 	height:100px;
-	
+
 }
 .loginForm{
 	margin:auto;
 	justify-content: center;
- 	align-items: center;
-	
+	align-items: center;
+
 }
 .login {
 	font-family: 'GangwonEdu_OTFBoldA';
@@ -699,7 +699,7 @@ cursor:pointer;
 }
 .login ul li {
 	list-style-type:none;
-		margin-top:30px;
+	margin-top:30px;
 }
 .login ul li label{
 	background-color:mediumaquamarine;
@@ -710,7 +710,7 @@ cursor:pointer;
 	width:150px;
 	color:white;
 	padding:5px 10px;
-	}
+}
 .login ul li input{
 	margin-left:20px;
 	width:250px;
@@ -722,14 +722,14 @@ cursor:pointer;
 .login .loginbtnbtn{
 	margin-right:20px;
 	width:130px;
-	
+
 }
 .login ul li span a{
 	margin-right:20px;
 	font-size:15px;
 	text-decoration:none;
 	color:gray;
-	
+
 }
 .idCheckbtn{
 	width:80px;
@@ -766,18 +766,18 @@ div.content section.coron_1 div.con {
 	margin-top:130px;
 }
 /* �뜝�룞�삕占쎄슈�뜝�띁�닱筌뤾쑴踰� - �뜝�럡���뜝�럩�뮔 */
-	.ask_title img{
+.ask_title img{
 	width:280px;
 	height:100px;
-	}
+}
 div.container section.coron_2 { /* section 占썩뫁伊숋옙�젧  */
 	width:1000px; height:300px;
 	margin:auto;
 	position:relative;
 	display:flex;
 	justify-content: center;
-  align-items: center;
-	
+	align-items: center;
+
 }
 /* div.container section.coron_2 div {
 	border:1px solid blue;
@@ -842,27 +842,27 @@ div.coron_input {
 	width:480px;
 	height:130px;
 	margin-bottom:30px;
-	
+
 }
 .admin_index_btn a img{
 	width:300px;
-	
+
 }
 .admin_index_btn a:nth-child(1){
 	margin-left:180px;
 	width:300px;
-	
+
 }
 .admin_index_btn a:nth-child(4){
 	margin-left:180px;
 	width:300px;
-	
+
 }
 .admin_board_list_title img{
 	width:350px;
 	height:110px;
 	float:left;
-	
+
 }
 /*store*/
 .store_title img{
@@ -885,12 +885,12 @@ div.coron_input {
 .store_cart {
 	margin-left:870px;
 	margin-bottom:20px;
-	
+
 }
 .store_cart img{
 	width:60px;
 	height:60px;
-	
+
 }
 .buybtn{
 	display:flex;
@@ -901,13 +901,13 @@ div.coron_input {
 	display:flex;
 }
 .cartkakaobtn img{
-	
-	width:120px;	
+
+	width:120px;
 }
 #keepshoppinggocart{
 	display:flex;
 	backgroung-color:white;
-	
+
 }
 #keepshoppinggocart button:first-child{
 	margin-left:60px;
@@ -935,20 +935,20 @@ div.coron_input {
 }
 .cartcardbtn img{
 	width:150px;
-	
-} 
+
+}
 .buycartmodal_footer{
 	display:flex;
 	flex-direction: row; /*�닔�룊 �젙�젹*/
-      align-items: center;
-      justify-content: center;
-      margin-bottom:30px;
+	align-items: center;
+	justify-content: center;
+	margin-bottom:30px;
 }
 #emptycart{
 	margin-top:50px;
 	margin-bottom:50px;
 	text-align:center;
-	
+
 }
 .emptycartclass{
 	text-align:center;
@@ -969,36 +969,35 @@ div.coron_input {
 }
 .modal{
 	font-family: 'GangwonEdu_OTFBoldA';
-	
+
 }
-/*.table-image {
+/*.table-image */
+/*thead*/
+/*td, th {*/
+/*	border: 0;*/
+/*	!* color: #666; *!*/
+/*	font-size: 0.8rem;*/
+/*}*/
 
-  thead {
-    td, th {
-      border: 0;
-      !* color: #666; *!
-      font-size: 0.8rem;
-    }
-  }
 
-  td, th {
-    vertical-align: middle;
-    text-align: center;
+/*td, th {*/
+/*	vertical-align: middle;*/
+/*	text-align: center;*/
 
-  }
-}*/
+/*}*/
+
 .buycartbtn {
 	background:white;
-	
+
 }
 .price {
-  margin-left: 1rem;
+	margin-left: 1rem;
 }
 
 .modal-footer button {
 	border: 1px solid white;
 	background-color:white;
-  padding-top: 0rem;
+	padding-top: 0rem;
 }
 .modal-footer button:hover{
 	background-color:white;
@@ -1017,7 +1016,7 @@ div.coron_input {
 	padding:3px 10px;
 	border:1px solid white;
 	border-radius:4px;
-	
+
 }
 #store_cart {
 	background-color:white;
@@ -1045,187 +1044,187 @@ div.coron_input {
 
 /*�뜝�럩援숂춯�엪�삕*/
 
- 		.cont-select {
- 		display:inline-block;
-            position: relative;
-            margin-left:80px;
-            margin-top:120px;
-            width: 200px;
-        }
+.cont-select {
+	display:inline-block;
+	position: relative;
+	margin-left:80px;
+	margin-top:120px;
+	width: 200px;
+}
 
-        .btn-select {
-        list-style-type:circle;
-            width: 100%;
-            padding: 13px 30px 13px 14px;
-/*             font-size: 15px; */
-            line-height: 15px;
-            background-color: #fff;
-            border: 1px solid #C4C4C4;
-            box-sizing: border-box;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: left;
-        /*     background: url("images/icon-Triangle-down.png") center right 14px no-repeat; */
-            /* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
+.btn-select {
+	list-style-type:circle;
+	width: 100%;
+	padding: 13px 30px 13px 14px;
+	/*             font-size: 15px; */
+	line-height: 15px;
+	background-color: #fff;
+	border: 1px solid #C4C4C4;
+	box-sizing: border-box;
+	border-radius: 10px;
+	cursor: pointer;
+	text-align: left;
+	/*     background: url("images/icon-Triangle-down.png") center right 14px no-repeat; */
+	/* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
 
-        .btn-select:hover,
-        .btn-select:focus {
-            border: 1px solid #9B51E0;
-            outline: 3px solid #F8E4FF;
-        }
+.btn-select:hover,
+.btn-select:focus {
+	border: 1px solid #9B51E0;
+	outline: 3px solid #F8E4FF;
+}
 
-        .list-member {
-       		background-color:white;
-            display: none;
-            position: absolute;
-            width: 100%;
-            top: 49px;
-            left: 0;
-            border: 1px solid #C4C4C4;
-            box-sizing: border-box;
-            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
-            border-radius: 10px;
-        }
+.list-member {
+	background-color:white;
+	display: none;
+	position: absolute;
+	width: 100%;
+	top: 49px;
+	left: 0;
+	border: 1px solid #C4C4C4;
+	box-sizing: border-box;
+	box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+}
 
-        .btn-select.on {
-           /*  background: url("images/icon-Triangle-up.png") center right 14px no-repeat; */
-        }
+.btn-select.on {
+	/*  background: url("images/icon-Triangle-up.png") center right 14px no-repeat; */
+}
 
-        .btn-select.on+.list-member {
-            display: block;
-        }
+.btn-select.on+.list-member {
+	display: block;
+}
 
-        .list-member li {
-        	list-style-type:circle;
-            height: 40px;
-            padding: 5px 8px;
-            box-sizing: border-box;
-        }
+.list-member li {
+	list-style-type:circle;
+	height: 40px;
+	padding: 5px 8px;
+	box-sizing: border-box;
+}
 
-        .list-member li button {
-            width: 100%;
-            padding: 7px 10px;
-            border: none;
-            background-color: #fff;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: left;
-            /* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
+.list-member li button {
+	width: 100%;
+	padding: 7px 10px;
+	border: none;
+	background-color: #fff;
+	border-radius: 8px;
+	cursor: pointer;
+	text-align: left;
+	/* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
 
-        .list-member li button:hover,
-        .list-member li button:focus {
-            background-color: #F8E4FF;
-        }
-        
-            .time-select{
-            display:inline-block;
-            position: relative;
-            margin-left:40px;
-            margin-top:20px;
-            width: 100px;
-        
-        }
-        
-         .btn-timeselect {
-        list-style-type:circle;
-            width: 100%;
-            padding: 13px 30px 13px 14px;
-/*             font-size: 15px; */
-            line-height: 15px;
-            background-color: #fff;
-            border: 1px solid #C4C4C4;
-            box-sizing: border-box;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: left;
-        /*     background: url("images/icon-Triangle-down.png") center right 14px no-repeat; */
-            /* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
+.list-member li button:hover,
+.list-member li button:focus {
+	background-color: #F8E4FF;
+}
 
-        .btn-timeselect:hover,
-        .btn-timeselect:focus {
-            border: 1px solid #9B51E0;
-            outline: 3px solid #F8E4FF;
-        }
+.time-select{
+	display:inline-block;
+	position: relative;
+	margin-left:40px;
+	margin-top:20px;
+	width: 100px;
 
-        .list-ordertime {
-        background-color:white;
-            display: none;
-            position: absolute;
-            width: 100%;
-            top: 49px;
-            left: 0;
-            border: 1px solid #C4C4C4;
-            box-sizing: border-box;
-            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
-            border-radius: 10px;
-        }
+}
 
-        .btn-timeselect.on {
-           /*  background: url("images/icon-Triangle-up.png") center right 14px no-repeat; */
-        }
+.btn-timeselect {
+	list-style-type:circle;
+	width: 100%;
+	padding: 13px 30px 13px 14px;
+	/*             font-size: 15px; */
+	line-height: 15px;
+	background-color: #fff;
+	border: 1px solid #C4C4C4;
+	box-sizing: border-box;
+	border-radius: 10px;
+	cursor: pointer;
+	text-align: left;
+	/*     background: url("images/icon-Triangle-down.png") center right 14px no-repeat; */
+	/* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
 
-        .btn-timeselect.on+.list-ordertime {
-            display: block;
-        }
+.btn-timeselect:hover,
+.btn-timeselect:focus {
+	border: 1px solid #9B51E0;
+	outline: 3px solid #F8E4FF;
+}
 
-        .list-member li {
-        	list-style-type:circle;
-            height: 40px;
-            padding: 5px 8px;
-            box-sizing: border-box;
-        }
+.list-ordertime {
+	background-color:white;
+	display: none;
+	position: absolute;
+	width: 100%;
+	top: 49px;
+	left: 0;
+	border: 1px solid #C4C4C4;
+	box-sizing: border-box;
+	box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+}
 
-        .list-ordertime li button {
-            width: 100%;
-            padding: 7px 10px;
-            border: none;
-            background-color: #fff;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: left;
-            /* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
+.btn-timeselect.on {
+	/*  background: url("images/icon-Triangle-up.png") center right 14px no-repeat; */
+}
 
-        .list-ordertime li button:hover,
-        .list-ordertime li button:focus {
-            background-color: #F8E4FF;
-        }
+.btn-timeselect.on+.list-ordertime {
+	display: block;
+}
+
+.list-member li {
+	list-style-type:circle;
+	height: 40px;
+	padding: 5px 8px;
+	box-sizing: border-box;
+}
+
+.list-ordertime li button {
+	width: 100%;
+	padding: 7px 10px;
+	border: none;
+	background-color: #fff;
+	border-radius: 8px;
+	cursor: pointer;
+	text-align: left;
+	/* 嶺뚮씭흮鸚룔굩�삕占쎈엮 */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.list-ordertime li button:hover,
+.list-ordertime li button:focus {
+	background-color: #F8E4FF;
+}
 
 .order_title img{
-width:160px;
-height:100px;
+	width:160px;
+	height:100px;
 
 }
 
 .ticket_title{
 	margin-left:100px;
-	
+
 }
 
 
 .ticket_bac1{
 	line-height:normal;
-margin-top:50px; 
-  display : block;
-  text-decoration : none;
-  color : rgb(37, 37, 37);
-  font-size: 15px;
- padding : 12px 20px; 
+	margin-top:50px;
+	display : block;
+	text-decoration : none;
+	color : rgb(37, 37, 37);
+	font-size: 15px;
+	padding : 12px 20px;
 	background-image:url("http://localhost:9000/images/ticket2.png");
 	background-repeat: no-repeat;
 	background-size: 1000px 300px;
@@ -1236,30 +1235,30 @@ margin-top:50px;
 }
 .ticket_bac1 select{
 	display:inline-block;
-height:20pt;
-border:1px solid #ddd;
-color:gray;
-border-radius:3px;
-margin-left:20px;
-margin-top:20px;
-line-height: normal;
-vertical-align: middle;
+	height:20pt;
+	border:1px solid #ddd;
+	color:gray;
+	border-radius:3px;
+	margin-left:20px;
+	margin-top:20px;
+	line-height: normal;
+	vertical-align: middle;
 }
 
-	
+
 .ticket_bac1 input{
 	width:150px;
 	height:45px;
-margin-left:40px;
-margin-top:10px;
-border:1px solid #ddd;
-border-radius:8px;
-padding:3px;
+	margin-left:40px;
+	margin-top:10px;
+	border:1px solid #ddd;
+	border-radius:8px;
+	padding:3px;
 }
 .ticket_bac1 input:hover,.ticket_bac1 input:focus{
-	
-border: 1px solid #9B51E0;
-outline: 3px solid #F8E4FF;
+
+	border: 1px solid #9B51E0;
+	outline: 3px solid #F8E4FF;
 }
 
 
@@ -1271,11 +1270,11 @@ outline: 3px solid #F8E4FF;
 
 .ticket_bac2{
 	margin-top:50px;
-  display : block;
-  text-decoration : none;
-  color : rgb(37, 37, 37);
-  font-size: 15px;
-  padding : 12px 20px;
+	display : block;
+	text-decoration : none;
+	color : rgb(37, 37, 37);
+	font-size: 15px;
+	padding : 12px 20px;
 	background-image:url("http://localhost:9000/images/ticket2.png");
 	background-repeat: no-repeat;
 	background-size: 1000px 300px;
@@ -1283,22 +1282,22 @@ outline: 3px solid #F8E4FF;
 }
 
 .ticket_bac2 ul li input{
-width:30%;
-border:1px solid #ddd;
-border-radius:4px;
+	width:30%;
+	border:1px solid #ddd;
+	border-radius:4px;
 
 }
 .ticket_bac2 li{
-margin-left:60px;
-margin-top:10px;
-text-decoration : none;
-list-style-type:none;
+	margin-left:60px;
+	margin-top:10px;
+	text-decoration : none;
+	list-style-type:none;
 }
 .ticket_bac2 li:first-child{
-margin-top:100px;
+	margin-top:100px;
 }
 .ticket_bac2 li label{
-width:50px;
+	width:50px;
 }
 .ticket_button {
 	display:inline-block;
@@ -1321,7 +1320,7 @@ width:50px;
 }
 .kakaopay_button:hover{
 	cursor:pointer;
-	
+
 }
 
 .ticket_button:hover{
@@ -1329,47 +1328,47 @@ width:50px;
 }
 
 .btn_style{
-margin-top:30px;
-padding:20px 10px;
-width:200px;
-font-size:15px;
-font-weight:700;
-border: 1px solid white;
-border-radius:4px;
-}
-	
-	
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+	margin-top:30px;
+	padding:20px 10px;
+	width:200px;
+	font-size:15px;
+	font-weight:700;
+	border: 1px solid white;
+	border-radius:4px;
 }
 
-	
+
+.material-symbols-outlined {
+	font-variation-settings:
+			'FILL' 0,
+			'wght' 400,
+			'GRAD' 0,
+			'opsz' 48
+}
+
+
 .ticket_button> a > img{
 	margin-top:30px;
 	width:200px;
 	height:80px;
-	
+
 }
 /**********************************
  �뜝�럩援숂춯�씞�걠占쎈걦占쎈쇀�뜝占� �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
 *************************************/
 
 .ordercon_title img{
-width:250px;
-height:100px;
+	width:250px;
+	height:100px;
 
 }
 .ticketcon_bac1{
-  margin-top:50px;
-  display : block;
-  text-decoration : none;
-  color : rgb(37, 37, 37); 
-  font-size: 15px;
- 	padding : 12px 20px; 
+	margin-top:50px;
+	display : block;
+	text-decoration : none;
+	color : rgb(37, 37, 37);
+	font-size: 15px;
+	padding : 12px 20px;
 	background-image:url("http://localhost:9000/images/ticket2.png");
 	background-repeat: no-repeat;
 	background-size: 1000px 300px;
@@ -1379,12 +1378,12 @@ height:100px;
 
 
 .ticketcon_bac2{
-margin-top:50px;
-  display : block;
-  text-decoration : none;
-color : rgb(37, 37, 37);
-  font-size: 15px;
-  padding : 12px 20px;
+	margin-top:50px;
+	display : block;
+	text-decoration : none;
+	color : rgb(37, 37, 37);
+	font-size: 15px;
+	padding : 12px 20px;
 	background-image:url("http://localhost:9000/images/ticket2.png");
 	background-repeat: no-repeat;
 	background-size: 1000px 300px;
@@ -1392,32 +1391,32 @@ color : rgb(37, 37, 37);
 
 }
 .ticketcon_bac1 p {
-display:inline;
+	display:inline;
 
-} 
+}
 .ticketcon_bac1 label:first-child{
-margin-top:100px;
+	margin-top:100px;
 
 }
 .ticketcon_bac1 label{
-width:100px;
-margin-left:80px;
-margin-top:10px;
+	width:100px;
+	margin-left:80px;
+	margin-top:10px;
 
 }
 .ticketcon_bac2 p {
-display:inline;
-	
+	display:inline;
+
 
 }
 .ticketcon_bac2 label:first-child{
-margin-top:100px;
+	margin-top:100px;
 
 }
 .ticketcon_bac2 label{
-width:100px;
-margin-left:80px;
-margin-top:15px;
+	width:100px;
+	margin-left:80px;
+	margin-top:15px;
 
 }
 
@@ -1432,23 +1431,23 @@ margin-top:15px;
 
 .board_title{
 	text-align:left;
-	
+
 }
 .board_title img{
 	width:300px;
 	height:100px;
-	}
+}
 section.board div.board_choose {
 	margin-left:500px;
 	margin-top:20px;
 	display:inline-block;
-} 
+}
 /***************************
 	占썩뫀踰듿뜝�룞�삕亦낆���삕�뜮占�
 *****************************/
 .notice{
 	margin-top:30px;
-	
+
 }
 .admin_notice_list_title img{
 	width:500px;
@@ -1456,15 +1455,15 @@ section.board div.board_choose {
 	float:left;
 }
 .movie_manager_title img{
-		width:500px;
+	width:500px;
 	height:100px;
 	float:left;
-	
+
 }
 .moviemanager button{
 	background-color:white;
 	border:1px solid white;
-	
+
 }
 .moviemanager table tr td a{
 	text-decoration:none;
@@ -1472,19 +1471,19 @@ section.board div.board_choose {
 }
 .addmoviebtn {
 	float:right;
-	
+
 }
 .moviemanager button img{
 	width:110px;
 	height:50px;
-	
+
 }
 .admin_member_title img{
 	width:500px;
 	height:100px;
 	float:left;
 	margin-bottom:30px;
-	
+
 }
 /***************************
 	faq
@@ -1497,27 +1496,27 @@ section.board div.board_choose {
 *****************************/
 .coron_2{
 	font-family: 'GangwonEdu_OTFBoldA';
-	
+
 }
 div.coron_input{
 	margin-right:200px;
 	position:relative;
 	right:10px;
 	bottom:30px;
-} 
+}
 .coron_input ul li:nth-child(2) input{
 	width:100px;
 }
 .coron_input ul li {
 	list-style-type:none;
 	margin-top:10px;
-	
+
 }
 .coron_input ul li input {
 	border: 1px solid lightgray;
 	border-radius:4px;
 	padding:5px 10px;
-	}
+}
 .coron_input ul li label{
 	background-color:mediumaquamarine;
 	border:1px solid mediumaquamarine;
@@ -1535,8 +1534,8 @@ div.coron_input{
 
 
 .movie_titleimg img{
-width:300px;
-height:100px;
+	width:300px;
+	height:100px;
 }
 .btn-outline-secondary{
 	width:140px;
@@ -1544,7 +1543,7 @@ height:100px;
 	margin-left:20px;
 	margin-top:20px;
 	margin-bottom:20px;
-	
+
 }
 .btn-outline-secondary2{
 	width:110px;
@@ -1553,7 +1552,7 @@ height:100px;
 	margin-top:20px;
 	margin-bottom:20px;
 
-	}
+}
 /***************************
 	index
 *****************************/
@@ -1568,21 +1567,21 @@ height:100px;
 }
 .mapimg img{
 	width:250px;
-	height:100px;	
+	height:100px;
 }
 .nowtitle img{
-		width:250px;
-	height:100px;	
-	
+	width:250px;
+	height:100px;
+
 }
-	
+
 /***************************
 	commons style sheet
 *****************************/
 .orderbtn{
 	width:150px;
 	height:50px;
-	
+
 }
 
 .headerorderbtn img{
@@ -1590,9 +1589,9 @@ height:100px;
 	height:50px;
 }
 
- * {
+* {
 	margin:0px; padding:0px;
-} 
+}
 /* .bd-placeholder-img {
    font-size: 1.125rem;
    text-anchor: middle;
@@ -1627,37 +1626,37 @@ height:100px;
  } */
 
 .nav-scroller {
-   position: relative;
-   z-index: 2;
-   height: 2.75rem;
-   overflow-y: hidden;
- }
+	position: relative;
+	z-index: 2;
+	height: 2.75rem;
+	overflow-y: hidden;
+}
 
 .nav-scroller .nav {
-   display: flex;
-   flex-wrap: nowrap;
-  padding-bottom: 1rem; 
-   margin-top: -1px; 
-   overflow-x: auto;
-   text-align: center;
-   white-space: nowrap;
-   -webkit-overflow-scrolling: touch;
- }  
+	display: flex;
+	flex-wrap: nowrap;
+	padding-bottom: 1rem;
+	margin-top: -1px;
+	overflow-x: auto;
+	text-align: center;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+}
 a{
- 	font-size:20px;
+	font-size:20px;
 }
 
- .li1{
- 	text-decoration: none;
- 	font-size:15px;
- 	color:gray;
- 	margin-left:10px;
+.li1{
+	text-decoration: none;
+	font-size:15px;
+	color:gray;
+	margin-left:10px;
 }
 
- .a1{
+.a1{
 	padding:p-2;
 	color:secondary;
-} 
+}
 
 
 /*                      �뜝�럥苑딁춯�쉻�삕�뜝�럩�쐪 : �뜝�럩寃ュ뜝�럩�꼨 �뜝�럡留믣뜝�럡�돪�뜝�럩�꼨嶺뚮〕�삕 : MovieInfo               */
@@ -1670,7 +1669,7 @@ div.content section.movie_info1 { /* section 占썩뫁伊숋옙�젧  */
 }
 div.content section.movie_info1 div { /* div relative */
 	clear:both;
-	 position:relative; 
+	position:relative;
 	display:inline-block;
 }
 div.content section.movie_info1 div img { /* 嶺뚮∥�뾼占쎈데 �뜝�럥竊쀥뜝�럥裕욃뜝�럡�댉 �뜝�럩逾졿쾬�꼶梨룟뜝占� default:�댖怨뺣샍占쎈쭋4*/
@@ -1747,16 +1746,16 @@ div.content section.movie_info2 div:first-child {
 	border-radius:5px;
 	width:1000px; height:200px;
 	padding:10px;
-	margin:50px 0; 
+	margin:50px 0;
 }
 div.content section.movie_info2 td {	/*  占쎈꽞占쎌뒩�몴占� �뜝�럩寃ュ뜝�럩�꼨�뜝�럡�맟嶺뚮쪋�삕 占쎄껀�뜝�띂寃ュ뜝占� */
 	text-align:center;
 	width:1000px; height:180px;
 	margin-left:80px;
 	font-weight:800;
-} 
+}
 div.content section.movie_info2 table{
-	margin:auto;	
+	margin:auto;
 }
 /* div.content section.movie_info2 div:first-child { �뜝�럩寃ュ뜝�럩�꼨�뜝�럡�맟嶺뚮쪋�삕 �뜝�럥占쎈���삕占쎈턄占쎈눀�뜝占� �뜝�럡�뀬�뜝�럩逾좂춯�빢�삕 
 	width:1150px; height:200px;
@@ -1800,14 +1799,14 @@ div.content section.movie_info3 div img:hover { /* �뜝�럩逾졿쾬�꼶�
 	position:relative; */
 	margin:0 auto;
 	text-align:center;
-/* 	left:400px;
-	width:200px;
-	bottom:430px;
-	font-style:italic;
-	font-size:20pt;
-	font-family:Neoneon;
-	color:red;
-	text-align:center; */
+	/* 	left:400px;
+        width:200px;
+        bottom:430px;
+        font-style:italic;
+        font-size:20pt;
+        font-family:Neoneon;
+        color:red;
+        text-align:center; */
 }
 
 /***************************
@@ -1826,7 +1825,7 @@ div.content section.movie_info3 div img:hover { /* �뜝�럩逾졿쾬�꼶�
 .gohomebtn img{
 	width:160px;
 	height:70px;
-	}
+}
 
 /***************************
 	footer
@@ -1837,7 +1836,7 @@ footer .container{
 }
 .footernav{
 	border-top:1px solid lightgray;
-	
+
 }
 
 .footernav a{
@@ -1900,7 +1899,7 @@ div.section4 div#weather_icon div:nth-child(2) { /* �궇�뵪 �쁺�뿭 di
 }
 div.section4 div#weather_icon div#weather_info ul li{ /* �궇�뵪 �긽�꽭 怨듯넻 */
 	list-style-type:none;
-	text-align:center;	
+	text-align:center;
 	color:white;
 	margin:5px 0px;
 }
@@ -1950,7 +1949,7 @@ section.board form table.comment_box tr td:first-child,
 section.board form table.comment_box tr td:nth-child(3) {
 	border: 1px solid gray;
 	padding:10px;
-	width:150px;	
+	width:150px;
 }
 section.board form table.table th {
 	width:20%;
@@ -2009,12 +2008,12 @@ section.myreview table#boardMaster div.maxSize{ /* @ */
 	white-space:nowrap;
 	position:relative;
 	top:11px;
-} 
+}
 
-section.board form#commentForm table.comment_box tr td:nth-child(2) textarea{ 
+section.board form#commentForm table.comment_box tr td:nth-child(2) textarea{
 	position:relative;
 	height:80px;
-	bottom:40px;	
+	bottom:40px;
 	resize:none;
 }
 section.board form#commentForm table.comment_box tr td:nth-child(2) {
@@ -2022,7 +2021,7 @@ section.board form#commentForm table.comment_box tr td:nth-child(2) {
 	top:50px;
 }
 section.board form#commentForm table.comment_box tr img:hover {
-	background: gray;	
+	background: gray;
 }
 section.board form#commentForm table.comment_box tr img {
 	border: 1px solid lightgray;
@@ -2048,7 +2047,7 @@ section.board form#commentForm table.comment_box tr td a:nth-child(4) img:hover{
 	background: red;
 }
 section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment1,
-section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment2, 
+section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment2,
 section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment3,
 section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment4,
 section.board form#commentForm table.comment_box div.hiddenEdit textarea#editComment5 {
@@ -2056,8 +2055,8 @@ section.board form#commentForm table.comment_box div.hiddenEdit textarea#editCom
 	bottom:43px;
 	margin-left:5px;
 	height:55px;
-}	
-	
+}
+
 section.board form#commentForm table.comment_box div.hiddenEdit {
 	width:460px; height:70px;
 }
@@ -2126,7 +2125,7 @@ section.indexSearch div.movieSearch {
 }
 section.indexSearch div.movieSearchTitle {
 	border-bottom:3px solid lightgray;
-	height:130px;	
+	height:130px;
 }
 section.indexSearch div.movieSearch img {
 	width:300px;
@@ -2138,7 +2137,7 @@ section.indexSearch div.movieSearchResult {
 section.indexSearch div.movieSearchInfo {
 	border:2px groove black;
 	height:384.5px; width:234px;
-	margin:20px 0px 0px 30px;	
+	margin:20px 0px 0px 30px;
 	display:inline-block;
 	border-radius:4px;
 }
@@ -2162,7 +2161,7 @@ section.indexSearch div.movieSearchResult div.movieSearchInfo p {
 }
 section.indexSearch div.movieSearchResult a#moreResult {
 	position:relative;
-	left:40px; bottom:150px;/* top:50px; */ 
+	left:40px; bottom:150px;/* top:50px; */
 	font-size:12pt;
 	color:gray;
 	text-decoration-line:none;
@@ -2184,12 +2183,12 @@ section.indexSearch div.noticeSearch {
 section.indexSearch div.noticeSearch div.noticeSearchResult div.noticeSearchTitle {
 	margin-top:60px;
 	border-bottom:3px solid lightgray;
-	height:110px;	
+	height:110px;
 }
 section.indexSearch div.noticeSearchResult div.noticeSearchTitle img {
 	width:250px;
 	height:100px;
-	
+
 }
 section.indexSearch div.noticeSearchResult table {
 	border:1px solid lightgray;
@@ -2209,7 +2208,7 @@ section.indexSearch div.noticeSearchResult table th:nth-child(3) {
 	width:10px;
 }
 section.indexSearch table td {
-	font-weight:700;	
+	font-weight:700;
 }
 section.indexSearch div.noticeSearchResult table td:nth-child(2) a{
 	text-decoration-line:none;
@@ -2223,7 +2222,7 @@ section.indexSearch div.noticeSearchResult table td:nth-child(1),
 section.indexSearch div.boardSearchResult table td:nth-child(1){
 	color:gray;
 	font-style:italic;
-	font-weight:700;	
+	font-weight:700;
 }
 section.indexSearch div.noticeSearchResult table td:nth-child(2),
 section.indexSearch div.noticeSearchResult table th:nth-child(2) {
@@ -2264,12 +2263,12 @@ section.indexSearch div.boardSearch {
 section.indexSearch div.boardSearch div.boardSearchResult div.boardSearchTitle {
 	margin-top:60px;
 	border-bottom:3px solid lightgray;
-	height:110px;	
+	height:110px;
 }
 section.indexSearch div.boardSearchResult div.boardSearchTitle img {
 	width:200px;
 	height:100px;
-	
+
 }
 section.indexSearch div.boardSearchResult table {
 	border:1px solid lightgray;
@@ -2362,21 +2361,3 @@ section.indexSearch div.boardSearch p {
 	font-weight:700;
 	font-style:italic;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

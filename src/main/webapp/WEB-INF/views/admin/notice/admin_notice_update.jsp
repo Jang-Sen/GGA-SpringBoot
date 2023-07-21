@@ -85,26 +85,30 @@ function writeReset(){
 		<img src="http://localhost:9000/images/adminnoticetitle.png">
 		</div>
 		<section class="admin_notice">
-			<form name="updateForm" action="admin_notice_update_proc"  method="post">
-			<input type= "hidden" name="nid" value="${noticeVo.nid}">
+			<form name="updateForm" action="/admin_notice_update"  method="post" enctype="multipart/form-data" >
+			<input type= "hidden" name="nid" value="${notice.nid}">
+			<input type= "hidden" name="page" value="${page}">
+			<input type= "hidden" name="gfile" value="${notice.gfile}">
+			<input type= "hidden" name="gsfile" value="${notice.gsfile}">
+			<input type = "file" name = "file1">
 				<table class="table table-bordered" style="width: 90%;">
 					<tr>
 						<th>제목</th>
 						<td colspan="3">
-							<input type="text" name="ntitle" class="ninput" id="atitle" value="${noticeVo.ntitle }">
+							<input type="text" name="ntitle" class="ninput" id="atitle" value="${notice.ntitle }">
 						</td>
 					</tr>
 					<tr>
 						<th>내용</th>
 						<td colspan="3">
-							<textarea rows="20" cols="80%" name="ncontent" class="ntextarea" id="atextarea" >${noticeVo.ncontent }</textarea>
+							<textarea rows="20" cols="80%" name="ncontent" class="ntextarea" id="atextarea" >${notice.ncontent }</textarea>
 						</td>
 					</tr>					
 					<tr>
 						<td colspan="4">
 							<button class="btn btn-outline-secondary" type="button" id="btnNoticeUpdateProc">수정완료</button>
 							<button class="btn btn-outline-secondary" type="reset" >다시쓰기</button>
-							<a href="admin_notice_list?ntitle=${noticeVo.nid }">
+							<a href="/admin_notice_content/${page}/${notice.nid }">
 								<button class="btn btn-outline-secondary" type="button">이전으로</button></a>
 						</td>				
 					</tr>

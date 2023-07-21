@@ -56,8 +56,10 @@ font-weight:500;
 		<img src="http://localhost:9000/images/adminnoticetitle.png">
 		</div>
 		<section class="admin_notice">
-			<form name="deleteForm" action="admin_notice_delete_proc" method="post">
-			<input type = "hidden" name="nid" value = "${nid}">
+			<form name="deleteForm" action="/admin_notice_delete" method="post">
+			<input type = "hidden" name="nid" value = "${notice.nid}">
+			<input type = "hidden" name="gfile" value = "${notice.gfile}">
+			<input type = "hidden" name="gsfile" value = "${notice.gsfile}">
 				<table class="delete_table"style="width: 60%;">
 					<tr>					
 						<td class="really">정말로 삭제 하시겠습니까?</td>
@@ -66,9 +68,9 @@ font-weight:500;
 					<tr>
 						<td colspan="5" >
 							<button class="btn btn-outline-secondary" type="button" id="btnNoticeDelete" >삭제하기</button>
-							<a href="admin_notice_content?nid=${nid}">
+							<a href="/admin_notice_content/${page}/${notice.nid}">
 							<button class="btn btn-outline-secondary" type="button">이전으로</button></a>
-							<a href="admin_notice_list">
+							<a href="/admin_notice_list">
 							<button class="btn btn-outline-secondary" type="button">리스트</button></a>
 						</td>				
 					</tr>				

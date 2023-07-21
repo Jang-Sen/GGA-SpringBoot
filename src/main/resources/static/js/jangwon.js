@@ -2,11 +2,11 @@ $(document).ready(function(){
 
 	/* 윈도우 창 */
 	$("#findIdBtn").click(function(){
-		window.open("login_idFind.do", "_blank", "width=600, height=550");
+		window.open("/login_idFind", "_blank", "width=600, height=550");
 	}); // findIdBtn
 
 	$("#findPwBtn").click(function(){
-		window.open("login_pwFind.do", "_blank", "width=600, height=580");
+		window.open("/login_pwFind", "_blank", "width=600, height=580");
 	}); // findPwBtn
 
 
@@ -30,13 +30,14 @@ $(document).ready(function(){
 			return false;
 		} else {
 			$.ajax({
-				url : "login_idFind_proc.do?name=" + name + "&birth=" + birth + "&phone=" + phone ,
+				url : "/login_idFind_proc/" + name + "/" + birth + "/" + phone ,
 				success : function(result){
+					alert(result);
 					if (result == ""){
 						alert("존재하지 않는 정보입니다.");
-						location.href="login_idFind.do";
+						location.href="/login_idFind";
 					} else {
-						location.href="login_idSelect.do?id=" + result;
+						location.href="/login_idSelect/" + result;
 					}
 				}
 

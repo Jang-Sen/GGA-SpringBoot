@@ -16,4 +16,20 @@ public class NoticeService {
     public List<NoticeDto> list(PageDto pageDto){
         return noticeMapper.list(pageDto);
     }
+
+    public NoticeDto content(String nid){
+        return noticeMapper.content(nid);
+    }
+
+    public int insert(NoticeDto noticeDto){
+        return noticeMapper.insert(noticeDto);
+    }
+
+    public int update(NoticeDto noticeDto){
+        return noticeMapper.update(noticeDto);
+    }
+
+    public int delete(String nid){
+        return noticeMapper.delete(nid);
+    }
 }

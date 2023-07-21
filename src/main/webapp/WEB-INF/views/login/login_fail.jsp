@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>gga_plz</title>
 <script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <script src="http://localhost:9000/js/gga_jquery.js"></script> <!-- gga_jquery.js -->
@@ -88,15 +88,15 @@
 			<section class="login">
 				<ul>
 					<li>
-						<a href= "http://localhost:9000/join">
+						<a href= "http://localhost:9000/join.do">
 							<img src="http://localhost:9000/images/joinbtn.png" class="loginbtnbtn"></a>
-						<a href= "http://localhost:9000/login">
+						<a href= "http://localhost:9000/login.do">
 							<img src="http://localhost:9000/images/loginbtn.png" class="loginbtnbtn">
 						</a>
 					</li>
 					<li>
 						<span><a href="#" id="findIdBtn" >아이디 찾기></a></span>
-						<span><a href="http://localhost:9000/login_pwFind">비밀번호 찾기></a></span>
+						<span><a href="http://localhost:9000/login_pwFind.do">비밀번호 찾기></a></span>
 					</li>
 				</ul>
 			</section>

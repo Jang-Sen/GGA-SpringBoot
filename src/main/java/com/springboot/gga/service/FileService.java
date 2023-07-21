@@ -48,7 +48,6 @@ public class FileService {
      * fileCheck 기능 - 파일이 존재하면  boardVo에 gfile, gsfile set!, 없으면 boardVo 리턴!
      */
     public FileDto fileCheck(FileDto fileDto) {
-        System.out.println("name---> " + fileDto.getFile1().getOriginalFilename());
         if(fileDto.getFile1().getOriginalFilename() != null
                 && !fileDto.getFile1().getOriginalFilename().equals("")) {  //파일이 존재하면
 

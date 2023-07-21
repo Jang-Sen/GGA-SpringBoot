@@ -72,30 +72,30 @@ height:600px;
 				<table class="table table-bordered" style="width: 90%;">
 					<tr>
 						<th>제목</th>
-						<td>${noticeVo.ntitle}</td>
+						<td>${notice.ntitle}</td>
 					</tr>
 					<tr>
 						<th>내용</th>
 						<td>
-							${noticeVo.ncontent }<br><br><br>
-							<c:if test="${noticeVo.nsfile != null}">
-								<img src="http://localhost:9000/upload/${noticeVo.nsfile}">
+							${notice.ncontent }<br><br><br>
+							<c:if test="${notice.gsfile != null}">
+								<img src="http://localhost:9000/upload/${notice.gsfile}">
 							</c:if>
 						</td>
 					</tr>
 					<tr>
 						<th>조회수</th>
-						<td>${noticeVo.nhits }</td>
+						<td>${notice.nhits }</td>
 					</tr>
 					<tr>
 						<th>작성일자</th>
-						<td>${noticeVo.ndate }</td>
+						<td>${notice.ndate }</td>
 					</tr>		
 					<tr>
 						<td colspan="2">
-							<a href="notice_list">
+							<a href="/notice_list">
 								<button class="btn btn-outline-secondary" type="button">이전으로</button></a>
-							<a href="http://localhost:9000/index">
+							<a href="http://localhost:9000">
 								<button class="btn btn-outline-secondary" type="button">홈으로</button></a>
 						</td>				
 					</tr>			

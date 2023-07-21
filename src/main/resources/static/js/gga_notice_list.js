@@ -17,7 +17,7 @@ $(document).ready(function(){
 				for(obj of notice.list){
 					output += "<tr>";
 					output += "<td>"+ obj.rno +"</td>";
-					output += "<td><a href="+"'"+"notice_content.do?nid="+obj.nid+"'>"+obj.ntitle+"</a></td>";
+					output += "<td><a href="+"'"+"/notice_content/" + page + "/" + obj.nid+"'>"+obj.ntitle+"</a></td>";
 					output += "<td>"+ obj.nhits +"</td>";
 					output += "<td>"+ obj.ndate +"</td>";
 					output += "</tr>";

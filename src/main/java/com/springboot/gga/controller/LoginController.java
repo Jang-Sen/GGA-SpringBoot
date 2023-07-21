@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
@@ -15,6 +16,36 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
     @Autowired
     private MemberService memberService;
+
+    // 패스워드 찾기
+    @GetMapping("login_pwFind")
+    public String login_pwFind(){
+        return "/login/login_pwFind";
+    }
+
+    // 아이디 찾기 결과 출력
+    @GetMapping("login_idSelect/{id}")
+    public String login_idSelect(@PathVariable String id, Model model){
+        model.addAttribute("id", id);
+        return "/login/login_idSelect";
+    }
+
+//    // 아이디 찾기 진행
+//    @GetMapping("login_idFind_proc/{name}/{birth}/{phone}")
+//    @ResponseBody
+//    public String login_idFind_proc(@PathVariable String name,@PathVariable String birth, @PathVariable String phone){
+//        Map<String,String> param = new HashMap<String,String>();
+//        param.put("name", name);
+//        param.put("birth", birth);
+//        param.put("phone", phone);
+//        return memberService.findId(param);
+//    }
+
+    // 아이디 찾기
+    @GetMapping("login_idFind")
+    public String login_idFind() {
+        return "/login/login_idFind";
+    }
 
 
     // 로그인 proc

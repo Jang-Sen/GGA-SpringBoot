@@ -156,4 +156,42 @@ $(document).on('change', '.form-control', function() {
   		});
 });
 
+	/* 내정보 수정 모달 - 송지웅 23-07-20*/
+
+	$(".mypageModal").click(function (){
+		$(".modal-bg").show();
+		$(".modal-wrap").show();
+		$('html').css({
+			overflow:'hidden',
+			height : 'auto'
+		});
+	});
+
+	$(".modalClose").click(function (){
+		$(".modal-bg").hide();
+		$(".modal-wrap").hide();
+		$('html').removeAttr('style');
+	});
+	$(".modalConfirm").click(function (){
+// alert($("#mypageNameCheck").val());
+// alert($("#mypagePassCheck").val());
+// alert($("#mypageSuccess").val());
+		$.ajax({
+			url : "/mypage_passCheck/"+$("#mypagePassCheck").val()+"/"+$("#mypageNameCheck").val(),
+			success : function(result){
+				if(result == "1"){
+//
+					alert("맞음");
+					alert("본인 인증 성공!!")
+					location.href= "http://localhost:9000/mypage_update/"+$("#mypageSuccess").val();
+				}else {
+					alert("비밀번호가 일치하지 않습니다.");
+					$("#mypagePassCheck").val("");
+					$("#mypagePassCheck").focus();
+// alert("틀림");
+				}
+			}
+		})
+	});
+
 });

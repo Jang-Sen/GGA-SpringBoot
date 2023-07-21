@@ -1,5 +1,6 @@
 package com.springboot.gga.service;
 
+import com.springboot.gga.dto.BoardCommentDto;
 import com.springboot.gga.dto.BoardDto;
 import com.springboot.gga.dto.PageDto;
 import com.springboot.gga.repository.BoardMapper;
@@ -13,6 +14,9 @@ public class BoardService {
     @Autowired
     private BoardMapper boardMapper;
 
+    /**
+     * Board
+     */
     public List<BoardDto> list(PageDto pageDto){
         return boardMapper.list(pageDto);
     }
@@ -29,12 +33,32 @@ public class BoardService {
         return  boardMapper.update(boardDto);
     }
 
-    public String getOldFile(String bid){
-        return boardMapper.getOldFile(bid);
-    }
-
     public int delete(String bid){
         return boardMapper.delete(bid);
+    }
+
+    /**
+     * BoardComment
+     */
+    public String commentSelect(String bcid){
+        return boardMapper.commentSelect(bcid);
+    }
+
+    public int commentInsert(BoardCommentDto boardCommentDto){
+        return boardMapper.commentInsert(boardCommentDto);
+    }
+
+//    public List<BoardCommentDto> comment(PageDto pageDto, String bid){
+    public List<BoardCommentDto> comment(PageDto pageDto){
+        return boardMapper.comment(pageDto);
+    }
+
+    public int commentDelete(String bcid){
+        return boardMapper.commentDelete(bcid);
+    }
+
+    public int commentUpdate(String bcid, String updateComment){
+        return boardMapper.commentUpdate(bcid, updateComment);
     }
 
 }

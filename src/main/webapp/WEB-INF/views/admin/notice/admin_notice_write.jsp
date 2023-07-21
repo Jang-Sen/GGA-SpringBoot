@@ -51,18 +51,18 @@ section.admin_notice table {
 		<img src="http://localhost:9000/images/adminnoticetitle.png">
 		</div>
 		<section class="admin_notice">
-			<form name="writeForm" action="admin_notice_write_proc"  method="post" enctype="multipart/form-data">
+			<form name="writeForm" action="/admin_notice_write"  method="post" enctype="multipart/form-data">
 				<table class="table table-bordered" style="width: 90%;">
 					<tr>
 						<th>제목</th>
 						<td colspan="3">
-							<input type="text" name="ntitle" class="ninput" id="ntitle" value="${noticevo.ntitle}">
+							<input type="text" name="ntitle" class="ninput" id="ntitle" value="${notice.ntitle}">
 						</td>
 					</tr>
 					<tr>
 						<th>내용</th>
 						<td colspan="3">
-							<textarea rows="20" cols="80%" name="ncontent" class="ntextarea" id="ntextarea">${noticevo.ncontent }</textarea>
+							<textarea rows="20" cols="80%" name="ncontent" class="ntextarea" id="ntextarea">${notice.ncontent }</textarea>
 						</td>
 					</tr>	
 					<tr>
@@ -75,7 +75,7 @@ section.admin_notice table {
 						<td colspan="4">
 							<button class="btn btn-outline-secondary" type="button" id="btnNoticeWrite">등록완료</button>
 							<button class="btn btn-outline-secondary" type="reset" >다시쓰기</button>
-							<a href="admin_notice_list">
+							<a href="/admin_notice_list">
 								<button class="btn btn-outline-secondary" type="button">이전으로</button></a>
 						</td>				
 					</tr>

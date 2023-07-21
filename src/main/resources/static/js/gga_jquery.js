@@ -642,9 +642,17 @@ $(document).ready(function(){
 			alert("이름을 입력해주세요.");
 			$("#name").focus();
 			return false;
-		} else if ($("#birth").val() == ""){
-			alert("생년월일을 입력해주세요.");
-			$("#birth").focus();
+		} else if ($("#birth").val().length <= 7) {
+			if($("#birth").val()
+				== ""){
+				alert("생년월일을 입력해주세요.");
+				$("#birth").focus();
+			}else{
+				alert("생년월일 형식이 올바르지 않습니다.")
+				$("#birth").val("");
+				$("#birth").focus();
+			}
+
 			return false;
 		} else if ($("input[name = 'gender']:checked").length == 0){
 			alert("성별을 선택해주세요.");
@@ -652,10 +660,19 @@ $(document).ready(function(){
 		} else if ($("input[name = 'tel']:checked").length == 0){
 			alert("통신사를 선택해주세요.");
 			return false;
-		} else if ($("#phone").val() == ""){
-			alert("번호를 입력해주세요.");
-			$("#phone").focus();
-			return false;
+		} else if ($("#phone").val().length != 11){
+			if($("#phone").val()
+				== ""){
+				alert("번호를 입력해주세요.");
+				$("#phone").focus();
+				return false;
+			}else {
+				alert("번호형식이 올바르지 않습니다.");
+				$("#phone").focus();
+				$("#phone").val("");
+				return false;
+			}
+
 		} else if ($("#email1").val() == ""){
 			alert("이메일을 입력해주세요.");
 			$("#email1").focus();
@@ -672,17 +689,22 @@ $(document).ready(function(){
 			alert("차량번호를 입력해주세요.");
 			$("#car2").focus();
 			return false;
-		} else if ($("input[name = 'genre']:checked").length == 0 && $("input[name = 'genre']:checked").length > 4){
+		} else if ($("input[name = 'genre']:checked").length == 0 || $("input[name = 'genre']:checked").length > 4){
 			alert("선호 영화를 선택해주세요. (3개까지 선택 가능)");
 			return false;
 		} else{
+			if($("#phoneConfirm").val() == 0){
+				alert("휴대폰 인증을 진행해주세요.");
+				$("#phone").focus();
+				return false;
 
+			}
 			joinForm.submit();
 		}
 	}); // btnJoin
 	/*
-     * 숫자만 입력
-     */
+    * 숫자만 입력
+    */
 	$("input:text[numberOnly]").on("keyup", function() {
 		$(this).val($(this).val().replace(/[^0-9]/g,""));
 	});
@@ -701,11 +723,13 @@ $(document).ready(function(){
 				success : function(result){
 					if (result == 1){
 						$("#idCheck_msg").text("이미 사용중인 아이디입니다.").css("color", "red")
-							.css("font-size", "11px").css("display", "block");
+							.css("font-size", "11px").css("display", "block").css("margin","7px 0px 0px 175px");
+
 						$("#id").focus();
 					} else if (result == 0){
 						$("#idCheck_msg").text("사용 가능한 아이디입니다.").css("color", "blue")
-							.css("font-size", "11px").css("display", "block");
+							.css("font-size", "11px").css("display", "block").css("margin","7px 0px 0px 175px");
+
 
 						$("#pass").focus();
 					}
@@ -733,16 +757,17 @@ $(document).ready(function(){
 		if ($("#pass").val() != "" && $("#cpass").val() != ""){
 			if ($("#pass").val() == $("#cpass").val()){
 				$("#cmsg").text("비밀번호가 일치합니다.").css("color", "blue")
-					.css("font-size", "11px").css("display", "block");
+					.css("font-size", "10pt").css("display", "block").css("margin","7px 0px 0px 175px");
+
 			} else{
 				$("#cmsg").text("비밀번호가 일치하지 않습니다. 다시 입력해주세요.").css("color", "red")
-					.css("font-size", "11px").css("display", "block");
+					.css("font-size", "10pt").css("display", "block").css("margin","7px 0px 0px 175px");
+
 
 				$("#pass").focus();
 			}
 		}
 	}); // cpass
-
 	/**
 	 * 로그인
 	 */
@@ -752,14 +777,16 @@ $(document).ready(function(){
 			$("#id").focus();
 			return false;
 		} else if ($("#pass").val() == ""){
-			alert("비밀번호를 입력해주세요.");
+			alert("비밀번호를입력해주세요.");
 			$("#pass").focus();
 			return false;
 		} else{
-			// 서버 전송
+// 서버 전송
 			loginForm.submit();
+
 		}
 	}); // btnLogin
+
 
 	// -- 오장원
 	
