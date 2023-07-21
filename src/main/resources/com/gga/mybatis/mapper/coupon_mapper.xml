@@ -19,27 +19,38 @@
     </update>
 
     <select id="list" parameterType="Map" resultType="com.springboot.gga.dto.CouponDto">
-            select couponid, couponname, startdate, enddate, discount, id, used
+            select couponid, couponname, startdate, enddate, discount, id, used, ccategory
             from gga_coupon
-            where id=#{id} and used=#{used}
+            where id=#{id} and used=#{used} and ccategory =#{ccategory}
     </select>
 
 
     <insert id="insertInit1" parameterType="String">
-        insert into gga_coupon(couponid, couponname, startdate, enddate, discount, id)
+        insert into gga_coupon(couponid, couponname, startdate, enddate, discount, id, ccategory)
         values ('coupon_' || LTRIM(to_char(sequ_gga_coupon.nextval,'0000')),'[신규회원] 1000원 쿠폰',
-                sysdate,sysdate + INTERVAL '1' YEAR, 1000, #{id})
+                sysdate,sysdate + INTERVAL '1' YEAR, 1000, #{id}, 'product')
     </insert>
     <insert id="insertInit2" parameterType="String">
-        insert into gga_coupon(couponid, couponname, startdate, enddate, discount, id)
+        insert into gga_coupon(couponid, couponname, startdate, enddate, discount, id, ccategory)
         values ('coupon_' || LTRIM(to_char(sequ_gga_coupon.nextval,'0000')),'[신규회원] 2000원 쿠폰',
-                sysdate,sysdate + INTERVAL '1' YEAR, 2000, #{id})
+                sysdate,sysdate + INTERVAL '1' YEAR, 2000, #{id}, 'product')
     </insert>
     <insert id="insertInit3" parameterType="String">
-        insert into gga_coupon(couponid, couponname, startdate, enddate, discount, id)
+        insert into gga_coupon(couponid, couponname, startdate, enddate, discount, id, ccategory)
         values ('coupon_' || LTRIM(to_char(sequ_gga_coupon.nextval,'0000')),'[신규회원] 3000원 쿠폰',
-                sysdate,sysdate + INTERVAL '1' YEAR, 3000, #{id})
+                sysdate,sysdate + INTERVAL '1' YEAR, 3000, #{id}, 'product')
     </insert>
+    <insert id="insertInit4" parameterType="String">
+        insert into gga_coupon(couponid, couponname, startdate, enddate, discount, id, ccategory)
+        values ('coupon_' || LTRIM(to_char(sequ_gga_coupon.nextval,'0000')),'[신규회원] 5000원 쿠폰 (첫 예매 한정)',
+                sysdate,sysdate + INTERVAL '1' YEAR, 5000, #{id}, 'moviefirst')
+    </insert>
+    <insert id="insertInit5" parameterType="String">
+        insert into gga_coupon(couponid, couponname, startdate, enddate, discount, id, ccategory)
+        values ('coupon_' || LTRIM(to_char(sequ_gga_coupon.nextval,'0000')),'[신규회원] 3000원 쿠폰',
+                sysdate,sysdate + INTERVAL '1' YEAR, 3000, #{id}, 'movie')
+    </insert>
+
 
 </mapper>
 

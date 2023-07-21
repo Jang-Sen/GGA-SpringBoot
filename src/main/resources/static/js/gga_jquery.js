@@ -399,6 +399,32 @@ $(document).ready(function(){
 		}
 
 	});
+
+	$("#seatpaybtn").click(function(){
+		var seatcom = $("#seatcom").html();
+		var seattotal = $("#seattotal").html();
+		var oid = $("#oidinput").val();
+		if (seatcom == "") {
+			alert("좌석을 선택해 주세요.");
+		} else {
+			$.ajax({
+				url: "http://localhost:9000/seatProc/" + seatcom + "/" + seattotal + "/" + oid+"/",
+				async: false,
+			}).done(function(data) {
+				if (data == '0') {
+					// 반환된 int 값이 0인 경우의 처리 로직
+					alert("이미 선택된 좌석입니다.");
+				} else if (data == '1') {
+					location.replace("http://localhost:9000/order_pay/"+oid);
+				}
+
+				});
+		}
+
+
+	});
+
+
 	$("#seatkakaobtn").click(function() {
 		var seatcom = $("#seatcom").html();
 		var seattotal = $("#seattotal").html();
@@ -519,9 +545,13 @@ $(document).ready(function(){
 			alert("차량번호를 입력해 주세요.")
 			$("#ocarnum").focus();
 			return false;
-		}else if($("#oemail").val()==""){
+		}else if($("#email1").val()=="") {
 			alert("이메일을 입력해 주세요.")
-			$("#oemail").focus();
+			$("#email1").focus();
+			return false;
+		}else if($("#email2").val()==""){
+			alert("이메일 뒷자리를 입력해 주세요.")
+			$("#email2").focus();
 			return false;
 		}else if($("#ophone").val()==""){
 			alert("전화번호를 입력해 주세요.")

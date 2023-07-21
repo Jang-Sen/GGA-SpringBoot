@@ -55,6 +55,7 @@ public class ProductOrderController {
         Map param = new HashMap<>();
         param.put("used", used);
         param.put("id", svo.getId());
+        param.put("ccategory","product");
         List<CouponDto> couponList = couponService.list(param);
 
         ProductDto productDto = productService.content(pid);

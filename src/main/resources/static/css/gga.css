@@ -1220,7 +1220,7 @@ height:100px;
 
 .ticket_bac1{
 	line-height:normal;
-margin-top:50px; 
+/*margin-top:20px;*/
   display : block;
   text-decoration : none;
   color : rgb(37, 37, 37);
@@ -1232,7 +1232,7 @@ margin-top:50px;
 	height:300px;
 }
 .ticket_bac1 select:first-child{
-	margin-top:130px;
+	margin-top:30px;
 }
 .ticket_bac1 select{
 	display:inline-block;

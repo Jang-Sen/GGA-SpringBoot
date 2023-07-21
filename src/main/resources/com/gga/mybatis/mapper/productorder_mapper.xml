@@ -6,7 +6,7 @@
 
 <mapper namespace="com.springboot.gga.repository.ProductOrderMapper">
     <insert id="insertOne" parameterType="Map" useGeneratedKeys="true" keyProperty="poid" keyColumn="poid">
-        insert into gga_product_order(poid, pid, couponid, id, qty, finalprice, podate, couponname)
+        insert into gga_product_order(poid, pid, couponid, id, qty, finalprice, podate, couponname, ccategory)
         values(#{poid}, #{pid},
         <if test="couponid == null">
             #{couponid, jdbcType=NULL},
@@ -14,7 +14,7 @@
         <if test="couponid != null">
             #{couponid},
         </if>
-               #{id}, 1, #{finalAmount}, sysdate, #{couponname})
+               #{id}, 1, #{finalAmount}, sysdate, #{couponname}, #{ccategory})
     </insert>
 
     <select id="selectOne" parameterType="String" resultType="com.springboot.gga.dto.ProductOrderDto">
