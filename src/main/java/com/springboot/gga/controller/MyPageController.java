@@ -3,6 +3,7 @@ package com.springboot.gga.controller;
 import com.springboot.gga.dto.MemberDto;
 import com.springboot.gga.dto.OrderconDto;
 import com.springboot.gga.dto.ProductOrderDto;
+import com.springboot.gga.service.CouponService;
 import com.springboot.gga.service.MemberService;
 import com.springboot.gga.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class MyPageController {
@@ -21,6 +24,9 @@ public class MyPageController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private CouponService couponService;
 
 
     // 내 정보 수정 완료
@@ -85,10 +91,18 @@ public class MyPageController {
         OrderconDto orderconDto = orderService.selectOrderconlist(oconid);
         String seat = orderconDto.getSeat();
         String[] seatList = seat.split(",");
+        Map param = new HashMap();
+
+
         for(String seatNumber : seatList) {
             orderService.resetSeat(seatNumber);
         }
         orderService.deleteOrdercon(oconid);
+        param.put("couponid", orderconDto.getCouponid());
+        param.put("id",orderconDto.getId());
+
+        couponService.updateCancel(param);
+
         return "/mypage/mypage";
 
     }

@@ -1,4 +1,4 @@
-package com.springboot.gga.controller;
+package  com.springboot.gga.controller;
 
 import com.springboot.gga.dto.CartDto;
 import com.springboot.gga.dto.SessionDto;
@@ -16,8 +16,7 @@ public class CartController {
 
     @Autowired
     private CartService cartService;
-
-
+  
     @GetMapping("/cartModal")
     public String cartModal(HttpSession session, Model model) {
         SessionDto svo = (SessionDto) session.getAttribute("svo");

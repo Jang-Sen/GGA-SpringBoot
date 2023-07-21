@@ -34,12 +34,20 @@ public class RestController {
 
     @Autowired
     OrderService orderService;
-    @GetMapping("orderconProc/{impuid}/{merchantuid}/{pgtype}/{oid}")
-    public String orderconProc(@PathVariable String impuid, @PathVariable String merchantuid, @PathVariable String pgtype,@PathVariable String oid){
+    @PostMapping("orderconProc")
+    public void orderconProc(@RequestParam String oid,
+                               @RequestParam String couponid,
+                               @RequestParam String finalAmount,
+                               @RequestParam String couponName,
+                               @RequestParam String impuid,
+                               @RequestParam String merchantuid,
+                               @RequestParam String paymethodcon){
+
+
         OrderDto orderDto = orderService.select(oid);
 
-        int result =  orderService.insertocon(impuid, merchantuid, pgtype,orderDto);
-        return String.valueOf(result);
+        orderService.insertocon(impuid, merchantuid, paymethodcon,orderDto, couponid, finalAmount, couponName);
+
     }
 
     @GetMapping("seatProc/{seat}/{price}/{oid}")
@@ -127,6 +135,10 @@ public class RestController {
         return String.valueOf(couponService.updateAdd(param));
     }
 
+
+
+
+
     @GetMapping("coupon_updateCancel/{id}/{couponid}")
     public String coupon_updateCancel(@PathVariable String id,
                                       @PathVariable String couponid) {
@@ -154,6 +166,7 @@ public class RestController {
         param.put("couponname", couponName);
         param.put("finalAmount", finalAmount);
         param.put("id", svo.getId());
+        param.put("ccategory","product");
         productOrderService.insertOne(param);
         return orderNumber;
     }

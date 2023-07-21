@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class OrderconDto {
     String oconid, movieid, movieordertitle, seat, otime, odate, oname, ocarnum,  oemail ,ophone,
-            orderdate ,	impuid ,merchantuid , pgtype, movieorderposter, id ;
+            orderdate ,	impuid ,merchantuid , pgtype, movieorderposter, id,couponid,couponName,finalAmount ;
     int price;
 
 }

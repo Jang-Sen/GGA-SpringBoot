@@ -23,6 +23,8 @@ public class CouponService {
     public int insertInit3(String id) {
         return couponMapper.insertInit3(id);
     }
+    public int insertInit4(String id) { return couponMapper.insertInit4(id);}
+    public int insertInit5(String id) { return couponMapper.insertInit5(id);}
 
     public List<CouponDto> list(Map param) {
         return couponMapper.list(param);
