@@ -186,72 +186,6 @@
 				</c:if>
 			</c:forEach>
 
-
-			<!-- <div class="seatrow">
-              <div class="seat" id="S_0001" data-num="0"></div>
-              <div class="seat" id="S_0002" data-num="1"></div>
-              <div class="seat" id="S_0003" data-num="2"></div>
-              <div class="seat" id="S_0004" data-num="3"></div>
-              <div class="seat" id="S_0005" data-num="4"></div>
-              <div class="seat" id="S_0006" data-num="5"></div>
-              <div class="seat" id="S_0007" data-num="6"></div>
-              <div class="seat" id="S_0008" data-num="7"></div>
-            </div>
-
-            <div class="seatrow">
-              <div class="seat" id="S_0009" data-num="8"></div>
-              <div class="seat" id="S_0010" data-num="9"></div>
-              <div class="seat" id="S_0011" data-num="10"></div>
-              <div class="seat" id="S_0012" data-num="11"></div>
-              <div class="seat occupied" id="S_0013" data-num="12"></div>
-              <div class="seat" id="S_0014" data-num="13"></div>
-              <div class="seat" id="S_0015" data-num="14"></div>
-              <div class="seat" id="S_0016" data-num="15"></div>
-            </div>
-
-            <div class="seatrow">
-              <div class="seat" id="S_0017" data-num="16"></div>
-              <div class="seat" id="S_0018" data-num="17"></div>
-              <div class="seat" id="S_0019" data-num="18"></div>
-              <div class="seat" id="S_0020" data-num="19"></div>
-              <div class="seat" id="S_0021" data-num="20"></div>
-              <div class="seat" id="S_0022" data-num="21"></div>
-              <div class="seat occupied" id="S_0023" data-num="22"></div>
-              <div class="seat occupied" id="S_0024" data-num="23"></div>
-            </div>
-
-            <div class="seatrow">
-              <div class="seat" id="S_0025" data-num="24"></div>
-              <div class="seat" id="S_0026" data-num="25"></div>
-              <div class="seat" id="S_0027" data-num="26"></div>
-              <div class="seat" id="S_0028" data-num="27"></div>
-              <div class="seat" id="S_0029" data-num="28"></div>
-              <div class="seat" id="S_0030" data-num="29"></div>
-              <div class="seat" id="S_0031" data-num="30"></div>
-              <div class="seat" id="S_0032" data-num="31"></div>
-            </div>
-
-            <div class="seatrow">
-              <div class="seat" id="S_0033" data-num="32"></div>
-              <div class="seat" id="S_0034" data-num="33"></div>
-              <div class="seat" id="S_0035" data-num="34"></div>
-              <div class="seat occupied" id="S_0036" data-num="35"></div>
-              <div class="seat occupied" id="S_0037" data-num="36"></div>
-              <div class="seat" id="S_0038" data-num="37"></div>
-              <div class="seat" id="S_0039" data-num="38"></div>
-              <div class="seat" id="S_0040" data-num="39"></div>
-            </div>
-
-            <div class="seatrow">
-              <div class="seat" id="S_0041" data-num="40"></div>
-              <div class="seat" id="S_0042" data-num="41"></div>
-              <div class="seat" id="S_0043" data-num="42"></div>
-              <div class="seat" id="S_0044" data-num="43"></div>
-              <div class="seat occupied" id="S_0045" data-num="44"></div>
-              <div class="seat occupied" id="S_0046" data-num="45"></div>
-              <div class="seat occupied" id="S_0047" data-num="46"></div>
-              <div class="seat" id="S_0048" data-num="47"></div>
-            </div> -->
 		</div>
 		<div class="textandbtn">
 			<p class="text">
@@ -261,13 +195,16 @@
 			<p class="text">
 				<!-- 선택한 좌석은 총 <span id="count">0</span> 좌석이며,  -->
 				가격 : <span id="seattotal">0</span> 원
-				<input type="text" name="oidinput" id="oidinput" value="${oid}">
+				<input type="hidden" name="oidinput" id="oidinput" value="${oid}">
 			</p>
+			<button type="submit" class="seatbtn" id="seatpaybtn" name="seatpaybtn">
+				<img src="http://localhost:9000/images/buybtn.png"></button>
 
-			<button type="submit" class="seatbtn" id="seatcardbtn" name="seatcardbtn">
+
+			<%--<button type="submit" class="seatbtn" id="seatcardbtn" name="seatcardbtn">
 				<img src="http://localhost:9000/images/cardpay.png"></button>
 			<button type="submit" class="seatbtn" id="seatkakaobtn" name="seatkakaobtn">
-				<img src="http://localhost:9000/images/kakaopay.png"></button>
+				<img src="http://localhost:9000/images/kakaopay.png"></button>--%>
 		</div>
 	</div>
 	<!-- content -->

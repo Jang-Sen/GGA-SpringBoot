@@ -27,6 +27,8 @@ public class JoinController {
             couponService.insertInit1(memberDto.getId());
             couponService.insertInit2(memberDto.getId());
             couponService.insertInit3(memberDto.getId());
+            couponService.insertInit4(memberDto.getId());
+            couponService.insertInit5(memberDto.getId());
         }
         return "redirect:/login";
     }
