@@ -13,14 +13,14 @@ $(document).ready(function(){
 				let output = "<table class='table table-bordered'  id='admin_notice_json' style='width: 90%;'>";
 				output += "<tr><td colspan='4'>";
 				output += "<a href='/admin_notice_write' class='writebtn'>";
-				output += "	<img src='http://localhost:9000/gga_plz/images/writebtn.png'></a>";
+				output += "	<img src='http://localhost:9000/images/writebtn.png'></a>";
 				output += "</td></tr>";
 				output += "<tr><th>번호</th><th>제목</th><th>조회수</th><th>작성일자</th></tr>";
 				
-				for(obj of list){
+				for(obj of admin_notice.list){
 					output += "<tr>";
 					output += "<td>"+ obj.rno +"</td>";
-					output += "<td><a href="+"'"+"admin_notice_content.do?nid="+obj.nid+"'>"+obj.ntitle+"</a></td>";
+					output += "<td><a href="+"'"+"/admin_notice_content/" + page + "/" + obj.nid+"'>"+obj.ntitle+"</a></td>";
 					output += "<td>"+ obj.nhits +"</td>";
 					output += "<td>"+ obj.ndate +"</td>";
 					output += "</tr>";

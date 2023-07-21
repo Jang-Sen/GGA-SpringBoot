@@ -28,10 +28,14 @@ public class PageService {
             pageSize = 5;
         }else if(pageDto.getServiceName().equals("board")) {
             pageSize = 10;
+        } else if(pageDto.getServiceName().equals("boardComment")) {
+            pageSize = 5;
         } else if (pageDto.getServiceName().equals("product")){
             pageSize = 5;
         } else if (pageDto.getServiceName().equals("movie")){
             pageSize = 7;
+        } else if (pageDto.getServiceName().equals("admin_notice")){
+            pageSize = 10;
         }
 
         // 총 페이지 수 계산

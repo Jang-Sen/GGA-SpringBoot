@@ -6,9 +6,9 @@
 
 <mapper namespace="com.springboot.gga.repository.JoinMapper">
 
-	<insert id="join" parameterType="com.springboot.gga.dto.MemberDto" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+	<insert id="join" parameterType="com.springboot.gga.dto.MemberDto">
 		INSERT INTO GGA_MEMBER(ID, PASS, NAME, BIRTH, GENDER, TEL, PHONE, EMAIL, CARNUM, GENRE, MDATE)
-		VALUES(#{id}, #{pass}, #{name}, #{birth}, #{gender}, #{tel}, #{phone}, #{email}, #{carnum}, #{genreList}, SYSDATE)
+		VALUES(#{id, jdbcType=VARCHAR}, #{pass}, #{name, jdbcType=VARCHAR}, #{birth}, #{gender}, #{tel}, #{phone}, #{email, jdbcType=VARCHAR}, #{carnum}, #{genreList}, SYSDATE)
 	</insert>
 
 </mapper>

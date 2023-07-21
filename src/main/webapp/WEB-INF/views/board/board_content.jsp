@@ -23,10 +23,10 @@
 $(document).ready(function(){
 	var pager = jQuery('#ampaginationsm').pagination({
 	
-	    maxSize: '${maxSize}',	    		// max page size
-	    totals: '${totals}',	// total pages	
-	    page: '${page}',		// initial page 현제 페이지 reqpage
-	    pageSize: '${pageSize}',			// max number items per page
+	    maxSize: '${page.pageCount}',	    		// max page size
+	    totals: '${page.dbCount}',	// total pages
+	    page: '${page.reqPage}',		// initial page 현제 페이지 reqpage
+	    pageSize: '${page.pageSize}',			// max number items per page
 	
 	    // custom labels		
 	    lastText: '&raquo;&raquo;', 		
@@ -40,7 +40,7 @@ $(document).ready(function(){
 	
 	jQuery('#ampaginationsm').on('am.pagination.change',function(e){
 		   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-           $(location).attr('href', "http://localhost:9000/board_content?page="+e.page+"&bid="+bid);      /* 페이징 해야함 */
+           $(location).attr('href', "http://localhost:9000/board_content/" + e.page + "/" + bid);      /* 페이징 해야함 */
     });
 	
 	});
@@ -103,6 +103,7 @@ section.board form table.table img.scoreImg {
 			<h1>게시판</h1>
 			<form name="contentForm" action="/board_delete"  method="post">
 				<table class="table table-bordered" style="width: 90%;">
+					<input type = "hidden" name = "bid" value = "${board.bid}">
 					<tr>
 						<th>제목</th>
 						<td>${board.btitle}</td>
@@ -111,6 +112,9 @@ section.board form table.table img.scoreImg {
 						<th>내용</th>
 						<td style = "word-break: break-all">
 							${board.bcontent}<br><br><br><br>
+								<c:if test="${board.gsfile != null}">
+									<img src="http://localhost:9000/upload/${board.gsfile}">
+								</c:if>
 						</td>
 					</tr>
 					<tr>
@@ -136,21 +140,21 @@ section.board form table.table img.scoreImg {
 					</tr>					
 					<tr>
 						<td colspan="4">
-<%--						<c:choose>--%>
-<%--							<c:when test="${sessionScope.svo.id != null }">--%>
-<%--								<c:if test="${authCheck == 1 }">--%>
-									<a href ="/board_update/${page}/${board.bid}">
+						<c:choose>
+							<c:when test="${sessionScope.svo.id != null }">
+								<c:if test="${authCheck == 1 }">
+									<a href ="/board_update/${page.reqPage}/${board.bid}">
 										<img id="boardUpdate" src="http://localhost:9000/images/editbtn.png"></a>
 										<img id="boardDelete" src="http://localhost:9000/images/deletebtn.png">
-<%--								</c:if>--%>
+								</c:if>
 									<a href="/board_list">
 										<img id="boardList"src="http://localhost:9000/images/listbtn.png"></a>
-<%--							</c:when>--%>
-<%--							<c:otherwise>--%>
+							</c:when>
+							<c:otherwise>
 								<a href="/board_list">
 									<img id="boardList"src="http://localhost:9000/images/listbtn.png"></a>
-<%--							</c:otherwise>--%>
-<%--						</c:choose>--%>
+							</c:otherwise>
+						</c:choose>
 						</td>				
 					</tr>
 				</table>
@@ -162,14 +166,15 @@ section.board form table.table img.scoreImg {
 				<div id="commentLogin"><a href="http://localhost:9000/login">댓글 확인 및 작성은 로그인이 필요합니다.</a></div>
 			</c:when>
 			<c:otherwise>
-			<form id="commentForm" name="commentForm" action="board_comment_proc"  method="post">
+			<form id="commentForm" name="commentForm" action="/board_comment"  method="post">
 				<input type="hidden" name="sid" value="${sessionScope.svo.id }">
-				<input type="hidden" name="bid" value="${board.bid }">
+				<input type="hidden" name="page" id="commentPage" value="${page.reqPage}">
+				<input type="hidden" name="bid" value="${board.bid}">
 				<table border="3" class="comment_box">
 					<tr>
-						<th colspan="3">뎃글 창</th>
+						<th colspan="3">댓글 창</th>
 					</tr>
-					<c:if test="${totals == 0}">
+					<c:if test="${page.dbCount == 0}">
 					<tr>
 						<td><input type="text" name="sid" value="${sessionScope.svo.id }" disabled></td>
 						<td><textarea maxlength="199" id="bccontent" name="bccontent" placeholder="*200자 이내로 작성해주세요"></textarea></td>
@@ -181,9 +186,9 @@ section.board form table.table img.scoreImg {
 						</td>
 					</tr>
 					</c:if>
-					<c:if test="${totals > 0 }">
-					<c:forEach var="commentList" items="${bcVo}">
-					<c:set var="i" value="${i+1 }"></c:set>
+					<c:if test="${page.dbCount > 0 }">
+					<c:forEach var="commentList" items="${comment}">
+					<c:set var="i" value="${i+1}"></c:set>
 					<tr>
 						<td>${commentList.sid }</td>
 							<td>

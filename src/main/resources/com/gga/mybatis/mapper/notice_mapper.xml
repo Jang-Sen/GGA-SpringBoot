@@ -13,30 +13,30 @@
 			where rno between #{startCount} and #{endCount}
 	</select>
 
-<!--	<select id="content" parameterType="String" resultType="com.gga.vo.NoticeVo">-->
-<!--		SELECT NID,NTITLE,NCONTENT,NHITS,NDATE, GFILE, GSFILE-->
-<!--		 FROM GGA_NOTICE WHERE NID=#{nid}-->
-<!--	</select>-->
-<!--	-->
-<!--	<insert id="insert" parameterType="com.gga.vo.NoticeVo">-->
-<!--		insert into gga_notice(nid, ntitle, ncontent, nhits, ndate, GFILE, GSFILE) -->
-<!--		values('n_'||ltrim(to_char(sequ_gga_notice_nid.nextval,'0000')), #{ntitle}, #{ncontent}, 0, sysdate, -->
-<!--		 #{GFILE, jdbcType=VARCHAR},#{GSFILE, jdbcType=VARCHAR})-->
-<!--	</insert>-->
-<!--	-->
+	<select id="content" parameterType="String" resultType="com.springboot.gga.dto.NoticeDto">
+		SELECT NID,NTITLE,NCONTENT,NHITS,NDATE, GFILE, GSFILE
+		 FROM GGA_NOTICE WHERE NID=#{nid}
+	</select>
+
+	<insert id="insert" parameterType="com.springboot.gga.dto.NoticeDto">
+		insert into gga_notice(nid, ntitle, ncontent, nhits, ndate, GFILE, GSFILE)
+		values('n_'||ltrim(to_char(sequ_gga_notice_nid.nextval,'0000')), #{ntitle}, #{ncontent}, 0, sysdate,
+		 #{gfile, jdbcType=VARCHAR},#{gsfile, jdbcType=VARCHAR})
+	</insert>
+
 <!--	<select id = "list2" resultType="com.gga.vo.NoticeVo">-->
 <!--		select rownum rno, ntitle, nhits, ndate, nid -->
 <!--			from (select ntitle, nhits, ndate, nid from gga_notice order by ndate desc)-->
 <!--	</select>-->
 
-<!--	<update id="update" parameterType="com.gga.vo.NoticeVo" >-->
-<!--		update gga_notice set ntitle=#{ntitle}, ncontent=#{ncontent} where nid=#{nid}-->
-<!--	</update>-->
-<!--	-->
-<!--	<delete id="delete" parameterType ="String">-->
-<!--		delete from gga_notice where nid=#{nid}-->
-<!--	</delete>-->
-<!--	-->
+	<update id="update" parameterType="com.springboot.gga.dto.NoticeDto" >
+		update gga_notice set ntitle=#{ntitle}, ncontent=#{ncontent}, gfile=#{gfile}, gsfile=#{gsfile} where nid=#{nid}
+	</update>
+
+	<delete id="delete" parameterType ="String">
+		delete from gga_notice where nid=#{nid}
+	</delete>
+
 <!--	<update id="updateHits" parameterType="String">-->
 <!--		update gga_notice set nhits = nhits+1 where nid=#{nid}-->
 <!--	</update>-->

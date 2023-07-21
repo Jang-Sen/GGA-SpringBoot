@@ -31,9 +31,31 @@ public class RestController {
     private ProductOrderService productOrderService;
     @Autowired
     private CartService cartService;
-
     @Autowired
     OrderService orderService;
+
+    // 아이디 찾기 진행
+
+    @GetMapping("login_idFind_proc/{name}/{birth}/{phone}")
+    public String login_idFind_proc(@PathVariable String name,@PathVariable String birth, @PathVariable String phone){
+        Map<String,String> param = new HashMap<String,String>();
+        param.put("name", name);
+        param.put("birth", birth);
+        param.put("phone", phone);
+        return memberService.findId(param);
+    }
+    //마이페이지 정보수정 접근 전 본인 확인
+
+    @GetMapping("mypage_passCheck/{modalPass}/{modalName}")
+    public String mypage_passCheck(@PathVariable String modalPass,@PathVariable String modalName) {
+        MemberDto memberDto = new MemberDto();
+        memberDto.setName(modalName);
+        memberDto.setPass(modalPass);
+        String result = memberService.passCheck(memberDto);
+        return result;
+    }
+    @GetMapping("orderconProc/{impuid}/{merchantuid}/{pgtype}/{oid}")
+    public String orderconProc(@PathVariable String impuid, @PathVariable String merchantuid, @PathVariable String pgtype,@PathVariable String oid){
     @PostMapping("orderconProc")
     public void orderconProc(@RequestParam String oid,
                                @RequestParam String couponid,
@@ -74,6 +96,9 @@ public class RestController {
 
     }
 
+    /**
+     * Board
+     */
     @GetMapping("board_list/{page}")
     public Map board_list(@PathVariable String page){
         Map map = new HashMap();
@@ -86,6 +111,38 @@ public class RestController {
         return map;
     }
 
+    @GetMapping("board_comment_delete/{bcid}")
+    public String board_comment_delete(@PathVariable String bcid){
+        String viewName = "";
+        String bid = boardService.commentSelect(bcid);
+        int result = boardService.commentDelete(bcid);
+
+        if (result == 1){
+            viewName = bid;
+        }
+
+        return viewName;
+    }
+
+    @GetMapping("board_comment_update/{bcid}/{updateComment}")
+    public String board_comment_update(@PathVariable String bcid, @PathVariable String updateComment){
+        Map map = new HashMap();
+        String viewName = "";
+        String bid = boardService.commentSelect(bcid);
+        int result = boardService.commentUpdate(bcid, updateComment);
+
+        if (result == 1){
+            viewName = bid;
+        }
+
+        map.put("bcid", bcid);
+        map.put("updateComment", updateComment);
+        return viewName;
+    }
+
+    /**
+     * Notice
+     */
     @GetMapping("notice_list/{page}")
     public Map notice_list(@PathVariable String page){
         Map map = new HashMap();

@@ -93,7 +93,13 @@ section.board table {
 							<textarea maxlength="200" rows="20" cols="80%" name="bcontent" class="btextarea" id="btextarea"></textarea>
 							<span id="bcmsg"></span>
 						</td>
-					</tr>		
+					</tr>
+					<tr>
+						<th>파일첨부</th>
+						<td>
+							<input type="file" name="file1" >
+						</td>
+					</tr>
 					<tr>
 						<td colspan="4">
 							<button class="btn btn-outline-secondary" type="button" id="btnBoardWrite">등록완료</button>
