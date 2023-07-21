@@ -873,24 +873,25 @@ div.coron_input {
 .cartbtn img{
 	width:135px;
 }
-.cartbtn2 img{
-	width:135px;
-}
 .cartbtn:hover{
 	cursor:pointer;
 }
 .cartbtn2:hover{
 	cursor:pointer;
 }
+.cartbtn2 img{
+	width:135px;
+}
 .store_cart {
-	margin-left:870px;
-	margin-bottom:20px;
-	
+	margin-left:600px;
+	margin-top: -20px;
 }
 .store_cart img{
 	width:60px;
 	height:60px;
-	
+	padding: 0px;
+	margin: 0px;
+
 }
 .buybtn{
 	display:flex;

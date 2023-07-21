@@ -6,6 +6,18 @@
 
 <mapper namespace="com.springboot.gga.repository.CouponMapper">
 
+    <update id="updateListAdd" parameterType="String">
+        UPDATE gga_coupon
+        SET used = 1
+        WHERE couponid IN
+        <foreach item="couponid" collection="array" open="(" separator="," close=")">
+            <if test="couponid != null and couponid != ''">
+                #{couponid}
+            </if>
+        </foreach>
+    </update>
+
+
     <update id="updateAdd" parameterType="Map">
         UPDATE gga_coupon
         SET used = '1'
@@ -19,9 +31,9 @@
     </update>
 
     <select id="list" parameterType="Map" resultType="com.springboot.gga.dto.CouponDto">
-            select couponid, couponname, startdate, enddate, discount, id, used, ccategory
-            from gga_coupon
-            where id=#{id} and used=#{used} and ccategory =#{ccategory}
+        select couponid, couponname, startdate, enddate, discount, id, used
+        from gga_coupon
+        where id=#{id} and used=#{used} and ccategory=#{ccategory}
     </select>
 
 

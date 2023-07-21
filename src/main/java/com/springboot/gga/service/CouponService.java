@@ -37,4 +37,8 @@ public class CouponService {
     public int updateCancel(Map param) {
         return couponMapper.updateCancel(param);
     }
+
+    public int updateListAdd(String[] couponidArray) {
+        return couponMapper.updateListAdd(couponidArray);
+    }
 }

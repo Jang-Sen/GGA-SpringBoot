@@ -51,6 +51,20 @@
 .card-body {
     text-align: center;
 }
+
+.cartbtn2 img{
+    width:135px;
+}
+.store_cart {
+    margin-left:600px;
+    margin-top: -20px;
+}
+.store_cart img{
+    width:60px;
+    height:60px;
+    padding: 0px;
+    margin: 0px;
+}
 </style>
 <script>
     $(document).ready(function (){
@@ -84,22 +98,28 @@
                 <a href="http://localhost:9000/store/beverage" class="nav-link"><span class="text-black text-decoration-none" style="font-size: 21px;">음료</span></a>
                 <span class="mx-3"></span>
                 <a href="http://localhost:9000/store/card" class="nav-link"><span class="text-black text-decoration-none" style="font-size: 21px;">상품권</span></a>
+                <c:choose>
+                    <c:when test="${svo == null }">
+                        <div class="store_cart">
+                            <a href="http://localhost:9000/login?redirectURL=/store/combo">
+                                <img src="http://localhost:9000/images/cartimg.png">
+                            </a></div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="store_cart">
+                            <span>
+                                <button type="button" id="store_cart" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#cartModal">
+                                    <img src="${count > 0 ? 'http://localhost:9000/images/cartimg2.png' : 'http://localhost:9000/images/cartimg.png'}">
+                                </button>
+                            </span>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
             </nav>
-            <hr>
+            <hr style="margin-top: -2px;">
 		</div>
 		<br>
-		<c:choose>
-			<c:when test="${svo == null }">
-				<div class="store_cart">
-					    		<a href="http://localhost:9000/login">
-									<img src="http://localhost:9000/images/cartimg.png">
-								</a></div>
-							</c:when>
-			<c:otherwise>
-				<div class="store_cart"><button type="button" id="store_cart" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#cartModal">
-				<img src="http://localhost:9000/images/cartimg.png"></button></div>
-			</c:otherwise>
-		</c:choose>
+
         <div class="row">
             <c:forEach var="product" items="${list}">
                 <div class="col-md-4">
@@ -113,7 +133,7 @@
                             <div class="storebtns">
                                 <c:choose>
                                     <c:when test="${svo == null }">
-                                        <a href="http://localhost:9000/login">
+                                        <a href="http://localhost:9000/login?redirectURL=/store/combo">
                                             <img class="cartbtnimg" style="width: 135px" src="http://localhost:9000/images/cartbtn.png">
                                         </a>
                                     </c:when>
@@ -124,11 +144,11 @@
                                 </c:choose>
                                 <c:choose>
                                     <c:when test="${svo == null }">
-                                        <a class="productbuybtn" class="cartbtn2" id="${product.pid}">
+                                        <a class="cartbtn2" class="productbuybtn"  href="http://localhost:9000/login?redirectURL=/store/combo">
                                             <img src="http://localhost:9000/images/buybtn.png"></a>
                                     </c:when>
                                     <c:otherwise>
-                                        <a class="productbuybtn" class="cartbtn2" id="${product.pid}">
+                                        <a class="cartbtn2" class="productbuybtn" id="${product.pid}">
                                             <img src="http://localhost:9000/images/buybtn.png"></a>
                                     </c:otherwise>
                                 </c:choose>
@@ -191,7 +211,7 @@
         <!-- Modal footer -->
         <div class="footer" id="keepshoppinggocart">
           <button type="button" class="shoppingbtn" id="shoppingbtn"><img src="http://localhost:9000/images/keepshoppingbtn.png"></button>
-          <button type="button" class="gocartbtn" id="gocartbtn"><img src="http://localhost:9000/images/gocartbtn.png"></button>
+          <button type="button" class="gocartbtn1" id="gocartbtn"><img src="http://localhost:9000/images/gocartbtn.png"></button>
         </div>
         
       </div>

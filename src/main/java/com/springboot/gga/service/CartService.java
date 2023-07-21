@@ -21,4 +21,28 @@ public class CartService {
     public List<CartDto> list(String id) {
         return cartMapper.list(id);
     }
+
+    public int update(Map param) {
+        return cartMapper.update(param);
+    }
+
+    public List<CartDto> contentList() {
+        return cartMapper.contentList();
+    }
+
+    public int deleteList(String[] cidArray) {
+        return cartMapper.deleteList(cidArray);
+    }
+
+    public int searchCart(Map param) {
+        return cartMapper.searchCart(param);
+    }
+
+    public int deleteOne(Map param) {
+        return cartMapper.deleteOne(param);
+    }
+
+    public int count(String id) {
+        return cartMapper.count(id);
+    }
 }

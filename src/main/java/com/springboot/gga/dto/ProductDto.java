@@ -8,5 +8,5 @@ import lombok.EqualsAndHashCode;
 public class ProductDto extends FileDto {
 
     int rno;
-    String pid, pname, pprice, pcategory, page;
+    String pid, pname, pprice, gfile, gsfile, pcategory, page;
 }

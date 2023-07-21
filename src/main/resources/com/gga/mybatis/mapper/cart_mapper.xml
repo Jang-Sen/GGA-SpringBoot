@@ -6,6 +6,40 @@
 
 <mapper namespace="com.springboot.gga.repository.CartMapper">
 
+    <select id="count" parameterType="String" resultType="int">
+        select count(*) from gga_cart where id=#{id}
+    </select>
+
+    <delete id="deleteOne" parameterType="Map">
+        delete from gga_cart
+        where id=#{id} and pid=#{pid}
+    </delete>
+
+    <select id="searchCart" parameterType="Map" resultType="int">
+        select count(*)
+        from gga_cart
+        where id=#{id} and pid=#{pid}
+    </select>
+
+    <delete id="deleteList" parameterType="String">
+        delete gga_cart
+        where cid in
+        <foreach item="cid" collection="array" open="(" separator="," close=")">
+            #{cid}
+        </foreach>
+    </delete>
+
+    <select id="contentList" resultType="com.springboot.gga.dto.CartDto">
+        select p.pid, pname, pprice, gfile, gsfile, pcategory, cid, qty
+        from gga_cart c, gga_product p
+        where c.pid = p.pid
+    </select>
+
+
+    <update id="update" parameterType="Map">
+        update gga_cart set qty=#{qty} where id=#{id} and pid=#{pid}
+    </update>
+
     <select id="list" parameterType="String" resultType="com.springboot.gga.dto.CartDto">
         select p.pid, cid, pname, pprice, qty, gsfile
         from gga_cart c, gga_product p

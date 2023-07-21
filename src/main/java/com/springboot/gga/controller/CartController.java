@@ -16,7 +16,7 @@ public class CartController {
 
     @Autowired
     private CartService cartService;
-
+  
     @GetMapping("/cartModal")
     public String cartModal(HttpSession session, Model model) {
         SessionDto svo = (SessionDto) session.getAttribute("svo");

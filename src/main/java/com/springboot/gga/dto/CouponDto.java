@@ -6,4 +6,5 @@ import lombok.Data;
 public class CouponDto {
 
     String couponid, couponname, startdate, enddate, discount, used, ccategory;
+    String couponidArray;
 }
