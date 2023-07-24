@@ -45,62 +45,6 @@
 		position: relative;
 		right:25px;
 	}
-	.modalJoin-bg {
-		width:100%;
-		height: 100%;
-		position: fixed;
-		top:0; left:0; right:0;
-		background: rgba(0,0,0,0.3);
-		z-index: 999;
-		display: none;
-	}
-	.modalJoin-wrap {
-		position: absolute;
-		top:80%; left:50%;
-		transform: translate(-50%,-50%);
-		width: 300px; height: 180px;
-		background: #fff;
-		z-index: 1000;
-		display: none;
-		background: powderblue;
-		/*background-image:url("http://localhost:9000/images/wick3.jpg");*/
-	}
-	.modalJoin-wrap span#modalJoinGuide {
-		color:gray;
-		font-size: 10pt;
-		font-weight: 700;
-		font-style: italic;
-		padding: 20px;
-		position: relative;
-		top:10px;
-	}
-	.modalJoin-wrap span#modalJoinTitle {
-		display: block;
-		text-align: center;
-		font-size: 17pt;
-		font-weight: 700;
-		margin-top: 20px;
-	}
-	.modalJoin-wrap input {
-		border: 1px groove black;
-		position: relative;
-		left: 50px; top: 10px;
-		width: 200px; height: 35px;
-		border-radius: 3px;
-	}
-	.modalJoin-wrap button {
-		border: 1px solid black;
-		background: white;
-		position: relative;
-		border-radius: 3px;
-		width: 100px;
-		padding: 3px;
-		top: 20px; left:47px;
-	}
-	.modalJoin-wrap button:hover {
-		background: powderblue;
-		border: 2px solid black;
-	}
 
 </style>
 

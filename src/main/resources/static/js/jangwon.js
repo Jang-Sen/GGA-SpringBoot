@@ -2,11 +2,58 @@ $(document).ready(function(){
 
 	/* 윈도우 창 */
 	$("#findIdBtn").click(function(){
-		window.open("/login_idFind", "_blank", "width=600, height=550");
+		// window.open("/login_idFind", "_blank", "width=600, height=550");
+		$(".modalLogin-bg").show();
+		$(".modalLogin-wrap").show();
+		$('html').css({
+			overflow:'hidden',
+			height : 'auto'
+		});
+
+		$("#modalLoginGuide").text("※ 정보를 입력해주세요. ※");
+		$("#modalLoginTitle").text("아이디 찾기");
+		$("#modalLoginType1").text("이름 : ");
+		$("#modalLoginType2").text("생년월일 : ");
+		$("#modalLoginType3").text("전화번호 : ");
+
+
+		$(".modalLoginClose").click(function (){
+			$(".modalLogin-bg").hide();
+			$(".modalLogin-wrap").hide();
+			$('html').removeAttr('style');
+		});
+
 	}); // findIdBtn
 
 	$("#findPwBtn").click(function(){
-		window.open("/login_pwFind", "_blank", "width=600, height=580");
+		// window.open("/login_pwFind", "_blank", "width=600, height=580");
+		$(".modalLogin-bg").show();
+		$(".modalLogin-wrap").show();
+		$('html').css({
+			overflow:'hidden',
+			height : 'auto'
+		});
+
+		$("#modalLoginGuide").text("※ 정보를 입력해주세요. ※");
+		$("#modalLoginTitle").text("비밀번호 찾기");
+		$("#modalLoginType1").text("아이디 : ")
+			.css("margin-right","20px");
+		$("#modalLoginFind1").css("position","relative")
+			.css("right","30px");
+		$("#modalLoginType2").text("이름 : ")
+			.css("margin-right","5px");
+		$("#modalLoginFind2").css("position","relative")
+			.css("right","2px");
+		$("#modalLoginType3").text("전화번호 : ")
+			.css("margin-right","38px");
+		$("#modalLoginFind3").css("position","relative")
+			.css("right","33px");
+
+		$(".modalLoginClose").click(function (){
+			$(".modalLogin-bg").hide();
+			$(".modalLogin-wrap").hide();
+			$('html').removeAttr('style');
+		});
 	}); // findPwBtn
 
 
