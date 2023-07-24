@@ -2362,3 +2362,168 @@ section.indexSearch div.boardSearch p {
 	font-weight:700;
 	font-style:italic;
 }
+
+/* 모달창 디자인 - 송지웅*/
+
+.modal-bg,
+.modalJoin-bg,
+.modalLogin-bg {
+	width:100%;
+	height: 100%;
+	position: fixed;
+	top:0; left:0; right:0;
+	background: rgba(0,0,0,0.3);
+	z-index: 999;
+	display: none;
+}
+.modalJoin-wrap {
+	border: 1px solid black;
+	border-radius: 3px;
+	position: absolute;
+	top:80%; left:50%;
+	transform: translate(-50%,-50%);
+	width: 300px; height: 180px;
+	background: #fff;
+	z-index: 1000;
+	display: none;
+	background: powderblue;
+	/*background-image:url("http://localhost:9000/images/wick3.jpg");*/
+}
+.modalLogin-wrap {
+	border: 1px solid black;
+	border-radius: 3px;
+	position: absolute;
+	top:50%; left:50%;
+	transform: translate(-50%,-50%);
+	width: 400px; height: 500px;
+	background: #fff;
+	z-index: 1000;
+	display: none;
+	background: powderblue;
+	/*background-image:url("http://localhost:9000/images/wick3.jpg");*/
+}
+
+.modal-wrap {
+	position: absolute;
+	top:50%; left:50%;
+	transform: translate(-50%,-50%);
+	width: 300px; height: 180px;
+	background: #fff;
+	z-index: 1000;
+	display: none;
+	background: powderblue;
+	/*background-image:url("http://localhost:9000/images/wick3.jpg");*/
+}
+.modal-wrap span#mypageModalGuide,
+.modalJoin-wrap span#modalJoinGuide,
+.modalLogin-wrap span#modalLoginGuide {
+	color:gray;
+	font-size: 10pt;
+	font-weight: 700;
+	font-style: italic;
+	padding: 20px;
+	position: relative;
+	top:10px;
+}
+.modalLogin-wrap span#modalLoginGuide {
+	font-size: 14pt;
+	font-weight: 700;
+	font-style: italic;
+	position:relative;
+	left:3pt;
+}
+.modal-wrap span#mypageModalTitle,
+.modalJoin-wrap span#modalJoinTitle {
+	display: block;
+	text-align: center;
+	font-size: 17pt;
+	font-weight: 700;
+	margin-top: 20px;
+}
+.modalLogin-wrap span#modalLoginTitle {
+	display: block;
+	font-size: 25pt;
+	font-weight: 700;
+	margin-top: 20px;
+}
+.modal-wrap input,
+.modalJoin-wrap input {
+	border: 1px groove black;
+	position: relative;
+	left: 50px; top: 10px;
+	width: 200px; height: 35px;
+	border-radius: 3px;
+}
+.modal-wrap button,
+.modalJoin-wrap button {
+	border: 1px solid black;
+	background: white;
+	position: relative;
+	border-radius: 3px;
+	width: 100px;
+	padding: 3px;
+	top: 20px; left:47px;
+}
+.modal-wrap button:hover,
+.modalJoin-wrap button:hover,
+.modalLogin-wrap button:hover{
+	background: white;
+	border: 2px solid black;
+}
+
+#modalLoginType1,
+#modalLoginType2,
+#modalLoginType3 {
+	font-size: 15pt;
+	font-weight: 700;
+}
+#modalLoginTitleBox {
+	border-bottom: 2px solid black;
+	width: 300px;
+	position: relative;
+	left:50px;
+}
+
+#modalLoginType1,
+#modalLoginFind1 {
+	margin-top: 40px;
+	margin-left: 15px;
+}
+#modalLoginType2,
+#modalLoginFind2 {
+	margin-top: 50px;
+}
+#modalLoginType3,
+#modalLoginFind3 {
+	margin-top: 50px;
+}
+button.modalLoginConfirm,
+button.modalLoginClose {
+	border: 1px solid black;
+	background: white;
+	position: relative;
+	border-radius: 3px;
+	width: 100px;
+	padding: 3px;
+	top: 20px; left:0px;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
