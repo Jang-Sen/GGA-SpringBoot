@@ -2,58 +2,11 @@ $(document).ready(function(){
 
 	/* 윈도우 창 */
 	$("#findIdBtn").click(function(){
-		// window.open("/login_idFind", "_blank", "width=600, height=550");
-		$(".modalLogin-bg").show();
-		$(".modalLogin-wrap").show();
-		$('html').css({
-			overflow:'hidden',
-			height : 'auto'
-		});
-
-		$("#modalLoginGuide").text("※ 정보를 입력해주세요. ※");
-		$("#modalLoginTitle").text("아이디 찾기");
-		$("#modalLoginType1").text("이름 : ");
-		$("#modalLoginType2").text("생년월일 : ");
-		$("#modalLoginType3").text("전화번호 : ");
-
-
-		$(".modalLoginClose").click(function (){
-			$(".modalLogin-bg").hide();
-			$(".modalLogin-wrap").hide();
-			$('html').removeAttr('style');
-		});
-
+		window.open("/login_idFind", "_blank", "width=600, height=550");
 	}); // findIdBtn
 
 	$("#findPwBtn").click(function(){
-		// window.open("/login_pwFind", "_blank", "width=600, height=580");
-		$(".modalLogin-bg").show();
-		$(".modalLogin-wrap").show();
-		$('html').css({
-			overflow:'hidden',
-			height : 'auto'
-		});
-
-		$("#modalLoginGuide").text("※ 정보를 입력해주세요. ※");
-		$("#modalLoginTitle").text("비밀번호 찾기");
-		$("#modalLoginType1").text("아이디 : ")
-			.css("margin-right","20px");
-		$("#modalLoginFind1").css("position","relative")
-			.css("right","30px");
-		$("#modalLoginType2").text("이름 : ")
-			.css("margin-right","5px");
-		$("#modalLoginFind2").css("position","relative")
-			.css("right","2px");
-		$("#modalLoginType3").text("전화번호 : ")
-			.css("margin-right","38px");
-		$("#modalLoginFind3").css("position","relative")
-			.css("right","33px");
-
-		$(".modalLoginClose").click(function (){
-			$(".modalLogin-bg").hide();
-			$(".modalLogin-wrap").hide();
-			$('html').removeAttr('style');
-		});
+		window.open("/login_pwFind", "_blank", "width=600, height=580");
 	}); // findPwBtn
 
 
@@ -79,12 +32,12 @@ $(document).ready(function(){
 			$.ajax({
 				url : "/login_idFind_proc/" + name + "/" + birth + "/" + phone ,
 				success : function(result){
-					alert(result);
+					// alert(result);
 					if (result == ""){
 						alert("존재하지 않는 정보입니다.");
 						location.href="/login_idFind";
 					} else {
-						location.href="/login_idSelect/" + result;
+						location.href="/login_idSelect/" + result + "/" + name + "/" + birth + "/" + phone;
 					}
 				}
 
@@ -92,6 +45,23 @@ $(document).ready(function(){
 
 		}
 	}); // btnFindId
+
+
+	$("#btnFindPass").click(function (){
+		window.close();
+		let throwId = $("#pwFindId").val();
+		let throwName = $("#pwFindName").val();
+		let throwBirth = $("#pwFindBirth").val();
+		let throwPhone = $("#pwFindPhone").val();
+		// alert($("#pwFindId").val());
+		// alert($("#pwFindName").val());
+		window.open("/login_pwFind/"+throwId+"/"+throwName+"/"+throwBirth+"/"+throwPhone, "_blank", "width=600, height=580");
+	});
+
+	$("#btnFindLogin").click(function (){
+		window.close();
+	});
+
 
 	/* 비밀번호 찾기 입력 */
 	$("#btnFindPw").click(function(){
@@ -111,6 +81,9 @@ $(document).ready(function(){
 			alert("번호를 입력해주세요. '-' 제외");
 			$("#phone").focus();
 			return false;
+		} else if ($("#findConfirm").val() == 0) {
+			alert("휴대폰 인증을 진행해주세요.");
+			return false;
 		} else {
 			var id = $("#id").val();
 			var name = $("#name").val();
@@ -118,18 +91,17 @@ $(document).ready(function(){
 			var phone = $("#phone").val();
 
 			$.ajax({
-				url : "login_pwFind_proc.do?id=" + id + "&name=" + name + "&birth=" + birth + "&phone=" + phone ,
+				url : "/login_pwFind_proc/" + id + "/" + name + "/" + birth + "/" + phone ,
 				success : function(result){
 					if (result == ""){
 						alert("존재하지 않는 정보입니다.");
-						location.href="login_pwFind.do";
+						location.href="/login_pwFind";
 					} else {
-						location.href="login_pwSelect.do?pass=" + result;
+						location.href="/login_pwSelect/" + result + "/" + name;
 					}
 				}
 			}); // ajax
 		}
-
 	}); // btnFindPw
 
 	/**

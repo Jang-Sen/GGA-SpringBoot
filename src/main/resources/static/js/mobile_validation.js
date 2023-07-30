@@ -41,6 +41,28 @@ $(document).ready(function(){
         });
     });
 
+    // 비밀번호 찾기 휴대폰 인증
+    $("#findPhoneCheck").click(function(){
+        $("#findPhoneCheck").text("입력완료").css("background","lightgray");
+        // $.ajax({
+        //     url : "/joinMobileCheck/"+$("#phone").val(),
+        //     success : function (result) {
+        //                    $("#findPhoneCheck").click(function (){
+        //                        if($("#findAccessKey").val() == result) {
+        //                            $("#findPhoneCheck").text("인증완료").css("background","powderblue");
+        //                            $("#findAccessKey").attr("readonly",true);
+        //                            $("#findConfirm").val("1");
+        //                        }else{
+        //                             alert("인증번호가 일치 하지 않습니다. 다시입력해주세요.");
+        //                             $("#findAccessKey").focus();
+        //                        }
+        //                    });
+        //     }
+        // });
+        $("#findAccessKey").show();
+        $("img#btnFindPw").css("postion","relative").css("bottom","59px");
+    });
+
 
 
 

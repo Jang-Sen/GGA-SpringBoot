@@ -34,9 +34,20 @@
 }
 
 .fmsg{
-	position: fixed;
-	bottom: 0;
-	right: 0;
+	position: relative;
+	top: 50px;
+	left: 15px;
+	font-size: 14pt;
+}
+div#passwordSelectTitle p {
+	text-align: center;
+	font-size:25pt;
+	font-weight: 700;
+	margin-top : 100px;
+}
+img#btnFindLogin {
+	position: relative;
+	left:180px; top:10px;
 }
 </style>
 
@@ -46,12 +57,16 @@
 		<div class="login_title">
 			<img src="http://localhost:9000/images/passschtitle.png">
 		</div>
-		<p>입력하신 회원님의 비밀번호 정보입니다.</p>
+			<p>입력하신 회원님의 비밀번호 정보입니다.</p>
+		<div id="passwordSelectTitle">
+			<p>"${name}" 님의 비밀번호는 </p>
+		</div>
 		<div style="text-align : center;">
-			<br><br><br><h3>${ pass }</h3>
+			<br><h1>${ pass } 입니다.</h1>
 		</div>
 		<div class="fmsg">
 			<p>로그인 후 '마이페이지', '내 정보 수정'에서 <strong><span style="color: red;">반드시</span></strong> 비밀번호 변경을 해주세요.</p>
+			<img src="http://localhost:9000/images/loginbtn.png" id="btnFindLogin" class="btnfindproc">
 		</div>
 	</div>
 	<!-- content -->

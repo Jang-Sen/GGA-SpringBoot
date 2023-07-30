@@ -130,8 +130,7 @@
 					<input type="radio" name="tel" value="kt"><span>KT</span>
 					<input type="radio" name="tel" value="lgu"><span>LG U+</span>
 					<input type="text" name="phone" id="phone" maxlength="11" numberOnly placeholder="'-'없이 모두 입력">
-					<button type="button" name="phoneCheck" id="phoneCheck"
-							style="border-radius: 3px; border:2px solid black;">인증하기</button>
+					<button type="button" name="phoneCheck" id="phoneCheck">인증하기</button>
 					<input type="hidden" name="phoneConfirm" id="phoneConfirm" value="1"> <%-- 시연일 때 0으로 바꾸면됨--%>
 				</li>
 				<c:if test="${svo.id == null}">

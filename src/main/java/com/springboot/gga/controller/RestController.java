@@ -34,6 +34,26 @@ public class RestController {
     @Autowired
     OrderService orderService;
 
+    // 로그인 계정 체크
+    @GetMapping("loginCheck/{id}/{pass}")
+    public String loginCheck(@PathVariable String id,@PathVariable String pass){
+        Map<String,String> param = new HashMap<String,String>();
+        param.put("id",id);
+        param.put("pass",pass);
+        return memberService.loginCheck(param);
+    }
+
+    // 비밀번호 찾기 진행
+    @GetMapping("login_pwFind_proc/{id}/{name}/{birth}/{phone}")
+    public String login_pwFind_proc(@PathVariable String id, @PathVariable String name,
+                                    @PathVariable String birth, @PathVariable String phone, Model model){
+        Map<String, String> param = new HashMap<String, String>();
+        param.put("id", id);
+        param.put("name", name);
+        param.put("birth", birth);
+        param.put("phone", phone);
+        return memberService.findPw(param);
+    }
     // 아이디 찾기 진행
 
     @GetMapping("login_idFind_proc/{name}/{birth}/{phone}")

@@ -32,6 +32,19 @@
 	margin-right:20px;
 	width:130px;
 }
+div#idSelectTitle p {
+	text-align: center;
+	font-size:25pt;
+	font-weight: 700;
+	margin-top : 100px;
+}
+img#btnFindPass {
+	border: 2px solid gray;
+	border-radius: 5px;
+	padding: 10px;
+	position: relative;
+	left:185px; top:55px;
+}
 </style>
 
 <body>
@@ -40,10 +53,18 @@
 		<div class="login_title">
 			<img src="http://localhost:9000/images/idschtitle.png">
 		</div>
-		<p>입력하신 회원님의 아이디 정보입니다.</p>
-		<div style="text-align : center;">
-			<br><br><br><h3>${ id }</h3>
+			<p>입력하신 회원님의 아이디 정보입니다.</p>
+		<div id="idSelectTitle">
+			<p>"${name}" 님의 아이디는 </p>
 		</div>
+		<div style="text-align : center;">
+			<br><h1>${ id } 입니다.</h1>
+		</div>
+		<img src="http://localhost:9000/images/passschtitle.png" id="btnFindPass" class="btnfindproc">
+		<input type="hidden" id="pwFindId" value="${id}">
+		<input type="hidden" id="pwFindName" value="${name}">
+		<input type="hidden" id="pwFindBirth" value="${birth}">
+		<input type="hidden" id="pwFindPhone" value="${phone}">
 	</div>
 	<!-- content -->
 	

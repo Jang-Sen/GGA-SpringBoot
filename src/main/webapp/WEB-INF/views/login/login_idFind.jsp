@@ -34,7 +34,7 @@
 }
 </style>
 
-<body>
+<body onresize="parent.resizeTo(600,600)" onload="parent.resizeTo(600,600)">
 	<!-- content -->
 	<div class="container">
 		<div class="login_title">
@@ -50,7 +50,7 @@
 					</li>
 					<li>
 						<label>생년월일</label>
-						<input type="text" name="birth" id="birth" maxlength="6" class="input1" numberOnly placeholder="주민등록번호 앞 6자리">
+						<input type="text" name="birth" id="birth" maxlength="8" class="input1" numberOnly placeholder="주민등록번호 앞 6자리">
 					</li>
 					<li>
 						<label>휴대전화</label>
