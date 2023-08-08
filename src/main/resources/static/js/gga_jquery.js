@@ -825,9 +825,21 @@ $(document).ready(function(){
 			$("#pass").focus();
 			return false;
 		} else{
+			$.ajax({
+				url : "/loginCheck/"+$("#id").val() + "/" + $("#pass").val(),
+				success : function(result) {
+					if(result == 0) {
+						alert("아이디 비밀번호를 확인해주세요.");
+						$("#id").val("").focus();
+						$("#pass").val("").focus();
+						return false;
+					}else{
+						loginForm.submit();
+					}
+				}
+			});
+			// loginForm.submit();
 // 서버 전송
-			loginForm.submit();
-
 		}
 	}); // btnLogin
 

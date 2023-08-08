@@ -13,12 +13,19 @@ public class MemberService {
     @Autowired
     private MemberMapper memberMapper;
 
+
+
     // 마이페이지 정보 수정 본인확인
     public String passCheck(MemberDto memberDto) { return memberMapper.passCheck(memberDto);}
 
+    // 비밀번호 찾기
+    public String findPw(Map<String, String> param) {
+        return memberMapper.findPw(param);
+    }
+
     // 아이디 찾기
     public String findId(Map<String,String> param){
-        return memberMapper.findId(param); //그냥 객체에 담을까 ?
+        return memberMapper.findId(param);
     }
 
     // 마이페이지 정보 수정
@@ -36,9 +43,13 @@ public class MemberService {
         return memberMapper.selectMypage(id);
     }
 
-    // 로그인 체크
+    // 로그인
     public SessionDto login(MemberDto memberDto){
         return memberMapper.login(memberDto);
+    }
+    // 로그인 계정 체크
+    public String loginCheck(Map<String,String> param){
+        return memberMapper.loginCheck(param);
     }
 
 }

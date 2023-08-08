@@ -91,26 +91,7 @@
 							// naver_id_login.setPopup();
 							naver_id_login.init_naver_id_login();
 						</script>
-
-						<div class="modalLogin-bg">
-							<div class="modalLogin-wrap">
-								<span id="modalLoginGuide"></span>
-								<div id="modalLoginTitleBox">
-									<span id="modalLoginTitle"></span>
-								</div>
-								<span id="modalLoginType1"></span>
-								<input type="text" name="modalLoginFind1" id="modalLoginFind1"><br>
-								<span id="modalLoginType2"></span>
-								<input type="text" name="modalLoginFind2" id="modalLoginFind2"><br>
-								<span id="modalLoginType3"></span>
-								<input type="text" name="modalLoginFind3" id="modalLoginFind3"><br>
-								<button type="button" name="modalLoginMobileCheck" id="modalLoginMobileCheck" style="display:none">
-									비밀번호 휴대폰인증 해야함.
-								<button type="button" class="modalLoginConfirm">확인</button>
-								<button type="button" class="modalLoginClose">닫기</button>
-						</div>
-
-						</li>
+  						</li>
 					</ul>
 				</form>
 			</section>

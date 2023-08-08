@@ -2471,45 +2471,32 @@ section.indexSearch div.boardSearch p {
 	border: 2px solid black;
 }
 
-#modalLoginType1,
-#modalLoginType2,
-#modalLoginType3 {
-	font-size: 15pt;
-	font-weight: 700;
-}
-#modalLoginTitleBox {
-	border-bottom: 2px solid black;
-	width: 300px;
-	position: relative;
-	left:50px;
-}
-
-#modalLoginType1,
-#modalLoginFind1 {
-	margin-top: 40px;
-	margin-left: 15px;
-}
-#modalLoginType2,
-#modalLoginFind2 {
-	margin-top: 50px;
-}
-#modalLoginType3,
-#modalLoginFind3 {
-	margin-top: 50px;
-}
-button.modalLoginConfirm,
-button.modalLoginClose {
-	border: 1px solid black;
+#findPhoneCheck {
+	border: 1px dotted black;
+	border-radius: 5px;
 	background: white;
+	padding: 5px;
 	position: relative;
-	border-radius: 3px;
-	width: 100px;
-	padding: 3px;
-	top: 20px; left:0px;
-	margin-top: 30px;
-	margin-left: 10px;
+	left: 180px; bottom: 36.5px;
 }
-
+#phoneCheck {
+	border: 1px dotted black;
+	border-radius: 5px;
+	background: white;
+	padding: 4px;
+}
+img#btnFindPw {
+	position: relative;
+	bottom:25px;
+}
+input#findAccessKey {
+	border-radius: 2px;
+	padding: 3px;
+	position: relative;
+	width: 190px;
+	bottom:71px; left:54px;
+	display:none;
+}
 
 
 

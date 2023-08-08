@@ -17,16 +17,41 @@ public class LoginController {
     @Autowired
     private MemberService memberService;
 
+
+
+    // 패스워드 찾기 결과 출력
+    @GetMapping("login_pwSelect/{pass}/{name}")
+    public String login_pwSelect(@PathVariable String pass, @PathVariable String name, Model model){
+        model.addAttribute("pass", pass);
+        model.addAttribute("name", name);
+        return "/login/login_pwSelect";
+    }
+
     // 패스워드 찾기
     @GetMapping("login_pwFind")
     public String login_pwFind(){
         return "/login/login_pwFind";
     }
 
-    // 아이디 찾기 결과 출력
-    @GetMapping("login_idSelect/{id}")
-    public String login_idSelect(@PathVariable String id, Model model){
+    // 아이디 찾기 후 패스워드 찾기
+    @GetMapping("login_pwFind/{id}/{name}/{birth}/{phone}")
+    public String login_pwFind(@PathVariable String id,@PathVariable String name,
+                               @PathVariable String birth, @PathVariable String phone, Model model){
         model.addAttribute("id", id);
+        model.addAttribute("name", name);
+        model.addAttribute("birth", birth);
+        model.addAttribute("phone", phone);
+        return "/login/login_pwFind";
+    }
+
+    // 아이디 찾기 결과 출력
+    @GetMapping("login_idSelect/{id}/{name}/{birth}/{phone}")
+    public String login_idSelect(@PathVariable String id,@PathVariable String name,
+                                 @PathVariable String birth, @PathVariable String phone, Model model){
+        model.addAttribute("id", id);
+        model.addAttribute("name", name);
+        model.addAttribute("birth", birth);
+        model.addAttribute("phone", phone);
         return "/login/login_idSelect";
     }
 
@@ -50,24 +75,12 @@ public class LoginController {
 
     // 로그인 proc
     @PostMapping("login")
-    public String loginProc(MemberDto memberDto, Model model, HttpSession session){
-//        String viewName = "";
+    public String loginProc(MemberDto memberDto, Model model, HttpSession session) {
         SessionDto sessionDto = memberService.login(memberDto);
-        if(sessionDto.getLoginResult() == 1 ) {
-            // 상태 토큰으로 사용할 랜덤 문자열 생성
-//            String state = generateState();
-            // 세션 또는 별도의 저장 공간에 상태 토큰을 저장
-//            request.session().attribute("state", state);
-//            session.setAttribute("state", state);
-//            return state;
-            model.addAttribute("loginResult","ok");
-//            model.addAttribute("sessionDto",sessionDto);
-            session.setAttribute("svo",sessionDto);
-//            viewName = "index";
+        if (sessionDto.getLoginResult() == 1) {
+            model.addAttribute("loginResult", "ok");
+            session.setAttribute("svo", sessionDto);
         }
-//        else if(sessionDto == null){ 널 체크
-//            viewName = "login_fail";
-//        }
         return "index";
     }
 
@@ -93,16 +106,5 @@ public class LoginController {
     public String login_fail(){
         return "login_fail";
     }
-
-
-
-//    // CSRF 방지를 위한 상태 토큰 생성 코드
-//    // 상태 토큰은 추후 검증을 위해 세션에 저장되어야 한다.
-//
-//
-//    public String generateState() {
-//        SecureRandom random = new SecureRandom();
-//        return new BigInteger(130, random).toString(32);
-//    }
 
 }
