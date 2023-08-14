@@ -108,7 +108,7 @@ section.board div.board_search button:hover { /* 커서이벤트 */
 	</div>
 		<section class="board">
 			<div class="board_search">
-				<input type="text" placeholder=" 게시물 검색" id="btitle" >
+				<input type="text" name = "btitle" placeholder=" 게시물 검색" id="btitle" >
 				<button type="submit" id="btnBoardSearch" class = "boardbtn1"><p>검색</p></button>
 				<a href="/board_list"><button type="submit" class = "boardbtn2"><p>처음으로</p></button></a>
 			</div>
@@ -120,7 +120,7 @@ section.board div.board_search button:hover { /* 커서이벤트 */
 <%--								</a>--%>
 <%--							</c:when>--%>
 <%--							<c:otherwise>--%>
-								<a href="board_write" class="writebtn">
+								<a href="/board_write" class="writebtn">
 									<img src="http://localhost:9000/images/writebtn.png">
 								</a>
 <%--							</c:otherwise>--%>

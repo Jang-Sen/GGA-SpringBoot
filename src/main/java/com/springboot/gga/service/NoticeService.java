@@ -18,6 +18,9 @@ public class NoticeService {
     }
 
     public NoticeDto content(String nid){
+        if (noticeMapper.content(nid) != null){
+            noticeMapper.updateHits(nid);
+        }
         return noticeMapper.content(nid);
     }
 
@@ -31,5 +34,9 @@ public class NoticeService {
 
     public int delete(String nid){
         return noticeMapper.delete(nid);
+    }
+
+    public List<NoticeDto> notice_search(PageDto pageDto){
+        return noticeMapper.notice_search(pageDto);
     }
 }

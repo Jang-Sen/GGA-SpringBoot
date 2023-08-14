@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class BoardService {
@@ -22,6 +23,9 @@ public class BoardService {
     }
 
     public BoardDto content(String bid){
+        if (boardMapper.content(bid) != null){
+            boardMapper.updateHits(bid);
+        }
         return boardMapper.content(bid);
     }
 
@@ -35,6 +39,10 @@ public class BoardService {
 
     public int delete(String bid){
         return boardMapper.delete(bid);
+    }
+
+    public List<BoardDto> searchList(PageDto pageDto){
+        return boardMapper.searchList(pageDto);
     }
 
     /**
@@ -59,6 +67,14 @@ public class BoardService {
 
     public int commentUpdate(String bcid, String updateComment){
         return boardMapper.commentUpdate(bcid, updateComment);
+    }
+
+    public List<BoardDto> commentMaster(PageDto pageDto){
+        return boardMapper.commentMaster(pageDto);
+    }
+
+    public int commentCount(String bid){
+        return boardMapper.commentCount(bid);
     }
 
 }
