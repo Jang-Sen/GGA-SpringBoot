@@ -54,7 +54,7 @@ public class BoardController {
         }
 
         model.addAttribute("page", pageDto);
-        model.addAttribute("board", boardService.content(bid));
+        model.addAttribute("board", boardDto);
         model.addAttribute("comment", comment);
         model.addAttribute("authCheck", authCheck);
 

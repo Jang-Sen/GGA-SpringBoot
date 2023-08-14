@@ -13,4 +13,6 @@ public interface NoticeMapper {
     int insert(NoticeDto noticeDto);
     int update(NoticeDto noticeDto);
     int delete(String nid);
+    List<NoticeDto> notice_search(PageDto pageDto);
+    void updateHits(String nid);
 }

@@ -88,6 +88,12 @@ section.board form table.table img.scoreImg {
 	width:30px;
 }
 
+.boardImg {
+	width: 300px;
+	height: 150px;
+	object-fit: cover;
+}
+
 
 </style>
 <body>
@@ -104,6 +110,7 @@ section.board form table.table img.scoreImg {
 			<form name="contentForm" action="/board_delete"  method="post">
 				<table class="table table-bordered" style="width: 90%;">
 					<input type = "hidden" name = "bid" value = "${board.bid}">
+					<input type = "hidden" name = "gsfile" value = "${board.gsfile}">
 					<tr>
 						<th>제목</th>
 						<td>${board.btitle}</td>
@@ -113,7 +120,7 @@ section.board form table.table img.scoreImg {
 						<td style = "word-break: break-all">
 							${board.bcontent}<br><br><br><br>
 								<c:if test="${board.gsfile != null}">
-									<img src="http://localhost:9000/upload/${board.gsfile}">
+									<img src="http://localhost:9000/upload/${board.gsfile}" class="boardImg">
 								</c:if>
 						</td>
 					</tr>

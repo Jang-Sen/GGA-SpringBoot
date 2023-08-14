@@ -53,6 +53,11 @@ img {
 width:460px;
 height:600px;
 }
+.noticeImg {
+	width: 1000px;
+	height: 150px;
+	object-fit: scale-down;
+}
 
 </style>
 
@@ -79,7 +84,7 @@ height:600px;
 						<td>
 							${notice.ncontent }<br><br><br>
 							<c:if test="${notice.gsfile != null}">
-								<img src="http://localhost:9000/upload/${notice.gsfile}">
+								<img src="http://localhost:9000/upload/${notice.gsfile}" class="noticeImg">
 							</c:if>
 						</td>
 					</tr>

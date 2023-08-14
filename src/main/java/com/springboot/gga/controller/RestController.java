@@ -125,6 +125,7 @@ public class RestController {
         PageDto pageDto = pageService.getPaging(new PageDto(page, "board"));
         List<BoardDto> list = boardService.list(pageDto);
 
+        map.put("commentCount", boardService.commentCount(pageDto.getBid()));
         map.put("list", list);
         map.put("page", pageDto);
 
@@ -160,6 +161,36 @@ public class RestController {
         return viewName;
     }
 
+    @GetMapping("board_search/{page}/{btitle}")
+    public Map board_search(@PathVariable String page, @PathVariable String btitle){
+        Map map = new HashMap();
+        PageDto pageDto = pageService.getPaging(new PageDto(page, "board_search"));
+        pageDto.setBtitle(btitle);
+
+        List<BoardDto> list = boardService.searchList(pageDto);
+
+        map.put("page", pageDto);
+        map.put("list", list);
+        //List<BoardDto> list = boardService.searchList(map);
+
+//        map.put("list", list);
+
+        return map;
+    }
+
+    @GetMapping("board_master/{page}/{id}")
+    public Map board_master(@PathVariable String page, @PathVariable String id){
+        Map map = new HashMap();
+        PageDto pageDto = pageService.getPaging(new PageDto(page, "myReview"));
+        pageDto.setId(id);
+        List<BoardDto> list = boardService.commentMaster(pageDto);
+
+        map.put("page", pageDto);
+        map.put("list", list);
+
+        return map;
+    }
+
     /**
      * Notice
      */
@@ -171,6 +202,21 @@ public class RestController {
 
         map.put("list", list);
         map.put("page", pageDto);
+
+        return map;
+    }
+
+    @GetMapping("notice_search/{page}/{ntitle}")
+    public Map notice_search(@PathVariable String page, @PathVariable String ntitle){
+        Map map = new HashMap();
+        PageDto pageDto = pageService.getPaging(new PageDto(page, "notice_search"));
+        pageDto.setNtitle(ntitle);
+
+        List<NoticeDto> list = noticeService.notice_search(pageDto);
+
+
+        map.put("page", pageDto);
+        map.put("list", list);
 
         return map;
     }

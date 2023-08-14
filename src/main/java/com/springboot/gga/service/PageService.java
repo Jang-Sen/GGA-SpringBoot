@@ -24,12 +24,18 @@ public class PageService {
 
         if (pageDto.getServiceName().equals("notice")) {
             pageSize = 10;
-        }else if(pageDto.getServiceName().equals("member")) {
-            pageSize = 5;
-        }else if(pageDto.getServiceName().equals("board")) {
+        } else if (pageDto.getServiceName().equals("notice_search")) {
             pageSize = 10;
-        } else if(pageDto.getServiceName().equals("boardComment")) {
+        } else if (pageDto.getServiceName().equals("member")) {
             pageSize = 5;
+        } else if (pageDto.getServiceName().equals("board")) {
+            pageSize = 10;
+        } else if (pageDto.getServiceName().equals("boardComment")) {
+            pageSize = 5;
+        } else if (pageDto.getServiceName().equals("board_search")) {
+            pageSize = 10;
+        } else if (pageDto.getServiceName().equals("myReview")) {
+            pageSize = 3;
         } else if (pageDto.getServiceName().equals("product")){
             pageSize = 5;
         } else if (pageDto.getServiceName().equals("movie")){

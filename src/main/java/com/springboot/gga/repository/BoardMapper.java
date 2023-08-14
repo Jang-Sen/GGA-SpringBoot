@@ -6,6 +6,7 @@ import com.springboot.gga.dto.PageDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface BoardMapper {
@@ -17,6 +18,8 @@ public interface BoardMapper {
     int insert(BoardDto boardDto);
     int update(BoardDto boardDto);
     int delete(String bid);
+    List<BoardDto> searchList(PageDto pageDto);
+    void updateHits(String bid);
 
     /**
      *  boardComment
@@ -27,4 +30,6 @@ public interface BoardMapper {
     List<BoardCommentDto> comment(PageDto pageDto);
     int commentDelete(String bcid);
     int commentUpdate(String bcid, String updateComment);
+    List<BoardDto> commentMaster(PageDto pageDto);
+    int commentCount(String bid);
 }

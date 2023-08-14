@@ -13,6 +13,9 @@ public class PageDto {
     private int reqPage;
     private int pageSize;
     private String bid;
+    private String btitle;
+    private String ntitle;
+    private String id;
     public PageDto(String page, String serviceName, String bid){
         this.page = page;
         this.serviceName = serviceName;
