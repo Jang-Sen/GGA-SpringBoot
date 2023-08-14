@@ -124,10 +124,12 @@
 	}
 
 	.KobisList{
-		/*border:1px solid blue;*/
+		width : 1000px;
 		font-family: "Noto Sans CJK KR";
-		text-align: center;
-		margin-left: 50px;
+		margin-left : 50px;
+	}
+	div.KobisList table tr th:nth-child(2){
+		width : 400px;
 	}
 
 	div.KobisList table tr th{
@@ -309,6 +311,9 @@
 				<option value = "Weekly">주간</option>
 			</select>
 			<button type ="button" id="btnKobis" class="Kbtn">조회</button>
+
+
+
 		</div>
 		<p class="kp">* 일별 박스오피스는 하루 전, 주간은 7일 전으로 조회됩니다.</p>
 
@@ -338,25 +343,25 @@
 		</div>
 
 
-<%--		<div class = "glides">--%>
-<%--			<div class="glide">--%>
-<%--				<div class="glide">--%>
-<%--					<div class="glide__track" data-glide-el="track">--%>
-<%--						<ul class="glide__slides">--%>
-<%--							<li class="glide__slide"><image src="images/ophen.jpg"/></li>--%>
-<%--							<li class="glide__slide"><image src="images/ophen.jpg"/></li>--%>
-<%--							<li class="glide__slide"><image src="images/ophen.jpg"/></li>--%>
-<%--							<li class="glide__slide"><image src="images/ophen.jpg"/></li>--%>
-<%--							<li class="glide__slide"><image src="images/ophen.jpg"/></li>--%>
-<%--						</ul>--%>
-<%--					</div>--%>
-<%--				</div>--%>
-<%--				<div class="glide__arrows" data-glide-el="controls">--%>
-<%--					<button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>--%>
-<%--					<button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>--%>
-<%--				</div>--%>
-<%--			</div>--%>
-<%--		</div>--%>
+		<div class = "glides">
+			<div class="glide">
+				<div class="glide">
+					<div class="glide__track" data-glide-el="track">
+						<ul class="glide__slides">
+							<li class="glide__slide"><img src='"+poster_img+"'/></li>
+							<li class="glide__slide"><image src="images/ophen.jpg"/></li>
+							<li class="glide__slide"><image src="images/ophen.jpg"/></li>
+							<li class="glide__slide"><image src="images/ophen.jpg"/></li>
+							<li class="glide__slide"><image src="images/ophen.jpg"/></li>
+						</ul>
+					</div>
+				</div>
+				<div class="glide__arrows" data-glide-el="controls">
+					<button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+					<button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+				</div>
+			</div>
+		</div>
 		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 		<script>
 			const config = {
