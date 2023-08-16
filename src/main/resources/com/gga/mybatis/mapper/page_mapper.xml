@@ -39,6 +39,9 @@
         <if test='serviceName == "movie"'>
             gga_movie
         </if>
+        <if test='serviceName == "boardMaster"'>
+            gga_board where mid =#{bid}
+        </if>
 
     </select>
 

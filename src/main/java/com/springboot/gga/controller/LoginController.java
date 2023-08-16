@@ -104,7 +104,7 @@ public class LoginController {
     //로그인 실패
     @GetMapping("login_fail")
     public String login_fail(){
-        return "login_fail";
+        return "/login/login_fail";
     }
 
 }

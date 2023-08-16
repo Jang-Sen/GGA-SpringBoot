@@ -33,6 +33,8 @@ public class RestController {
     private CartService cartService;
     @Autowired
     OrderService orderService;
+    @Autowired
+    SearchService searchService;
 
     // 로그인 계정 체크
     @GetMapping("loginCheck/{id}/{pass}")
@@ -407,4 +409,37 @@ public class RestController {
         List<ProductOrderDto> list = productOrderService.searchDateList(param);
         return list;
     }
+
+    @GetMapping("indexSearch_json_data/{firstSearch}")
+    public Map<String, List<IndexSearchDto>> indexSearch_json_data(@PathVariable String firstSearch, Model model){
+//        model.addAttribute("firstSearch", firstSearch);
+        Map<String, List<IndexSearchDto>> param = new HashMap<String, List<IndexSearchDto>>();
+        param.put("mlist",searchService.movieSearch(firstSearch));
+        param.put("nlist",searchService.noticeSearch(firstSearch));
+        param.put("blist",searchService.boardSearch(firstSearch));
+        param.put("plist",searchService.productSearch(firstSearch));
+//        System.out.println(firstSearch);
+//        System.out.println(param);
+        return param;
+//        return searchService.movieSearch(firstSearch);
+    }
+
+    /* 마이페이지 My리뷰 */
+    @GetMapping("board_master_json_data/{id}/{page}")
+    public Map board_master_json_data(@PathVariable String id, @PathVariable String page){
+//        pageDto.setPage(page); 스타트 카운트 엔드카운트 해결해야함
+        PageDto pageDto = pageService.getPaging(new PageDto(page, "boardMaster",id));
+        Map param = new HashMap();
+        param.put("id",id);
+        param.put("startCount", pageDto.getStartCount());
+        param.put("endCount", pageDto.getEndCount());
+//        System.out.println(param);
+        Map result = new HashMap();
+        result.put("BoardDto",boardService.boardCommentMaster(param));
+        result.put("page",pageDto);
+
+        System.out.println(result);
+        return result;
+    }
+
 }

@@ -73,13 +73,13 @@ $(document).ready(function(){
 				}
 			}
 			if(weatherIconData == "0" || weatherIconData == "2") { //먼저 짜보고 하자 
-				var weatherOutput = "<div id='weather_img'><img src='http://localhost:9000/gga_plz/images/sun.png'></div>";
+				var weatherOutput = "<div id='weather_img'><img src='http://localhost:9000/images/sun.png'></div>";
 			}else if(weatherIconData == "1") {
-				var weatherOutput = "<div id='weather_img'><img src='http://localhost:9000/gga_plz/images/sun.png'></div>";
+				var weatherOutput = "<div id='weather_img'><img src='http://localhost:9000/images/cloud.png'></div>";
 			}else if(weathetIconData == "3") {
-				var weathetOutput = "<div id='weather_img'><img src='http://localhost:9000/gga_plz/images/cloud.png'></div>"
+				var weathetOutput = "<div id='weather_img'><img src='http://localhost:9000/images/cloud.png'></div>"
 			}else if(weathetIconData == "4") {
-				var weatherOutput = "<div id='weather_img'><img src='http://localhost:9000/gga_plz/images/rain.png'></div>";
+				var weatherOutput = "<div id='weather_img'><img src='http://localhost:9000/images/rain.png'></div>";
 			}
 			if(weatherRainData == "0") {
 				var weatherRainMessage = "맑음";

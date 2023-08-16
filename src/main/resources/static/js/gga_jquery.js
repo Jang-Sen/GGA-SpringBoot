@@ -671,7 +671,7 @@ $(document).ready(function(){
 			$("#id").focus();
 			return false;
 		} else if ($("#idCheck_msg").text() == ""){
-			alert("아이디 중복을 확인해주세요.");
+			alert("아이디 중복체크를 진행해주세요.");
 			$("#idCheck_msg").focus();
 			return false;
 		} else if ($("#pass").val() == ""){
@@ -768,8 +768,9 @@ $(document).ready(function(){
 					if (result == 1){
 						$("#idCheck_msg").text("이미 사용중인 아이디입니다.").css("color", "red")
 							.css("font-size", "11px").css("display", "block").css("margin","7px 0px 0px 175px");
-
+						$("#id").val("");
 						$("#id").focus();
+						return false;
 					} else if (result == 0){
 						$("#idCheck_msg").text("사용 가능한 아이디입니다.").css("color", "blue")
 							.css("font-size", "11px").css("display", "block").css("margin","7px 0px 0px 175px");
@@ -807,8 +808,10 @@ $(document).ready(function(){
 				$("#cmsg").text("비밀번호가 일치하지 않습니다. 다시 입력해주세요.").css("color", "red")
 					.css("font-size", "10pt").css("display", "block").css("margin","7px 0px 0px 175px");
 
-
+				$("#pass").val("");
+				$("#cpass").val("");
 				$("#pass").focus();
+				return false;
 			}
 		}
 	}); // cpass
@@ -969,7 +972,37 @@ $(document).ready(function(){
 		 $(this).off(e);
 		}
 	});
-	
+
+	/* 차량 없을때 체크 */
+	$(".carNone").change(function (){
+		let carCheck = $(this).val();
+		if(carCheck == "yes") {
+			$("div#carNoneBox").css("display","none");
+			$("input#car1").val("");
+			$("input#car2").val("");
+			$(this).val("no");
+		}else{
+			// $("div#carNoneBox").show();
+			$("div#carNoneBox").css("display","inline-block");
+			$("input#car1").val("none");
+			$("input#car2").val("none");
+			$(this).val("yes");
+		}
+	});
+
+	/* 네이버 세션처리 비로그인 체크 */
+	// $(".orderbtn").click(function (){
+	// 	// alert($("#unLoginCheck").val());
+	// 	if($("unLoginCheck").val() == "none"){
+	// 		alert("비회원 예매는 불가능합니다. 로그인을 먼저 진행 해주세요."); 미완성
+	// 	}
+	// });
+
+
+
+
+
 
 }); //ready
-	
+
+

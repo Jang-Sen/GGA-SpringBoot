@@ -20,17 +20,17 @@ $(document).ready(function(){
 			          	output += "<tr>";
 			          	output += "<td>"+obj.rno+"</td>";
 			          	if(obj.movieName == "suzume"){
-			  	        	output += "<td><a href="+"'"+"movieinfo/MOVIE_0002'>[스즈매의 문단속]&nbsp</a>";
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0002'>[스즈매의 문단속]&nbsp</a>";
 			          	}else if (obj.movieName == "darknight"){
-			  	        	output += "<td><a href="+"'"+"movieinfo/MOVIE_0001'>[다크나이트]&nbsp</a>";
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0001'>[다크나이트]&nbsp</a>";
 			          	}else if (obj.movieName == "dune"){
-			  	        	output += "<td><a href="+"'"+"movieinfo/MOVIE_0003'>[듄]&nbsp</a>";
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0003'>[듄]&nbsp</a>";
 			          	}else if (obj.movieName == "slamdunk"){
-			  	        	output += "<td><a href="+"'"+"movieinfo/MOVIE_0009'>[슬램덩크]&nbsp</a>";
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0009'>[슬램덩크]&nbsp</a>";
 			          	}else if (obj.movieName == "inception"){
-			  	        	output += "<td><a href="+"'"+"movieinfo/MOVIE_0004'>[인셉션]&nbsp</a>";
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0004'>[인셉션]&nbsp</a>";
 			          	}else if (obj.movieName == "rings"){
-			  	        	output += "<td><a href="+"'"+"movieinfo/MOVIE_0007'>[반지의제왕]&nbsp</a>";
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0007'>[반지의제왕]&nbsp</a>";
 			          	}
 			          	if(obj.commentCount > 0){
 			          		output += "<div class='maxSize'><a href="+"'"+"board_content/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a>&nbsp(" + board.commentCount + ")</td></div>";
