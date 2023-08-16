@@ -68,7 +68,7 @@
 </style>
 <script>
     $(document).ready(function (){
-        $('.productbuybtn').click(function () {
+        $('.cartbtn2').click(function () {
             var result = confirm('정말로 결제하시겠습니까?');
             var pid = $(this).attr('id');
             if (result) {
