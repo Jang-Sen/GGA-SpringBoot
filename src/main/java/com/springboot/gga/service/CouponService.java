@@ -41,4 +41,8 @@ public class CouponService {
     public int updateListAdd(String[] couponidArray) {
         return couponMapper.updateListAdd(couponidArray);
     }
+
+    public List<CouponDto> myList(String id) {
+        return couponMapper.myList(id);
+    }
 }

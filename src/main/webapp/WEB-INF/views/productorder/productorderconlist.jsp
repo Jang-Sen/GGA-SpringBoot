@@ -200,7 +200,7 @@
 		</table>
 
 
-		<br><br><br><br><br><br><br>
+		<%--<br><br><br><br><br><br><br>
 		<div class="myreview_header">
 			<h1>My상품구매내역 목록</h1>
 		</div>
@@ -261,7 +261,7 @@
 			</tbody>
 		</table>
 	</section>
-	</div>
+	</div>--%>
 	<!-- content -->
 
 
