@@ -43,7 +43,7 @@
 		      	<div class="header_menu">
 		      	<c:choose>
 <%--		      	<c:when test="${ sessionDto.loginResult == null || sessionDto.loginResult == 0}">--%>
-					<c:when test="${svo.id == null}">
+					<c:when test="${svo.id == null || svo.id == 'none'}">
 			      	<ul>
 				        <li>
 				        	<a href="http://localhost:9000/login">로그인</a>

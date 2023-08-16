@@ -59,9 +59,14 @@
 			<div class="header_section2">
 				<div class="header_menu2">
 					<ul>
-						  <li><a href="http://localhost:9000/movie_menu">
-							영화</a></li>
-						  <li><a href="http://localhost:9000/order">예매</a></li>
+						  <li>
+<%--							  <a href="http://localhost:9000/movie_menu">영화</a>--%>
+							  <a href="" id="movieValue"></a>
+						  </li>
+						  <li>
+<%--							  <a href="http://localhost:9000/order">예매</a>--%>
+							  <a href="" id="orderValue"></a>
+						  </li>
 						  <li class="dropdown">
 						  <a class="dropdown-toggle-split" href="#" role="button"
 							 data-bs-toggle="dropdown" aria-expanded="false">

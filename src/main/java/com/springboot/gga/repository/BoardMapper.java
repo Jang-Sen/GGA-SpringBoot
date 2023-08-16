@@ -30,6 +30,8 @@ public interface BoardMapper {
     List<BoardCommentDto> comment(PageDto pageDto);
     int commentDelete(String bcid);
     int commentUpdate(String bcid, String updateComment);
+    List<BoardDto> boardCommentMaster(Map param);
     List<BoardDto> commentMaster(PageDto pageDto);
     int commentCount(String bid);
+
 }

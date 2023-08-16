@@ -55,6 +55,10 @@ public class JoinController {
 //
 //        return String.valueOf(result);
 //    }
+    @GetMapping("joinevent")
+    public String joinevent(){
+        return "joinevent";
+    }
 
     // 회원가입 완료 작업
     @PostMapping("join")

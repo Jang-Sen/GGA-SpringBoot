@@ -1049,7 +1049,7 @@ div.coron_input {
 	display:inline-block;
 	position: relative;
 	margin-left:80px;
-	margin-top:120px;
+	/*margin-top:10px;*/
 	width: 200px;
 }
 
@@ -1205,7 +1205,9 @@ div.coron_input {
 .list-ordertime li button:focus {
 	background-color: #F8E4FF;
 }
-
+.order_title{
+	margin-bottom: 20px;
+}
 .order_title img{
 	width:160px;
 	height:100px;
@@ -1563,10 +1565,12 @@ div.coron_input{
 }
 
 .mapimg{
+	border:1px solid white;
 	width:200px;
 	height:120px;
 }
 .mapimg img{
+	border:1px solid white;
 	width:250px;
 	height:100px;
 }
@@ -1852,6 +1856,7 @@ footer .container{
  �궇�뵪 api - �뿬湲곕��꽣蹂대궡�빞�븿
 *******/
 
+
 div.section4 div.col-3{ /* �궇�뵪�쁺�뿭 div */
 	position:relative;
 	float:left;
@@ -1859,12 +1864,10 @@ div.section4 div.col-3{ /* �궇�뵪�쁺�뿭 div */
 	left:0px;
 }
 div.section4 div.col-9 { /* 吏��룄�쁺�뿭  div */
-	border:2px solid black;
 	border-radius:3px;
 	width:680px; height:405px;
 }
 div.section4 div.weather_api { /* api�쁺�뿭 div */
-	border:1px groove black;
 	border-radius : 5px;
 	background-image:url("http://localhost:9000/images/weatherbackground.jpg");
 	height:50%;
@@ -1888,17 +1891,20 @@ div.section4 div.weather_api div button:hover { /* �궇吏� 踰꾪듉 �씠
 	color: blue;
 }
 div.section4 div.weather_api img { /* �궇�뵪 �븘�씠肄�  */
+	/*border:1px solid white;*/
 	position:relative;
 	left:48px; top:20px;
 	width:120px; height:120px;
 }
 div.section4 div#weather_icon div:nth-child(2) { /* �궇�뵪 �쁺�뿭 div  */
+/*	border:1px solid white;*/
 	position:relative;
 	right:20px; top:30px;
 	width:200%; float:left;
 	height:110%;
 }
 div.section4 div#weather_icon div#weather_info ul li{ /* �궇�뵪 �긽�꽭 怨듯넻 */
+	/*border:1px solid white;*/
 	list-style-type:none;
 	text-align:center;
 	color:white;
@@ -1920,6 +1926,7 @@ div.section4 div#weather_icon div#weather_info ul li:first-child { /* 湲곗삩 
 *******/
 
 div.section4 div.card {
+/*	border:1px solid white;*/
 	position:relative;
 	right:680px;
 	margin-top:10px;
@@ -2497,7 +2504,6 @@ input#findAccessKey {
 	bottom:71px; left:54px;
 	display:none;
 }
-
 
 
 

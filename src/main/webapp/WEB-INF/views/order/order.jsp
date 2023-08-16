@@ -97,7 +97,7 @@
 	#orderinfo{
 		color: #444451;
 		margin-left: 85px;
-		margin-top: 110px;
+		margin-top: 100px;
 	}
 
 	@media (min-width: 768px) {
@@ -135,6 +135,7 @@
 <div class="container">
 	<div class="order_title">
 		<img src="http://localhost:9000/images/ordertitle.png">
+		<br>
 	</div>
 
 
@@ -144,12 +145,15 @@
 		<article class="cont-select">
 			<button class="btn-select">영화를 선택해 주세요.</button>
 			<ul class="list-member">
-				<li><button type="button" class="orderseltitle" value="MOVIE_0001" data-poster="darknight">다크 나이트 라이즈</button></li>
-				<li><button type="button" class="orderseltitle" value="MOVIE_0002" data-poster="door">스즈메의 문단속</button></li>
-				<li><button type="button" class="orderseltitle" value="MOVIE_0003" data-poster="dune">듄</button></li>
-				<li><button type="button" class="orderseltitle" value="MOVIE_0004" data-poster="inception">인셉션</button></li>
-				<li><button type="button" class="orderseltitle" value="MOVIE_0007" data-poster="ringsking">반지의 제왕: 왕의 귀환</button></li>
-				<li><button type="button" class="orderseltitle" value="MOVIE_0009" data-poster="slamdunk">더 퍼스트 슬램덩크</button></li>
+				<li><button type="button" class="orderseltitle" value="MOVIE_0001" data-poster="oppenhelmer">오펜하이머</button></li>
+				<li><button type="button" class="orderseltitle" value="MOVIE_0002" data-poster="concreteutopia">콘크리트 유토피아</button></li>
+				<li><button type="button" class="orderseltitle" value="MOVIE_0003" data-poster="honeysweet">달짝지근해: 7510</button></li>
+				<li><button type="button" class="orderseltitle" value="MOVIE_0004" data-poster="smugglers">밀수</button></li>
+				<li><button type="button" class="orderseltitle" value="MOVIE_0005" data-poster="elemental">엘리멘탈</button></li>
+				<li><button type="button" class="orderseltitle" value="MOVIE_0006" data-poster="meg2">메가로돈2</button></li>
+				<li><button type="button" class="orderseltitle" value="MOVIE_0007" data-poster="amanofreason">보호자</button></li>
+				<li><button type="button" class="orderseltitle" value="MOVIE_0008" data-poster="octonauts">바다 탐험대 옥토넛 어보브 앤 비욘드</button></li>
+				<li><button type="button" class="orderseltitle" value="MOVIE_0009" data-poster="ransomed">비공식작전</button></li>
 			</ul>
 		</article>
 
