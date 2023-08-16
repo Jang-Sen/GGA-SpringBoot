@@ -57,7 +57,8 @@
         <if test="couponid != null">
             #{couponid},
         </if>
-        #{id}, 1, #{finalAmount}, sysdate, #{couponname})
+        #{id}, 1, #{finalAmount}, sysdate, #{couponname}
+        )
     </insert>
 
     <select id="selectOne" parameterType="String" resultType="com.springboot.gga.dto.ProductOrderDto">

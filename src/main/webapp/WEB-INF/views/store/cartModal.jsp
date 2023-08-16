@@ -134,9 +134,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" <%--id="modalkakaopay" --%> id="productcartorder" class="btn btn-success" data-bs-dismiss="modal">
-    <img src="http://localhost:9000/images/kakaopay.png"></button>
-        <button type="button" id="modalcardpay" class="btn btn-success" data-bs-dismiss="modal">
-    <img src="http://localhost:9000/images/cardpay.png"></button>
+            <img src="http://localhost:9000/images/buybtn.png">
+        </button>
+        <%--<button type="button" id="modalcardpay" class="btn btn-success" data-bs-dismiss="modal">
+    <img src="http://localhost:9000/images/cardpay.png"></button>--%>
 
       </div>
 			
