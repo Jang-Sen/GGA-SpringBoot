@@ -46,6 +46,34 @@
 		right:25px;
 	}
 
+
+	span#carNoneText{
+		border: 1px solid white;
+		font-size:13pt;
+		position: relative;
+		padding:5px;
+		display: inline-block;
+		bottom:34px; left:320px;
+	}
+	input#carNone {
+		position: relative;
+		left:320px; bottom:20px;
+		zoom: 1.5;
+	}
+
+	div#carNoneBox{
+		border: 2px solid lightgray;
+		background: white;
+		font-size: 13pt;
+		font-weight: 700;
+		border-radius: 5px;
+		position: relative;
+		bottom:40px; right:311px;
+		width:460px;
+		display: inline-block;
+		padding:7px;
+		display:none;
+	}
 </style>
 
 <body>
@@ -151,6 +179,11 @@
 					<label>차량번호</label>
 					<input type="text" name="car1" id="car1" class="input1" maxlength="4" placeholder= "예) 00가">
 					<input type="text" name="car2" id="car2" class="input1" maxlength="6" numberOnly placeholder= "예) 0000">
+					<input type="checkbox" id="carNone" class="carNone" value="no"/>
+					<span id="carNoneText">차량이 없습니다.</span>
+					<div id="carNoneBox">
+						예매 할 때에는 차량번호를 꼭 입력해주세요.
+					</div>
 				</li>
 				<li id="genreCheckbox">
 					<label>영화 장르</label>

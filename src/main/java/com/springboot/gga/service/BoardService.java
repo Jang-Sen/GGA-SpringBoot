@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class BoardService {
@@ -60,5 +61,13 @@ public class BoardService {
     public int commentUpdate(String bcid, String updateComment){
         return boardMapper.commentUpdate(bcid, updateComment);
     }
+
+    /**
+    * BoardMaster - 마이페이지 - 지웅
+     */
+    public List<BoardDto> boardCommentMaster(Map param){
+        return boardMapper.boardCommentMaster(param);
+    }
+
 
 }

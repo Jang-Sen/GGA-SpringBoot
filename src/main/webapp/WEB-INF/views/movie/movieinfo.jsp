@@ -66,33 +66,33 @@
 			<!-- <section class="movie_info1"> -->
 				<div class="row">
 					<div class="col">
-						<img class="john" src="http://localhost:9000/images/${movieVo.mainposter}">
+						<img class="john" src="http://localhost:9000/images/${movie.mainposter}">
 					</div>
 					<div class="col">
 						<table class="movieinfotable">
 							<tr>
 								<th><img src="http://localhost:9000/images/desctitle.png"></th>
-								<td>${movieVo.movietitle}</td>
+								<td>${movie.movietitle}</td>
 							</tr>
 							<tr>
 								<th><img src="http://localhost:9000/images/descdate.png"></th>
-								<td>${movieVo.moviedday}</td>
+								<td>${movie.moviedday}</td>
 							</tr>
 							<tr>
 								<th><img src="http://localhost:9000/images/descdirector.png"></th>
-								<td>${movieVo.director}</td>
+								<td>${movie.director}</td>
 							</tr>
 							<tr>
 								<th><img src="http://localhost:9000/images/descactor.png"></th>
-								<td>${movieVo.actor}</td>
+								<td>${movie.actor}</td>
 							</tr>
 							<tr>
 								<th><img src="http://localhost:9000/images/descgenre.png"></th>
-								<td>${movieVo.genre}</td>
+								<td>${movie.genre}</td>
 							</tr>
 							<tr>
 								<th><img src="http://localhost:9000/images/descrun.png"></th>
-								<td>${movieVo.runtime}</td>
+								<td>${movie.runtime}</td>
 							</tr>
 							<tr>
 								<th><img src="http://localhost:9000/images/descgrade.png"></th>

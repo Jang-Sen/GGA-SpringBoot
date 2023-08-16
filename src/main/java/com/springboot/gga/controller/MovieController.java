@@ -2,6 +2,7 @@ package com.springboot.gga.controller;
 
 import com.springboot.gga.dto.MovieDto;
 import com.springboot.gga.dto.PageDto;
+import com.springboot.gga.dto.SessionDto;
 import com.springboot.gga.service.MovieService;
 import com.springboot.gga.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class MovieController {
@@ -52,6 +55,13 @@ public class MovieController {
         return "/movie/movieinfo";
     }
 
+    @GetMapping("movie_menu/{id}")
+    public String moive_menu(@PathVariable String id, HttpSession session) {
+        SessionDto svo = new SessionDto();
+        svo.setId(id);
+        session.setAttribute("svo",svo);
+        return "/movie/movie_menu";
+    }
 
 
 }

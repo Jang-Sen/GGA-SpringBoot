@@ -1,10 +1,11 @@
 $(document).ready(function(){
-
 	$.ajax({
-			url:"http://localhost:9000/gga_plz/indexSearch_json_data.do?searchContent="+$("#firstSearch").val(),
+			url:"http://localhost:9000/indexSearch_json_data/"+$("#firstSearch").val(),
 			success: function(result){
-		     	let jdata = JSON.parse(result);
-				        
+				// alert(result.mlist[0].movieId);
+		     	// let jdata = JSON.parse(result);
+		     	let jdata = result;
+
 			    var output = "";
 				var mcount = 0;	var ncount = 0;	var bcount = 0;	var pcount = 0;
 				let mindex = jdata.mlist.length-1;	let nindex = jdata.nlist.length;	let bindex = jdata.blist.length;
@@ -16,7 +17,7 @@ $(document).ready(function(){
 				if(jdata.mlist[0] == null && jdata.nlist[0] == null){
 					if(jdata.blist[0] == null && jdata.plist[0] == null) {
 						output += "<div class='noneResult'>";
-						output += "<img src='http://localhost:9000/gga_plz/images/indexSearchNoneResult.png'>";
+						output += "<img src='http://localhost:9000/images/indexSearchNoneResult.png'>";
 						output += "<span class='result1'>"+"'"+$("#firstSearch").val()+"'"+"검색결과가 없습니다.</span><br>";
 						output += "<span class='result2'>검색내용을 확인 후 다시 검색해주세요!!</span></div>";
 						output += "<div class='noneResultGuide'>";
@@ -26,23 +27,23 @@ $(document).ready(function(){
 				if(jdata.mlist[0] != null){
 				    output += "<div class='movieSearch'>";
 					output += "<div class='movieSearchTitle'>";
-					output += "<a href='http://localhost:9000/gga_plz/movie_menu.do'><img src='http://localhost:9000/gga_plz/images/movietitle.png'></a></div>";
+					output += "<a href='http://localhost:9000/movie_menu'><img src='http://localhost:9000/images/movietitle.png'></a></div>";
 					output += "<div class='movieSearchResult'>";
 				    for(obj of jdata.mlist){
 				       	if(mcount < 3) {
 						    output += "<div class='movieSearchInfo'>";
-						    output += "<a href='http://localhost:9000/gga_plz/movieinfo.do?movieid="+obj.movieId+"'><img src='http://localhost:9000/gga_plz/images/"+obj.mainPoster+"'"+" class='movieSearchInfoImg' id='"+obj.movieId+"'"+"></a>";
+						    output += "<a href='http://localhost:9000/movieinfo/"+obj.movieId+"'><img src='http://localhost:9000/images/"+obj.mainPoster+"'"+" class='movieSearchInfoImg' id='"+obj.movieId+"'"+"></a>";
 						    if(obj.movieTitle == '귀멸의 칼날: 상현집결, 그리고 도공 마을로'){
-						       	output += "<a id='movieTitle' href='http://localhost:9000/gga_plz/movieinfo.do?movieid=MOVIE_0006'>귀멸의칼날 : 상현집결</a>";
+						       	output += "<a id='movieTitle' href='http://localhost:9000/movieinfo/MOVIE_0006'>귀멸의칼날 : 상현집결</a>";
 							}else{
-						       	output += "<a id='movieTitle' href='http://localhost:9000/gga_plz/movieinfo.do?movieid="+obj.movieId+"'>"+obj.movieTitle+"</a>";
+						       	output += "<a id='movieTitle' href='http://localhost:9000/movieinfo/"+obj.movieId+"'>"+obj.movieTitle+"</a>";
 							}					       			
 						    output += "<p>"+obj.genre+"</p></div>";
 						    mcount++;
 				       	}
 				    }
 				    if(mlast >= 4){
-				       	output += "<a href='http://localhost:9000/gga_plz/movie_menu.do' id='moreResult'>더보기 ></a></div></div>";
+				       	output += "<a href='http://localhost:9000/movie_menu' id='moreResult'>더보기 ></a></div></div>";
 				    }else{
 				       	output += "</div></div>";
 				    }
@@ -53,7 +54,7 @@ $(document).ready(function(){
 				    output += "<div class='noticeSearch'>";
 				  	output += "<div class='noticeSearchResult'>";
 			     	output += "<div class='noticeSearchTitle'>";
-			     	output += "<a href='http://localhost:9000/gga_plz/notice_list.do'><img src='http://localhost:9000/gga_plz/images/noticetitle.png'></a><p>*최근 등록 순</p></div>";
+			     	output += "<a href='http://localhost:9000/notice_list'><img src='http://localhost:9000/images/noticetitle.png'></a><p>*최근 등록 순</p></div>";
 			     	output += "<table>";
 			     	output += "<tr><th>번호</th>";
 			     	output += "<th>제목</th>";
@@ -62,7 +63,7 @@ $(document).ready(function(){
 			    for(obj of jdata.nlist){
 			     	if(ncount < 5){
 				     	output += "<tr><td>No."+obj.nrno+"</td>";
-				     	output += "<td ><a href='notice_content.do?nid="+obj.nid+"'>📢 "+obj.ntitle+"</a></td>";
+				     	output += "<td ><a href='/notice_content/1/"+obj.nid+"'>📢 "+obj.ntitle+"</a></td>";
 				     	output += "<td>"+obj.nhits+"</td>";
 				     	output += "<td>"+obj.ndate+"</td></tr>";
 				     	ncount++;
@@ -70,7 +71,7 @@ $(document).ready(function(){
 			    }
 			    output += "</table>";
 			    if(nindex >= 6) {
-				    output += "<span>총 '"+nindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/gga_plz/notice_list.do' id='moreResult2'>더보기 ></a></span></div></div>";
+				    output += "<span>총 '"+nindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/notice_list' id='moreResult2'>더보기 ></a></span></div></div>";
 			    }else{
 			     	output += "<span>총 '"+nindex+"'개의 게시물이 검색 되었습니다.</span></div></div>";
 			    }
@@ -81,7 +82,7 @@ $(document).ready(function(){
 				output += "<div class='boardSearch'>";
 				output += "<div class='boardSearchResult'>";
 			    output += "<div class='boardSearchTitle'>";
-			    output += "<a href='http://localhost:9000/gga_plz/board_list.do'><img src='http://localhost:9000/gga_plz/images/comtitle.png'></a><p>*조회수 정렬</p></div>";
+			    output += "<a href='http://localhost:9000/board_list'><img src='http://localhost:9000/images/comtitle.png'></a><p>*조회수 정렬</p></div>";
 			    output += "<table>";
 			    output += "<tr><th>번호</th>";
 			    output += "<th>제목</th>";
@@ -92,22 +93,22 @@ $(document).ready(function(){
 			   if(bcount < 5){
 				   output += "<tr><td>"+obj.brno+"</td>";
 				   if(obj.movieName == "suzume"){
-				  	   output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0002'>📝 [스즈매의 문단속]&nbsp</a>";
+				  	   output += "<td><a href="+"'"+"/movieinfo/MOVIE_0002'>📝 [스즈매의 문단속]&nbsp</a>";
 					}else if (obj.movieName == "darknight"){
-						output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0001'>📝 [다크나이트]&nbsp</a>";
+						output += "<td><a href="+"'"+"/movieinfo/MOVIE_0001'>📝 [다크나이트]&nbsp</a>";
 					}else if (obj.movieName == "dune"){
-						output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0003'>📝 [듄]&nbsp</a>";
+						output += "<td><a href="+"'"+"/movieinfo/MOVIE_0003'>📝 [듄]&nbsp</a>";
 					}else if (obj.movieName == "slamdunk"){
-						output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0009'>📝 [슬램덩크]&nbsp</a>";
+						output += "<td><a href="+"'"+"/movieinfo/MOVIE_0009'>📝 [슬램덩크]&nbsp</a>";
 					}else if (obj.movieName == "inception"){
-						output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0004'>📝 [인셉션]&nbsp</a>";
+						output += "<td><a href="+"'"+"/movieinfo/MOVIE_0004'>📝 [인셉션]&nbsp</a>";
 					}else if (obj.movieName == "rings"){
-						output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0007'>📝 [반지의제왕]&nbsp</a>";
+						output += "<td><a href="+"'"+"/movieinfo/MOVIE_0007'>📝 [반지의제왕]&nbsp</a>";
 					}
 					if(obj.commentCount > 0){
-						output += "<div class='maxSize'><a href="+"'"+"board_content.do?bid="+obj.bid+"'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
+						output += "<div class='maxSize'><a href="+"'"+"/board_content/1/"+obj.bid+"'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
 					}else{
-						output += "<div class='maxSize' id='boardSearchBox'><a href="+"'"+"board_content.do?bid="+obj.bid+"'>"+obj.btitle+"</a></td></div>";
+						output += "<div class='maxSize' id='boardSearchBox'><a href="+"'"+"/board_content/1/"+obj.bid+"'>"+obj.btitle+"</a></td></div>";
 					}
 				    output += "<td>"+obj.bhits+"</td>";
 				    output += "<td>"+obj.mid+"</td>";
@@ -117,7 +118,7 @@ $(document).ready(function(){
 			    }
 			    output += "</table>";
 			    if(bindex >= 4){
-			     	output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/gga_plz/board_list.do' id='moreResult2'>더보기 ></a></span></div></div>";
+			     	output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/board_list' id='moreResult2'>더보기 ></a></span></div></div>";
 			    }else{
 			     	output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.</span></div></div>";
 			    }
@@ -126,17 +127,17 @@ $(document).ready(function(){
 			if(jdata.plist[0] != null){
 				output += "<div class='movieSearch'>";
 				output += "<div class='movieSearchTitle' id='storeSearchTitle'>";
-				output += "<a href='http://localhost:9000/gga_plz/store.do'><img src='http://localhost:9000/gga_plz/images/storetitle.png'></a></div>";
+				output += "<a href='http://localhost:9000/store/combo'><img src='http://localhost:9000/images/storetitle.png'></a></div>";
 				output += "<div class='movieSearchResult'>";
 			for(obj of jdata.plist){
 				if(pcount < 3){
 					output += "<div class='movieSearchInfo' id='storeSearchInfo'>";
-					output += "<a href='http://localhost:9000/gga_plz/store.do'><img src='http://localhost:9000/gga_plz/images/"+obj.gfile+"' class='movieSearchInfoImg' id='"+obj.pid+"'></a>";
-					output += "<a href='http://localhost:9000/gga_plz/store.do' id='movieTitle'>"+obj.pname+"</a></div>";
+					output += "<a href='http://localhost:9000/store/combo'><img src='http://localhost:9000/images/"+obj.gfile+"' class='movieSearchInfoImg' id='"+obj.pid+"'></a>";
+					output += "<a href='http://localhost:9000/store/combo' id='movieTitle'>"+obj.pname+"</a></div>";
 					pcount++;
 				}
 			}
-			output += "<a href='http://localhost:9000/gga_plz/store.do' id='moreResult'>상품 더보기 ></a></div></div>";
+			output += "<a href='http://localhost:9000/store/combo' id='moreResult'>상품 더보기 ></a></div></div>";
 		}
 								
 		$(".noneResult").remove();
@@ -166,12 +167,12 @@ $(document).ready(function(){
 			if(initFlag == null) {
 				let firstSearch = $("#searchContent").val();
 				initFlag = true;
-				location.href="http://localhost:9000/gga_plz/indexSearch.do?firstSearch="+firstSearch;
+				location.href="http://localhost:9000/indexSearch/"+firstSearch;
 			}else{
 				$.ajax({
-				     url:"http://localhost:9000/gga_plz/indexSearch_json_data.do?searchContent="+$("#searchContent").val(),
+				     url:"http://localhost:9000/indexSearch_json_data/"+$("#searchContent").val(),
 			         success: function(result){
-				     	let jdata = JSON.parse(result);
+				     	let jdata = result;
 				        var output = "";
 				        var mcount = 0;	var ncount = 0;	var bcount = 0;	var pcount = 0;
 				        let mindex = jdata.mlist.length-1;	let nindex = jdata.nlist.length;	let bindex = jdata.blist.length;
@@ -183,7 +184,7 @@ $(document).ready(function(){
 					 	   if(jdata.mlist[0] == null && jdata.nlist[0] == null){
 					 			if(jdata.blist[0] == null && jdata.plist[0] == null) {
 							   		output += "<div class='noneResult'>";
-									output += "<img src='http://localhost:9000/gga_plz/images/indexSearchNoneResult.png'>";
+									output += "<img src='http://localhost:9000/images/indexSearchNoneResult.png'>";
 									output += "<span class='result1'>"+"'"+$("#searchContent").val()+"'"+"검색결과가 없습니다.</span><br>";
 									output += "<span class='result2'>검색내용을 확인 후 다시 검색해주세요!!</span></div>";
 									output += "<div class='noneResultGuide'>";
@@ -193,23 +194,23 @@ $(document).ready(function(){
 					       if(jdata.mlist[0] != null){
 				       				output += "<div class='movieSearch'>";
 					       			output += "<div class='movieSearchTitle'>";
-					       			output += "<a href='http://localhost:9000/gga_plz/movie_menu.do'><img src='http://localhost:9000/gga_plz/images/movietitle.png'></a></div>";
+					       			output += "<a href='http://localhost:9000/movie_menu'><img src='http://localhost:9000/images/movietitle.png'></a></div>";
 					       			output += "<div class='movieSearchResult'>";
 				       			for(obj of jdata.mlist){
 				       				if(mcount < 3) {
 						       			output += "<div class='movieSearchInfo'>";
-						       			output += "<a href='http://localhost:9000/gga_plz/movieinfo.do?movieid="+obj.movieId+"'><img src='http://localhost:9000/gga_plz/images/"+obj.mainPoster+"'"+" class='movieSearchInfoImg' id='"+obj.movieId+"'"+"></a>";
+						       			output += "<a href='http://localhost:9000/movieinfo/"+obj.movieId+"'><img src='http://localhost:9000/images/"+obj.mainPoster+"'"+" class='movieSearchInfoImg' id='"+obj.movieId+"'"+"></a>";
 						       			if(obj.movieTitle == '귀멸의 칼날: 상현집결, 그리고 도공 마을로'){
-						       				output += "<a id='movieTitle' href='http://localhost:9000/gga_plz/movieinfo.do?movieid=MOVIE_0006'>귀멸의칼날 : 상현집결</a>";
+						       				output += "<a id='movieTitle' href='http://localhost:9000/movieinfo/MOVIE_0006'>귀멸의칼날 : 상현집결</a>";
 										}else{
-						       				output += "<a id='movieTitle' href='http://localhost:9000/gga_plz/movieinfo.do?movieid="+obj.movieId+"'>"+obj.movieTitle+"</a>";
+						       				output += "<a id='movieTitle' href='http://localhost:9000/movieinfo/"+obj.movieId+"'>"+obj.movieTitle+"</a>";
 										}					       			
 						       				output += "<p>"+obj.genre+"</p></div>";
 						       				mcount++;
 				       				}
 				       			}
 				       			if(mlast >= 4){
-				       				output += "<a href='http://localhost:9000/gga_plz/movie_menu.do' id='moreResult'>더보기 ></a></div></div>";
+				       				output += "<a href='http://localhost:9000/movie_menu' id='moreResult'>더보기 ></a></div></div>";
 				       			}else{
 				       				output += "</div></div>";
 				       			}
@@ -220,7 +221,7 @@ $(document).ready(function(){
 				         		output += "<div class='noticeSearch'>";
 				  		  		output += "<div class='noticeSearchResult'>";
 			     		  		output += "<div class='noticeSearchTitle'>";
-			     		  		output += "<a href='http://localhost:9000/gga_plz/notice_list.do'><img src='http://localhost:9000/gga_plz/images/noticetitle.png'></a><p>*최근 등록 순</p></div>";
+			     		  		output += "<a href='http://localhost:9000/notice_list'><img src='http://localhost:9000/images/noticetitle.png'></a><p>*최근 등록 순</p></div>";
 			     		  		output += "<table>";
 			     		  		output += "<tr><th>번호</th>";
 			     		  		output += "<th>제목</th>";
@@ -229,7 +230,7 @@ $(document).ready(function(){
 			     		  		for(obj of jdata.nlist){
 			     		  			if(ncount < 5){
 				     		  		output += "<tr><td>No."+obj.nrno+"</td>";
-				     		  		output += "<td ><a href='notice_content.do?nid="+obj.nid+"'>📢 "+obj.ntitle+"</a></td>";
+				     		  		output += "<td ><a href='/notice_content/1/"+obj.nid+"'>📢 "+obj.ntitle+"</a></td>";
 				     		  		output += "<td>"+obj.nhits+"</td>";
 				     		  		output += "<td>"+obj.ndate+"</td></tr>";
 				     		  		ncount++;
@@ -237,7 +238,7 @@ $(document).ready(function(){
 			     		  		}
 			     		  		output += "</table>";
 			     		  		if(nindex >= 6) {
-				     		  		output += "<span>총 '"+nindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/gga_plz/notice_list.do' id='moreResult2'>더보기 ></a></span></div></div>";
+				     		  		output += "<span>총 '"+nindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/notice_list' id='moreResult2'>더보기 ></a></span></div></div>";
 			     		  		}else{
 			     		  			output += "<span>총 '"+nindex+"'개의 게시물이 검색 되었습니다.</span></div></div>";
 			     		  		}
@@ -248,7 +249,7 @@ $(document).ready(function(){
 				         		output += "<div class='boardSearch'>";
 				  		  		output += "<div class='boardSearchResult'>";
 			     		  		output += "<div class='boardSearchTitle'>";
-			     		  		output += "<a href='http://localhost:9000/gga_plz/board_list.do'><img src='http://localhost:9000/gga_plz/images/comtitle.png'></a><p>*조회수 정렬</p></div>";
+			     		  		output += "<a href='http://localhost:9000/board_list'><img src='http://localhost:9000/images/comtitle.png'></a><p>*조회수 정렬</p></div>";
 			     		  		output += "<table>";
 			     		  		output += "<tr><th>번호</th>";
 			     		  		output += "<th>제목</th>";
@@ -259,22 +260,22 @@ $(document).ready(function(){
 			     		  			if(bcount < 5){
 				     		  		output += "<tr><td>"+obj.brno+"</td>";
 				     		  		if(obj.movieName == "suzume"){
-				  	       			 	output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0002'>📝 [스즈매의 문단속]&nbsp</a>";
+				  	       			 	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0002'>📝 [스즈매의 문단속]&nbsp</a>";
 						          	}else if (obj.movieName == "darknight"){
-						  	        	output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0001'>📝 [다크나이트]&nbsp</a>";
+						  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0001'>📝 [다크나이트]&nbsp</a>";
 						          	}else if (obj.movieName == "dune"){
-						  	        	output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0003'>📝 [듄]&nbsp</a>";
+						  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0003'>📝 [듄]&nbsp</a>";
 						          	}else if (obj.movieName == "slamdunk"){
-						  	        	output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0009'>📝 [슬램덩크]&nbsp</a>";
+						  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0009'>📝 [슬램덩크]&nbsp</a>";
 						          	}else if (obj.movieName == "inception"){
-						  	        	output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0004'>📝 [인셉션]&nbsp</a>";
+						  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0004'>📝 [인셉션]&nbsp</a>";
 						          	}else if (obj.movieName == "rings"){
-						  	        	output += "<td><a href="+"'"+"movieinfo.do?movieid=MOVIE_0007'>📝 [반지의제왕]&nbsp</a>";
+						  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0007'>📝 [반지의제왕]&nbsp</a>";
 						          	}
 						          	if(obj.commentCount > 0){
-						          		output += "<div class='maxSize'><a href="+"'"+"board_content.do?bid="+obj.bid+"'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
+						          		output += "<div class='maxSize'><a href="+"'"+"/board_content/1/"+obj.bid+"'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
 						          	}else{
-						          		output += "<div class='maxSize' id='boardSearchBox'><a href="+"'"+"board_content.do?bid="+obj.bid+"'>"+obj.btitle+"</a></td></div>";
+						          		output += "<div class='maxSize' id='boardSearchBox'><a href="+"'"+"/board_content/"+obj.bid+"'>"+obj.btitle+"</a></td></div>";
 						          	}
 				     		  		output += "<td>"+obj.bhits+"</td>";
 				     		  		output += "<td>"+obj.mid+"</td>";
@@ -284,7 +285,7 @@ $(document).ready(function(){
 			     		  		}
 			     		  		output += "</table>";
 			     		  		if(bindex >= 4){
-			     		  			output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/gga_plz/board_list.do' id='moreResult2'>더보기 ></a></span></div></div>";
+			     		  			output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/board_list' id='moreResult2'>더보기 ></a></span></div></div>";
 			     		  		}else{
 			     		  			output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.</span></div></div>";
 			     		  		}
@@ -293,17 +294,17 @@ $(document).ready(function(){
 				   		   if(jdata.plist[0] != null){
 				         		output += "<div class='movieSearch'>";
 				  		  		output += "<div class='movieSearchTitle' id='storeSearchTitle'>";
-				  		  		output += "<a href='http://localhost:9000/gga_plz/store.do'><img src='http://localhost:9000/gga_plz/images/storetitle.png'></a></div>";
+				  		  		output += "<a href='http://localhost:9000/store/combo'><img src='http://localhost:9000/images/storetitle.png'></a></div>";
 				  		  		output += "<div class='movieSearchResult'>";
 				  		  		for(obj of jdata.plist){
 				  		  			if(pcount < 3){
 						  		  		output += "<div class='movieSearchInfo' id='storeSearchInfo'>";
-						  		  		output += "<a href='http://localhost:9000/gga_plz/store.do'><img src='http://localhost:9000/gga_plz/images/"+obj.gfile+"' class='movieSearchInfoImg' id='"+obj.pid+"'></a>";
-						  		  		output += "<a href='http://localhost:9000/gga_plz/store.do' id='movieTitle'>"+obj.pname+"</a></div>";
+						  		  		output += "<a href='http://localhost:9000/store/combo'><img src='http://localhost:9000/images/"+obj.gfile+"' class='movieSearchInfoImg' id='"+obj.pid+"'></a>";
+						  		  		output += "<a href='http://localhost:9000/store/combo' id='movieTitle'>"+obj.pname+"</a></div>";
 						  		  		pcount++;
 				  		  			}
 				  		  		}
-					  		  		output += "<a href='http://localhost:9000/gga_plz/store.do' id='moreResult'>상품 더보기 ></a></div></div>";
+					  		  		output += "<a href='http://localhost:9000/store/combo' id='moreResult'>상품 더보기 ></a></div></div>";
 			       		   }
 								
 			       		   		$(".noneResult").remove();

@@ -11,11 +11,11 @@
 <!--	-->
 <!--	</select>-->
 <!--	-->
-<!--	<select id="commentMaster" parameterType="map" resultType="com.gga.vo.BoardVo">-->
-<!--		SELECT RNO,BTITLE,BHITS,BDATE,MID,MOVIENAME,BID FROM -->
-<!--		(SELECT ROWNUM RNO,BTITLE,BHITS,TO_CHAR(BDATE, 'YYYY.MM.DD') BDATE,MID,MOVIENAME,BID FROM -->
-<!--		(SELECT BTITLE,BHITS,BDATE,MID,MOVIENAME,BID FROM GGA_BOARD) WHERE MID = #{id}) WHERE RNO BETWEEN #{startCount} AND #{endCount}-->
-<!--	</select>-->
+	<select id="boardCommentMaster" parameterType="map" resultType="com.springboot.gga.dto.BoardDto">
+		SELECT RNO,BTITLE,BHITS,BDATE,MID,MOVIENAME,BID FROM
+		(SELECT ROWNUM RNO,BTITLE,BHITS,TO_CHAR(BDATE, 'YYYY.MM.DD') BDATE,MID,MOVIENAME,BID FROM
+		(SELECT BTITLE,BHITS,BDATE,MID,MOVIENAME,BID FROM GGA_BOARD) WHERE MID = #{id}) WHERE RNO BETWEEN #{startCount} AND #{endCount}
+	</select>
 
 	<update id="commentUpdate" parameterType="map">
 		UPDATE GGA_BOARD_COMMENT SET BCCONTENT=#{updateComment} WHERE BCID=#{bcid}

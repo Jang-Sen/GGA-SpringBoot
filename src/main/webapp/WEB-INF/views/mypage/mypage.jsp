@@ -56,6 +56,9 @@
 	font-size: 12pt;
 	color: gray;
 }
+table#boardMaster tr td:nth-child(2) a{
+	text-decoration-line: none;
+}
 
 </style>
 	<script>
@@ -106,7 +109,7 @@
 						</c:when>
 						<c:otherwise>
 							<a href= "http://localhost:9000/join">내 정보 수정 (GGA 회원 전용)</a>
-							<span id="naverGuide">* 클릭 시 회원 전환 화면으로 넘어갑니다.</span>
+							<span id="naverGuide">* 클릭 시 회원 전환 화면으로 넘어갑니다. (통합 회원 전환 시 할인쿠폰 5종이 지급 됩니다!!)</span>
 						</c:otherwise>
 					</c:choose>
 

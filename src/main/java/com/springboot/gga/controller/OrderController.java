@@ -118,6 +118,16 @@ public class OrderController {
         return "/order/order";
     }
 
+    // 네이버 회원 전용 예매 세션처리
+    @GetMapping("order/{naverId}/{naverName}")
+    public String order(@PathVariable String naverId,@PathVariable String naverName, HttpSession session) {
+        SessionDto svo = new SessionDto();
+        svo.setId(naverId);
+        svo.setName(naverName);
+        session.setAttribute("svo", svo);
+        return "/order/order";
+    }
+
    /* @GetMapping("oidProc")
     public String oidProc(){
         return  orderService.getOid();

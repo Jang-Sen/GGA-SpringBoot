@@ -63,6 +63,7 @@
 	<div class="container">
 		<div class="movie_titleimg">
 		<img src="http://localhost:9000/images/movietitle.png">
+			<input type="hidden" id="unLoginCheck" value="${sessionScope.svo.id}">
 		</div>
 		<nav class="buttons">
 		<a href="http://localhost:9000/movie_menu"><img src="http://localhost:9000/images/moviechart.png" class="btn-outline-secondary"></a>

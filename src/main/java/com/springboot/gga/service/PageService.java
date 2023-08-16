@@ -21,6 +21,7 @@ public class PageService {
 
         dbCount = pageMapper.totalPaging(pageDto);
 
+//        System.out.println(pageDto.getBid());
 
         if (pageDto.getServiceName().equals("notice")) {
             pageSize = 10;
@@ -36,6 +37,8 @@ public class PageService {
             pageSize = 7;
         } else if (pageDto.getServiceName().equals("admin_notice")){
             pageSize = 10;
+        } else if (pageDto.getServiceName().equals("boardMaster")) {
+            pageSize = 5;
         }
 
         // 총 페이지 수 계산
