@@ -23,6 +23,9 @@ public class BoardService {
     }
 
     public BoardDto content(String bid){
+        if (boardMapper.content(bid) != null){
+            boardMapper.updateHits(bid);
+        }
         return boardMapper.content(bid);
     }
 
@@ -36,6 +39,10 @@ public class BoardService {
 
     public int delete(String bid){
         return boardMapper.delete(bid);
+    }
+
+    public List<BoardDto> searchList(PageDto pageDto){
+        return boardMapper.searchList(pageDto);
     }
 
     /**
@@ -67,6 +74,14 @@ public class BoardService {
      */
     public List<BoardDto> boardCommentMaster(Map param){
         return boardMapper.boardCommentMaster(param);
+    }
+
+    public List<BoardDto> commentMaster(PageDto pageDto){
+        return boardMapper.commentMaster(pageDto);
+    }
+
+    public int commentCount(String bid){
+        return boardMapper.commentCount(bid);
     }
 
 

@@ -11,10 +11,17 @@
 <!--	-->
 <!--	</select>-->
 <!--	-->
+
 	<select id="boardCommentMaster" parameterType="map" resultType="com.springboot.gga.dto.BoardDto">
 		SELECT RNO,BTITLE,BHITS,BDATE,MID,MOVIENAME,BID FROM
 		(SELECT ROWNUM RNO,BTITLE,BHITS,TO_CHAR(BDATE, 'YYYY.MM.DD') BDATE,MID,MOVIENAME,BID FROM
 		(SELECT BTITLE,BHITS,BDATE,MID,MOVIENAME,BID FROM GGA_BOARD) WHERE MID = #{id}) WHERE RNO BETWEEN #{startCount} AND #{endCount}
+
+	<select id="commentMaster" parameterType="com.springboot.gga.dto.PageDto" resultType="com.springboot.gga.dto.BoardDto">
+		SELECT RNO,BTITLE,BHITS,BDATE,MID,MOVIENAME,BID FROM
+		(SELECT ROWNUM RNO,BTITLE,BHITS,TO_CHAR(BDATE, 'YYYY.MM.DD') BDATE,MID,MOVIENAME,BID FROM
+		(SELECT BTITLE,BHITS,BDATE,MID,MOVIENAME,BID FROM GGA_BOARD ORDER BY BDATE DESC) WHERE MID = #{id})
+		WHERE RNO BETWEEN #{startCount} AND #{endCount}
 	</select>
 
 	<update id="commentUpdate" parameterType="map">
@@ -34,10 +41,10 @@
 		VALUES('bc_'||LTRIM(TO_CHAR(SEQU_GGA_BOARD_COMMENT_BCID.NEXTVAL,'0000')),#{bid, jdbcType=VARCHAR},#{sid},#{bccontent},SYSDATE)
 	</insert>
 
-<!--	<select id="commentCount" parameterType="java.lang.String" resultType="int">-->
-<!--		SELECT COUNT(*) FROM GGA_BOARD_COMMENT WHERE BID = #{bid, jdbcType=VARCHAR}-->
-<!--	</select>-->
-<!--	-->
+	<select id="commentCount" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM GGA_BOARD_COMMENT WHERE BID = #{bid}
+	</select>
+
 
 
 	<select id="comment" parameterType="com.springboot.gga.dto.PageDto" resultType="com.springboot.gga.dto.BoardCommentDto">
@@ -73,17 +80,17 @@
 		    WHERE BID=#{bid}
 	</update>
 
-<!--	<select id="searchList" parameterType="map" resultType="com.gga.vo.BoardVo">-->
-<!--		SELECT RNO, BID, BTITLE, BCONTENT, Bhits, MID, MOVIENAME, BDATE-->
-<!--			FROM (SELECT ROWNUM RNO, BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, TO_CHAR(BDATE, 'YYYY-MM-DD') BDATE FROM-->
-<!--				(SELECT BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, BDATE FROM GGA_BOARD ORDER BY BDATE DESC)WHERE BTITLE LIKE '%'||#{btitle}||'%')-->
-<!--				WHERE RNO BETWEEN #{startCount} AND #{endCount}-->
-<!--	</select>-->
-<!--	-->
-<!--	<select id="updateHits" parameterType="String">-->
-<!--		UPDATE GGA_BOARD SET BHITS=BHITS+1 WHERE BID =#{bid}-->
-<!--	</select>-->
-<!--	-->
+	<select id="searchList" parameterType="com.springboot.gga.dto.PageDto" resultType="com.springboot.gga.dto.BoardDto">
+		SELECT RNO, BID, BTITLE, BCONTENT, Bhits, MID, MOVIENAME, BDATE
+			FROM (SELECT ROWNUM RNO, BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, TO_CHAR(BDATE, 'YYYY-MM-DD') BDATE FROM
+				(SELECT BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, BDATE FROM GGA_BOARD ORDER BY BDATE DESC)WHERE BTITLE LIKE '%'||#{btitle}||'%')
+				WHERE RNO BETWEEN #{startCount} AND #{endCount}
+	</select>
+
+	<select id="updateHits" parameterType="String">
+		UPDATE GGA_BOARD SET BHITS=BHITS+1 WHERE BID =#{bid}
+	</select>
+
 <!--	<select id="searchRowCount" parameterType="String" resultType="int">-->
 <!--		SELECT COUNT(*) FROM GGA_BOARD WHERE BTITLE LIKE '%'||#{btitle}||'%'-->
 <!--	</select>-->

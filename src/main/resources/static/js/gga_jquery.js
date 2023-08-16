@@ -892,24 +892,24 @@ $(document).ready(function(){
 	/***********************
 	소윤 - 공지사항 검색 
 	************************/
-		$("#btnNoticeSearch").click(function(){
-			if($("#ntitle").val() == "" ){
-				alert("공지사항 제목을 입력해주세요.");
-				$("#ntitle").focus();
-				return false;
-			} else{
-				$.ajax({
-			          url:"http://localhost:9000/gga_plz/Searchnoticeproc.do?ntitle="+$("#ntitle").val(),
-			          success: function(nid){
-			          	if(nid == ""){
-							alert("존재하지 않는 게시글입니다.다시 입력해주세요.");
-			          	}else{
-			           	 location.href="http://localhost:9000/gga_plz/notice_content.do?nid="+nid; }
-			         	}
-					
-				});
-			}
-		});
+		// $("#btnNoticeSearch").click(function(){
+		// 	if($("#ntitle").val() == "" ){
+		// 		alert("공지사항 제목을 입력해주세요.");
+		// 		$("#ntitle").focus();
+		// 		return false;
+		// 	} else{
+		// 		$.ajax({
+		// 	          url:"http://localhost:9000/gga_plz/Searchnoticeproc.do?ntitle="+$("#ntitle").val(),
+		// 	          success: function(nid){
+		// 	          	if(nid == ""){
+		// 					alert("존재하지 않는 게시글입니다.다시 입력해주세요.");
+		// 	          	}else{
+		// 	           	 location.href="http://localhost:9000/gga_plz/notice_content.do?nid="+nid; }
+		// 	         	}
+		//
+		// 		});
+		// 	}
+		// });
 		
 		
 	/***********************

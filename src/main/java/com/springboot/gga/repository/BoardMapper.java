@@ -18,6 +18,8 @@ public interface BoardMapper {
     int insert(BoardDto boardDto);
     int update(BoardDto boardDto);
     int delete(String bid);
+    List<BoardDto> searchList(PageDto pageDto);
+    void updateHits(String bid);
 
     /**
      *  boardComment
@@ -28,11 +30,8 @@ public interface BoardMapper {
     List<BoardCommentDto> comment(PageDto pageDto);
     int commentDelete(String bcid);
     int commentUpdate(String bcid, String updateComment);
-
-    /**
-     *  BoardMaster - 마이페이지 - 지웅
-     */
     List<BoardDto> boardCommentMaster(Map param);
-
+    List<BoardDto> commentMaster(PageDto pageDto);
+    int commentCount(String bid);
 
 }

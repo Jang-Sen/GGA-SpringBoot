@@ -15,14 +15,23 @@
         <if test='serviceName == "admin_notice"'>
             gga_notice
         </if>
+        <if test='serviceName == "notice_search"'>
+            gga_notice
+        </if>
         <if test='serviceName == "member"'>
             gga_member
         </if>
         <if test='serviceName == "board"'>
             gga_board
         </if>
+        <if test='serviceName == "board_search"'>
+            gga_board
+        </if>
         <if test='serviceName == "boardComment"'>
             gga_board_comment
+        </if>
+        <if test='serviceName == "myReview"'>
+            gga_board
         </if>
         <if test='serviceName == "product"'>
             gga_product

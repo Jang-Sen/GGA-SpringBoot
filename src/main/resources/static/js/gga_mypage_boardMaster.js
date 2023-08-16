@@ -58,7 +58,7 @@ $(document).ready(function(){
 				}
 				
 				pager(page.dbCount, page.pageCount, page.pageSize, page.page);
-			
+      
 				jQuery('#ampaginationsm').on('am.pagination.change',function(e){
 					jQuery('.showlabelsm').text('The selected page no: '+e.page);
 				  	initAjax(e.page);
