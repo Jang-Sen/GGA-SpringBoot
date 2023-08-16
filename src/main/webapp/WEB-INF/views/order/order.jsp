@@ -15,8 +15,91 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 		  rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<!-- 부트스트랩 -->
+<script>
+	$(document).ready(function() {
+		$("#email4").change(function (){
+			if(!$("#email5").val()==""){
+				var oemail = $("#email4").val() + "@" + $("#email5").val();
+				$("#oemail").val(oemail);
+			}
+		});
+
+		$("#email5").change(function () {
+			if (!$("#email4").val() == "") {
+				var oemail = $("#email4").val() + "@" + $("#email5").val();
+				$("#oemail").val(oemail);
+			}
+
+		});
+
+
+		$("#email6").on("change", function(){
+
+			if($("#email6").val() != "default"){
+				$("#email5").val($("#email6").val());
+				if (!$("#email4").val() == "") {
+					var oemail = $("#email4").val() + "@" + $("#email5").val();
+					$("#oemail").val(oemail);
+				}
+			}else {
+				$("#email5").val("");
+				$("#oemail").val("");
+
+			}
+		});
+
+		$("#ophone").mouseout(function () {
+			if(!$("#ophone").val()==""){
+				var ophone = phoneFormat($("#ophone").val());
+				$("#ophone").val(ophone);
+			}
+		});
+
+		$("#ophone").change(function () {
+			if(!$("#ophone").val()==""){
+				var ophone = phoneFormat($("#ophone").val());
+				$("#ophone").val(ophone);
+			}
+		});
+
+		function phoneFormat(phoneNumber) {
+			// 특수문자 제거
+			const value = phoneNumber.replace(/[^0-9]/g, '');
+
+
+			if(value.length >9){
+				// 00 OR 000 지정
+				const firstLength = value.length > 9 ? 3 : 2;
+				// ({2,3}) - ({3,4}) - ({4})
+				return [
+					// 첫번째 구간 (00 or 000)
+					value.slice(0, firstLength),
+					// 두번째 구간 (000 or 0000)
+					value.slice(firstLength, value.length - 4),
+					// 남은 마지막 모든 숫자
+					value.slice(value.length - 4),
+				].join('-');
+
+			}else{
+				return value;
+			}
+
+		}
+
+
+	});//document.ready
+</script>
+
+
+
 </head>
 <style>
+	#orderinfo{
+		color: #444451;
+		margin-left: 85px;
+		margin-top: 110px;
+	}
+
 	@media (min-width: 768px) {
 		.container {
 			width: 750px;
@@ -27,6 +110,16 @@
 		.container {
 			width: 1000px;
 		}
+	}
+
+	#email6{
+		width: auto;
+		height: 25px;
+	}
+
+	#email4, #email5{
+		width: 115px;
+
 	}
 </style>
 
@@ -47,6 +140,7 @@
 
 
 	<div class="ticket_bac1">
+		<p id="orderinfo">관람을 원하는 영화, 날짜, 시간을 선택해 주세요.</p>
 		<article class="cont-select">
 			<button class="btn-select">영화를 선택해 주세요.</button>
 			<ul class="list-member">
@@ -89,15 +183,24 @@
 				</li>
 				<li>
 					<label><span class="material-symbols-outlined">garage</span>  : </label>
-					<input type="text" name="ocarnum" id="ocarnum" class="ticket_name" placeholder=" 차량번호">
+					<input type="text" name="ocarnum" id="ocarnum" class="ticket_name" placeholder=" 차량번호 ex)00가 0000">
 				</li>
 				<li>
 					<label><span class="material-symbols-outlined">mail</span>  : </label>
-					<input type="text" name="oemail" id="oemail" class="ticket_name" placeholder=" Email">
+					<input type="hidden" name="oemail" id="oemail" class="ticket_name">
+					<input type="text" name="email4" id="email4" class="ticket_name" placeholder=" Email"> @
+					<input type="text" name="email5" id="email5" class="ticket_name">
+					<select id="email6">
+						<option value="default">직접입력</option>
+						<option value="naver.com">네이버</option>
+						<option value="nate.com">네이트</option>
+						<option value="google.com">구글</option>
+						<option value="daum.net">다음</option>
+					</select>
 				</li>
 				<li>
 					<label><span class="material-symbols-outlined">call</span>  : </label>
-					<input type="text" name="ophone" id="ophone" class="ticket_name" placeholder=" 전화번호">
+					<input type="text" name="ophone" id="ophone" class="ticket_name" numberOnly placeholder=" 전화번호">
 				</li>
 
 
