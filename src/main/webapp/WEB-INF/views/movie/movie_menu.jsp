@@ -73,14 +73,14 @@
 			<div class="row">
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/inception.jpg" class="mimg" id="MOVIE_0004">
+					  <img src="http://localhost:9000/images/oppenhelmer.jpg" class="mimg" id="MOVIE_0001">
 					  <div class="card-body">
-					    <h5 class="card-title">인셉션</h5>
-					    <p class="card-text">개봉일 : 2020.01.01<p>
+					    <h5 class="card-title">오펜하이머</h5>
+					    <p class="card-text">개봉일 : 2023.08.25<p>
 					   <!--  <p>🚘🚘</p> -->
-					   <span class="material-symbols-outlined">directions_car</span>
-					   <span class="material-symbols-outlined">directions_car</span>
-					   <br>
+						  <p>평점 : <span class="material-symbols-outlined">directions_car</span>
+						  <span class="material-symbols-outlined">directions_car</span></p>
+
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -88,15 +88,16 @@
 				</div>
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/darknight.jpg" class="mimg" id="MOVIE_0001">
+					  <img src="http://localhost:9000/images/concreteutopia.jpg" class="mimg" id="MOVIE_0002">
 					  <div class="card-body">
-					    <h5 class="card-title">다크 나이트 라이즈</h5>
-					    <p class="card-text">개봉일 : 2020.01.01</p>
+					    <h5 class="card-title">콘크리트 유토피아</h5>
+					    <p class="card-text">개봉일 : 2023.08.09</p>
 					    <!-- <p>🚘🚘🚘</p> -->
+						  <p> 평점 :
 					    <span class="material-symbols-outlined">directions_car</span>
 					   <span class="material-symbols-outlined">directions_car</span>
 					   <span class="material-symbols-outlined">directions_car</span>
-					   <br>
+						  </p>
 					   	<a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -104,16 +105,18 @@
 				</div>
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/door.jpg" class="mimg" id="MOVIE_0002">
+					  <img src="http://localhost:9000/images/honeysweet.jpg" class="mimg" id="MOVIE_0003">
 					  <div class="card-body">
-					    <h5 class="card-title">스즈메의 문단속</h5>
-					    <p class="card-text">개봉일 : 2020.01.01<p>
+					    <h5 class="card-title">달짝지근해: 7510</h5>
+					    <p class="card-text">개봉일 : 2023.08.15<p>
 					    <!-- <p>🚘🚘🚘🚘</p> -->
-					    <span class="material-symbols-outlined">directions_car</span>
-					   <span class="material-symbols-outlined">directions_car</span>
-					   <span class="material-symbols-outlined">directions_car</span>
-					   <span class="material-symbols-outlined">directions_car</span>
-					   <br>
+						  <p>
+						  평점:
+						  <span class="material-symbols-outlined">directions_car</span>
+						  <span class="material-symbols-outlined">directions_car</span>
+						  <span class="material-symbols-outlined">directions_car</span>
+						  <span class="material-symbols-outlined">directions_car</span>
+					  </p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -124,14 +127,16 @@
 			<div class="row">
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/ringsking.jpg" class="mimg" id="MOVIE_0007">
+					  <img src="http://localhost:9000/images/smugglers.jpg" class="mimg" id="MOVIE_0004">
 					  <div class="card-body">
-					    <h5 class="card-title">반지의 제왕</h5>
-					    <p class="card-text">개봉일 : 2020.01.01<p>
+					    <h5 class="card-title">밀수</h5>
+					    <p class="card-text">개봉일 : 2023.07.26<p>
 					    <!-- <p>🚘🚘</p> -->
+						  <p>
+						  평점 :
 					    <span class="material-symbols-outlined">directions_car</span>
 					   <span class="material-symbols-outlined">directions_car</span>
-					   <br>
+					  </p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -139,14 +144,15 @@
 				</div>
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/dune.jpg" class="mimg" id="MOVIE_0003">
+					  <img src="http://localhost:9000/images/elemental.jpg" class="mimg" id="MOVIE_0005">
 					  <div class="card-body">
-					    <h5 class="card-title">듄</h5>
-					    <p class="card-text">개봉일 : 2020.01.01<p>
+					    <h5 class="card-title">엘리멘탈</h5>
+					    <p class="card-text">개봉일 : 2023.06.14<p>
 					    <!-- <p>🚘🚘</p> -->
-					    <span class="material-symbols-outlined">directions_car</span>
-					   <span class="material-symbols-outlined">directions_car</span>
-					   <br>
+						  <p>평점:
+						  <span class="material-symbols-outlined">directions_car</span>
+						  <span class="material-symbols-outlined">directions_car</span>
+					  </p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -154,14 +160,63 @@
 				</div>
 				<div class="col">
 				<div class="card" >
-				  <img src="http://localhost:9000/images/slamdunk.jpg" class="mimg" id="MOVIE_0009">
+				  <img src="http://localhost:9000/images/meg2.jpg" class="mimg" id="MOVIE_0006">
 				  <div class="card-body">
-				    <h5 class="card-title">더 퍼스트 슬램덩크</h5>
-				    <p class="card-text">개봉일 : 2020.01.01<p>
+				    <h5 class="card-title">메가로돈2</h5>
+				    <p class="card-text">개봉일 : 2023.08.15<p>
 				    <!-- <p>🚘🚘</p> -->
-					   <span class="material-symbols-outlined">directions_car</span>
-					   <span class="material-symbols-outlined">directions_car</span>
-					   <br>
+					  <p>평점:
+					  <span class="material-symbols-outlined">directions_car</span>
+					  <span class="material-symbols-outlined">directions_car</span>
+				  </p>
+				   			 <a class="headerorderbtn">
+							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+				  </div>
+				</div>
+				</div>
+				<div class="col">
+				<div class="card" >
+				  <img src="http://localhost:9000/images/amanofreason.jpg" class="mimg" id="MOVIE_0007">
+				  <div class="card-body">
+				    <h5 class="card-title">보호자</h5>
+				    <p class="card-text">개봉일 : 2023.08.15<p>
+				    <!-- <p>🚘🚘</p> -->
+					  <p>평점:
+					  <span class="material-symbols-outlined">directions_car</span>
+					  <span class="material-symbols-outlined">directions_car</span>
+				  </p>
+				   			 <a class="headerorderbtn">
+							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+				  </div>
+				</div>
+				</div>
+				<div class="col">
+				<div class="card" >
+				  <img src="http://localhost:9000/images/octonauts.jpg" class="mimg" id="MOVIE_0008">
+				  <div class="card-body">
+				    <h5 class="card-title">바다 탐험대 옥토넛 어보브 앤 비욘드</h5>
+				    <p class="card-text">개봉일 : 2023.08.10<p>
+				    <!-- <p>🚘🚘</p> -->
+					  <p>평점:
+					  <span class="material-symbols-outlined">directions_car</span>
+					  <span class="material-symbols-outlined">directions_car</span>
+				  </p>
+				   			 <a class="headerorderbtn">
+							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+				  </div>
+				</div>
+				</div>
+				<div class="col">
+				<div class="card" >
+				  <img src="http://localhost:9000/images/ransomed.jpg" class="mimg" id="MOVIE_0009">
+				  <div class="card-body">
+				    <h5 class="card-title">비공식작전</h5>
+				    <p class="card-text">개봉일 : 2023.08.02<p>
+				    <!-- <p>🚘🚘</p> -->
+					  <p>평점:
+					  <span class="material-symbols-outlined">directions_car</span>
+					  <span class="material-symbols-outlined">directions_car</span>
+				  </p>
 				   			 <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 				  </div>

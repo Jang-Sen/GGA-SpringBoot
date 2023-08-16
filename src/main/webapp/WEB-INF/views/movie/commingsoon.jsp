@@ -73,10 +73,10 @@
 			<div class="row">
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/knife.jpg" class="mimg" id="MOVIE_0006">
+					  <img src="http://localhost:9000/images/sleep0.jpg" class="mimg" id="MOVIE_0010">
 					  <div class="card-body">
-					    <h5 class="card-title">귀멸의 칼날</h5>
-					    <p class="card-text">개봉예정일 : 2023.10.15<p>
+					    <h5 class="card-title">잠</h5>
+					    <p class="card-text">개봉예정일 : 2023.09.06<p>
 					    <p class="dday">D-5</p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
@@ -85,10 +85,10 @@
 				</div>
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/interstellar.jpg" class="mimg" id="MOVIE_0005">
+					  <img src="http://localhost:9000/images/spy0.jpg" class="mimg" id="MOVIE_0011">
 					  <div class="card-body">
-					    <h5 class="card-title">인터스텔라</h5>
-					    <p class="card-text">개봉예정일 : 2023.10.15<p>
+					    <h5 class="card-title">스파이 코드명 포춘</h5>
+					    <p class="card-text">개봉예정일 : 2023.08.30<p>
 					    <p class="dday">D-3</p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
@@ -97,10 +97,10 @@
 				</div>
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/war.jpg" class="mimg" id="MOVIE_0013">
+					  <img src="http://localhost:9000/images/joy0.jpg" class="mimg" id="MOVIE_0012">
 					  <div class="card-body">
-					    <h5 class="card-title">1917</h5>
-					    <p class="card-text">개봉예정일 : 2023.10.15<p>
+					    <h5 class="card-title">조이 라이드</h5>
+					    <p class="card-text">개봉예정일 : 2023.08.30<p>
 					    <p class="dday">D-3</p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
@@ -109,10 +109,10 @@
 				</div>
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/wick.jpg" class="mimg" id="MOVIE_0014">
+					  <img src="http://localhost:9000/images/innocents0.jpg" class="mimg" id="MOVIE_0013">
 					  <div class="card-body">
-					    <h5 class="card-title">존 윅 4</h5>
-					    <p class="card-text">개봉예정일 : 2023.10.15<p>
+					    <h5 class="card-title">이노센트</h5>
+					    <p class="card-text">개봉예정일 : 2023.09.06<p>
 					    <p class="dday">D-3</p>
 					   <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
@@ -124,10 +124,10 @@
 				<div class="row">
 					<div class="col">
 						<div class="card">
-						  <img src="http://localhost:9000/images/topgun.jpg" class="mimg" id="MOVIE_0012">
+						  <img src="http://localhost:9000/images/zip0.jpg" class="mimg" id="MOVIE_0014">
 						  <div class="card-body">
-						    <h5 class="card-title">탑 건 : 매버릭</h5>
-						    <p class="card-text">개봉예정일 : 2023.10.15<p>
+						    <h5 class="card-title">신체모음.zip</h5>
+						    <p class="card-text">개봉예정일 : 2023.08.30<p>
 						    <p class="dday">D-3</p>
 						    <a class="headerorderbtn">
 								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
@@ -136,10 +136,10 @@
 					</div>
 					<div class="col">
 						<div class="card">
-						  <img src="http://localhost:9000/images/tenet.jpg" class="mimg" id="MOVIE_0011">
+						  <img src="http://localhost:9000/images/target0.jpg" class="mimg" id="MOVIE_0015">
 						  <div class="card-body">
-						    <h5 class="card-title">테넷</h5>
-						    <p class="card-text">개봉예정일 : 2023.10.15<p>
+						    <h5 class="card-title">타겟</h5>
+						    <p class="card-text">개봉예정일 : 2023.08.30<p>
 						    <p class="dday">D-3</p>
 						    <a class="headerorderbtn">
 								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
@@ -148,10 +148,10 @@
 					</div>
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/supermario.jpg" class="mimg" id="MOVIE_0010">
+					  <img src="http://localhost:9000/images/flower0.jpg" class="mimg" id="MOVIE_0016">
 					  <div class="card-body">
-					    <h5 class="card-title">슈퍼마리오</h5>
-					    <p class="card-text">개봉예정일 : 2023.10.15<p>
+					    <h5 class="card-title">물꽃의 전설</h5>
+					    <p class="card-text">개봉예정일 : 2023.08.30<p>
 					    <p class="dday">D-3</p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
@@ -160,10 +160,10 @@
 				</div>
 				<div class="col">
 					<div class="card">
-					  <img src="http://localhost:9000/images/show.jpg" class="mimg" id="MOVIE_0008">
+					  <img src="http://localhost:9000/images/legend0.jpg" class="mimg" id="MOVIE_0017">
 					  <div class="card-body">
-					    <h5 class="card-title">위대한 쇼맨</h5>
-					    <p class="card-text">개봉예정일 : 2023.10.15<p>
+					    <h5 class="card-title">거룩한 술꾼의 전설</h5>
+					    <p class="card-text">개봉예정일 : 2023.08.30<p>
 					    <p class="dday">D-3</p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>

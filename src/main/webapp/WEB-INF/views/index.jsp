@@ -27,6 +27,16 @@
 	}
 </script>
 <style>
+	.div.section4 div{
+		border:1px solid white;
+	}
+	.glide__slides img{
+		width:100%;
+		height: 300px;
+		margin-bottom: 10px;
+	}
+
+
 	@media (min-width: 768px) {
 		.container {
 			width: 750px;
@@ -154,6 +164,10 @@
 	div.glides {
 		padding : 50px 0 100px 0;
 	}
+	.ggamovieboxofficetitle img{
+		width: 800px;
+
+	}
 
 
 	#modalBody{
@@ -245,6 +259,7 @@
 	}
 
 
+
 </style>
 
 <body>
@@ -254,13 +269,96 @@
 
 <!-- content -->
 <div class="container text-center">
+	<div class="ggamovieboxofficetitle">
+				<img src="http://localhost:9000/images/ggamovieboxoffice.png">
+			</div>
+
+	<div class = "glides">
+		<div class="glide">
+			<div class="glide">
+				<div class="glide__track" data-glide-el="track">
+					<ul class="glide__slides">
+						<li class="glide__slide"><img src="http://localhost:9000/images/oppenhelmer.jpg" id="MOVIE_0001" class="mimg"/>
+							<a class="headerorderbtn">
+								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+						<li class="glide__slide"><img src="http://localhost:9000/images/concreteutopia.jpg" id="MOVIE_0002" class="mimg"/>
+							<a class="headerorderbtn">
+								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+						<li class="glide__slide"><img src="http://localhost:9000/images/honeysweet.jpg" id="MOVIE_0003" class="mimg"/>
+							<a class="headerorderbtn">
+								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+						<li class="glide__slide"><img src="http://localhost:9000/images/smugglers.jpg" id="MOVIE_0004" class="mimg"/>
+							<a class="headerorderbtn">
+								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+						<li class="glide__slide"><img src="http://localhost:9000/images/elemental.jpg" id="MOVIE_0005" class="mimg"/>
+							<a class="headerorderbtn">
+								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+						<li class="glide__slide"><img src="http://localhost:9000/images/meg2.jpg" id="MOVIE_0006" class="mimg"/>
+							<a class="headerorderbtn">
+								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+						<li class="glide__slide"><img src="http://localhost:9000/images/amanofreason.jpg" id="MOVIE_0007" class="mimg"/>
+							<a class="headerorderbtn">
+								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+						<li class="glide__slide"><img src="http://localhost:9000/images/octonauts.jpg" id="MOVIE_0008" class="mimg"/>
+							<a class="headerorderbtn">
+								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+						<li class="glide__slide"><img src="http://localhost:9000/images/ransomed.jpg" id="MOVIE_0009" class="mimg"/>
+							<a class="headerorderbtn">
+								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="glide__arrows" data-glide-el="controls">
+				<button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
+				<button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+	<script>
+		const config = {
+			type : 'carousel',
+			perView: 5
+		}
+		new Glide('.glide', config).mount()
+	</script>
+
 	<div class="section1">
 		<div class="col" >
-			<div class="ggamovietitle">
-				<img src="http://localhost:9001/images/ggamovietitle.png">
-			</div>
 			<iframe justify-content-center width="100%" height="500px"
-					src="https://www.youtube.com/embed/cGNUpsevAk4?mute=1&autoplay=1"></iframe>
+					src="https://www.youtube.com/embed/oSqK_v6zPoM?mute=1&autoplay=1"></iframe>
+		</div>
+	</div>
+	<div class="ggamovietitle">
+				<img src="http://localhost:9000/images/eventtitle.png">
+			</div>
+	<div class="section3">
+		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<a href="http://localhost:9000/joinevent">
+					<img src="http://localhost:9000/images/joineventbanner.jpg" class="d-block w-100" style="height: 200px;" alt="...">
+					</a>
+				</div>
+				<div class="carousel-item">
+					<a href="http://localhost:9000/order">
+					<img src="http://localhost:9000/images/bannerimg2.jpg" class="d-block w-100" style="height: 200px;" alt="...">
+					</a>
+				</div>
+				<div class="carousel-item">
+					<a href="http://localhost:9000/store/combo">
+					<img src="http://localhost:9000/images/footerimg2.jpg" class="d-block w-100" style="height: 200px;" alt="...">
+					</a>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
 		</div>
 	</div>
 
@@ -268,16 +366,16 @@
 	<div class="fixed_button">
 
 		<div class = "fixed" onclick="window.scrollTo(0,0);">
-			<img src="http://localhost:9001/images/top.png" class="fixed_top_btn">
+			<img src="http://localhost:9000/images/top.png" class="fixed_top_btn">
 		</div>
 
 		<div class="fixed">
-			<button type="button" class="fixed_order_btn" id="indexOrderBtn"><img src="http://localhost:9001/images/indexorderbtn.png"></button>
+			<button type="button" class="fixed_order_btn" id="indexOrderBtn"><img src="http://localhost:9000/images/indexorderbtn.png"></button>
 		</div>
 
 		<!-- 날씨 부분으로 하단 이동 -->
 		<div class="fixed" onclick="window.scrollTo(1600,1600);">
-			<img src="http://localhost:9001/images/weather_checkbtn.png" class="fixed_weather_btn">
+			<img src="http://localhost:9000/images/weather_checkbtn.png" class="fixed_weather_btn">
 		</div>
 
 		<!-- 카카오톡 채널 추가 버튼 -->
@@ -302,8 +400,9 @@
 
 	<div class="section2">
 
-		<h1 class="Ktitle">GGA MOVIE BOXOFFICE</h1>
-
+		<div class="ggamovietitle">
+			<img src="http://localhost:9000/images/movierank.png">
+		</div>
 		<div id="1111" class="Kchoice">
 			<select id="kselect" class="K">
 				<option value = "default">박스오피스 선택</option>
@@ -343,63 +442,14 @@
 		</div>
 
 
-		<div class = "glides">
-			<div class="glide">
-				<div class="glide">
-					<div class="glide__track" data-glide-el="track">
-						<ul class="glide__slides">
-							<li class="glide__slide"><img src='"+poster_img+"'/></li>
-							<li class="glide__slide"><image src="images/ophen.jpg"/></li>
-							<li class="glide__slide"><image src="images/ophen.jpg"/></li>
-							<li class="glide__slide"><image src="images/ophen.jpg"/></li>
-							<li class="glide__slide"><image src="images/ophen.jpg"/></li>
-						</ul>
-					</div>
-				</div>
-				<div class="glide__arrows" data-glide-el="controls">
-					<button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-					<button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-				</div>
-			</div>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-		<script>
-			const config = {
-				type : 'carousel',
-				perView: 5
-			}
-			new Glide('.glide', config).mount()
-		</script>
 
 
-		<div class="section3">
-			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="http://localhost:9001/images/bannerimg2.jpg" class="d-block w-100" style="height: 200px;" alt="...">
-					</div>
-					<div class="carousel-item">
-						<img src="http://localhost:9001/images/bannerimg3.jpg" class="d-block w-100" style="height: 200px;" alt="...">
-					</div>
-					<div class="carousel-item">
-						<img src="http://localhost:9001/images/footerimg2.jpg" class="d-block w-100" style="height: 200px;" alt="...">
-					</div>
-				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-			</div>
-		</div>
+
 
 		<div class="section4">
 			<div class="row">
 				<div class="mapimg">
-					<img src="http://localhost:9001/images/map.png">
+					<img src="http://localhost:9000/images/map.png">
 				</div>
 			</div>
 			<div class="row">

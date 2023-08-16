@@ -113,7 +113,7 @@
 				<table class="table">
 					<tr class="movieinfoback">
 						<td></td>
-						<td style="width: 80%;">${movieVo.movieinfo}</td>
+						<td style="width: 80%;">${movie.movieinfo}</td>
 						<td></td>
 					</tr>
 				</table>
@@ -124,7 +124,7 @@
 				</table> -->
 			</div>
 			<div>
-				<iframe width="1000" height="450" src="${movieVo.youtube}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="1000" height="450" src="${movie.youtube}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			</section>
 			<div class="still_cut">
@@ -132,23 +132,23 @@
 			</div>
 			<section class="movie_info3">
 			<div>
-				<a target="_blank" href="http://localhost:9000/images/${movieVo.stillcut1}">
-					<img alt="cut1" src="http://localhost:9000/images/${movieVo.stillcut1}" width="250" height="210">
+				<a target="_blank" href="http://localhost:9000/images/${movie.stillcut1}">
+					<img alt="cut1" src="http://localhost:9000/images/${movie.stillcut1}" width="250" height="210">
 				</a>
 			</div>		
 			<div>
-				<a target="_blank" href="http://localhost:9000/images/${movieVo.stillcut2}">
-					<img alt="cut2" src="http://localhost:9000/images/${movieVo.stillcut2}" width="250" height="210">
+				<a target="_blank" href="http://localhost:9000/images/${movie.stillcut2}">
+					<img alt="cut2" src="http://localhost:9000/images/${movie.stillcut2}" width="250" height="210">
 				</a>
 			</div>		
 			<div>
-				<a target="_blank" href="http://localhost:9000/images/${movieVo.stillcut3}">
-					<img alt="cut3" src="http://localhost:9000/images/${movieVo.stillcut3}" width="250" height="210">
+				<a target="_blank" href="http://localhost:9000/images/${movie.stillcut3}">
+					<img alt="cut3" src="http://localhost:9000/images/${movie.stillcut3}" width="250" height="210">
 				</a>
 			</div>		
 			<div>
-				<a target="_blank" href="http://localhost:9000/images/${movieVo.stillcut4}">
-					<img alt="cut4" src="http://localhost:9000/images/${movieVo.stillcut4}" width="250" height="210">
+				<a target="_blank" href="http://localhost:9000/images/${movie.stillcut4}">
+					<img alt="cut4" src="http://localhost:9000/images/${movie.stillcut4}" width="250" height="210">
 				</a>
 			</div>		
 			
