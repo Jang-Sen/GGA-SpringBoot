@@ -80,7 +80,7 @@ $(document).ready(function(){
 	
 	$("#edit1").click(function(){
 		var select = $('.commentEdit').attr('id');
-		$("#editComment1")"display","block");
+		$("#editComment1").css("display","block");
 		$("#commentEditSuccess1").css("display","inline");
 		$("#commentEditStop1").css("display","inline");
 		$("#commentEditSuccess1").click(function(){
