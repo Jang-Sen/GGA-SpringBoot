@@ -43,12 +43,34 @@
 }
 
 .productordercon table tr td:nth-child(5){
-	width : 200px;
+	width : 120px;
 }
 
 .productordercon h1{
 	font-size:20pt;
 }
+
+.form-inline {
+	display: flex;
+	align-items: center;
+}
+.form-group {
+	margin-left: 60px;
+	margin-right: 70px;
+}
+
+.myproductorder_text{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-left: 150px;
+}
+
+.myproductorder_text img{
+	width: 140px;
+}
+
 #ampaginationsm {
 	height:30px;
 }
@@ -79,6 +101,61 @@
 			});
 		});
 
+	$(document).ready(function (){
+		$('#productSearchDate, #productSearchDateWeek, #productSearchDateMonth, #productSearchDateThreeMonth').click(function (){
+			let startDate = $('#startDate').val();
+			let endDate = $('#endDate').val();
+
+
+			if (startDate == ''){
+				alert("시작 날짜를 검색해주세요");
+			} else {
+				$.ajax({
+					url: '/product_date_search/'+startDate+'/'+endDate,
+					success: function (result){
+						if (result.length >= 1){
+							let productOrderTableBody = $('#productOrderTableBody');
+							productOrderTableBody.empty();
+
+							for (let i = 0; i < result.length; i++) {
+								let product = result[i];
+								let row = $('<tr>');
+								row.append($('<td>').append(
+										$('<img>').attr('src', 'http://localhost:9000/upload/' + product.gsfile)
+								));
+								row.append($('<td>').text(product.pname));
+								row.append($('<td>').text(product.couponname != null ? product.couponname : '사용한 쿠폰이 없습니다'));
+								row.append($('<td>').text(product.qty));
+
+								let td = $('<td>');
+
+								if (product.couponname != null) {
+									let p1 = $('<p>').attr('style', 'color: gray; text-decoration: line-through; margin: 0px; padding: 0px;').text(product.pprice * product.qty + ' 원');
+									let p2 = $('<p>').attr('style', 'color: blue; margin: 0px; padding: 0px;').addClass('previousPrice1').text((product.pprice * product.qty - product.discount) + ' 원');
+									td.append(p1);
+									td.append(p2);
+								} else {
+									let span = $('<span>').attr('style', 'color: red;').addClass('previousPrice1').text((product.pprice * product.qty - product.discount) + ' 원');
+									td.append(span);
+								}
+
+								row.append(td);;
+
+								row.append($('<td>').text(product.poid));
+								row.append($('<td>').text(product.podate));
+								productOrderTableBody.append(row);
+							}
+
+						} else {
+							alert("검색결과 없습니다");
+						}
+
+					}
+				});
+			}
+
+		});
+	});
 	</script>
 </head>
 <body>
@@ -103,10 +180,12 @@
 						<c:when test="${svo.naverLoginResult == 0}">
 <%--							<a href= "http://localhost:9000/mypage_update/${svo.id}">내 정보 수정</a> <!-- el태그 memberVo.mid -->--%>
 							<a href="#" class="mypageModal">내 정보 수정</a>
+							<a href= "http://localhost:9000/mycoupon">내 쿠폰함</a>
 						</c:when>
 						<c:otherwise>
 							<a href= "http://localhost:9000/join">내 정보 수정 (GGA 회원 전용)</a>
 							<span id="naverGuide">* 클릭 시 회원 전환 화면으로 넘어갑니다.</span>
+
 						</c:otherwise>
 					</c:choose>
 
@@ -203,28 +282,84 @@
 		<hr>
 			<section class="productordercon">
 				<div class="myreview_header">
-						<h1>My상품구매내역</h1>
+					<h1>My상품구매내역 목록</h1>
 				</div>
-				<table class="table table-bordered" style="width: 90%;">
-					<tr>
+
+				<c:choose>
+				<c:when test="${not empty productOrderList}">
+					<form name="searchForm" action="product_date_search" method="POST" >
+						<div class="form-inline">
+							<div class="form-group">
+								<label for="startDate">시작 날짜:</label>
+								<input type="date" id="startDate" name="startDate" class="form-control" style="width: 200px;">
+							</div>
+							<div class="form-group">
+								<label for="endDate">종료 날짜:</label>
+								<input type="date" id="endDate" name="endDate" class="form-control" style="width: 200px;" value="<%= java.time.LocalDate.now() %>">
+							</div>
+							<button type="button" id="productSearchDate" class="btn btn-outline-secondary">검색</button>
+						</div>
+						<div class="form-group">
+							<button type="button" id="productSearchDateWeek" class="btn btn-outline-secondary" onclick="setDateRange(7)">일주일 전</button>
+							<button type="button" id="productSearchDateMonth" class="btn btn-outline-secondary" onclick="setDateRange(30)">한달 전</button>
+							<button type="button" id="productSearchDateThreeMonth" class="btn btn-outline-secondary" onclick="setDateRange(90)">3개월 전</button>
+						</div>
+					</form>
+
+					<table class="table table-bordered" style="width: 90%;">
+						<tr>
 							<th>이미지</th>
 							<th>상품명</th>
+							<th>사용한 쿠폰명</th>
 							<th>수량</th>
 							<th>결제 금액</th>
 							<th>주문 번호</th>
 							<th>구매 일자</th>
-					</tr>
-					<c:forEach var="productOrderVo" items="${polist}">
-					<tr>
-						<td><img src="http://localhost:9000/images/${productOrderVo.gfile}"></td>
-						<td>${productOrderVo.pname}</td>
-						<td>${productOrderVo.qty}</td>
-						<td>${productOrderVo.totalprice}</td>
-						<td>${productOrderVo.poid}</td>
-						<td>${productOrderVo.podate}</td>
-					</tr>
-					</c:forEach>
-				</table>
+						</tr>
+						<tbody id="productOrderTableBody">
+						<c:forEach var="productList" items="${productOrderList}">
+							<tr>
+								<td><img src="http://localhost:9000/upload/${productList.gsfile}"></td>
+								<td>${productList.pname}</td>
+								<td>
+									<c:choose>
+										<c:when test="${productList.couponname != null}">${productList.couponname}</c:when>
+										<c:otherwise>사용한 쿠폰이 없습니다</c:otherwise>
+									</c:choose>
+								</td>
+								<td>${productList.qty}</td>
+								<td>
+									<c:choose>
+										<c:when test="${productList.couponname != null}">
+											<p style="color: gray; text-decoration: line-through; margin: 0px; padding: 0px;" >${productList.pprice*productList.qty} 원</p>
+											<p style="color: blue; margin: 0px; padding: 0px;" class="previousPrice1">${productList.pprice*productList.qty - productList.discount} 원</p></c:when>
+										<c:otherwise><span style="color: red;" class="previousPrice1">${productList.pprice*productList.qty - productList.discount} 원</span></c:otherwise>
+									</c:choose>
+								</td>
+								<td>${productList.poid}</td>
+								<td>${productList.podate}</td>
+							</tr>
+						</c:forEach>
+						</tbody>
+					</table>
+				</c:when>
+				<c:otherwise>
+					<div class="myproductorder_text">
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<p>아직 구매한 상품이 없습니다.
+							상품을 구매하러 갈까요? <br>(네이버 회원은 통합 회원으로 전환 시 확인 가능합니다)</p>
+						<a href="http://localhost:9000/store/combo" class="orderbtn">
+							<img src="http://localhost:9000/images/buybtn.png"></a>
+					</div>
+
+				</c:otherwise>
+				</c:choose>
+
+
 			</section>
 		</div>
 	</div>
@@ -253,5 +388,18 @@
 			<jsp:include page="../footer.jsp" />
 		</footer>
 	<!-- Footer -->
+	<script>
+		function setDateRange(days) {
+			const today = new Date();
+			const startDate = new Date(today);
+			startDate.setDate(startDate.getDate() - days);
+
+			const startDateValue = startDate.toISOString().split('T')[0];
+			const endDateValue = today.toISOString().split('T')[0];
+
+			document.getElementById("startDate").value = startDateValue;
+			document.getElementById("endDate").value = endDateValue;
+		}
+	</script>
 </body>
 </html>

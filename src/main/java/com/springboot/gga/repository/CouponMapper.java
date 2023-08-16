@@ -21,4 +21,6 @@ public interface CouponMapper {
     int updateCancel(Map param);
 
     int updateListAdd(String[] couponidArray);
+
+    List<CouponDto> myList(String id);
 }

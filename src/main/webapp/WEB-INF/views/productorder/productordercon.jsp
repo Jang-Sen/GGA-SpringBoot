@@ -54,7 +54,9 @@
 	 <div class="container">
 	<section class="productordercon">
 		<div class="myreview_header">
+			<br><br>
 				<h1>My상품구매내역</h1>
+			<br><br>
 		</div>
 		<table class="table table-bordered" style="width: 90%;">
 			<tr>
@@ -84,7 +86,7 @@
 <%--			</c:forEach>--%>
 		</table>
 
-		<div class="myreview_header">
+		<%--<div class="myreview_header">
 			<h1>My상품구매내역 목록</h1>
 		</div>
 		<table class="table table-bordered" style="width: 90%;">
@@ -113,7 +115,7 @@
 				<td>${productList.podate}</td>
 			</tr>
 			</c:forEach>
-		</table>
+		</table>--%>
 	</section>
 	</div>
 	<!-- content -->

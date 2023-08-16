@@ -1,12 +1,10 @@
 package com.springboot.gga.controller;
 
-import com.springboot.gga.dto.MemberDto;
-import com.springboot.gga.dto.OrderconDto;
-import com.springboot.gga.dto.ProductOrderDto;
-import com.springboot.gga.dto.SessionDto;
+import com.springboot.gga.dto.*;
 import com.springboot.gga.service.CouponService;
 import com.springboot.gga.service.MemberService;
 import com.springboot.gga.service.OrderService;
+import com.springboot.gga.service.ProductOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -27,6 +26,8 @@ public class MyPageController {
     private OrderService orderService;
     @Autowired
     private CouponService couponService;
+    @Autowired
+    private ProductOrderService productOrderService;
 
     //마이페이지 정보수정 접근 전 본인 확인
 //    @GetMapping("mypage_passCheck/{modalPass}/{modalName}")
@@ -123,13 +124,17 @@ public class MyPageController {
 
     // 마이페이지 조회
     @GetMapping("mypage/{id}")
-    public String mypage(@PathVariable String id, Model model){
+    public String mypage(@PathVariable String id, Model model, HttpSession session){
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        List<ProductOrderDto> productOrderList = productOrderService.myList(svo.getId());
+
         MemberDto memberDto  = memberService.selectMypage(id);
         ArrayList<OrderconDto> list = orderService.selectOrderconMypage(id);
        // ArrayList<ProductOrderDto> polist = orderService.selectProductOrderMypage(id);
 
         model.addAttribute("svo",memberDto);
         model.addAttribute("ticketlist",list);
+        model.addAttribute("productOrderList",productOrderList);
         //model.addAttribute("polist",polist);
 
         return "/mypage/mypage";
@@ -171,6 +176,15 @@ public class MyPageController {
 
         return "/mypage/mypage";
 
+    }
+
+    @GetMapping("mycoupon")
+    public String mycoupon(HttpSession session, Model model){
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        List<CouponDto> list = couponService.myList(svo.getId());
+        model.addAttribute("list", list);
+        model.addAttribute("id", svo.getId());
+        return "/mypage/mycoupon";
     }
 
 }

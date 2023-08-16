@@ -52,7 +52,7 @@
 							<a href="http://localhost:9000/join">회원가입</a>
 						</li>
 						<li>
-							<a href="http://localhost:9000/mypage">마이페이지</a>
+							<a href="http://localhost:9000/login">마이페이지</a>
 						</li>
 					</ul>
 		      	</c:when>
