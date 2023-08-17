@@ -59,11 +59,11 @@ table tr:first-child {
 <script>
 	$(document).ready(function(){
 		var pager = jQuery('#ampaginationsm').pagination({
-		
-		    maxSize: "${pageCount}",	    		// max page size
-		    totals: "${dbCount}",	// total pages	
-		    page: "${page}",		// initial page		
-		    pageSize: "${pageSize}",			// max number items per page
+
+			maxSize: '${maxSize}',	    		// max page size
+			totals: '${totals}',	// total pages
+			page: '${page}',		// initial page
+			pageSize: '${pageSize}',			// max number items per page
 		
 		    // custom labels		
 		    lastText: '&raquo;&raquo;', 		
@@ -76,7 +76,7 @@ table tr:first-child {
 		
 		jQuery('#ampaginationsm').on('am.pagination.change',function(e){
 			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "http://localhost:9000/admin_member_list?page="+e.page);
+	           $(location).attr('href', "http://localhost:9000/admin_member_list/"+e.page);
 	    });
 		
  	});
@@ -107,12 +107,12 @@ table tr:first-child {
 					<th>이름</th>
 					<th>가입일자</th>
 				</tr>
-				<c:forEach var="memberVo" items="${ list }">
+				<c:forEach var="member" items="${ list }">
 				<tr>
-					<td>${ memberVo.rno }</td>
-					<td>${ memberVo.id }</td>
-					<td>${ memberVo.name }</td>
-					<td>${ memberVo.mdate }</td>
+					<td>${ member.rno }</td>
+					<td>${ member.id }</td>
+					<td>${ member.name }</td>
+					<td>${ member.mdate }</td>
 				</tr>
 				</c:forEach>
 				<tr>

@@ -1,17 +1,25 @@
 package com.springboot.gga.service;
 
+import com.springboot.gga.dto.PageDto;
 import com.springboot.gga.repository.MemberMapper;
 import com.springboot.gga.dto.MemberDto;
 import com.springboot.gga.dto.SessionDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 @Service
 public class MemberService {
     @Autowired
     private MemberMapper memberMapper;
+
+
+    // 관리자 맴버 조회
+    public List<MemberDto> select(PageDto pageDto){
+        return memberMapper.select(pageDto);
+    };
 
 
 
