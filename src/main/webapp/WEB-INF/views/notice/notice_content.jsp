@@ -40,8 +40,8 @@ section.notice table {
 	width:95%;
 	border-color:#ddd;
 }
-.table td {
-text-align:left;
+.table th, .table td {
+	vertical-align: middle;
 }
 .table tr:last-child td {
 text-align:center;
@@ -83,10 +83,10 @@ height:600px;
 					<tr>
 						<th>내용</th>
 						<td>
-							${notice.ncontent }<br><br><br>
 							<c:if test="${notice.gsfile != null}">
 								<img src="http://localhost:9000/upload/${notice.gsfile}" class="noticeImg">
 							</c:if>
+							<br>${notice.ncontent }<br><br>
 						</td>
 					</tr>
 					<tr>

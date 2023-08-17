@@ -72,11 +72,13 @@ div.board_title img {
 	width:95%;
 	border-color:#ddd;
 }
-.table td {
-text-align:left;
+.table th, .table td {
+	vertical-align: middle;
 }
+
 .table tr:last-child td {
 text-align:center;
+
 }
 
 section.board form table img#boardUpdate,
@@ -121,7 +123,7 @@ section.board form table.table img.scoreImg {
 					<tr>
 						<th>내용</th>
 						<td style = "word-break: break-all">
-							${board.bcontent}<br><br><br><br>
+							<br>${board.bcontent}<br><br>
 								<c:if test="${board.gsfile != null}">
 									<img src="http://localhost:9000/upload/${board.gsfile}" class="boardImg">
 								</c:if>

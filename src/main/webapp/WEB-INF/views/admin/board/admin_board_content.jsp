@@ -38,8 +38,8 @@ section.board table {
 	width:95%;
 	border-color:#ddd;
 }
-.table td {
-text-align:left;
+.table th, .table td {
+	vertical-align: middle;
 }
 .table tr:last-child td {
 text-align:center;

@@ -28,6 +28,9 @@ section.admin_notice table {
 	text-align:center;
 	margin:auto;
 }
+.table th {
+	vertical-align: middle;
+}
 .ninput{
 	width:95%;
 	border-color:#ddd;
@@ -47,7 +50,7 @@ section.admin_notice table {
 	
 	<!-- content -->
 	<div class="container text-center">
-		<div class="board_title">
+		<div class="admin_notice_list_title">
 		<img src="http://localhost:9000/images/adminnoticetitle.png">
 		</div>
 		<section class="admin_notice">

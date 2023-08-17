@@ -15,7 +15,7 @@ $(document).ready(function(){
 			$("#btmsg").text("✔").css("color", "blue")
 			.css("font-size", "12px").css("display", "block");
 		}
-	}); 
+	});
 	$("#movieName").on("blur", function(){
 		if ($("#movieName").val() == "default"){
 			$("#bmmsg").text("영화를 선택해주세요.").css("color", "red")
@@ -47,12 +47,12 @@ $(document).ready(function(){
 			.css("font-size", "12px").css("display", "block");
 		}
 	});
-	
+
 
 	/***********************************
 	 보내줘야함 - 희정님
 	*************************************/
-	
+
 	$("#btnBoardComment").click(function(){
 			if($("#userComment").val() == "") {
 				alert("댓글을 입력하세요.");
@@ -65,7 +65,7 @@ $(document).ready(function(){
 	/***********************************
 		mypage
 	*************************************/
-	
+
 	 $(".mypage_ticket").click(function() {
 	 var oconid = $(this).data('oconid');
 	 location.replace("http://localhost:9000/mypage_ticket/"+oconid+"/");
@@ -74,7 +74,7 @@ $(document).ready(function(){
  var oconid = $(this).data('oconid');
  location.replace("http://localhost:9000/mypage_ticket2/"+oconid+"/");
                     	});
-	                    	
+
 	 $(".openmypage").click(function() {
 	 location.replace("http://localhost:9000/mypage");
 	                    	});
@@ -84,7 +84,7 @@ $(document).ready(function(){
  $(".openallticket").click(function() {
  location.replace("http://localhost:9000/mypage_allticket");
                     	});
-	                    	
+
 	$(".refundticket").click(function() {
 
 		var oconid = $(".forrefundoconid").data('id');
@@ -100,32 +100,32 @@ $(document).ready(function(){
 	  			alert("환불이 완료되었습니다.");
 	  			location.replace("http://localhost:9000/mypage/"+id+"/");
 	  			});
-	    
+
 	  		}
-	});                	
-	
+	});
+
 		/***********************************
 		store
 		*************************************/
-		
-		
-	
-	function reloadModalContent() {  
+
+
+
+	function reloadModalContent() {
 	   $('#CartModal .modal-content').load('/cartModal', function() {
 	      $('#CartModal').modal('show');
-	      
-	
+
+
 	   });
 	}
-	
+
 	$(document).on('click', '.emptycartclass', function() {
 	  $('#CartModal').modal('hide');
 	});
-	
+
 	$(document).on('click', '.cartclosebtn', function() {
 	  $('#CartModal').modal('hide');
 	});
-		
+
 	   $("#store_cart").click(function(){
 	  	 $('#CartModal .modal-content').load('/cartModal');
 		 $('#CartModal').modal('show');
@@ -159,8 +159,8 @@ $(document).ready(function(){
 	$('#buyModal').on('hidden.bs.modal', function (e) {
 		location.reload(); // 모달 닫힐 때 페이지 리로드
 	});
-	
-	
+
+
 	  $("#shoppingbtn").click(function(){
 		 $('#buyModal').modal('hide');
 	 });
@@ -170,12 +170,12 @@ $(document).ready(function(){
 		 $('#CartModal').modal('show');
 
 	 });
-	 
-	
+
+
 	  $("#cartclosebtn2").click(function(){
 		 $('#buyModal').modal('hide');
 	 });
-	  
+
 /*	$(".cartbtn2").click(function(){
 		 $('#buycartModal').modal('show');
 		 $("#cartkakaopay").data('price',$(this).data('price'));
@@ -188,28 +188,28 @@ $(document).ready(function(){
 	  $("#cartclosebtn3").click(function(){
 		 $('#buycartModal').modal('hide');
 	 });
-	
-	 
+
+
 	  $("#cartcardpay").click(function(){
 		var price = $(this).data('price');
-	
-			var IMP = window.IMP; 
-	        IMP.init("imp71285848"); 
-	      
-	        var today = new Date();   
+
+			var IMP = window.IMP;
+	        IMP.init("imp71285848");
+
+	        var today = new Date();
 	        var hours = today.getHours(); // 시
 	        var minutes = today.getMinutes();  // 분
 	        var seconds = today.getSeconds();  // 초
 	        var milliseconds = today.getMilliseconds();
 	        var makeMerchantUid = hours +  minutes + seconds + milliseconds;
-			
+
 			if(price == "0"){
 				alert("결제할 상품이 없습니다.");
 			}else{
 				IMP.request_pay({
 	                pg : 'kcp',
 	                pay_method : 'card',
-	                merchant_uid: "IMP"+makeMerchantUid, 
+	                merchant_uid: "IMP"+makeMerchantUid,
 	                name : 'GGA 스토어',
 	                amount : price,
 	                buyer_email : 'Iamport@chai.finance',
@@ -236,37 +236,37 @@ $(document).ready(function(){
 	                    } else {
 	                    console.log(rsp);
 	                    alert("결제를 실패했습니다. 잠시후 다시 시도해 주세요.");
-	                    
+
 	              	  }
-	            
+
 	            });
 		}
-	
+
 	 });
-	 
+
 	  $("#cartkakaopay").click(function(){
 			var price = $(this).data('price');
 			var pid = $(this).data('id');
 			var pname = $(this).data('pname');
 			var gfile = $(this).data('gfile');
-			
-			var IMP = window.IMP; 
-	        IMP.init("imp71285848"); 
-	      
-	        var today = new Date();   
+
+			var IMP = window.IMP;
+	        IMP.init("imp71285848");
+
+	        var today = new Date();
 	        var hours = today.getHours(); // 시
 	        var minutes = today.getMinutes();  // 분
 	        var seconds = today.getSeconds();  // 초
 	        var milliseconds = today.getMilliseconds();
 	        var makeMerchantUid = hours +  minutes + seconds + milliseconds;
-			
+
 			if(price == "0"){
 				alert("결제할 상품이 없습니다.");
 			}else{
 				IMP.request_pay({
 	                pg : 'kakaopay',
 	                pay_method : 'card',
-	                merchant_uid: "IMP"+makeMerchantUid, 
+	                merchant_uid: "IMP"+makeMerchantUid,
 	                name : 'GGA 스토어',
 	                amount : price,
 	                buyer_email : 'Iamport@chai.finance',
@@ -295,14 +295,14 @@ $(document).ready(function(){
 	                    } else {
 	                    console.log(rsp);
 	                    alert("결제를 실패했습니다. 잠시후 다시 시도해 주세요.");
-	                    
+
 	              	  }
-	            
+
 	            });
 		}
 	 });
 
-	 
+
 		/*********************************
 		 영화 CRUD
 		 *********************************/
@@ -576,11 +576,11 @@ $(document).ready(function(){
 		}
 
 	});
-	
+
 		/**********************************
-		header 부분 검색 
+		header 부분 검색
 		 **********************************/
-		
+
 		/**********************************
 		영화 포스터 클릭시 -> movieinfo 이동
 		 **********************************/
@@ -613,9 +613,9 @@ $(document).ready(function(){
 					writeForm.submit();
 				}
 			});
-		 
+
 	//업데이트
-			
+
 			$("#btnBoardUpdate").click(function(){
 			if($("#btitle").val() == "") {
 				alert("제목을 입력하세요.");
@@ -637,21 +637,21 @@ $(document).ready(function(){
 				updateForm.submit();
 			}
 		});
-	
+
 		//리셋 버튼
-		
+
 		$("#btnBoardReset").click(function(){
 			$("#btitle").val("");
 			$("#bmovie").val("default");
 			$("#bscore").val("default");
 			$("#btextarea").val("");
 		});
-		
+
 		/***
-		 * 게시판 콘텐츠  
+		 * 게시판 콘텐츠
 		 */
 		//삭제 버튼
-		
+
 		$("#boardDelete").click(function(){
 			var delConfirm = confirm("정말로 삭제 하시겠습니까 ?");
 			if(delConfirm) {
@@ -848,9 +848,9 @@ $(document).ready(function(){
 
 
 	// -- 오장원
-	
+
 	/**********************************
-		소윤짱의 관리자 
+		소윤짱의 관리자
 		 **********************************/
 		$("#btnNoticeWrite").click(function(){
 			if($("#ntitle").val()==""){
@@ -860,9 +860,9 @@ $(document).ready(function(){
 			} else{
 				writeForm.submit();
 			}
-			
+
 		});
-		
+
 		$("#btnNoticeUpdate").click(function(){
 			if($("#ntitle").val()==""){
 				alert("제목을 입력해주세요.");
@@ -871,7 +871,7 @@ $(document).ready(function(){
 			} else{
 				updateForm.submit();
 			}
-			
+
 		});
 		$("#btnNoticeUpdateProc").click(function(){
 			if($("#ntitle").val()==""){
@@ -881,16 +881,16 @@ $(document).ready(function(){
 			} else{
 				updateForm.submit();
 			}
-			
+
 		});
 		$("#btnNoticeDelete").click(function(){
 			deleteForm.submit();
 			alert("삭제가 완료되었습니다.");
 		});
-	
-	
+
+
 	/***********************
-	소윤 - 공지사항 검색 
+	소윤 - 공지사항 검색
 	************************/
 		// $("#btnNoticeSearch").click(function(){
 		// 	if($("#ntitle").val() == "" ){
@@ -910,30 +910,30 @@ $(document).ready(function(){
 		// 		});
 		// 	}
 		// });
-		
-		
+
+
 	/***********************
-	관리자 공지사항 검색 
-	************************/	
-	$("#btnAdminNoticeSearch").click(function(){
+	관리자 공지사항 검색
+	************************/
+	/*$("#btnAdminNoticeSearch").click(function(){
 			if($("#ntitle").val() == "" ){
 				alert("공지사항 제목을 입력해주세요.");
 				$("#ntitle").focus();
 				return false;
 			} else{
 				$.ajax({
-			          url:"http://localhost:9000/gga_plz/Searchnoticeproc.do?ntitle="+$("#ntitle").val(),
+			          url:"http://localhost:9000/admin_notice_search/" + page + $("#ntitle").val(),
 			          success: function(nid){
 			          	if(nid == ""){
 							alert("존재하지 않는 게시글입니다.다시 입력해주세요.");
 			          	}else{
 			           	 location.href="http://localhost:9000/gga_plz/admin_notice_content.do?nid="+nid; }
 			         	}
-					
+
 				});
 			}
-		});
-		
+		});*/
+
 	/*대관문의-김소윤*/
 	$("#btnConfirm").click(function(){
 		if($("#cname").val() == ""){
@@ -961,8 +961,8 @@ $(document).ready(function(){
 			alert("신청이 완료되었습니다.");
 		}
 
-	});	
-	
+	});
+
 	/*********************************
 	  search _ using enter key 김소윤
 	*********************************/

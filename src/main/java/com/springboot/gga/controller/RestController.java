@@ -235,6 +235,21 @@ public class RestController {
         return map;
     }
 
+    @GetMapping("admin_notice_search/{page}/{ntitle}")
+    public Map admin_notice_search(@PathVariable String page, @PathVariable String ntitle){
+        Map map = new HashMap();
+        PageDto pageDto = pageService.getPaging(new PageDto(page, "notice_search"));
+        pageDto.setNtitle(ntitle);
+
+        List<NoticeDto> list = noticeService.notice_search(pageDto);
+
+
+        map.put("page", pageDto);
+        map.put("list", list);
+
+        return map;
+    }
+
     @GetMapping("idCheckProc/{id}")
     public String idCheck(@PathVariable String id) {
         return String.valueOf(memberService.idCheck(id));

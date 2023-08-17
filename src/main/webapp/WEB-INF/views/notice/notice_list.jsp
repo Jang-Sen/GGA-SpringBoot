@@ -55,7 +55,15 @@
 }
 section.notice table {
 	margin:auto;
-} 
+}
+section.notice table tr td a { /* 텍스트 언더라인 X */
+	color: darkgreen;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+section.notice table tr td a:hover {
+	color: blue;
+}
 
 table tr:last-child {
 	border:1px solid white;
@@ -66,12 +74,8 @@ table tr:last-child nav ul {
 	justify-content:center;
 }
 
-table tr{
-	text-align:center;
-}
-
-table td:nth-child(2){
-	text-align:left;
+table tr, table td{
+	vertical-align: middle;
 }
 
 .notice_search {

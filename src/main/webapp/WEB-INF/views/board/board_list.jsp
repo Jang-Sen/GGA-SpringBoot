@@ -31,9 +31,14 @@
 }
 section.board table {
 		margin:auto;
-} 
+}
 section.board table tr td a { /* 텍스트 언더라인 X */
-	text-decoration-line:none;
+	color: darkgreen;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+section.board table tr td a:hover {
+	color: blue;
 }
 
 table tr:last-child {
@@ -46,7 +51,7 @@ table tr:last-child nav ul {
 }
 
 table tr{
-	text-align:center;
+	vertical-align: middle;
 }
 
 table td:nth-child(2){
