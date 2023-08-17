@@ -85,7 +85,14 @@
 			}
 
 		}
+// 오늘 날짜 가져오기
+		var today = new Date().toISOString().split('T')[0];
 
+		// input 요소 가져오기
+		var orderDateInput = document.getElementById('orderdate');
+
+		// 최소 날짜 설정 (오늘 이전 날짜)
+		orderDateInput.setAttribute('min', today);
 
 	});//document.ready
 </script>
@@ -157,7 +164,7 @@
 			</ul>
 		</article>
 
-		<input type="date" value="today" min="2023-04-01" max="2023-08-31"
+		<input type="date" max="2023-08-31"
 			   id="orderdate" name="orderdate">
 
 		<article class="time-select">
