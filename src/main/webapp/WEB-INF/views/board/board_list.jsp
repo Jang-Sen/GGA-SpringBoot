@@ -67,7 +67,7 @@ section.board div.board_search input { /* 검색창 */
 	height:30px;width:160px;
 	border-radius: 5px;
 	opacity:80%;
-	border:lightgray 1px solid;
+	border:white;
 }
 section.board div.board_search { /* 검색창 영역 */
 	float:left;
@@ -79,8 +79,9 @@ section.board div.board_search { /* 검색창 영역 */
 .boardbtn1, .boardbtn2{
 	border-color:white;
 	height:25px;
-	background: white;
+	background: #aed581;
 	border-radius:5px;
+	color: black;
 	font-size:14px;
 	width:60px;
 	padding-top:3px;

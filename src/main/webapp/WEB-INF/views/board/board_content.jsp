@@ -62,7 +62,7 @@ section.board table {
 	margin:auto;
 }
 div.board_title img {
-	width:230px;
+	width:160px;
 }
 .binput{
 	width:95%;
