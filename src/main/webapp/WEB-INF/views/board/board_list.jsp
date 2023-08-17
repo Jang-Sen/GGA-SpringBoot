@@ -53,7 +53,7 @@ table td:nth-child(2){
 	text-align:left;
 }
 div.board_title img {
-	width:230px;
+	width:160px;
 }
 
 img {
@@ -67,7 +67,7 @@ section.board div.board_search input { /* 검색창 */
 	height:30px;width:160px;
 	border-radius: 5px;
 	opacity:80%;
-	border:white;
+	border:lightgray 1px solid;
 }
 section.board div.board_search { /* 검색창 영역 */
 	float:left;
@@ -79,9 +79,8 @@ section.board div.board_search { /* 검색창 영역 */
 .boardbtn1, .boardbtn2{
 	border-color:white;
 	height:25px;
-	background: #aed581;
+	background: white;
 	border-radius:5px;
-	color: black;
 	font-size:14px;
 	width:60px;
 	padding-top:3px;

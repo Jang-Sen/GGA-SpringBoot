@@ -36,7 +36,7 @@
                     output += "<th>영화명</th>";
                     output += "<th>누적관객</th>";
                     output += "<th>개봉일자</th>";
-                    output += "<th>순위증감분</th>";
+                    /*output += "<th>순위증감분</th>";*/
                     output += "</tr class='KobisListth'>";
 
                     var listName = boxOffice.dailyBoxOfficeList;
@@ -48,7 +48,7 @@
                         output += "<td id='buttonTitle'><button type='button' id='movieName"+kobisCount+"' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>"+list.movieNm+"</button></td>";
                         output += "<td>"+list.audiAcc+"</td>";
                         output += "<td>"+list.openDt+"</td>";
-                        output += "<td>"+list.rankInten+"</td>";
+                      /*  output += "<td>"+list.rankInten+"</td>";*/
                         output += "</tr>"
 
                         kobisCount++;
@@ -183,7 +183,7 @@
                     output += "<th id='movieNmSize'>영화명</th>";
                     output += "<th>누적관객</th>";
                     output += "<th>개봉일자</th>";
-                    output += "<th>순위증감분</th>";
+                   /* output += "<th>순위증감분</th>";*/
                     output += "</tr class='KobisListth'>";
 
                     var listName = null;
@@ -201,7 +201,7 @@
                         output += "<td id='buttonTitle'><button type='button' id='movieName"+kobisCount+"' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>"+list.movieNm+"</button></td>";
                         output += "<td>"+list.audiAcc+"</td>";
                         output += "<td>"+list.openDt+"</td>";
-                        output += "<td>"+list.rankInten+"</td>";
+                        /*output += "<td>"+list.rankInten+"</td>";*/
                         output += "</tr>"
 
                         kobisCount++;

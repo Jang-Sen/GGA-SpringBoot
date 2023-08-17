@@ -24,6 +24,9 @@
     width: 1000px;
   }
 }
+.headerorderbtn:hover{
+	cursor: pointer;
+}
 
 	
 		.buttons button:hover {
@@ -77,7 +80,7 @@
 					  <div class="card-body">
 					    <h5 class="card-title">잠</h5>
 					    <p class="card-text">개봉예정일 : 2023.09.06<p>
-					    <p class="dday">D-5</p>
+					    <p class="dday">D-9</p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -89,7 +92,7 @@
 					  <div class="card-body">
 					    <h5 class="card-title">스파이 코드명 포춘</h5>
 					    <p class="card-text">개봉예정일 : 2023.08.30<p>
-					    <p class="dday">D-3</p>
+					    <p class="dday">D-2</p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -101,7 +104,7 @@
 					  <div class="card-body">
 					    <h5 class="card-title">조이 라이드</h5>
 					    <p class="card-text">개봉예정일 : 2023.08.30<p>
-					    <p class="dday">D-3</p>
+					    <p class="dday">D-2</p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -113,7 +116,7 @@
 					  <div class="card-body">
 					    <h5 class="card-title">이노센트</h5>
 					    <p class="card-text">개봉예정일 : 2023.09.06<p>
-					    <p class="dday">D-3</p>
+					    <p class="dday">D-9</p>
 					   <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -128,7 +131,7 @@
 						  <div class="card-body">
 						    <h5 class="card-title">신체모음.zip</h5>
 						    <p class="card-text">개봉예정일 : 2023.08.30<p>
-						    <p class="dday">D-3</p>
+						    <p class="dday">D-2</p>
 						    <a class="headerorderbtn">
 								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 						  </div>
@@ -140,7 +143,7 @@
 						  <div class="card-body">
 						    <h5 class="card-title">타겟</h5>
 						    <p class="card-text">개봉예정일 : 2023.08.30<p>
-						    <p class="dday">D-3</p>
+						    <p class="dday">D-2</p>
 						    <a class="headerorderbtn">
 								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 						  </div>
@@ -152,7 +155,7 @@
 					  <div class="card-body">
 					    <h5 class="card-title">물꽃의 전설</h5>
 					    <p class="card-text">개봉예정일 : 2023.08.30<p>
-					    <p class="dday">D-3</p>
+					    <p class="dday">D-2</p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -164,7 +167,7 @@
 					  <div class="card-body">
 					    <h5 class="card-title">거룩한 술꾼의 전설</h5>
 					    <p class="card-text">개봉예정일 : 2023.08.30<p>
-					    <p class="dday">D-3</p>
+					    <p class="dday">D-2</p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
