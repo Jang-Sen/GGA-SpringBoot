@@ -69,7 +69,7 @@
 						</li>
 					<c:if test="${ svo.id == 'admin' }">
 						<li>
-							<a href="http://localhost:9000/admin/index">관리자</a>
+							<a href="http://localhost:9000/admin_index">관리자</a>
 						</li>
 					</c:if>
 			      	</ul>
