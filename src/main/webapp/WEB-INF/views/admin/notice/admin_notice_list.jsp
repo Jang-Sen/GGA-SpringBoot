@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>관리자 공지사항 관리</title>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <link rel="stylesheet" href="http://localhost:9000/css/am-pagination.css">
 <script src="http://localhost:9000/js/jquery-3.6.4.min.js"></script>

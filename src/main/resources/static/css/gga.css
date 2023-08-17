@@ -1451,6 +1451,16 @@ section.board div.board_choose {
 	margin-top:30px;
 
 }
+
+section.notice table.table tr th {
+	text-align: center;
+}
+
+section.notice form table.table th {
+	width:20%;
+	background-image:url("http://localhost:9000/images/commentbackground.PNG");
+}
+
 .admin_notice_list_title img{
 	width:500px;
 	height:100px;
