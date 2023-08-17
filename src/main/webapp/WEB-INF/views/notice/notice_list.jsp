@@ -81,11 +81,11 @@ table td:nth-child(2){
 }
 
 .n_searchbox {
+	border: lightgray 1px solid;
 	width:200px;
-	heigth:30px;
+	height:30px;
 	margin-right:15px;
 	border-radius: 5px;
-	border: 0px;
 	padding-left:5px;
 	opacity:80%;
 	padding-top : 2px;
@@ -94,7 +94,7 @@ table td:nth-child(2){
 .n_searchbutton {
 	padding:2px 15px;
 	height:25px;
-	background: #aed581;
+	background: white;
 	border-radius:5px;
 	border-color:white;
 	color: black;
@@ -117,7 +117,7 @@ table td:nth-child(2){
 		</div>
 		<section class="notice">
 			<div class="notice_search">
-				<input type="text" placeholder="공지사항 제목을 검색해 주세요." id="ntitle" name="ntitle" class="n_searchbox">
+				<input type="text" placeholder="제목을 검색해 주세요." id="ntitle" name="ntitle" class="n_searchbox">
 				<button type="submit" id="btnNoticeSearch"  class="n_searchbutton"><p>검색</p></button>
 			</div>
 			<%-- <table class="table table-bordered" style="width: 90%;">

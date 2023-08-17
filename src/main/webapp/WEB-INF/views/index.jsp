@@ -27,6 +27,34 @@
 	}
 </script>
 <style>
+	#btnKobis{
+		margin-left: 5px;
+		padding: 3px 20px;
+		border: white;
+		background-color: white;
+		color: gray;
+
+	}
+	.mapimg{
+		margin-top: 30px;
+	}
+	.mapaddress{
+		margin-top: 5px;
+
+	}
+	.ggamovieranktitle img{
+		margin-top: 30px;
+		width:450px;
+	}
+	#kselect{
+		height: 25px;
+		border: white;
+
+	}
+	.ggaeventtitle img{
+		width:300px;
+	}
+
 	.div.section4 div{
 		border:1px solid white;
 	}
@@ -35,7 +63,6 @@
 		height: 300px;
 		margin-bottom: 10px;
 	}
-
 
 	@media (min-width: 768px) {
 		.container {
@@ -47,6 +74,14 @@
 		.container {
 			width: 1000px;
 		}
+	}
+	.section2{
+		margin-top: 30px;
+		width: 800px;
+		background-image:url("http://localhost:9000/images/movierankback.jpg");
+		background-repeat: no-repeat;
+		/*background-size: 1000px 300px;*/
+
 	}
 	.section2{
 		margin:auto;
@@ -67,7 +102,10 @@
 		z-index : 1;
 
 	}
+	.section3{
+		margin-bottom: 50px;
 
+	}
 
 	.fixed_button .fixed{
 		/* padding: 10px; */
@@ -101,7 +139,7 @@
 	.Ktitle{
 		padding-top: 60px;
 		/*border:1px solid red;*/
-		font-family: "Noto Sans CJK KR";
+		/*font-family: "Noto Sans CJK KR";*/
 		font-weight: 700;
 		font-size : 60px;
 	}
@@ -115,7 +153,7 @@
 		border-radius : 5px;
 		padding : 0px 12px;
 		margin-left: 5px;
-		font-family: "Noto Sans CJK KR";
+		/*font-family: "Noto Sans CJK KR";*/
 		font-size : 15px;
 		color:dimgray;
 	}
@@ -127,7 +165,7 @@
 		border-radius : 5px;
 		text-align: center;
 		margin: 20px 0;
-		font-family: "Noto Sans CJK KR";
+		/*font-family: "Noto Sans CJK KR";*/
 		font-size : 15px;
 		color:#212121;
 		font-weight: 500;
@@ -135,7 +173,7 @@
 
 	.KobisList{
 		width : 1000px;
-		font-family: "Noto Sans CJK KR";
+		/*font-family: "Noto Sans CJK KR";*/
 		margin-left : 50px;
 	}
 	div.KobisList table tr th:nth-child(2){
@@ -154,7 +192,7 @@
 
 	.kp{
 		padding : 20px 0 80px 0;
-		font-family: "Noto Sans CJK KR";
+		/*font-family: "Noto Sans CJK KR";*/
 		color: #004D40;
 		font-size : 13px;
 		font-weight: 700;
@@ -329,7 +367,7 @@
 					src="https://www.youtube.com/embed/oSqK_v6zPoM?mute=1&autoplay=1"></iframe>
 		</div>
 	</div>
-	<div class="ggamovietitle">
+	<div class="ggaeventtitle">
 				<img src="http://localhost:9000/images/eventtitle.png">
 			</div>
 	<div class="section3">
@@ -374,7 +412,7 @@
 		</div>
 
 		<!-- 날씨 부분으로 하단 이동 -->
-		<div class="fixed" onclick="window.scrollTo(1600,1600);">
+		<div class="fixed" onclick="window.scrollTo(1600,2600);">
 			<img src="http://localhost:9000/images/weather_checkbtn.png" class="fixed_weather_btn">
 		</div>
 
@@ -400,12 +438,12 @@
 
 	<div class="section2">
 
-		<div class="ggamovietitle">
+		<div class="ggamovieranktitle">
 			<img src="http://localhost:9000/images/movierank.png">
 		</div>
 		<div id="1111" class="Kchoice">
 			<select id="kselect" class="K">
-				<option value = "default">박스오피스 선택</option>
+				<%--<option value = "default">일별/주간 선택</option>--%>
 				<option value = "Daily">일별</option>
 				<option value = "Weekly">주간</option>
 			</select>
@@ -415,7 +453,7 @@
 
 		</div>
 		<p class="kp">* 일별 박스오피스는 하루 전, 주간은 7일 전으로 조회됩니다.</p>
-
+	</div>
 
 		<!-- Modal -->
 
@@ -455,24 +493,26 @@
 			<div class="row">
 				<div class="col-9">
 					<div id="map" style="width:100%; height:400px;"></div>
+					<p align="left" class="mapaddress">주소 : 서울 강남구 강남대로 78길 8 한국빌딩 4F, 8F</p>
 				</div>
+<%--				<div class="card mb-4 rounded-3 shadow-sm">--%>
+<%--					<div class="card-body">--%>
+<%--						<p class="card-text">서울 강남구 강남대로 78길 8 한국빌딩 4F, 8F</p>--%>
+<%--					</div>--%>
+<%--				</div>--%>
 				<div class="col-3">
 					<div class="weather_api">
 						<div>
-							<button type="button" class="btn_weather_date" id="today">오늘</button>
-							<button type="button" class="btn_weather_date" id="tomorrow">+1</button>
-							<button type="button" class="btn_weather_date" id="after">+2</button>
+							<button type="button" class="btn_weather_date" id="today">오늘 날씨</button>
+							<button type="button" class="btn_weather_date" id="tomorrow">내일</button>
+							<button type="button" class="btn_weather_date" id="after">모레</button>
 							<div class="weather_icon" id="weather_icon">
 								<!-- 날씨API 들어가는 자리 -->
 							</div>
 						</div>
 
 					</div>
-					<div class="card mb-4 rounded-3 shadow-sm">
-						<div class="card-body">
-							<p class="card-text">서울 강남구 강남대로 78길 8 한국빌딩 4F, 8F</p>
-						</div>
-					</div>
+
 				</div>
 			</div>
 		</div>

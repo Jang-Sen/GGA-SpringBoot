@@ -1219,7 +1219,6 @@ div.coron_input {
 
 }
 
-
 .ticket_bac1{
 	line-height:normal;
 /*margin-top:20px;*/
@@ -1860,17 +1859,18 @@ footer .container{
 div.section4 div.col-3{ /* �궇�뵪�쁺�뿭 div */
 	position:relative;
 	float:left;
-	width:300px;	height:800px;
+	width:300px;	height:400px;
 	left:0px;
 }
 div.section4 div.col-9 { /* 吏��룄�쁺�뿭  div */
 	border-radius:3px;
+
 	width:680px; height:405px;
 }
 div.section4 div.weather_api { /* api�쁺�뿭 div */
 	border-radius : 5px;
 	background-image:url("http://localhost:9000/images/weatherbackground.jpg");
-	height:50%;
+	height:400px;
 }
 div.section4 div.weather_api div.weather_icon { /* �궇�뵪 �븘�씠肄� div */
 	width:120px; height:120px;
@@ -1883,7 +1883,7 @@ div.section4 div.weather_api div button { /* �궇吏� 踰꾪듉 */
 	background:none;
 	margin: 20px 10px 0px 10px;
 	font-size:12pt;
-	color:white;
+	/*color:;*/
 	font-weight:700;
 	float:top;
 }
@@ -1907,7 +1907,7 @@ div.section4 div#weather_icon div#weather_info ul li{ /* �궇�뵪 �긽��
 	/*border:1px solid white;*/
 	list-style-type:none;
 	text-align:center;
-	color:white;
+	/*color:white;*/
 	margin:5px 0px;
 }
 div.section4 div#weather_icon div#weather_info ul li:nth-child(2),

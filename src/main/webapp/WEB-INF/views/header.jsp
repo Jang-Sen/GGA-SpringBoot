@@ -92,7 +92,7 @@
 				            <li><a class="dropdown-item" href="http://localhost:9000/notice_list"
 				            	>공지사항</a></li>
 				            <li><a class="dropdown-item" href="http://localhost:9000/board_list"
-				            	>커뮤니티</a></li>
+				            	>리   뷰</a></li>
 				            <li><a class="dropdown-item" href="http://localhost:9000/faq"
 				            	>FAQ</a></li>
 				     </ul>
