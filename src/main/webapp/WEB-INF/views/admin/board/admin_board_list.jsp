@@ -57,6 +57,10 @@ table td:nth-child(2){
 	text-align:left;
 }
 
+div.board_title img {
+	width:500px;
+}
+
 img {
 	width:95px;
 	height:40px;
