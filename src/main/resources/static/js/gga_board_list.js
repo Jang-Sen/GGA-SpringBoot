@@ -19,19 +19,29 @@ $(document).ready(function(){
 		          	for(obj of board.list) {
 			          	output += "<tr>";
 			          	output += "<td>"+obj.rno+"</td>";
-			          	if(obj.movieName == "suzume"){
-			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0002'>[스즈매의 문단속]</a>&nbsp";
-			          	}else if (obj.movieName == "darknight"){
-			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0001'>[다크나이트]</a>&nbsp";
-			          	}else if (obj.movieName == "dune"){
-			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0003'>[듄]</a>&nbsp";
-			          	}else if (obj.movieName == "slamdunk"){
-			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0009'>[슬램덩크]</a>&nbsp";
-			          	}else if (obj.movieName == "inception"){
-			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0004'>[인셉션]</a>&nbsp";
-			          	}else if (obj.movieName == "rings"){
-			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0007'>[반지의제왕]</a>&nbsp";
-			          	}
+			          	if(obj.movieName == "oppenhelmer"){
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0001'>[오펜하이머]</a>&nbsp";
+			          	}else if (obj.movieName == "concreteutopia"){
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0002'>[콘크리트 유토피아]</a>&nbsp";
+			          	}else if (obj.movieName == "honeysweet"){
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0003'>[달짝지근해: 7510]</a>&nbsp";
+			          	}else if (obj.movieName == "smugglers"){
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0004'>[밀수]</a>&nbsp";
+			          	}else if (obj.movieName == "elemental"){
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0005'>[엘리멘탈]</a>&nbsp";
+			          	}else if (obj.movieName == "meg2"){
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0006'>[메가로돈2]</a>&nbsp";
+						  }else if (obj.movieName == "amanofreason"){
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0007'>[보호자]</a>&nbsp";
+						  }else if (obj.movieName == "octonauts"){
+			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0008'>[바다 탐험대 옥토넛 어보브 앤 비욘드]</a>&nbsp";
+						  }else if (obj.movieName == "ransomed") {
+							output += "<td><a href=" + "'" + "/movieinfo/MOVIE_0009'>[비공식작전]</a>&nbsp";
+						}
+
+
+
+
 			          	if(obj.commentCount > 0){
 			          		output += "<div class='maxSize'><a href="+"'"+"board_content/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a>&nbsp(" + board.commentCount + ")</td></div>";
 			          	}else{
@@ -91,19 +101,25 @@ $(document).ready(function(){
 			          	for(obj of board_search.list) {
 			          	output += "<tr>";
 			          	output += "<td>"+obj.rno+"</td>";
-			          	if(obj.movieName == "suzume"){
-			  	        	output += "<td><a href=" + "'" + "movieinfo/MOVIE_0002" + "'>[스즈매의 문단속]</a>";
-			          	}else if (obj.movieName == "darknight"){
-			  	        	output += "<td><a href=" + "'" + "movieinfo/MOVIE_0001" + "'>[다크나이트]</a>";
-			          	}else if (obj.movieName == "dune"){
-			  	        	output += "<td><a href=" + "'" + "movieinfo/MOVIE_0003" + "'>[듄]</a>";
-			          	}else if (obj.movieName == "slamdunk"){
-			  	        	output += "<td><a href=" + "'" + "movieinfo/MOVIE_0009" + "'>[슬램덩크]</a>";
-			          	}else if (obj.movieName == "inception"){
-			  	        	output += "<td><a href=" + "'" + "movieinfo/MOVIE_0004" + "'>[인셉션]</a>";
-			          	}else if (obj.movieName == "rings"){
-			  	        	output += "<td><a href=" + "'" + "movieinfo/MOVIE_0007" + "'>[반지의제왕]</a>";
-			          	}
+							if(obj.movieName == "oppenhelmer"){
+								output += "<td><a href="+"'"+"/movieinfo/MOVIE_0001'>[오펜하이머]</a>&nbsp";
+							}else if (obj.movieName == "concreteutopia"){
+								output += "<td><a href="+"'"+"/movieinfo/MOVIE_0002'>[콘크리트 유토피아]</a>&nbsp";
+							}else if (obj.movieName == "honeysweet"){
+								output += "<td><a href="+"'"+"/movieinfo/MOVIE_0003'>[달짝지근해: 7510]</a>&nbsp";
+							}else if (obj.movieName == "smugglers"){
+								output += "<td><a href="+"'"+"/movieinfo/MOVIE_0004'>[밀수]</a>&nbsp";
+							}else if (obj.movieName == "elemental"){
+								output += "<td><a href="+"'"+"/movieinfo/MOVIE_0005'>[엘리멘탈]</a>&nbsp";
+							}else if (obj.movieName == "meg2"){
+								output += "<td><a href="+"'"+"/movieinfo/MOVIE_0006'>[메가로돈2]</a>&nbsp";
+							}else if (obj.movieName == "amanofreason"){
+								output += "<td><a href="+"'"+"/movieinfo/MOVIE_0007'>[보호자]</a>&nbsp";
+							}else if (obj.movieName == "octonauts"){
+								output += "<td><a href="+"'"+"/movieinfo/MOVIE_0008'>[바다 탐험대 옥토넛 어보브 앤 비욘드]</a>&nbsp";
+							}else if (obj.movieName == "ransomed") {
+								output += "<td><a href=" + "'" + "/movieinfo/MOVIE_0009'>[비공식작전]</a>&nbsp";
+							}
 			          	if(obj.commentCount > 0){
 			          		output += "<div class='maxSize'><a href=" + "'" + "board_content/" + page + "/" + obj.bid + "'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
 			          	}else{

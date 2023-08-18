@@ -72,12 +72,15 @@ div.board_title img {
 						<td>
 							<select class="btn btn-outline-secondary" name="movieName" id="movieName">
 								<option value="default">영화 제목</option>
-								<option value="suzume">스즈메의 문단속</option>
-								<option value="darknight">다크나이트</option>
-								<option value="dune">듄</option>
-								<option value="slamdunk">슬램덩크</option>
-								<option value="inception">인셉션</option>
-								<option value="rings">반지의 제왕</option>
+								<option value="oppenhelmer">오펜하이머</option>
+								<option value="concreteutopia">콘크리트 유토피아</option>
+								<option value="honeysweet">달짝지근해: 7510</option>
+								<option value="smugglers">밀수</option>
+								<option value="elemental">엘리멘탈</option>
+								<option value="meg2">메가로돈2</option>
+								<option value="amanofreason">보호자</option>
+								<option value="octonauts">바다 탐험대 옥토넛 어보브 앤 비욘드</option>
+								<option value="ransomed">비공식작전</option>
 							</select>
 							<span id="bmmsg"></span>
 						</td>
@@ -105,7 +108,7 @@ div.board_title img {
 					<tr>
 						<th>파일첨부</th>
 						<td>
-							<input type="file" name="file1" class="form-control">
+							<input type="file" name="file1" >
 						</td>
 					</tr>
 					<tr>
