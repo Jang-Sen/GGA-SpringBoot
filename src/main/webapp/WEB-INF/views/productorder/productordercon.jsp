@@ -10,6 +10,8 @@
 <script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
+	<link rel="stylesheet" href="http://localhost:9000/css/glide.core.min.css">
+	<link rel="stylesheet" href="http://localhost:9000/css/glide.theme.min.css">
  <script src="http://localhost:9000/js/gga_javascript.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
 	rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> 
@@ -40,6 +42,13 @@
 .productordercon table tr td:nth-child(5){
 	width : 120px;
 }
+
+.glide__slides img{
+	width:100%;
+	height: 300px;
+	margin-bottom: 10px;
+}
+
 </style>
 
 <body>
@@ -116,6 +125,58 @@
 			</tr>
 			</c:forEach>
 		</table>--%>
+
+		<br><br><br><br><br><br>
+		<div class = "glides">
+			<div class="glide">
+				<div class="glide">
+					<div class="glide__track" data-glide-el="track">
+						<ul class="glide__slides">
+							<li class="glide__slide"><img src="http://localhost:9000/images/oppenhelmer.jpg" id="MOVIE_0001" class="mimg"/>
+								<a class="headerorderbtn">
+									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+							<li class="glide__slide"><img src="http://localhost:9000/images/concreteutopia.jpg" id="MOVIE_0002" class="mimg"/>
+								<a class="headerorderbtn">
+									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+							<li class="glide__slide"><img src="http://localhost:9000/images/honeysweet.jpg" id="MOVIE_0003" class="mimg"/>
+								<a class="headerorderbtn">
+									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+							<li class="glide__slide"><img src="http://localhost:9000/images/smugglers.jpg" id="MOVIE_0004" class="mimg"/>
+								<a class="headerorderbtn">
+									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+							<li class="glide__slide"><img src="http://localhost:9000/images/elemental.jpg" id="MOVIE_0005" class="mimg"/>
+								<a class="headerorderbtn">
+									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+							<li class="glide__slide"><img src="http://localhost:9000/images/meg2.jpg" id="MOVIE_0006" class="mimg"/>
+								<a class="headerorderbtn">
+									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+							<li class="glide__slide"><img src="http://localhost:9000/images/amanofreason.jpg" id="MOVIE_0007" class="mimg"/>
+								<a class="headerorderbtn">
+									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+							<li class="glide__slide"><img src="http://localhost:9000/images/octonauts.jpg" id="MOVIE_0008" class="mimg"/>
+								<a class="headerorderbtn">
+									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+							<li class="glide__slide"><img src="http://localhost:9000/images/ransomed.jpg" id="MOVIE_0009" class="mimg"/>
+								<a class="headerorderbtn">
+									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="glide__arrows" data-glide-el="controls">
+					<button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
+					<button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+		<script>
+			const config = {
+				type : 'carousel',
+				perView: 5
+			}
+			new Glide('.glide', config).mount()
+		</script>
+
 	</section>
 	</div>
 	<!-- content -->
