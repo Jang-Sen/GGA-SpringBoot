@@ -43,7 +43,7 @@ $(document).ready(function(){
 
 
 			          	if(obj.commentCount > 0){
-			          		output += "<div class='maxSize'><a href="+"'"+"board_content/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a>&nbsp(" + board.commentCount + ")</td></div>";
+			          		output += "<div class='maxSize'><a href="+"'"+"board_content/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a>&nbsp(" + obj.commentCount + ")</td></div>";
 			          	}else{
 			          		output += "<div class='maxSize'><a href="+"'"+"board_content/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a></td></div>";
 			          	}
