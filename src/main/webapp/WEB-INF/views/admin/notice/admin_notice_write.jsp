@@ -71,7 +71,7 @@ section.admin_notice table {
 					<tr>
 						<th>파일업로드</th>
 						<td>
-							<input type="file" name="file1" >
+							<input type="file" name="file1" class="form-control">
 						</td>
 					</tr>			
 					<tr>

@@ -105,10 +105,14 @@ div.board_title img {
 						</td>
 					</tr>	
 				 	<tr>
-						<th>파일첨부</th>
+						<th>파일업로드</th>
 						<td>
-							<input type="file" name="file1" >
-							<input type="hidden" name="file1" >
+							<input type="file" name="file1" class="form-control">
+							<c:choose>
+								<c:when test="${board.gfile != null}">
+									<span id="update_file">${board.gfile}</span>
+								</c:when>
+							</c:choose>
 						</td>
 					</tr>
 					<tr>

@@ -109,7 +109,12 @@ function writeReset(){
 					<tr>
 						<th>파일업로드</th>
 						<td>
-							<input type="file" name="file1" >
+							<input type="file" name="file1" class="form-control">
+							<c:choose>
+								<c:when test="${notice.gfile != null}">
+									<span id="update_file">${notice.gfile}</span>
+								</c:when>
+							</c:choose>
 						</td>
 					</tr>
 					<tr>

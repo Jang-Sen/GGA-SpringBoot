@@ -284,10 +284,12 @@ table#boardMaster tr td:nth-child(2) a{
 				</tr> -->
 			<!-- </table> -->
 		</section>
+		<br>
 		<div class="container">
 		<hr>
 			<section class="productordercon">
 				<div class="myreview_header">
+					<br>
 					<h1>My상품구매내역 목록</h1>
 				</div>
 

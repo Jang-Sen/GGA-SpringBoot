@@ -118,18 +118,18 @@ section.board div.board_search button:hover { /* 커서이벤트 */
 				<a href="/board_list"><button type="submit" class = "boardbtn2"><p>처음으로</p></button></a>
 			</div>
 			<div class="board_choose">
-<%--						<c:choose>--%>
-<%--							<c:when test="${sessionDto.id == null }">--%>
-<%--								<a href="http://localhost:9000/login" class="writebtncancel">--%>
-<%--									<img src="http://localhost:9000/images/writebtn.png">--%>
-<%--								</a>--%>
-<%--							</c:when>--%>
-<%--							<c:otherwise>--%>
+						<c:choose>
+							<c:when test="${svo.id == null }">
+								<a href="http://localhost:9000/login" class="writebtncancel">
+									<img src="http://localhost:9000/images/writebtn.png">
+								</a>
+							</c:when>
+							<c:otherwise>
 								<a href="/board_write" class="writebtn">
 									<img src="http://localhost:9000/images/writebtn.png">
 								</a>
-<%--							</c:otherwise>--%>
-<%--						</c:choose>--%>
+							</c:otherwise>
+						</c:choose>
 			</div>
 		</section>
 	</div>
