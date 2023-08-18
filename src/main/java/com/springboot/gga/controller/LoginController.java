@@ -107,4 +107,9 @@ public class LoginController {
         return "/login/login_fail";
     }
 
+    @GetMapping("errorpage")
+    public String error(){
+        return "/errorpage";
+    }
+
 }
