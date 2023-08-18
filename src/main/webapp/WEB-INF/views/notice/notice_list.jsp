@@ -98,7 +98,7 @@ table tr, table td{
 .n_searchbutton {
 	padding:2px 15px;
 	height:25px;
-	background: #aed581;
+	background: white;
 	border-radius:5px;
 	border-color:white;
 	color: black;
