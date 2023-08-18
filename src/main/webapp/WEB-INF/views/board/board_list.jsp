@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>GGA 리뷰</title>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <link rel="stylesheet" href="http://localhost:9000/css/am-pagination.css"> <!-- gga.css -->
 <script src="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
@@ -31,9 +31,14 @@
 }
 section.board table {
 		margin:auto;
-} 
+}
 section.board table tr td a { /* 텍스트 언더라인 X */
-	text-decoration-line:none;
+	color: darkgreen;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+section.board table tr td a:hover {
+	color: blue;
 }
 
 table tr:last-child {
@@ -46,14 +51,14 @@ table tr:last-child nav ul {
 }
 
 table tr{
-	text-align:center;
+	vertical-align: middle;
 }
 
 table td:nth-child(2){
 	text-align:left;
 }
 div.board_title img {
-	width:230px;
+	width:160px;
 }
 
 img {

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>${board.btitle}</title>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <link rel="stylesheet" href="http://localhost:9000/css/am-pagination.css">
 <script src="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
@@ -61,6 +61,9 @@ section.board table {
 	text-align:center;
 	margin:auto;
 }
+div.board_title img {
+	width:160px;
+}
 .binput{
 	width:95%;
 	border-color:#ddd;
@@ -69,11 +72,13 @@ section.board table {
 	width:95%;
 	border-color:#ddd;
 }
-.table td {
-text-align:left;
+.table th, .table td {
+	vertical-align: middle;
 }
+
 .table tr:last-child td {
 text-align:center;
+
 }
 
 section.board form table img#boardUpdate,
@@ -89,11 +94,9 @@ section.board form table.table img.scoreImg {
 }
 
 .boardImg {
-	width: 300px;
-	height: 150px;
-	object-fit: cover;
+	width: 600px;
+	object-fit: scale-down;
 }
-
 
 </style>
 <body>
@@ -105,8 +108,10 @@ section.board form table.table img.scoreImg {
 	
 	<!-- content -->
 	<div class="container text-center">
+		<div class="board_title">
+			<img src="http://localhost:9000/images/comtitle.png">
+		</div>
 		<section class="board">
-			<h1>게시판</h1>
 			<form name="contentForm" action="/board_delete"  method="post">
 				<table class="table table-bordered" style="width: 90%;">
 					<input type = "hidden" name = "bid" value = "${board.bid}">
@@ -118,7 +123,7 @@ section.board form table.table img.scoreImg {
 					<tr>
 						<th>내용</th>
 						<td style = "word-break: break-all">
-							${board.bcontent}<br><br><br><br>
+							<br>${board.bcontent}<br><br>
 								<c:if test="${board.gsfile != null}">
 									<img src="http://localhost:9000/upload/${board.gsfile}" class="boardImg">
 								</c:if>

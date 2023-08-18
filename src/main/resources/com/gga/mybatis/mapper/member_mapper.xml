@@ -14,13 +14,13 @@
 		SELECT COUNT(*) FROM GGA_MEMBER WHERE ID = #{id} AND PASS = #{pass}
 
 	</select>
-	<!--	<select id="select" parameterType="map" resultType="com.gga.vo.MemberVo">-->
-	<!--		SELECT RNO, ID, NAME, MDATE -->
-	<!--					FROM (SELECT ROWNUM RNO, ID, NAME, TO_CHAR(MDATE,'YYYY-MM-DD') MDATE -->
-	<!--					FROM (SELECT ID, NAME, MDATE FROM GGA_MEMBER-->
-	<!--					ORDER BY MDATE DESC))-->
-	<!--					WHERE RNO BETWEEN #{start} AND #{end}-->
-	<!--	</select>-->
+	<select id="select" parameterType="com.springboot.gga.dto.PageDto" resultType="com.springboot.gga.dto.MemberDto">
+			SELECT RNO, ID, NAME, MDATE
+						FROM (SELECT ROWNUM RNO, ID, NAME, TO_CHAR(MDATE,'YYYY-MM-DD') MDATE
+						FROM (SELECT ID, NAME, MDATE FROM GGA_MEMBER
+						ORDER BY MDATE DESC))
+						WHERE RNO BETWEEN #{startCount} AND #{endCount}
+	</select>
 	<!--	-->
 	<select id="idCheck" parameterType="String" resultType="int">
 		SELECT COUNT(*) FROM GGA_MEMBER WHERE ID = #{id}

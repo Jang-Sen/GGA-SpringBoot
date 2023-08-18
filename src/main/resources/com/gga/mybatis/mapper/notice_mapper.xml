@@ -30,7 +30,7 @@
 <!--	</select>-->
 
 	<update id="update" parameterType="com.springboot.gga.dto.NoticeDto" >
-		update gga_notice set ntitle=#{ntitle}, ncontent=#{ncontent}, gfile=#{gfile}, gsfile=#{gsfile} where nid=#{nid}
+		update gga_notice set ntitle=#{ntitle}, ncontent=#{ncontent}, GFILE=#{gfile, jdbcType=VARCHAR}, GSFILE=#{gsfile, jdbcType=VARCHAR} where nid=#{nid}
 	</update>
 
 	<delete id="delete" parameterType ="String">

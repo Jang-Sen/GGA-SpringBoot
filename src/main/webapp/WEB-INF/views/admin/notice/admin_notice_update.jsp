@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>공지사항 수정</title>
 <script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
@@ -29,6 +29,9 @@ integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG
 section.admin_notice table {
 	text-align:center;
 	margin:auto;
+}
+.table th {
+	vertical-align: middle;
 }
 .ninput{
 	width:95%;
@@ -81,7 +84,7 @@ function writeReset(){
 	
 	<!-- content -->
 	<div class="container text-center">
-		<div class="board_title">
+		<div class="admin_notice_list_title">
 		<img src="http://localhost:9000/images/adminnoticetitle.png">
 		</div>
 		<section class="admin_notice">
@@ -90,7 +93,6 @@ function writeReset(){
 			<input type= "hidden" name="page" value="${page}">
 			<input type= "hidden" name="gfile" value="${notice.gfile}">
 			<input type= "hidden" name="gsfile" value="${notice.gsfile}">
-			<input type = "file" name = "file1">
 				<table class="table table-bordered" style="width: 90%;">
 					<tr>
 						<th>제목</th>
@@ -103,7 +105,13 @@ function writeReset(){
 						<td colspan="3">
 							<textarea rows="20" cols="80%" name="ncontent" class="ntextarea" id="atextarea" >${notice.ncontent }</textarea>
 						</td>
-					</tr>					
+					</tr>
+					<tr>
+						<th>파일업로드</th>
+						<td>
+							<input type="file" name="file1" >
+						</td>
+					</tr>
 					<tr>
 						<td colspan="4">
 							<button class="btn btn-outline-secondary" type="button" id="btnNoticeUpdateProc">수정완료</button>

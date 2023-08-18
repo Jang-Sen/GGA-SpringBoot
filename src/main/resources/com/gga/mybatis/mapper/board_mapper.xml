@@ -56,7 +56,7 @@
 	</select>
 
 	<select id="list" parameterType="com.springboot.gga.dto.PageDto" resultType="com.springboot.gga.dto.BoardDto">
-		SELECT RNO, BID, BTITLE, BCONTENT, Bhits, MID, MOVIENAME, BDATE
+		SELECT RNO, BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, BDATE
 			FROM (SELECT ROWNUM RNO, BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, TO_CHAR(BDATE, 'YYYY-MM-DD') BDATE FROM
 				(SELECT BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, BDATE FROM GGA_BOARD ORDER BY BDATE DESC))
 				WHERE RNO BETWEEN #{startCount} AND #{endCount}
@@ -64,7 +64,7 @@
 
 	<insert id="insert" parameterType="com.springboot.gga.dto.BoardDto">
 		INSERT INTO GGA_BOARD(BID,BTITLE,SCORE,BCONTENT,Bhits,MID,MOVIENAME,BDATE, GFILE, GSFILE)
-			VALUES('b_'||LTRIM(TO_CHAR(SEQU_GGA_BOARD_BID.NEXTVAL, '0000')),#{btitle},#{score},#{bcontent},0,#{mid, jdbcType=VARCHAR},#{movieName},SYSDATE, #{gfile}, #{gsfile})
+			VALUES('b_'||LTRIM(TO_CHAR(SEQU_GGA_BOARD_BID.NEXTVAL, '0000')),#{btitle},#{score},#{bcontent},0,#{mid, jdbcType=VARCHAR},#{movieName},SYSDATE, #{gfile, jdbcType=VARCHAR},#{gsfile, jdbcType=VARCHAR})
 	</insert>
 
 	<select id="content" parameterType="String" resultType="com.springboot.gga.dto.BoardDto">
@@ -77,12 +77,12 @@
 
 	<update id="update" parameterType="com.springboot.gga.dto.BoardDto">
 		UPDATE GGA_BOARD SET BTITLE=#{btitle}, MOVIENAME=#{movieName}, SCORE=#{score}, BCONTENT=#{bcontent}
-				, GFILE = #{gfile}, GSFILE = #{gsfile}
+				, GFILE=#{gfile, jdbcType=VARCHAR}, GSFILE=#{gsfile, jdbcType=VARCHAR}
 		    WHERE BID=#{bid}
 	</update>
 
 	<select id="searchList" parameterType="com.springboot.gga.dto.PageDto" resultType="com.springboot.gga.dto.BoardDto">
-		SELECT RNO, BID, BTITLE, BCONTENT, Bhits, MID, MOVIENAME, BDATE
+		SELECT RNO, BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, BDATE
 			FROM (SELECT ROWNUM RNO, BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, TO_CHAR(BDATE, 'YYYY-MM-DD') BDATE FROM
 				(SELECT BID, BTITLE, BCONTENT, BHITS, MID, MOVIENAME, BDATE FROM GGA_BOARD ORDER BY BDATE DESC)WHERE BTITLE LIKE '%'||#{btitle}||'%')
 				WHERE RNO BETWEEN #{startCount} AND #{endCount}

@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>관리자 공지사항 관리</title>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <link rel="stylesheet" href="http://localhost:9000/css/am-pagination.css">
 <script src="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
@@ -57,7 +57,16 @@
 }
 section.admin_notice table {
 	margin:auto;
-} 
+}
+section.admin_notice table tr td a { /* 텍스트 언더라인 X */
+	color: darkgreen;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+section.admin_notice table tr td a:hover {
+	color: blue;
+}
+
 
 table tr:last-child {
 	border:1px solid white;
@@ -68,12 +77,8 @@ table tr:last-child nav ul {
 	justify-content:center;
 }
 
-table tr{
-	text-align:center;
-}
-
-table td:nth-child(2){
-	text-align:left;
+table tr, table td{
+	vertical-align: middle;
 }
 
 table tr:first-child {

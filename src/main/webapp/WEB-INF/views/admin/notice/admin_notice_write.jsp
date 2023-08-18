@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA_Test1</title>
+<title>공지사항 작성</title>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <script src="http://localhost:9000/js/jquery-3.6.4.min.js"></script> <!-- gga_javascript.js -->
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
@@ -28,6 +28,9 @@ section.admin_notice table {
 	text-align:center;
 	margin:auto;
 }
+.table th {
+	vertical-align: middle;
+}
 .ninput{
 	width:95%;
 	border-color:#ddd;
@@ -47,7 +50,7 @@ section.admin_notice table {
 	
 	<!-- content -->
 	<div class="container text-center">
-		<div class="board_title">
+		<div class="admin_notice_list_title">
 		<img src="http://localhost:9000/images/adminnoticetitle.png">
 		</div>
 		<section class="admin_notice">

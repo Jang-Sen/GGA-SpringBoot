@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>${notice.ntitle}</title>
 <script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
@@ -40,8 +40,8 @@ section.notice table {
 	width:95%;
 	border-color:#ddd;
 }
-.table td {
-text-align:left;
+.table th, .table td {
+	vertical-align: middle;
 }
 .table tr:last-child td {
 text-align:center;
@@ -54,8 +54,7 @@ width:460px;
 height:600px;
 }
 .noticeImg {
-	width: 1000px;
-	height: 150px;
+	width: 750px;
 	object-fit: scale-down;
 }
 
@@ -71,9 +70,11 @@ height:600px;
 	
 	<!-- content -->
 	<div class="container text-center">
+		<div class="board_title">
+			<img src="http://localhost:9000/images/noticetitle.png">
+		</div>
 		<section class="notice">
 		<form enctype="multipart/form-data">
-			<h1>공지사항</h1>
 				<table class="table table-bordered" style="width: 90%;">
 					<tr>
 						<th>제목</th>
@@ -82,10 +83,10 @@ height:600px;
 					<tr>
 						<th>내용</th>
 						<td>
-							${notice.ncontent }<br><br><br>
 							<c:if test="${notice.gsfile != null}">
 								<img src="http://localhost:9000/upload/${notice.gsfile}" class="noticeImg">
 							</c:if>
+							<br>${notice.ncontent }<br><br>
 						</td>
 					</tr>
 					<tr>

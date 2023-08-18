@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>리뷰 수정</title>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <script src="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
@@ -29,6 +29,14 @@ section.board table {
 	text-align:center;
 	margin:auto;
 }
+div.board_title img {
+	width:160px;
+}
+
+.table th {
+	vertical-align: middle;
+}
+
 .binput{
 	width:95%;
 	border-color:#ddd;
@@ -47,8 +55,10 @@ section.board table {
 	<!-- header -->
 	<!-- content -->
 	<div class="container text-center">
+		<div class="board_title">
+			<img src="http://localhost:9000/images/comtitle.png">
+		</div>
 		<section class="board">
-			<h1>수정하기</h1>
 			<form name="updateForm" action="/board_update"  method="post" enctype="multipart/form-data">
 				<table class="table table-bordered" style="width: 90%;">
 					<tr>

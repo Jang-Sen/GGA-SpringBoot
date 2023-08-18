@@ -63,7 +63,7 @@
 	</div>
 		<div class="section1">
 			<div class="admin_index_btn">
-				<a href="http://localhost:9000/admin_member_list"><img src="http://localhost:9000/images/memberedit.png"></a>
+				<a href="/admin_member_list/1"><img src="http://localhost:9000/images/memberedit.png"></a>
 				<a href="http://localhost:9000/admin_board_list"><img src="http://localhost:9000/images/reviewedit.png"></a>
 			<br>
 				<a href="http://localhost:9000/admin_notice_list"><img src="http://localhost:9000/images/noticeedit.png"></a>

@@ -65,21 +65,20 @@ $(document).ready(function(){
 				initAjax(1);
 					function initAjax(page){
 						$.ajax({
-							url: "http://localhost:9000/gga_plz/admin_notice_search_json_data.do?ntitle="+$("#ntitle").val()+"&page="+page ,
-							success : function(result){
-								let jdata = JSON.parse(result);
-			
-								let output = "<table class='table table-bordered'  id='admin_notice_json' style='width: 90%;'>";
+							url: "http://localhost:9000/admin_notice_search/" + page + "/" + $("#ntitle").val() ,
+							success : function(notice_search){
+
+								let output = "<table class='table table-bordered'  id='notice_json' style='width: 90%;'>";
 								output += "<tr><td colspan='4'>";
-								output += "<a href='admin_notice_write.do' class='writebtn'>";
-								output += "	<img src='http://localhost:9000/gga_plz/images/writebtn.png'></a>";
+								output += "<a href='/admin_notice_write' class='writebtn'>";
+								output += "	<img src='http://localhost:9000/images/writebtn.png'></a>";
 								output += "</td></tr>";
 								output += "<tr><th>번호</th><th>제목</th><th>조회수</th><th>작성일자</th></tr>";
 								
-								for(obj of jdata.jlist){
+								for(obj of notice_search.list){
 									output += "<tr>";
 									output += "<td>"+ obj.rno +"</td>";
-									output += "<td><a href="+"'"+"admin_notice_content.do?nid="+obj.nid+"'>"+obj.ntitle+"</a></td>";
+									output += "<td><a href=" + "'" + "admin_notice_content/" + page + "/" + obj.nid + "'>" + obj.ntitle+"</a></td>";
 									output += "<td>"+ obj.nhits +"</td>";
 									output += "<td>"+ obj.ndate +"</td>";
 									output += "</tr>";
@@ -96,7 +95,7 @@ $(document).ready(function(){
 								$("div.admin_notice_search").after(output);
 								
 								//페이징 처리 함수 호출
-								pager(jdata.totals, jdata.maxSize, jdata.pageSize, jdata.page);
+								pager(notice_search.page.dbCount, notice_search.page.pageCount, notice_search.pageSize, notice_search.page.reqPage);
 								
 								//페이지 번호 클릭 이벤트 처리
 								jQuery('#ampaginationsm').on('am.pagination.change',function(e){

@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>관리자 리뷰 관리</title>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <link rel="stylesheet" href="http://localhost:9000/css/am-pagination.css"> <!-- am-pagination.css -->
 <script src="http://localhost:9000/js/jquery-3.6.4.min.js"></script> <!-- gga_javascript.js -->
 <script src="http://localhost:9000/js/gga_jquery.js"></script> <!-- gga_jquery.js -->
 <script src="http://localhost:9000/js/gga_board_list.js"></script> <!-- gga_jquery.js -->
-<script src="http://localhost:9000/mycgv_jsp/js/am-pagination.js"></script> <!-- am-pagination.js -->
+<script src="http://localhost:9000/js/am-pagination.js"></script> <!-- am-pagination.js -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
 	rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> 
 	<!-- 부트스트랩 -->
@@ -31,7 +31,16 @@
 }
 section.board table {
 		margin:auto;
-} 
+}
+section.board table tr td a { /* 텍스트 언더라인 X */
+	color: darkgreen;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+section.board table tr td a:hover {
+	color: blue;
+}
+
 
 table tr:first-child {
 	border-top:1px solid white;
@@ -50,11 +59,15 @@ table tr:last-child nav ul {
 }
 
 table tr{
-	text-align:center;
+	vertical-align: middle;
 }
 
 table td:nth-child(2){
 	text-align:left;
+}
+
+div.board_title img {
+	width:500px;
 }
 
 img {

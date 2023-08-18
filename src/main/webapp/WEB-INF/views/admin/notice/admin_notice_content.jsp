@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA_Test1</title>
+<title>${notice.ntitle}</title>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <script src="http://localhost:9000/js/jquery-3.6.4.min.js"></script> <!-- gga_javascript.js -->
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
@@ -39,8 +39,8 @@ section.admin_notice table {
 	width:95%;
 	border-color:#ddd;
 }
-.table td {
-text-align:left;
+.table th, .table td {
+	vertical-align: middle;
 }
 .table tr:last-child td {
 text-align:center;
@@ -58,6 +58,11 @@ border-color:white;
 .admin_content1{
 border-color:white;
 }
+.noticeImg {
+	width: 750px;
+	object-fit: scale-down;
+}
+
 </style>
 <!-- <script>
 function cdelete(){
@@ -82,7 +87,7 @@ function cupdate(){
 	
 	<!-- content -->
 	<div class="container text-center">
-		<div class="board_title">
+		<div class="admin_notice_list_title">
 		<img src="http://localhost:9000/images/adminnoticetitle.png">
 		</div>
 		<section class="admin_notice">
@@ -94,10 +99,10 @@ function cupdate(){
 					<tr>
 						<th>내용</th>
 						<td>
-							${notice.ncontent }<br><br><br>
 							<c:if test="${notice.gsfile != null}">
-								<img src="http://localhost:9000/upload/${notice.gsfile}">
+								<img src="http://localhost:9000/upload/${notice.gsfile}" class="noticeImg">
 							</c:if>
+							<br>${notice.ncontent }<br><br>
 						</td>
 					</tr>
 					<tr>

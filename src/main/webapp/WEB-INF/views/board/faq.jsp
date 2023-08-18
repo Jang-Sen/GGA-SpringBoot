@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>FAQ</title>
 <script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
@@ -180,7 +180,19 @@
 		      </div>
 		    </div>
 		  </div>
-		  
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="heading10">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+						<strong>Q10. 행사를 진행하려 하는데 대관도 가능한가요?</strong>
+					</button>
+				</h2>
+				<div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						네 가능합니다. 사이트 상단에 <span style= "color:blue"><strong>'대관문의'</strong></span> 탭을 이용해 문의신청 해주세요.
+					</div>
+				</div>
+			</div>
+
 		</div>
 		</section>
 	</div>
