@@ -105,7 +105,7 @@ div.board_title img {
 					<tr>
 						<th>파일첨부</th>
 						<td>
-							<input type="file" name="file1" >
+							<input type="file" name="file1" class="form-control">
 						</td>
 					</tr>
 					<tr>
