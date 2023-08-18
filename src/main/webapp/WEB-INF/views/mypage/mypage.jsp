@@ -46,6 +46,10 @@
 	width : 120px;
 }
 
+.productordercon table tr td:last-child{
+	width : 120px;
+}
+
 .productordercon h1{
 	font-size:20pt;
 }
@@ -339,7 +343,7 @@ table#boardMaster tr td:nth-child(2) a{
 									</c:choose>
 								</td>
 								<td>${productList.poid}</td>
-								<td>${productList.podate}</td>
+								<td style="font-size: 20px">${productList.podate}</td>
 							</tr>
 						</c:forEach>
 						</tbody>
@@ -402,6 +406,7 @@ table#boardMaster tr td:nth-child(2) a{
 			document.getElementById("startDate").value = startDateValue;
 			document.getElementById("endDate").value = endDateValue;
 		}
+
 	</script>
 </body>
 </html>

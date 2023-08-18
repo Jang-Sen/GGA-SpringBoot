@@ -70,11 +70,17 @@
 		<header>
 			<jsp:include page="../header.jsp" />
 		</header>
+
+
 	<!-- Header -->
 	<!-- Content -->
 	<div class="container">
 		<div class= "content" >
 			<section class= "mycoupon">
+				<div class= "mycoupon_header">
+					<img style="width: 300px" src="http://localhost:9000/images/mypagetitle.png">
+					<br><br>
+				</div>
 				<div class="myorder_header">
 					<h1>내 쿠폰함</h1>
 					<a href="http://localhost:9000/mypage/${id}" class="myorder_all"><h5>마이 페이지</h5></a>
@@ -120,9 +126,9 @@
 					<c:otherwise>
 						<div class="mycoupon_text">
 							<br>
-							<br>
-							<br>
 							<p>쿠폰함이 비었습니다 ㅠㅠ</p>
+							<a href="http://localhost:9000/mypage/${id}">
+								<img style="width: 150px" src="http://localhost:9000/images/backbtn.png"></a>
 						</div>
 					</c:otherwise>
 							</c:choose>

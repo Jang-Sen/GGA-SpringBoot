@@ -80,9 +80,6 @@
 					  <div class="card-body">
 					    <h5 class="card-title">오펜하이머</h5>
 					    <p class="card-text">개봉일 : 2023.08.25<p>
-					   <!--  <p>🚘🚘</p> -->
-						  <p>평점 : <span class="material-symbols-outlined">directions_car</span>
-						  <span class="material-symbols-outlined">directions_car</span></p>
 
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
@@ -95,12 +92,6 @@
 					  <div class="card-body">
 					    <h5 class="card-title">콘크리트 유토피아</h5>
 					    <p class="card-text">개봉일 : 2023.08.09</p>
-					    <!-- <p>🚘🚘🚘</p> -->
-						  <p> 평점 :
-					    <span class="material-symbols-outlined">directions_car</span>
-					   <span class="material-symbols-outlined">directions_car</span>
-					   <span class="material-symbols-outlined">directions_car</span>
-						  </p>
 					   	<a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -113,13 +104,6 @@
 					    <h5 class="card-title">달짝지근해: 7510</h5>
 					    <p class="card-text">개봉일 : 2023.08.15<p>
 					    <!-- <p>🚘🚘🚘🚘</p> -->
-						  <p>
-						  평점:
-						  <span class="material-symbols-outlined">directions_car</span>
-						  <span class="material-symbols-outlined">directions_car</span>
-						  <span class="material-symbols-outlined">directions_car</span>
-						  <span class="material-symbols-outlined">directions_car</span>
-					  </p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -135,11 +119,6 @@
 					    <h5 class="card-title">밀수</h5>
 					    <p class="card-text">개봉일 : 2023.07.26<p>
 					    <!-- <p>🚘🚘</p> -->
-						  <p>
-						  평점 :
-					    <span class="material-symbols-outlined">directions_car</span>
-					   <span class="material-symbols-outlined">directions_car</span>
-					  </p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -152,10 +131,6 @@
 					    <h5 class="card-title">엘리멘탈</h5>
 					    <p class="card-text">개봉일 : 2023.06.14<p>
 					    <!-- <p>🚘🚘</p> -->
-						  <p>평점:
-						  <span class="material-symbols-outlined">directions_car</span>
-						  <span class="material-symbols-outlined">directions_car</span>
-					  </p>
 					    <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
@@ -168,10 +143,6 @@
 				    <h5 class="card-title">메가로돈2</h5>
 				    <p class="card-text">개봉일 : 2023.08.15<p>
 				    <!-- <p>🚘🚘</p> -->
-					  <p>평점:
-					  <span class="material-symbols-outlined">directions_car</span>
-					  <span class="material-symbols-outlined">directions_car</span>
-				  </p>
 				   			 <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 				  </div>
@@ -184,10 +155,6 @@
 				    <h5 class="card-title">보호자</h5>
 				    <p class="card-text">개봉일 : 2023.08.15<p>
 				    <!-- <p>🚘🚘</p> -->
-					  <p>평점:
-					  <span class="material-symbols-outlined">directions_car</span>
-					  <span class="material-symbols-outlined">directions_car</span>
-				  </p>
 				   			 <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 				  </div>
@@ -199,11 +166,6 @@
 				  <div class="card-body">
 				    <h5 class="card-title">바다 탐험대 옥토넛 어보브 앤 비욘드</h5>
 				    <p class="card-text">개봉일 : 2023.08.10<p>
-				    <!-- <p>🚘🚘</p> -->
-					  <p>평점:
-					  <span class="material-symbols-outlined">directions_car</span>
-					  <span class="material-symbols-outlined">directions_car</span>
-				  </p>
 				   			 <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 				  </div>
@@ -215,11 +177,6 @@
 				  <div class="card-body">
 				    <h5 class="card-title">비공식작전</h5>
 				    <p class="card-text">개봉일 : 2023.08.02<p>
-				    <!-- <p>🚘🚘</p> -->
-					  <p>평점:
-					  <span class="material-symbols-outlined">directions_car</span>
-					  <span class="material-symbols-outlined">directions_car</span>
-				  </p>
 				   			 <a class="headerorderbtn">
 							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
 				  </div>

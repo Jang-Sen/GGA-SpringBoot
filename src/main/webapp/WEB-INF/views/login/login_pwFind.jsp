@@ -74,7 +74,7 @@ body {
 						<button type="button" name="findPhoneCheck" id="findPhoneCheck">인증하기</button>
 					</li>
 					<input type="text" name="findAccessKey" id="findAccessKey" placeholder="4자리 입력 후 '입력완료' 클릭">
-					<input type="hidden" name="findConfirm" id="findConfirm" value="1">
+					<input type="hidden" name="findConfirm" id="findConfirm" value="1"> <%--시현시 0으로 --%>
 					<li>
 						<img src="http://localhost:9000/images/schbtn.png" id="btnFindPw" class="btnfindproc">
 					</li>

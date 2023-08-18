@@ -84,18 +84,15 @@
 				      <li><a href="http://localhost:9000/movie_menu">
 				     	영화</a></li>
 				      <li><a href="http://localhost:9000/order">예매</a></li>
-			      	  <li class="dropdown">
+			      	  <li class="dropdown" >
 			          <a class="dropdown-toggle-split" href="#" role="button" 
 			         	 data-bs-toggle="dropdown" aria-expanded="false">
 			         	 게시판</a>
-				          <ul class="dropdown-menu">
-				            <li><a class="dropdown-item" href="http://localhost:9000/notice_list"
-				            	>공지사항</a></li>
-				            <li><a class="dropdown-item" href="http://localhost:9000/board_list"
-				            	>리   뷰</a></li>
-				            <li><a class="dropdown-item" href="http://localhost:9000/faq"
-				            	>FAQ</a></li>
-				     </ul>
+				          <ul class="dropdown-menu" style="padding: 3px; min-width: 0px">
+				            <li><a class="dropdown-item" href="http://localhost:9000/notice_list">공지사항</a></li>
+				            <li><a class="dropdown-item" href="http://localhost:9000/board_list">커뮤니티</a></li>
+				            <li><a class="dropdown-item" href="http://localhost:9000/faq">FAQ</a></li>
+						  </ul>
 				     </li>
 				      <li><a href="http://localhost:9000/coronation">
 				      대관문의</a></li>
