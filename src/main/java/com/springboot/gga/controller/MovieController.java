@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.mvc.annotation.ModelAndViewResolver;
 
 import javax.servlet.http.HttpSession;
 
@@ -21,10 +22,18 @@ public class MovieController {
     @Autowired
     PageService pageService;
 
-    @GetMapping("movie_register")
-    public String movie_register(){
+//    @GetMapping("movie_register")
+//    public String movie_register(){
+//
+//        return "/admin/moviemanager/movie_register";
+//    }
 
-        return "/admin/moviemanager/movie_register";
+    @GetMapping("movie_content/{movieid}")
+    public String movie_content(@PathVariable String movieid, Model model){
+        MovieDto movieDto = movieService.getMovieSelect(movieid);
+        model.addAttribute("movie", movieDto);
+
+        return "/admin/moviemanager/movie_content";
     }
 
     @GetMapping("movie_list/{page}")
