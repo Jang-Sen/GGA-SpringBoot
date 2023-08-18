@@ -127,7 +127,11 @@ public class RestController {
         PageDto pageDto = pageService.getPaging(new PageDto(page, "board"));
         List<BoardDto> list = boardService.list(pageDto);
 
-        map.put("commentCount", boardService.commentCount(pageDto.getBid()));
+        for (int i = 0; i < list.size(); i++){
+            list.get(i).setCommentCount(boardService.commentCount(list.get(i).getBid()));
+        }
+
+//        map.put("commentCount", list);
         map.put("list", list);
         map.put("page", pageDto);
 

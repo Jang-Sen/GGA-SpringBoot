@@ -33,7 +33,7 @@ $(document).ready(function(){
 			  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0007'>[반지의제왕]</a>&nbsp";
 			          	}
 			          	if(obj.commentCount > 0){
-			          		output += "<div class='maxSize'><a href="+"'"+"board_content/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a>&nbsp(" + board.commentCount + ")</td></div>";
+			          		output += "<div class='maxSize'><a href="+"'"+"board_content/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a>&nbsp(" + obj.commentCount + ")</td></div>";
 			          	}else{
 			          		output += "<div class='maxSize'><a href="+"'"+"board_content/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a></td></div>";
 			          	}

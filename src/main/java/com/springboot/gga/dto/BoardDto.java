@@ -8,6 +8,6 @@ import lombok.EqualsAndHashCode;
 public class BoardDto extends FileDto {
     String page;
     String bid, btitle, bcontent, bdate, mid, movieName;
-    int rno, bhits, score;
+    int rno, bhits, score, commentCount;
 
 }

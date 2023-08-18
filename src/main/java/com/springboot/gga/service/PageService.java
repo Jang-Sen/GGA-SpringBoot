@@ -1,6 +1,7 @@
 package com.springboot.gga.service;
 
 import com.springboot.gga.dto.PageDto;
+import com.springboot.gga.repository.BoardMapper;
 import com.springboot.gga.repository.PageMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Service;
 public class PageService {
     @Autowired
     private PageMapper pageMapper;
+    @Autowired
+    private BoardMapper boardMapper;
 
     public PageDto getPaging(PageDto pageDto){
         // 페이징 처리 - startCount, endCount 구하기
@@ -19,7 +22,13 @@ public class PageService {
         int pageCount = 1;	// 전체 페이지 수
         int dbCount = 0;	// DB에서 가져온 전체 행수
 
-        dbCount = pageMapper.totalPaging(pageDto);
+        if (pageDto.getServiceName().equals("boardComment")) {
+            dbCount = boardMapper.commentCount(pageDto.getBid());
+        } else {
+            dbCount = pageMapper.totalPaging(pageDto);
+        }
+
+//        dbCount = pageMapper.totalPaging(pageDto);
 
 //        System.out.println(pageDto.getBid());
 
