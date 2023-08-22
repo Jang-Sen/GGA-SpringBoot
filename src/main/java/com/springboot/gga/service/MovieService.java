@@ -13,6 +13,13 @@ public class MovieService {
     @Autowired
     MovieMapper movieMapper;
 
+
+    public int getMovieDelete(String movieid) { return movieMapper.delete(movieid); }
+
+    public int getMovieUpdate(MovieDto movieDto) { return movieMapper.update(movieDto); }
+
+    public int getMovieInsert(MovieDto movieDto) { return movieMapper.insert(movieDto); }
+
     public List<MovieDto> list(PageDto pageDto){
         return movieMapper.list(pageDto);
     }

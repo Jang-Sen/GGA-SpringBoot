@@ -115,10 +115,10 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<a href="/movie_update/=${movie.movieid}">
+						<a href="/movie_update/${movieid}">
 							<button type="button" class="btn btn-outline-secondary">수정하기</button></a>
 						<button type="button" id="btnMovieDelete" class="btn btn-outline-secondary">삭제하기</button>
-						<a href="http://localhost:9000/movie_list">
+						<a href="/movie_list">
 							<button type="button" class="btn btn-outline-secondary">이전으로</button></a>
 					</td>
 				</tr>
