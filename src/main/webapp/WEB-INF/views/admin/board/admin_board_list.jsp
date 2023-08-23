@@ -66,7 +66,7 @@ table td:nth-child(2){
 	text-align:left;
 }
 
-div.board_title img {
+div.boardTitle img {
 	width:500px;
 }
 
@@ -76,21 +76,21 @@ img {
 }
 
 /* 검색  */
-section.board div.board_search input { /* 검색창 */
+section.board div.boardSearch input { /* 검색창 */
 	position:relative;
 	height:30px;width:160px;
 	border-radius: 5px;
 	opacity:80%;
 	border:white;
 }
-section.board div.board_search { /* 검색창 영역 */
+section.board div.boardSearch { /* 검색창 영역 */
 	float:left;
 	position:relative;
 	margin-top:32px;
 	left:50px; top:0px;
 }
 
-.boardbtn1, .boardbtn2{
+.boardBtn1, .boardBtn2{
 	border-color:white;
 	height:25px;
 	background: #aed581;
@@ -102,7 +102,7 @@ section.board div.board_search { /* 검색창 영역 */
 	position:relative;
 }
 
-section.board div.board_search button:hover { /* 커서이벤트 */
+section.board div.boardSearch button:hover { /* 커서이벤트 */
 	background: powderblue;
 }
 
@@ -143,14 +143,14 @@ section.board div.board_search button:hover { /* 커서이벤트 */
 	
 	<!-- content -->
 	<div class="container text-center">
-	<div class="board_title">
+	<div class="boardTitle">
 		<img src="http://localhost:9000/images/adminreviewtitle.png">
 	</div>
 		<section class="board">
-			<div class="board_search">
+			<div class="boardSearch">
 				<input type="text" placeholder=" 게시물 검색" id="btitle" >
-				<button type="submit" id="btnBoardSearch" class = "boardbtn1"><p>검색</p></button>
-				<a href="/admin_board_list"><button type="submit" class = "boardbtn2"><p>처음으로</p></button></a>
+				<button type="submit" id="btnBoardSearch" class = "boardBtn1"><p>검색</p></button>
+				<a href="/admin_board_list"><button type="submit" class = "boardBtn2"><p>처음으로</p></button></a>
 			</div>
 			<div class="board_choose">
 						<c:choose>
@@ -160,7 +160,7 @@ section.board div.board_search button:hover { /* 커서이벤트 */
 								</a>
 							</c:when>
 							<c:otherwise>
-								<a href="/board_write" class="writebtn">
+								<a href="/boardWrite" class="writebtn">
 									<img src="http://localhost:9000/images/writebtn.png">
 								</a>
 							</c:otherwise>

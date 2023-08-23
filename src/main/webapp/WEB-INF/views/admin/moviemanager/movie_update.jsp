@@ -45,7 +45,7 @@ section.moviemanager table button {
 	
 	<!-- content -->
 	<div class="container text-center">
-	<div class="board_title">
+	<div class="boardTitle">
 		<h1>영화 수정</h1>
 		</div>
 		<section class="moviemanager">

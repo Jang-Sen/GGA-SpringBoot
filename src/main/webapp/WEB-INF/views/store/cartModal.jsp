@@ -44,7 +44,7 @@
 			  height: 300px;
 			  width: 100%;
 			} 
-			.orderbtn{
+			.myPageHeader{
 			/* margin-left:55px; */
 			height:50px;
 			width:160px;

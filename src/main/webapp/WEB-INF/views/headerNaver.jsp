@@ -74,7 +74,7 @@
 							  <ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="http://localhost:9000/notice_list"
 									>공지사항</a></li>
-								<li><a class="dropdown-item" href="http://localhost:9000/board_list"
+								<li><a class="dropdown-item" href="http://localhost:9000/boardList"
 									>커뮤니티</a></li>
 								<li><a class="dropdown-item" href="http://localhost:9000/faq"
 									>FAQ</a></li>

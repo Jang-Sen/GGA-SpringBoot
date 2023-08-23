@@ -111,8 +111,8 @@
 				        		class="mimg" id="MOVIE_0001">
 			        	<div class="card-body">
 			          	<p class="card-text">다크나이트</p>
-			          	<a class="headerorderbtn">
-						<img src="http://localhost:9000/images/neworderbtn.png"></a>
+			          	<a class="myPageHeader">
+						<img src="http://localhost:9000/images/newmyPageHeader.png"></a>
 			        	</div>
 			     	</div>
 		    	</div>
@@ -122,8 +122,8 @@
 			        		class="mimg" id="MOVIE_0003">
 			        	<div class="card-body">
 			          	<p class="card-text">듄</p>
-			          	<a class="headerorderbtn">
-						<img src="http://localhost:9000/images/neworderbtn.png"></a>
+			          	<a class="myPageHeader">
+						<img src="http://localhost:9000/images/newmyPageHeader.png"></a>
 			        	</div>
 			     	</div>
 		    	</div>
@@ -133,8 +133,8 @@
 			        		class="mimg" id="MOVIE_0004">
 			        	<div class="card-body">
 			          	<p class="card-text">인셉션</p>
-			          	<a class="headerorderbtn">
-						<img src="http://localhost:9000/images/neworderbtn.png"></a>
+			          	<a class="myPageHeader">
+						<img src="http://localhost:9000/images/newmyPageHeader.png"></a>
 			        	</div>
 			     	</div>
 		    	</div>
@@ -144,8 +144,8 @@
 			        		class="mimg" id="MOVIE_0009">
 			        	<div class="card-body">
 			          	<p class="card-text">슬램덩크</p>
-			          	<a class="headerorderbtn">
-						<img src="http://localhost:9000/images/neworderbtn.png"></a>
+			          	<a class="myPageHeader">
+						<img src="http://localhost:9000/images/newmyPageHeader.png"></a>
 			        	</div>
 			     	</div>
 		    	</div>
@@ -155,8 +155,8 @@
 			        		class="mimg" id="MOVIE_0002">
 			        	<div class="card-body">
 			          	<p class="card-text">스즈메</p>
-			          	<a class="headerorderbtn">
-						<img src="http://localhost:9000/images/neworderbtn.png"></a>
+			          	<a class="myPageHeader">
+						<img src="http://localhost:9000/images/newmyPageHeader.png"></a>
 			        	</div>
 			     	</div>
 		    	</div>

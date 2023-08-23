@@ -183,7 +183,7 @@ $(document).ready(function(){
 				if(result == "1"){
 //
 					alert("본인 인증 성공!!")
-					location.href= "http://localhost:9000/mypage_update/"+$("#mypageSuccess").val();
+					location.href= "http://localhost:9000/myPageUpdate/"+$("#mypageSuccess").val();
 				}else {
 					alert("비밀번호가 일치하지 않습니다.");
 					$("#mypagePassCheck").val("");

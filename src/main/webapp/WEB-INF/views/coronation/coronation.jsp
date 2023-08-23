@@ -18,23 +18,21 @@
 </style>
 
 <body>
-		<!-- header -->
-		<jsp:include page="../header.jsp" />
-	<!-- header -->
 
-	<!-- content:송지웅  -->
+		<jsp:include page="../header.jsp" />
+
 	<div class="container">
-		<div class="ask_title">
+		<div class="askTitle">
 		<img src="http://localhost:9000/images/ask.png">
 		</div>
-		<section class="coron_1">
+		<section class="coron1">
 		</section>
-			<div class="corondetail">
+			<div class="coronDetail">
 				<img src="http://localhost:9000/images/corondetail.png">
 			</div>
-		<section class="coron_2">
+		<section class="coron2">
 		<form name = "coronationForm">
-			<div class="coron_input">
+			<div class="coronInput">
 				<ul>
 				<li>
 					<label>이름</label>
@@ -52,7 +50,7 @@
 				</li>
 				<li>
 					<label>문의내용</label>
-					<textarea name="coroncontent" placeholder="* 200자 이내 작성"></textarea>
+					<textarea name="coronContent" placeholder="* 200자 이내 작성"></textarea>
 				</li>
 				</ul>
 			</div>
@@ -64,15 +62,13 @@
 	<div id="coron_btn">
 		<section class="enroll">
 			<a href = "index">
-			<button type ="submit" id = "btnConfirm" class="coronbtn"><img src="http://localhost:9000/images/qnabtn.png"></button></a>
+			<button type ="submit" id = "btnConfirm" class="coronBtn"><img src="http://localhost:9000/images/qnabtn.png"></button></a>
 		</section>
 	</div>
 
-	<!-- content:송지웅  -->
 
-	<!-- footer -->
 	<jsp:include page="../footer.jsp" />
-	<!-- footer -->	
+
 
 </body>
 </html>

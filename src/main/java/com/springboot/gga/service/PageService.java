@@ -42,7 +42,7 @@ public class PageService {
             pageSize = 10;
         } else if (pageDto.getServiceName().equals("boardComment")) {
             pageSize = 5;
-        } else if (pageDto.getServiceName().equals("board_search")) {
+        } else if (pageDto.getServiceName().equals("boardSearch")) {
             pageSize = 10;
         } else if (pageDto.getServiceName().equals("myReview")) {
             pageSize = 3;

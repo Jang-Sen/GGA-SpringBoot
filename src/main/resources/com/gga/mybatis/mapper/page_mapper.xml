@@ -22,16 +22,16 @@
             gga_member
         </if>
         <if test='serviceName == "board"'>
-            gga_board
+            ggaBoard
         </if>
-        <if test='serviceName == "board_search"'>
-            gga_board
+        <if test='serviceName == "boardSearch"'>
+            ggaBoard
         </if>
         <if test='serviceName == "boardComment"'>
-            gga_board_comment
+            ggaBoardComment
         </if>
         <if test='serviceName == "myReview"'>
-            gga_board
+            ggaBoard
         </if>
         <if test='serviceName == "product"'>
             gga_product
@@ -40,7 +40,7 @@
             gga_movie
         </if>
         <if test='serviceName == "boardMaster"'>
-            gga_board where mid =#{bid}
+            ggaBoard where mid =#{bid}
         </if>
 
     </select>

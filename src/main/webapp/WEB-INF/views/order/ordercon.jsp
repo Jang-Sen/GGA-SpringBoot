@@ -40,36 +40,36 @@
 
 <!-- content -->
 <div class="container">
-	<div class="ordercon_title">
+	<div class="orderConTitle">
 		<img src="http://localhost:9000/images/ordercontitle.png">
 		<!-- <img src="http://localhost:9000/images/ticket2.png"> -->
 	</div>
 
-	<div class="ticketcon_bac1">
+	<div class="ticketConBack1">
 		<label>제목 :</label>
-		<p class="ticketcon_title">${orderconDto.movieordertitle}</p><br>
+		<p class="ticketConTitle">${orderConDto.movieordertitle}</p><br>
 		<label>날짜 :</label>
-		<p class="ticketcon_date">${orderconDto.odate}</p><br>
+		<p class="ticketConDate">${orderConDto.odate}</p><br>
 		<label>시간 :</label>
-		<p class="ticketcon_time">${orderconDto.otime}</p><br>
+		<p class="ticketConTime">${orderConDto.otime}</p><br>
 		<label>가격 :</label>
-		<p class="ticketcon_price">${orderconDto.price}</p><br>
+		<p class="ticketConPrice">${orderConDto.price}</p><br>
 		<label>좌석 :</label>
-		<p class="ticket_orderseat">${orderconDto.seat}</p>
+		<p class="ticketOrderSeat">${orderConDto.seat}</p>
 		<label>예매번호 :</label>
-		<p class="ticket_ordernum">${orderconDto.oconid}</p><br>
+		<p class="ticketOrderNum">${orderConDto.oconid}</p><br>
 
 	</div>
 
-	<div class="ticketcon_bac2">
+	<div class="ticketConBack2">
 		<label>이름 :</label>
-		<p class="ticketcon_name">${orderconDto.oname}</p><br>
+		<p class="ticketConName">${orderConDto.oname}</p><br>
 		<label>차량번호 :</label>
-		<p class="ticketcon_carnum">${orderconDto.ocarnum}</p><br>
+		<p class="ticketConCarNum">${orderConDto.ocarnum}</p><br>
 		<label>Email :</label>
-		<p class="ticketcon_email">${orderconDto.oemail}</p><br>
+		<p class="ticketConEmail">${orderConDto.oemail}</p><br>
 		<label>전화번호 :</label>
-		<p class="ticket_number">${orderconDto.ophone}</p><br>
+		<p class="ticketNumber">${orderConDto.ophone}</p><br>
 
 	</div>
 </div>

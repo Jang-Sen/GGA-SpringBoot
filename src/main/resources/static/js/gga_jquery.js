@@ -66,39 +66,38 @@ $(document).ready(function(){
 		mypage
 	*************************************/
 
-	 $(".mypage_ticket").click(function() {
+	 $(".myPageTicket").click(function() {
 	 var oconid = $(this).data('oconid');
-	 location.replace("http://localhost:9000/mypage_ticket/"+oconid+"/");
+	 location.replace("http://localhost:9000/myPageTicket/"+oconid+"/");
 	                    	});
-	 $(".mypage_ticket2").click(function() {
+	 $(".myPageTicket2").click(function() {
  var oconid = $(this).data('oconid');
- location.replace("http://localhost:9000/mypage_ticket2/"+oconid+"/");
+ location.replace("http://localhost:9000/myPageTicket2/"+oconid+"/");
                     	});
 
-	 $(".openmypage").click(function() {
-	 location.replace("http://localhost:9000/mypage");
+	 $(".openMyPage").click(function() {
+	 location.replace("http://localhost:9000/myPage");
 	                    	});
-	 $(".openmypage2").click(function() {
- location.replace("http://localhost:9000/mypage");
+	 $(".openMyPage2").click(function() {
+ location.replace("http://localhost:9000/myPage");
                     	});
- $(".openallticket").click(function() {
- location.replace("http://localhost:9000/mypage_allticket");
+ $(".openAllTicket").click(function() {
+ location.replace("http://localhost:9000/myPageAllTicket");
                     	});
 
-	$(".refundticket").click(function() {
+	$(".refundTicket").click(function() {
 
-		var oconid = $(".forrefundoconid").data('id');
-		var id = $(".ticket_userid").data('id');
+		var oconid = $(".forRefundOconId").data('id');
+		var id = $(".ticketUserId").data('id');
 
-		alert(oconid);
 	 		 var result = confirm("정말 예매를 취소하시겠습니까?");
 
 	  		if (result) {
 	  		jQuery.ajax({
-	 			url: "http://localhost:9000/mypage_ticket_refund/"+oconid+"/"
+	 			url: "http://localhost:9000/myPageTicketRefund/"+oconid+"/"
 	 			}).done(function(){
 	  			alert("환불이 완료되었습니다.");
-	  			location.replace("http://localhost:9000/mypage/"+id+"/");
+	  			location.replace("http://localhost:9000/myPage/"+id+"/");
 	  			});
 
 	  		}
@@ -334,21 +333,21 @@ $(document).ready(function(){
 	 희정짱 order 부분!!
 	 **********************************/
 	//!*예매 버튼이 눌릴 때 예매번호 생성해서 폼에 같이 넘기기*!/
-		$("#indexOrderBtn").click(function(){
+		$("#indexmyPageHeader").click(function(){
 			location.replace("http://localhost:9000/order/");
 	});
 
-		$("#mypagegoorder").click(function(){
+		$("#myPageGoOrder").click(function(){
 				location.replace("http://localhost:9000/order/");
 	});
 
-		$(".headerorderbtn").click(function(){
+		$(".myPageHeader").click(function(){
 
 					location.replace("http://localhost:9000/order/");
 
 		});
 
-		$(".headerorderbtn1").click(function(){
+		$(".1").click(function(){
 
 			location.replace("http://localhost:9000/order/"+movieid+"/");
 
@@ -358,9 +357,9 @@ $(document).ready(function(){
      * 좌석 선택
      * */
 	$("#seatcardbtn").click(function(){
-		var seatcom = $("#seatcom").html();
-		var seattotal = $("#seattotal").html();
-		var oid = $("#oidinput").val();
+		var seatCom = $("#seatCom").html();
+		var seatTotal = $("#seatTotal").html();
+		var oid = $("#oidInput").val();
 
 		var IMP = window.IMP;
 		IMP.init("imp71285848");
@@ -372,7 +371,7 @@ $(document).ready(function(){
 		var milliseconds = today.getMilliseconds();
 		var makeMerchantUid = hours +  minutes + seconds + milliseconds;
 
-		if(seatcom == ""){
+		if(seatCom == ""){
 			alert("좌석을 선택해 주세요.");
 		}else{
 			IMP.request_pay({
@@ -380,26 +379,26 @@ $(document).ready(function(){
 				pay_method : 'card',
 				merchant_uid: "IMP"+makeMerchantUid,
 				name : 'GGA 영화 티켓',
-				amount : seattotal,
+				amount : seatTotal,
 				buyer_email : 'Iamport@chai.finance',
 				buyer_name : '아임포트 기술지원팀',
 				buyer_tel : '010-1234-5678',
 				buyer_addr : '서울특별시 강남구 삼성동',
 				buyer_postcode : '123-456',
-				/* m_redirect_url: "http://localhost:9000/ordercon.do"  */
-			}, function (rsp) { // callback
+
+			}, function (rsp) {
 				if (rsp.success) {
 					jQuery.ajax({
-						url:"seatProc.do?seat="+seatcom+"&price="+seattotal+"&oid="+oid,
+						url:"seatProc.do?seat="+seatCom+"&price="+seatTotal+"&oid="+oid,
 						method:"POST",
 						headers: { "Content-Type": "application/json" },
 						data: {
-							imp_uid: rsp.imp_uid,            // 결제 고유번호
-							merchant_uid: rsp.merchant_uid,   // 주문번호
-							pg_type: rsp.pg //pg사 이름
+							imp_uid: rsp.imp_uid,
+							merchant_uid: rsp.merchant_uid,
+							pg_type: rsp.pg
 						}
 					}).done(function (data) {
-						// 성공시 로직
+
 						location.replace("http://localhost:9000/ordercon.do?oid="+oid);
 					})
 				} else {
@@ -414,22 +413,22 @@ $(document).ready(function(){
 
 	});
 
-	$("#seatpaybtn").click(function(){
-		var seatcom = $("#seatcom").html();
-		var seattotal = $("#seattotal").html();
-		var oid = $("#oidinput").val();
-		if (seatcom == "") {
+	$("#seatPayBtn").click(function(){
+		var seatCom = $("#seatCom").html();
+		var seatTotal = $("#seatTotal").html();
+		var oid = $("#oidInput").val();
+		if (seatCom == "") {
 			alert("좌석을 선택해 주세요.");
 		} else {
 			$.ajax({
-				url: "http://localhost:9000/seatProc/" + seatcom + "/" + seattotal + "/" + oid+"/",
+				url: "http://localhost:9000/seatProc/" + seatCom + "/" + seatTotal + "/" + oid+"/",
 				async: false,
 			}).done(function(data) {
 				if (data == '0') {
-					// 반환된 int 값이 0인 경우의 처리 로직
+
 					alert("이미 선택된 좌석입니다.");
 				} else if (data == '1') {
-					location.replace("http://localhost:9000/order_pay/"+oid);
+					location.replace("http://localhost:9000/orderPay/"+oid+"/");
 				}
 
 				});
@@ -440,9 +439,9 @@ $(document).ready(function(){
 
 
 	$("#seatkakaobtn").click(function() {
-		var seatcom = $("#seatcom").html();
-		var seattotal = $("#seattotal").html();
-		var oid = $("#oidinput").val();
+		var seatCom = $("#seatCom").html();
+		var seatTotal = $("#seatTotal").html();
+		var oid = $("#oidInput").val();
 
 		var IMP = window.IMP;
 		IMP.init("imp71285848");
@@ -458,7 +457,7 @@ $(document).ready(function(){
 		var merchantuid = "";
 		var pgtype = "";
 
-		if (seatcom == "") {
+		if (seatCom == "") {
 			alert("좌석을 선택해 주세요.");
 		} else {
 			IMP.request_pay({
@@ -466,24 +465,24 @@ $(document).ready(function(){
 				pay_method: 'card',
 				merchant_uid: "IMP" + makeMerchantUid,
 				name: 'GGA 영화 티켓',
-				amount: seattotal,
+				amount: seatTotal,
 				buyer_email: 'Iamport@chai.finance',
 				buyer_name: '아임포트 기술지원팀',
 				buyer_tel: '010-1234-5678',
 				buyer_addr: '서울특별시 강남구 삼성동',
 				buyer_postcode: '123-456'
-			}, function(rsp) { // callback
+			}, function(rsp) {
 				if (rsp.success) {
 					console.log(rsp);
-					impuid = rsp.imp_uid, // 결제 고유번호
-						merchantuid = rsp.merchant_uid, // 주문번호
+					impuid = rsp.imp_uid,
+						merchantuid = rsp.merchant_uid,
 						pgtype = 'kakaopay',
 						$.ajax({
-							url: "http://localhost:9000/seatProc/" + seatcom + "/" + seattotal + "/" + oid+"/",
+							url: "http://localhost:9000/seatProc/" + seatCom + "/" + seatTotal + "/" + oid+"/",
 							async: false,
 						}).done(function(data) {
 							if (data == '0') {
-								// 반환된 int 값이 0인 경우의 처리 로직
+
 								alert("이미 선택된 좌석입니다.");
 							} else if (data == '1') {
 								$.ajax({
@@ -513,7 +512,7 @@ $(document).ready(function(){
      * 예매 폼 입력
      * */
 	//event : 예매 영화 제목 클릭시
-	$(".orderseltitle").click(function(){
+	$(".orderSelTitle").click(function(){
 
 		$("#movieid").val($(this).val());
 		$("#movieordertitle").val($(this).text());
@@ -522,11 +521,11 @@ $(document).ready(function(){
 			const oid = urlParams.get('oid');
 			$("#oid").val(oid);*/
 	});
-	$("#orderdate").change(function(){
-		$("#odate").val($("#orderdate").val());
+	$("#orderDate").change(function(){
+		$("#odate").val($("#orderDate").val());
 	});
 	//event : 예매 시간 클릭시
-	$(".orderseltime").click(function(){
+	$(".orderSelTime").click(function(){
 
 		$("#otime").val($(this).text());
 	});
@@ -541,15 +540,15 @@ $(document).ready(function(){
 			}else
 		if($("#movieid").val()==""){
 			alert("영화를 선택해 주세요.");
-			$(".orderseltitle").focus();
+			$(".orderSelTitle").focus();
 			return false;
 		}else if($("#odate").val()==""){
 			alert("날짜를 선택해 주세요.");
-			$("#orderdate").focus();
+			$("#orderDate").focus();
 			return false;
 		}else if($("#otime").val()==""){
 			alert("시간을 선택해 주세요.")
-			$(".orderseltime").focus();
+			$(".orderSelTime").focus();
 			return false;
 		}else if($("#oname").val()==""){
 			alert("이름을 입력해 주세요.")
@@ -687,8 +686,7 @@ $(document).ready(function(){
 			$("#name").focus();
 			return false;
 		} else if ($("#birth").val().length <= 7) {
-			if($("#birth").val()
-				== ""){
+			if($("#birth").val() == ""){
 				alert("생년월일을 입력해주세요.");
 				$("#birth").focus();
 			}else{
@@ -991,7 +989,7 @@ $(document).ready(function(){
 	});
 
 	/* 네이버 세션처리 비로그인 체크 */
-	// $(".orderbtn").click(function (){
+	// $(".myPageHeader").click(function (){
 	// 	// alert($("#unLoginCheck").val());
 	// 	if($("unLoginCheck").val() == "none"){
 	// 		alert("비회원 예매는 불가능합니다. 로그인을 먼저 진행 해주세요."); 미완성

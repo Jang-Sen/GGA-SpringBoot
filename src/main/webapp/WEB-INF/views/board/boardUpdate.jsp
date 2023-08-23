@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>리뷰 작성</title>
+<title>리뷰 수정</title>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <script src="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
@@ -29,12 +29,14 @@ section.board table {
 	text-align:center;
 	margin:auto;
 }
-div.board_title img {
+div.boardTitle img {
 	width:160px;
 }
+
 .table th {
 	vertical-align: middle;
 }
+
 .binput{
 	width:95%;
 	border-color:#ddd;
@@ -44,26 +46,27 @@ div.board_title img {
 	border-color:#ddd;
 }
 </style>
+
 <body>
 	<!-- header -->
 	<header>
 		<jsp:include page="../header.jsp" />
 	</header>
 	<!-- header -->
-	
 	<!-- content -->
 	<div class="container text-center">
-		<div class="board_title">
+		<div class="boardTitle">
 			<img src="http://localhost:9000/images/comtitle.png">
 		</div>
 		<section class="board">
-			<form name="writeForm" action="/board_write"  method="post" enctype="multipart/form-data">
-			<input type="hidden" name="mid" value="${sessionScope.svo.id }">
+			<form name="updateForm" action="/boardUpdate"  method="post" enctype="multipart/form-data">
 				<table class="table table-bordered" style="width: 90%;">
 					<tr>
 						<th>제목</th>
 						<td colspan="3">
-							<input type="text" name="btitle" class="binput" id="btitle">
+							<input type="text" name="btitle" class="binput" id="btitle" value="${board.btitle }">
+							<input type="hidden" name="bid" value="${board.bid}">
+							<input type="hidden" name="page" value="${page}">
 							<span id="btmsg"></span>
 						</td>
 					</tr>
@@ -86,7 +89,7 @@ div.board_title img {
 						</td>
 						<th>평점</th>
 						<td>
-							<select class="btn btn-outline-secondary"name="score" id="score">
+							<select class="btn btn-outline-secondary" name="score" id="score">
 								<option value="default">평점</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -97,25 +100,25 @@ div.board_title img {
 							<span id="bsmsg"></span>
 						</td>
 					</tr>
-					
 					<tr>
 						<th>내용</th>
 						<td colspan="3">
-							<textarea maxlength="200" rows="20" cols="80%" name="bcontent" class="btextarea" id="btextarea"></textarea>
+							<textarea maxlength="200" rows="20" cols="80%" name="bcontent" class="btextarea" id="btextarea">${board.bcontent}</textarea>
 							<span id="bcmsg"></span>
 						</td>
-					</tr>
-					<tr>
+					</tr>	
+				 	<tr>
 						<th>파일첨부</th>
 						<td>
 							<input type="file" name="file1" >
+							<input type="hidden" name="file1" >
 						</td>
 					</tr>
 					<tr>
 						<td colspan="4">
-							<button class="btn btn-outline-secondary" type="button" id="btnBoardWrite">등록완료</button>
-							<button class="btn btn-outline-secondary" type="reset">다시쓰기</button>
-							<a href="/board_list">
+							<button class="btn btn-outline-secondary" type="button" id="btnBoardUpdate">수정완료</button>
+							<button class="btn btn-outline-secondary" type="button" id="btnBoardReset">다시쓰기</button>
+							<a href="/boardContent/${page}/${board.bid}">
 								<button class="btn btn-outline-secondary" type="button">이전으로</button></a>
 						</td>				
 					</tr>

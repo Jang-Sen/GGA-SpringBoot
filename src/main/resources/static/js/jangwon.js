@@ -184,7 +184,7 @@ $(document).ready(function(){
 			$("#car1").val($("#Hcar").val());
 			$("#car2").val("");
 		}
-		mp_updateForm.submit();
+		myPageHeaderForm.submit();
 	}); // btnJoin
 
 

@@ -1,7 +1,7 @@
 package com.springboot.gga.repository;
 
 import com.springboot.gga.dto.OrderDto;
-import com.springboot.gga.dto.OrderconDto;
+import com.springboot.gga.dto.OrderConDto;
 import com.springboot.gga.dto.SeatDto;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -11,35 +11,35 @@ import java.util.List;
 @Mapper
 public interface OrderMapper {
 
-    ArrayList<SeatDto> seatlist();
+    ArrayList<SeatDto> seatList();
     void getSeatPrice(String seat, String price, String oid);
 
-    OrderconDto selectOrderconlist(String oconid);
+    OrderConDto selectOrderConList(String oconid);
 
-    void deleteOrdercon(String oconid);
+    void deleteOrderCon(String oconid);
 
     int resetSeat(String seat);
 
-    int updateseatstatus(String seat);
+    int updateSeatStatus(String seat);
 
     int insertOrderDto(OrderDto orderDto);
 
     String getOid();
 
-    int insertocon(OrderconDto orderconDto);
+    int insertOcon(OrderConDto orderconDto);
 
     OrderDto select(String oid);
 
-    ArrayList<OrderconDto> selectOrdercon();
+    ArrayList<OrderConDto> selectOrderCon();
 
-    OrderconDto selectOrderconuid(String merchantuid);
+    OrderConDto selectOrderConUid(String merchantuid);
 
-    void getimp(String impuid, String merchantuid, String pgtype, OrderDto orderDto);
+    void getImp(String impuid, String merchantuid, String pgtype, OrderDto orderDto);
 
     SeatDto searchSeat(String seat);
 
-    int insertpriceseat(OrderDto orderDto);
+    int insertPriceSeat(OrderDto orderDto);
 
-    List<OrderconDto> selectOrderconMypage(String id);
+    List<OrderConDto> selectOrderConMyPage(String id);
 
 }

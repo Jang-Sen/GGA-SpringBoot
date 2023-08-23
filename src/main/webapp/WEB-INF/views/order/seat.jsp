@@ -12,12 +12,9 @@
 	<script src="http://localhost:9000/js/gga_jquery.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 	<script src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-	<!-- <link rel="stylesheet" href="http://localhost:9000/css/gga.css">  --><!-- gga.css -->
+
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-	<!-- <script src="http://localhost:9000/js/gga_javascript.js"></script> --> <!-- gga_javascript.js -->
-	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-        rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">  -->
-	<!-- 부트스트랩 -->
+
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
@@ -26,7 +23,6 @@
 		}
 
 		.container{
-			/* display: flex; */
 			justify-content: center;
 			align-content: center;
 
@@ -70,14 +66,14 @@
 			transform: scale(1.2);
 		}
 
-		.showcase .seat:not(.occupied):hover {
+		.showCase .seat:not(.occupied):hover {
 			cursor: default;
 			transform: scale(1);
 		}
-		.showcasediv{
+		.showCaseDiv{
 			display: inline-block;
 		}
-		.showcase {
+		.showCase {
 			align-items: center;
 			width:350px;
 			background-color: rgba(0, 0, 0, 0.1);
@@ -89,22 +85,22 @@
 			justify-content: space-between;
 		}
 
-		.showcase li {
+		.showCase li {
 			clear:both;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			margin: 0 10px;
 		}
-		.showcase li div{
+		.showCase li div{
 			display: flex;
 		}
 
-		.showcase li small {
+		.showCase li small {
 			margin-left: 10px;
 		}
 
-		.seatrow {
+		.seatRow {
 			display: flex;
 		}
 
@@ -112,7 +108,6 @@
 			background-color: #fff;
 			height: 70px;
 			width: 200px;
-			/* margin: 15px 0; */
 			transform: rotateX(-45deg);
 			box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
 		}
@@ -125,7 +120,7 @@
 			color: #6feaf6;
 		}
 
-		.seatbtn{
+		.seatBtn{
 			margin-top:20px;
 			width:100px;
 			padding:5px;
@@ -145,17 +140,16 @@
 </head>
 
 <body>
-<!-- header -->
+
 <header>
 	<jsp:include page="../header.jsp" />
 </header>
-<!-- header -->
-<!-- content -->
-<div class="seatcontainer">
+
+<div class="seatContainer">
 	<div class="container">
 
-		<div class="showcasediv">
-			<ul class="showcase">
+		<div class="showCaseDiv">
+			<ul class="showCase">
 				<li>
 					<div class="seat"></div>
 					<small>이용 가능</small>
@@ -176,58 +170,51 @@
 
 		<div class="container2">
 			<div class="screen"></div>
-			<c:forEach var="seatVo" items="${list}" varStatus="status">
+			<c:forEach var="seatDto" items="${list}" varStatus="status">
 				<c:if test="${status.index % 8 == 0}">
-					<div class="seatrow">
+					<div class="seatRow">
 				</c:if>
-				<div class="${seatVo.status}" id="${seatVo.sid}" data-num="${seatVo.snumber}"></div>
+				<div class="${seatDto.status}" id="${seatDto.sid}" data-num="${seatDto.snumber}"></div>
 				<c:if test="${(status.index + 1) % 8 == 0 || status.last}">
 					</div>
 				</c:if>
 			</c:forEach>
 
 		</div>
-		<div class="textandbtn">
+		<div class="textAndBtn">
 			<p class="text">
 				선택한 좌석 :
-				<span id="seatcom"></span> 번
+				<span id="seatCom"></span> 번
 			</p>
 			<p class="text">
-				<!-- 선택한 좌석은 총 <span id="count">0</span> 좌석이며,  -->
-				가격 : <span id="seattotal">0</span> 원
-				<input type="hidden" name="oidinput" id="oidinput" value="${oid}">
+
+				가격 : <span id="seatTotal">0</span> 원
+				<input type="hidden" name="oidInput" id="oidInput" value="${oid}">
 			</p>
-			<button type="submit" class="seatbtn" id="seatpaybtn" name="seatpaybtn">
+			<button type="submit" class="seatBtn" id="seatPayBtn" name="seatPayBtn">
 				<img src="http://localhost:9000/images/buybtn.png"></button>
 
-
-			<%--<button type="submit" class="seatbtn" id="seatcardbtn" name="seatcardbtn">
-				<img src="http://localhost:9000/images/cardpay.png"></button>
-			<button type="submit" class="seatbtn" id="seatkakaobtn" name="seatkakaobtn">
-				<img src="http://localhost:9000/images/kakaopay.png"></button>--%>
 		</div>
 	</div>
-	<!-- content -->
-	<!-- footer -->
+
 	<footer>
 		<jsp:include page="../footer.jsp" />
 	</footer>
-	<!-- footer -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK
-	/7HAuoJl+0I4" crossorigin="anonymous"></script> <!-- 부트스트랩 -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK
-	/7HAuoJl+0I4" crossorigin="anonymous"></script> <!-- 부트스트랩 -->
 
-	<!--  <script src="script.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK
+	/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK
+	/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 	<script>
 		$(document).ready(function() {
 			const container = $('.container2');
-			const seats = $('.seatrow .seat:not(.occupied)');
+			const seats = $('.seatRow .seat:not(.occupied)');
 			const count = $('#count');
-			const total = $('#seattotal');
-			const seatcomcom = $('#seatcom');
+			const total = $('#seatTotal');
+			const seatcomcom = $('#seatCom');
 			const seatcardbtn = $('#seatcardbtn');
 			const seatkakaobtn = $('#seatkakaobtn');
 
@@ -240,7 +227,7 @@
 			}
 
 			function updateSelectedCount() {
-				const selectedSeats = $('.seatrow .seat.selected');
+				const selectedSeats = $('.seatRow .seat.selected');
 				const seatsIndex = selectedSeats.map(function() {
 					return $(this).data('num');
 				}).get();
@@ -268,7 +255,7 @@
 				}
 			}
 
-			container.on('click', '.seatrow .seat:not(.occupied)', function() {
+			container.on('click', '.seatRow .seat:not(.occupied)', function() {
 				$(this).toggleClass('selected');
 				updateSelectedCount();
 			});

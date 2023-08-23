@@ -1,7 +1,7 @@
 package com.springboot.gga.service;
 
 import com.springboot.gga.dto.OrderDto;
-import com.springboot.gga.dto.OrderconDto;
+import com.springboot.gga.dto.OrderConDto;
 import com.springboot.gga.dto.SeatDto;
 import com.springboot.gga.repository.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,20 +21,20 @@ public class OrderService {
     }
 
 
-   public OrderconDto selectOrderconlist(String oconid) {
-        return orderMapper.selectOrderconlist(oconid);
+   public OrderConDto selectOrderConList(String oconid) {
+        return orderMapper.selectOrderConList(oconid);
     };
 
-    public void deleteOrdercon(String oconid) {
-        orderMapper.deleteOrdercon(oconid);
+    public void deleteOrderCon(String oconid) {
+        orderMapper.deleteOrderCon(oconid);
     }
     public int resetSeat(String seat) {
         return orderMapper.resetSeat(seat);
 
     }
-    public int updateseatstatus(String seatNumber) {
+    public int updateSeatStatus(String seatNumber) {
 
-        return orderMapper.updateseatstatus(seatNumber);
+        return orderMapper.updateSeatStatus(seatNumber);
     }
 
 
@@ -47,56 +47,56 @@ public class OrderService {
     public OrderDto select(String oid) {
         return orderMapper.select(oid);
     }
-/*    public ArrayList<OrderconDto> selectOrdercon(){
-        return orderMapper.selectOrdercon();
+/*    public ArrayList<OrderConDto> selectOrderCon(){
+        return orderMapper.selectOrderCon();
     };*/
 
-    public ArrayList<OrderconDto> selectOrderconMypage(String id){
-        return (ArrayList<OrderconDto>) orderMapper.selectOrderconMypage(id);
+    public ArrayList<OrderConDto> selectOrderConMyPage(String id){
+        return (ArrayList<OrderConDto>) orderMapper.selectOrderConMyPage(id);
     };
 
-    public OrderconDto selectOrderconuid(String merchantuid) {
-        return orderMapper.selectOrderconuid(merchantuid);
+    public OrderConDto selectOrderConUid(String merchantuid) {
+        return orderMapper.selectOrderConUid(merchantuid);
     };
 
-    public int insertocon(String impuid, String merchantuid, String pgtype, OrderDto orderDto, String couponid, String finalAmount, String couponName) {
+    public int insertOcon(String impuid, String merchantuid, String pgtype, OrderDto orderDto, String couponid, String finalAmount, String couponName) {
 
-        OrderconDto orderconDto = new OrderconDto();
-        orderconDto.setImpuid(impuid);
-        orderconDto.setMovieid(orderDto.getMovieid());
-        orderconDto.setOcarnum(orderDto.getOcarnum());
-        orderconDto.setOdate(orderDto.getOdate());
-        orderconDto.setMovieorderposter(orderDto.getMovieorderposter());
-        orderconDto.setOphone(orderDto.getOphone());
-        orderconDto.setMovieordertitle(orderDto.getMovieordertitle());
-        orderconDto.setOname(orderDto.getOname());
-        orderconDto.setPrice(orderDto.getPrice());
-        orderconDto.setPgtype(pgtype);
-        orderconDto.setSeat(orderDto.getSeat());
-        orderconDto.setOtime(orderDto.getOtime());
-        orderconDto.setOrderdate(orderDto.getOrderdate());
-        orderconDto.setOemail(orderDto.getOemail());
-        orderconDto.setMerchantuid(merchantuid);
-        orderconDto.setId(orderDto.getId());
-        orderconDto.setCouponid(couponid);
-        orderconDto.setFinalAmount(finalAmount);
-        orderconDto.setCouponName(couponName);
+        OrderConDto orderConDto = new OrderConDto();
+        orderConDto.setImpuid(impuid);
+        orderConDto.setMovieid(orderDto.getMovieid());
+        orderConDto.setOcarnum(orderDto.getOcarnum());
+        orderConDto.setOdate(orderDto.getOdate());
+        orderConDto.setMovieorderposter(orderDto.getMovieorderposter());
+        orderConDto.setOphone(orderDto.getOphone());
+        orderConDto.setMovieordertitle(orderDto.getMovieordertitle());
+        orderConDto.setOname(orderDto.getOname());
+        orderConDto.setPrice(orderDto.getPrice());
+        orderConDto.setPgtype(pgtype);
+        orderConDto.setSeat(orderDto.getSeat());
+        orderConDto.setOtime(orderDto.getOtime());
+        orderConDto.setOrderdate(orderDto.getOrderdate());
+        orderConDto.setOemail(orderDto.getOemail());
+        orderConDto.setMerchantuid(merchantuid);
+        orderConDto.setId(orderDto.getId());
+        orderConDto.setCouponid(couponid);
+        orderConDto.setFinalAmount(finalAmount);
+        orderConDto.setCouponName(couponName);
 
-        return orderMapper.insertocon(orderconDto);
+        return orderMapper.insertOcon(orderConDto);
     }
     public SeatDto searchSeat(String seat) {
         return orderMapper.searchSeat(seat);
     }
-    public ArrayList<SeatDto> seatlist(){
-        return orderMapper.seatlist();
+    public ArrayList<SeatDto> seatList(){
+        return orderMapper.seatList();
     }
 
-    public int insertpriceseat(String seat, String price, String oid){
+    public int insertPriceSeat(String seat, String price, String oid){
         OrderDto orderDto = new OrderDto();
         orderDto.setSeat(seat);
         orderDto.setPrice(Integer.parseInt(price));
         orderDto.setOid(oid);
 
-        return orderMapper.insertpriceseat(orderDto);
+        return orderMapper.insertPriceSeat(orderDto);
     }
 }

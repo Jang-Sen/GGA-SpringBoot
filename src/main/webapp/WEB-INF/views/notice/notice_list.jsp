@@ -116,7 +116,7 @@ table tr, table td{
 	
 	<!-- content -->
 	<div class="container text-center">
-		<div class="board_title">
+		<div class="boardTitle">
 			<img src="http://localhost:9000/images/noticetitle.png">
 		</div>
 		<section class="notice">

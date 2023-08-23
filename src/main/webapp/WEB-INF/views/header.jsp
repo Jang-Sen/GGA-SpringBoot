@@ -65,7 +65,7 @@
 							<a href="http://localhost:9000/logout">로그아웃</a>
 						</li>
 						<li>
-							<a href="http://localhost:9000/mypage/${svo.id}/">마이페이지</a>
+							<a href="http://localhost:9000/myPage/${svo.id}/">마이페이지</a>
 						</li>
 					<c:if test="${ svo.id == 'admin' }">
 						<li>
@@ -90,7 +90,7 @@
 			         	 게시판</a>
 				          <ul class="dropdown-menu" style="padding: 3px; min-width: 0px">
 				            <li><a class="dropdown-item" href="http://localhost:9000/notice_list">공지사항</a></li>
-				            <li><a class="dropdown-item" href="http://localhost:9000/board_list">리   뷰</a></li>
+				            <li><a class="dropdown-item" href="http://localhost:9000/boardList">리   뷰</a></li>
 				            <li><a class="dropdown-item" href="http://localhost:9000/faq">FAQ</a></li>
 						  </ul>
 				     </li>

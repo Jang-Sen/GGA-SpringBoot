@@ -82,7 +82,7 @@ $(document).ready(function(){
 				output += "<div class='boardSearch'>";
 				output += "<div class='boardSearchResult'>";
 			    output += "<div class='boardSearchTitle'>";
-			    output += "<a href='http://localhost:9000/board_list'><img src='http://localhost:9000/images/comtitle.png'></a><p>*조회수 정렬</p></div>";
+			    output += "<a href='http://localhost:9000/boardList'><img src='http://localhost:9000/images/comtitle.png'></a><p>*조회수 정렬</p></div>";
 			    output += "<table>";
 			    output += "<tr><th>번호</th>";
 			    output += "<th>제목</th>";
@@ -106,9 +106,9 @@ $(document).ready(function(){
 						output += "<td><a href="+"'"+"/movieinfo/MOVIE_0007'>📝 [반지의제왕]&nbsp</a>";
 					}
 					if(obj.commentCount > 0){
-						output += "<div class='maxSize'><a href="+"'"+"/board_content/1/"+obj.bid+"'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
+						output += "<div class='maxSize'><a href="+"'"+"/boardContent/1/"+obj.bid+"'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
 					}else{
-						output += "<div class='maxSize' id='boardSearchBox'><a href="+"'"+"/board_content/1/"+obj.bid+"'>"+obj.btitle+"</a></td></div>";
+						output += "<div class='maxSize' id='boardSearchBox'><a href="+"'"+"/boardContent/1/"+obj.bid+"'>"+obj.btitle+"</a></td></div>";
 					}
 				    output += "<td>"+obj.bhits+"</td>";
 				    output += "<td>"+obj.mid+"</td>";
@@ -118,7 +118,7 @@ $(document).ready(function(){
 			    }
 			    output += "</table>";
 			    if(bindex >= 4){
-			     	output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/board_list' id='moreResult2'>더보기 ></a></span></div></div>";
+			     	output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/boardList' id='moreResult2'>더보기 ></a></span></div></div>";
 			    }else{
 			     	output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.</span></div></div>";
 			    }
@@ -249,7 +249,7 @@ $(document).ready(function(){
 				         		output += "<div class='boardSearch'>";
 				  		  		output += "<div class='boardSearchResult'>";
 			     		  		output += "<div class='boardSearchTitle'>";
-			     		  		output += "<a href='http://localhost:9000/board_list'><img src='http://localhost:9000/images/comtitle.png'></a><p>*조회수 정렬</p></div>";
+			     		  		output += "<a href='http://localhost:9000/boardList'><img src='http://localhost:9000/images/comtitle.png'></a><p>*조회수 정렬</p></div>";
 			     		  		output += "<table>";
 			     		  		output += "<tr><th>번호</th>";
 			     		  		output += "<th>제목</th>";
@@ -273,9 +273,9 @@ $(document).ready(function(){
 						  	        	output += "<td><a href="+"'"+"/movieinfo/MOVIE_0007'>📝 [반지의제왕]&nbsp</a>";
 						          	}
 						          	if(obj.commentCount > 0){
-						          		output += "<div class='maxSize'><a href="+"'"+"/board_content/1/"+obj.bid+"'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
+						          		output += "<div class='maxSize'><a href="+"'"+"/boardContent/1/"+obj.bid+"'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
 						          	}else{
-						          		output += "<div class='maxSize' id='boardSearchBox'><a href="+"'"+"/board_content/"+obj.bid+"'>"+obj.btitle+"</a></td></div>";
+						          		output += "<div class='maxSize' id='boardSearchBox'><a href="+"'"+"/boardContent/"+obj.bid+"'>"+obj.btitle+"</a></td></div>";
 						          	}
 				     		  		output += "<td>"+obj.bhits+"</td>";
 				     		  		output += "<td>"+obj.mid+"</td>";
@@ -285,7 +285,7 @@ $(document).ready(function(){
 			     		  		}
 			     		  		output += "</table>";
 			     		  		if(bindex >= 4){
-			     		  			output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/board_list' id='moreResult2'>더보기 ></a></span></div></div>";
+			     		  			output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.<a href='http://localhost:9000/boardList' id='moreResult2'>더보기 ></a></span></div></div>";
 			     		  		}else{
 			     		  			output += "<span>총'"+bindex+"'개의 게시물이 검색 되었습니다.</span></div></div>";
 			     		  		}

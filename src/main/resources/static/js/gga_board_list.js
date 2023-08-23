@@ -6,7 +6,7 @@ $(document).ready(function(){
 	initAjax(1);
 		function initAjax(page) {
 			$.ajax({
-				url:"/board_list/" + page + "/",
+				url:"//" + page + "/",
 				success : function(board) {
 		          	let output = "<table class='table table-bordered' id='board_table'style='width: 90%;'>";
 		          	output += "<tr>";
@@ -43,9 +43,9 @@ $(document).ready(function(){
 
 
 			          	if(obj.commentCount > 0){
-			          		output += "<div class='maxSize'><a href="+"'"+"board_content/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a>&nbsp(" + obj.commentCount + ")</td></div>";
+			          		output += "<div class='maxSize'><a href="+"'"+"boardContent/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a>&nbsp(" + obj.commentCount + ")</td></div>";
 			          	}else{
-			          		output += "<div class='maxSize'><a href="+"'"+"board_content/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a></td></div>";
+			          		output += "<div class='maxSize'><a href="+"'"+"boardContent/" + page + "/" + obj.bid + "'>" + obj.btitle + "</a></td></div>";
 			          	}
 			          	output += "<td>"+obj.bhits+"</td>";
 			          	output += "<td>"+obj.mid+"</td>";
@@ -79,7 +79,6 @@ $(document).ready(function(){
 	$("#btnBoardSearch").click(function(){
 		if($("#btitle").val() =="" ){
 			alert("게시물 명을 입력해주세요.");
-			//$(location).attr('href', "http://localhost:9000/gga_plz/board_list.do?page=1");
 			$("#btitle").focus();
 			return false;
 		} else{
@@ -88,8 +87,8 @@ $(document).ready(function(){
 			function initAjax(page){
 			
 				$.ajax({
-			          url:"http://localhost:9000/board_search/" + page + "/" + $("#btitle").val() + "/",
-			          success: function(board_search){
+			          url:"http://localhost:9000/boardSearch/" + page + "/" + $("#btitle").val() + "/",
+			          success: function(boardSearch){
 			          	let output = "<table class='table table-bordered' id='board_table'style='width: 90%;'>";
 			          	output += "<tr>";
 			          	output += "<th>번호</th>";
@@ -98,7 +97,7 @@ $(document).ready(function(){
 			          	output += "<th>작성자</th>";
 			          	output += "<th>작성일자</th>";
 			          	output += "</tr>";
-			          	for(obj of board_search.list) {
+			          	for(obj of boardSearch.list) {
 			          	output += "<tr>";
 			          	output += "<td>"+obj.rno+"</td>";
 							if(obj.movieName == "oppenhelmer"){
@@ -121,9 +120,9 @@ $(document).ready(function(){
 								output += "<td><a href=" + "'" + "/movieinfo/MOVIE_0009'>[비공식작전]</a>&nbsp";
 							}
 			          	if(obj.commentCount > 0){
-			          		output += "<div class='maxSize'><a href=" + "'" + "board_content/" + page + "/" + obj.bid + "'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
+			          		output += "<div class='maxSize'><a href=" + "'" + "boardContent/" + page + "/" + obj.bid + "'>"+obj.btitle+"</a>&nbsp("+obj.commentCount+")</td></div>";
 			          	}else{
-			          		output += "<div class='maxSize'><a href=" + "'" + "board_content/" + page + "/" + obj.bid + "'>"+obj.btitle+"</a></td></div>";
+			          		output += "<div class='maxSize'><a href=" + "'" + "boardContent/" + page + "/" + obj.bid + "'>"+obj.btitle+"</a></td></div>";
 			          	}
 			          	output += "<td>"+obj.bhits+"</td>";
 			          	output += "<td>"+obj.mid+"</td>";
@@ -137,7 +136,7 @@ $(document).ready(function(){
 						$("#board_table").remove();
 			          	$("div.board_choose").after(output);
 			          	
-			          	pager(board_search.page.dbCount, board_search.page.pageCount, board_search.page.pageSize, board_search.page.reqPage);
+			          	pager(boardSearch.page.dbCount, boardSearch.page.pageCount, boardSearch.page.pageSize, boardSearch.page.reqPage);
 				
 						jQuery('#ampaginationsm').on('am.pagination.change',function(e){
 							jQuery('.showlabelsm').text('The selected page no: '+e.page);

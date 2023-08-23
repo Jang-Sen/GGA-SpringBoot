@@ -81,7 +81,7 @@ public class MyPageController {
 // model.addAttribute("ticketlist",list);
 // model.addAttribute("polist",polist);
 
-        return "/mypage/mypage";
+        return "/mypage/myPage";
     }
 
     // 네이버 로그아웃
@@ -97,8 +97,8 @@ public class MyPageController {
     }
 
     // 내 정보 수정 완료
-    @PostMapping("mypage_update")
-    public String mypage_update(MemberDto memberDto){
+    @PostMapping("myPageUpdate")
+    public String myPageUpdate(MemberDto memberDto){
 
         System.out.println("진입");
         System.out.println(memberDto.getTel());
@@ -110,57 +110,56 @@ public class MyPageController {
         System.out.println(memberDto.getCar2());
         int result = memberService.updateMypage(memberDto);
         // if 문 조건 viewName
-        return "redirect:/mypage/"+memberDto.getId();
+        return "redirect:/mypage/myPage/"+memberDto.getId();
     }
 
     // 내정보 수정탭 진입
-    @GetMapping("mypage_update/{id}")
-    public String mypage_update(@PathVariable String id, Model model){
+    @GetMapping("myPageUpdate/{id}")
+    public String myPageUpdate(@PathVariable String id, Model model){
         MemberDto memberDto = memberService.selectMypage(id);
         model.addAttribute("memberInfo", memberDto);
-        return "/mypage/mypage_update";
+        return "/mypage/myPageUpdate";
     }
 
 
     // 마이페이지 조회
-    @GetMapping("mypage/{id}")
-    public String mypage(@PathVariable String id, Model model, HttpSession session){
+    @GetMapping("myPage/{id}")
+    public String myPage(@PathVariable String id, Model model, HttpSession session){
         SessionDto svo = (SessionDto) session.getAttribute("svo");
         List<ProductOrderDto> productOrderList = productOrderService.myList(svo.getId());
 
         MemberDto memberDto  = memberService.selectMypage(id);
-        ArrayList<OrderconDto> list = orderService.selectOrderconMypage(id);
-       // ArrayList<ProductOrderDto> polist = orderService.selectProductOrderMypage(id);
+        ArrayList<OrderConDto> list = orderService.selectOrderConMyPage(id);
+
 
         model.addAttribute("svo",memberDto);
         model.addAttribute("ticketlist",list);
         model.addAttribute("productOrderList",productOrderList);
-        //model.addAttribute("polist",polist);
 
-        return "/mypage/mypage";
+        return "/mypage/myPage";
 
     }
 
-    @GetMapping("mypage_ticket/{oconid}")
-    public String mypage_ticket(@PathVariable String oconid,Model model) {
-        OrderconDto orderconDto = orderService.selectOrderconlist(oconid);
-        model.addAttribute("orderconDto", orderconDto);
+    @GetMapping("myPageTicket/{oconid}")
+    public String myPageTicket(@PathVariable String oconid,Model model) {
+        OrderConDto orderConDto = orderService.selectOrderConList(oconid);
+        model.addAttribute("orderConDto", orderConDto);
 
-        return "/mypage/mypage_ticket";
+        return "/mypage/myPageTicket";
     }
 
-    @GetMapping("mypage_ticket2/{oconid}")
-    public String mypage_ticket2(@PathVariable String oconid,Model model) {
-        OrderconDto orderconDto = orderService.selectOrderconlist(oconid);
-        model.addAttribute("orderconDto", orderconDto);
+    @GetMapping("myPageTicket2/{oconid}")
+    public String myPageTicket2(@PathVariable String oconid,Model model) {
+        OrderConDto orderConDto = orderService.selectOrderConList(oconid);
+        model.addAttribute("orderConDto", orderConDto);
 
-        return "/mypage/mypage_ticket2";
+        return "/mypage/myPageTicket2";
     }
 
-    @GetMapping("mypage_ticket_refund/{oconid}")
-    public String mypage_ticket_refund(@PathVariable String oconid) {
-        OrderconDto orderconDto = orderService.selectOrderconlist(oconid);
-        String seat = orderconDto.getSeat();
+    @GetMapping("myPageTicketRefund/{oconid}")
+    public String myPageTicketRefund(@PathVariable String oconid) {
+        OrderConDto orderConDto = orderService.selectOrderConList(oconid);
+        String seat = orderConDto.getSeat();
         String[] seatList = seat.split(",");
         Map param = new HashMap();
 
@@ -168,13 +167,16 @@ public class MyPageController {
         for(String seatNumber : seatList) {
             orderService.resetSeat(seatNumber);
         }
-        orderService.deleteOrdercon(oconid);
-        param.put("couponid", orderconDto.getCouponid());
-        param.put("id",orderconDto.getId());
+        orderService.deleteOrderCon(oconid);
 
-        couponService.updateCancel(param);
+        if(orderConDto.getCouponid() != null) {
 
-        return "/mypage/mypage";
+            param.put("couponid", orderConDto.getCouponid());
+            param.put("id", orderConDto.getId());
+
+            couponService.updateCancel(param);
+        }
+        return "/mypage/myPage";
 
     }
 

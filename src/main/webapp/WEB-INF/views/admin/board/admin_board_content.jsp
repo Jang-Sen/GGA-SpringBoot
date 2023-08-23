@@ -62,7 +62,7 @@ img{
 	<div class="container text-center">
 		<section class="board">
 			<h1>게시판</h1>
-			<form name="contentForm" action="board_delete_proc?bid=${ boardVo.bid }"  method="post">
+			<form name="contentForm" action="boardDeleteProc?bid=${ boardVo.bid }"  method="post">
 				<table class="table table-bordered" style="width: 90%;">
 					<tr>
 						<th>제목</th>
@@ -93,10 +93,10 @@ img{
 					</tr>					
 					<tr>
 						<td colspan="4">
-						<a href ="board_update?bid=${ boardVo.bid }">
+						<a href ="boardUpdate?bid=${ boardVo.bid }">
 							<img id="boardUpdate" src="http://localhost:9000/images/editbtn.png"></a>
 							<img id="boardDelete" src="http://localhost:9000/images/deletebtn.png">
-							<a href="board_list">
+							<a href="boardList">
 								<img src="http://localhost:9000/images/listbtn.png"></a>
 						</td>				
 					</tr>

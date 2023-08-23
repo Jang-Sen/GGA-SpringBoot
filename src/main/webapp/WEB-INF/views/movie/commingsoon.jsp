@@ -24,7 +24,7 @@
     width: 1000px;
   }
 }
-.headerorderbtn:hover{
+.myPageHeader:hover{
 	cursor: pointer;
 }
 
@@ -50,7 +50,7 @@
 				color:mediumvioletred;
 			}
 			
-			.orderbtn{
+			.myPageHeader{
 				height:50px;
 				width:160px;
 			}
@@ -65,7 +65,7 @@
 	
 	<!-- content -->
 	<div class="container">
-		<div class="movie_titleimg">
+		<div class="movieTitleImg">
 		<img src="http://localhost:9000/images/movietitle.png">
 		</div>
 			<nav class="buttons">
@@ -81,8 +81,8 @@
 					    <h5 class="card-title">잠</h5>
 					    <p class="card-text">개봉예정일 : 2023.09.06<p>
 					    <p class="dday">D-9</p>
-					    <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					    <a class="myPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>
@@ -93,8 +93,8 @@
 					    <h5 class="card-title">스파이 코드명 포춘</h5>
 					    <p class="card-text">개봉예정일 : 2023.08.30<p>
 					    <p class="dday">D-2</p>
-					    <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					    <a class="">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>
@@ -105,8 +105,8 @@
 					    <h5 class="card-title">조이 라이드</h5>
 					    <p class="card-text">개봉예정일 : 2023.08.30<p>
 					    <p class="dday">D-2</p>
-					    <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					    <a class="">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>
@@ -117,8 +117,8 @@
 					    <h5 class="card-title">이노센트</h5>
 					    <p class="card-text">개봉예정일 : 2023.09.06<p>
 					    <p class="dday">D-9</p>
-					   <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					   <a class="">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>
@@ -132,8 +132,8 @@
 						    <h5 class="card-title">신체모음.zip</h5>
 						    <p class="card-text">개봉예정일 : 2023.08.30<p>
 						    <p class="dday">D-2</p>
-						    <a class="headerorderbtn">
-								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+						    <a class="">
+								<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 						  </div>
 						</div>
 					</div>
@@ -144,8 +144,8 @@
 						    <h5 class="card-title">타겟</h5>
 						    <p class="card-text">개봉예정일 : 2023.08.30<p>
 						    <p class="dday">D-2</p>
-						    <a class="headerorderbtn">
-								<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+						    <a class="">
+								<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 						  </div>
 						</div>
 					</div>
@@ -156,8 +156,8 @@
 					    <h5 class="card-title">물꽃의 전설</h5>
 					    <p class="card-text">개봉예정일 : 2023.08.30<p>
 					    <p class="dday">D-2</p>
-					    <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					    <a class="">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>
@@ -168,8 +168,8 @@
 					    <h5 class="card-title">거룩한 술꾼의 전설</h5>
 					    <p class="card-text">개봉예정일 : 2023.08.30<p>
 					    <p class="dday">D-2</p>
-					    <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					    <a class="myPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>

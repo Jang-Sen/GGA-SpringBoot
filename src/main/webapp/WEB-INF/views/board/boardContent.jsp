@@ -40,7 +40,7 @@ $(document).ready(function(){
 	
 	jQuery('#ampaginationsm').on('am.pagination.change',function(e){
 		   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-           $(location).attr('href', "http://localhost:9000/board_content/" + e.page + "/" + bid);      /* 페이징 해야함 */
+           $(location).attr('href', "http://localhost:9000/boardContent/" + e.page + "/" + bid);      /* 페이징 해야함 */
     });
 	
 	});
@@ -61,7 +61,7 @@ section.board table {
 	text-align:center;
 	margin:auto;
 }
-div.board_title img {
+div.boardTitle img {
 	width:160px;
 }
 .binput{
@@ -108,11 +108,11 @@ section.board form table.table img.scoreImg {
 	
 	<!-- content -->
 	<div class="container text-center">
-		<div class="board_title">
+		<div class="boardTitle">
 			<img src="http://localhost:9000/images/comtitle.png">
 		</div>
 		<section class="board">
-			<form name="contentForm" action="/board_delete"  method="post">
+			<form name="contentForm" action="/boardDelete"  method="post">
 				<table class="table table-bordered" style="width: 90%;">
 					<input type = "hidden" name = "bid" value = "${board.bid}">
 					<input type = "hidden" name = "gsfile" value = "${board.gsfile}">
@@ -155,15 +155,15 @@ section.board form table.table img.scoreImg {
 						<c:choose>
 							<c:when test="${sessionScope.svo.id != null }">
 								<c:if test="${authCheck == 1 }">
-									<a href ="/board_update/${page.reqPage}/${board.bid}">
+									<a href ="/boardUpdate/${page.reqPage}/${board.bid}">
 										<img id="boardUpdate" src="http://localhost:9000/images/editbtn.png"></a>
 										<img id="boardDelete" src="http://localhost:9000/images/deletebtn.png">
 								</c:if>
-									<a href="/board_list">
+									<a href="/boardList">
 										<img id="boardList"src="http://localhost:9000/images/listbtn.png"></a>
 							</c:when>
 							<c:otherwise>
-								<a href="/board_list">
+								<a href="/boardList">
 									<img id="boardList"src="http://localhost:9000/images/listbtn.png"></a>
 							</c:otherwise>
 						</c:choose>

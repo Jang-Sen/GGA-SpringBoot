@@ -3,7 +3,7 @@ $(document).ready(function(){
 	/**************************
 		마이페이지 보드 리뷰 테이블
 	**************************/
-	let id = $("#myreview_header_json").data("id");
+	let id = $("#myReview_header_json").data("id");
 	initAjax(1);
 	function initAjax(page) {
 		$.ajax({
@@ -45,9 +45,9 @@ $(document).ready(function(){
 						}
 
 						if (obj.commentCount > 0) {
-							output += "<div class='maxSize'><a href=" + "'" + "/board_content/1/" + obj.bid + "'>" + obj.btitle + "</a>(" + obj.commentCount + ")</td>";
+							output += "<div class='maxSize'><a href=" + "'" + "/boardContent/1/" + obj.bid + "'>" + obj.btitle + "</a>(" + obj.commentCount + ")</td>";
 						} else {
-							output += "<div class='maxSize'><a href=" + "'" + "/board_content/1/" + obj.bid + "'>" + obj.btitle + "</a></td>";
+							output += "<div class='maxSize'><a href=" + "'" + "/boardContent/1/" + obj.bid + "'>" + obj.btitle + "</a></td>";
 						}
 						output += "<td>" + obj.bhits + "</td>";
 						output += "<td>" + obj.bdate + "</td>";
@@ -56,13 +56,13 @@ $(document).ready(function(){
 					output += "<tr><td colspan='5'><div id='ampaginationsm'></td></tr></table>";
 
 					$("#boardMaster").remove();
-					$("div#myreview_header_json").after(output);
+					$("div#myReview_header_json").after(output);
 				}else {
 					output += "<div id='noneReviewBox' style='position: relative; top:80px; font-size: 15pt; padding: 10px; border: 3px dotted lightgray;" +
 						"border-radius: 5px'>아직 작성한 리뷰가 없습니다. 리뷰를 쓰러 갈까요?</div>";
-					output += "<a href='http://localhost:9000/board_list'><img src='http://localhost:9000/images/writebtn.png' style='height:55px; width: 130px; position: relative; top:80px'></a>"
+					output += "<a href='http://localhost:9000/boardList'><img src='http://localhost:9000/images/writebtn.png' style='height:55px; width: 130px; position: relative; top:80px'></a>"
 					$("#boardMaster").remove();
-					$("div#myreview_header_json").after(output);
+					$("div#myReview_header_json").after(output);
 				}
 				
 				pager(page.dbCount, page.pageCount, page.pageSize, page.page);

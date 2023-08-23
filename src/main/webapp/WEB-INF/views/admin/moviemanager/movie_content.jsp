@@ -54,7 +54,7 @@
 
 <!-- content -->
 <div class="container text-center">
-	<div class="board_title">
+	<div class="boardTitle">
 		<h1>영화 등록</h1>
 	</div>
 	<section class="moviemanager">

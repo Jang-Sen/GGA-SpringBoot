@@ -16,7 +16,7 @@
 	
 	<!-- Content -->
 	<div class= "content">
-		<section class= "mp_reservation">
+		<section class= "mpReservation">
 			<h1 class= "title">내 예매 내역</h1>
 		</section>
 	</div>

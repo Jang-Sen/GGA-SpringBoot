@@ -152,7 +152,7 @@
 	<!-- content -->
 	 <div class="container">
 	<section class="productordercon">
-		<div class="myreview_header">
+		<div class="myReview_header">
 				<h1>My상품구매내역</h1>
 		</div>
 		<table class="table table-bordered-none" style="width: 100%;">
@@ -212,32 +212,32 @@
 					<div class="glide__track" data-glide-el="track">
 						<ul class="glide__slides">
 							<li class="glide__slide"><img src="http://localhost:9000/images/oppenhelmer.jpg" id="MOVIE_0001" class="mimg"/>
-								<a class="headerorderbtn">
-									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+								<a class="myPageHeader">
+									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/concreteutopia.jpg" id="MOVIE_0002" class="mimg"/>
-								<a class="headerorderbtn">
-									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+								<a class="myPageHeader">
+									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/honeysweet.jpg" id="MOVIE_0003" class="mimg"/>
-								<a class="headerorderbtn">
-									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+								<a class="myPageHeader">
+									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/smugglers.jpg" id="MOVIE_0004" class="mimg"/>
-								<a class="headerorderbtn">
-									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+								<a class="myPageHeader">
+									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/elemental.jpg" id="MOVIE_0005" class="mimg"/>
-								<a class="headerorderbtn">
-									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+								<a class="myPageHeader">
+									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/meg2.jpg" id="MOVIE_0006" class="mimg"/>
-								<a class="headerorderbtn">
-									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+								<a class="myPageHeader">
+									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/amanofreason.jpg" id="MOVIE_0007" class="mimg"/>
-								<a class="headerorderbtn">
-									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+								<a class="myPageHeader">
+									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/octonauts.jpg" id="MOVIE_0008" class="mimg"/>
-								<a class="headerorderbtn">
-									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+								<a class="myPageHeader">
+									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/ransomed.jpg" id="MOVIE_0009" class="mimg"/>
-								<a class="headerorderbtn">
-									<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a></li>
+								<a class="myPageHeader">
+									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -257,7 +257,7 @@
 		</script>
 
 		<%--<br><br><br><br><br><br><br>
-		<div class="myreview_header">
+		<div class="_header">
 			<h1>My상품구매내역 목록</h1>
 		</div>
 

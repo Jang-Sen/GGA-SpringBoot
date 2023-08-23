@@ -33,7 +33,7 @@
 	width:117px;
 	margin:25px 50px 25px 0;
 }
-.orderbtn{
+.myPageHeader{
 	width:200px;
 	heigth:110px;
 	margin:50px 125px;	
@@ -103,8 +103,8 @@
 				</div>
 			
 			<div>
-				<a class="headerorderbtn">
-					<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png" id="movieinfobtn"></a>
+				<a class="headermyPageHeader">
+					<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png" id="movieinfobtn"></a>
 			</div>
 			<!-- </section> -->
 			

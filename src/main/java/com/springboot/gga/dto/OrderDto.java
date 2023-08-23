@@ -12,13 +12,4 @@ public class OrderDto {
 
 
 
-
-  /*  public String getOemail() {
-        if(email1 != null && email2 != "") {
-            oemail = email1 + "@" + email2;
-        }else if(email2 == ""){
-            oemail = email1;
-        }
-        return oemail;
-    }*/
 }

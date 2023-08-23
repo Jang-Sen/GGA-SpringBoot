@@ -90,7 +90,7 @@ public class RestController {
 
             OrderDto orderDto = orderService.select(oid);
 
-            orderService.insertocon(impuid, merchantuid, paymethodcon, orderDto, couponid, finalAmount, couponName);
+            orderService.insertOcon(impuid, merchantuid, paymethodcon, orderDto, couponid, finalAmount, couponName);
 
         }
 //    }
@@ -108,7 +108,7 @@ public class RestController {
             }
         }
         if (result == 1) {
-            orderService.insertpriceseat(seat, price, oid);
+            orderService.insertPriceSeat(seat, price, oid);
             realresult = 1;
         } else {
             System.out.println("ordercontroller  좌석 불가능함");
@@ -121,8 +121,8 @@ public class RestController {
     /**
      * Board
      */
-    @GetMapping("board_list/{page}")
-    public Map board_list(@PathVariable String page){
+    @GetMapping("boardList/{page}")
+    public Map boardList(@PathVariable String page){
         Map map = new HashMap();
         PageDto pageDto = pageService.getPaging(new PageDto(page, "board"));
         List<BoardDto> list = boardService.list(pageDto);
@@ -138,8 +138,8 @@ public class RestController {
         return map;
     }
 
-    @GetMapping("board_comment_delete/{bcid}")
-    public String board_comment_delete(@PathVariable String bcid){
+    @GetMapping("boardCommentDelete/{bcid}")
+    public String boardCommentDelete(@PathVariable String bcid){
         String viewName = "";
         String bid = boardService.commentSelect(bcid);
         int result = boardService.commentDelete(bcid);
@@ -151,8 +151,8 @@ public class RestController {
         return viewName;
     }
 
-    @GetMapping("board_comment_update/{bcid}/{updateComment}")
-    public String board_comment_update(@PathVariable String bcid, @PathVariable String updateComment){
+    @GetMapping("boardCommentUpdate/{bcid}/{updateComment}")
+    public String boardCommentUpdate(@PathVariable String bcid, @PathVariable String updateComment){
         Map map = new HashMap();
         String viewName = "";
         String bid = boardService.commentSelect(bcid);
@@ -167,10 +167,10 @@ public class RestController {
         return viewName;
     }
 
-    @GetMapping("board_search/{page}/{btitle}")
-    public Map board_search(@PathVariable String page, @PathVariable String btitle){
+    @GetMapping("boardSearch/{page}/{btitle}")
+    public Map boardSearch(@PathVariable String page, @PathVariable String btitle){
         Map map = new HashMap();
-        PageDto pageDto = pageService.getPaging(new PageDto(page, "board_search"));
+        PageDto pageDto = pageService.getPaging(new PageDto(page, "boardSearch"));
         pageDto.setBtitle(btitle);
 
         List<BoardDto> list = boardService.searchList(pageDto);

@@ -5,16 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>gga_plz</title>
+<title>GGA 결제</title>
 
 <script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
-<link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
+<link rel="stylesheet" href="http://localhost:9000/css/gga.css">
  <script src="http://localhost:9000/js/gga_javascript.js"></script>
 	<script src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
 	rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> 
-	<!-- 부트스트랩 -->
+
 </head>
 <style>
 @media (min-width: 768px) {
@@ -74,28 +74,27 @@
 
 }
 
-#movieorderdiv{
+#movieOrderDiv{
 	width:475px;
-	/*border: red 1px solid;*/
+
 	margin: auto;
 	margin-left: 0;
 	margin-right: 0;
 	border-right: lightgray 1px dotted;
 }
-#movieorderdiv2{
-	/*border: red 1px solid;*/
+#movieOrderDiv2{
+
 	border-left: white 20px solid;
 	width:450px;
 }
 
 #discountdiv{
 	width: 500px;
-	/*border: red 1px solid;*/
+
 	display: inline-block;
 }
 #paydiv{
-	/*border: red 1px solid;*/
-	/*border-left: lightgray 1px dotted;*/
+
 	display: inline-block;
 }
 
@@ -111,9 +110,6 @@
 
 }
 
-/*.productorder p{
-	font-size: 20px;
-}*/
 .paymethod {
 	background-color: white;
 	height: 35px;
@@ -149,8 +145,6 @@
 	display: block;
 
 }
-#checkdiv{
-}
 
 </style>
 <script>
@@ -160,16 +154,10 @@
 		var oid = $('#oid').val();
 
 
-		/*$('.paymethod').click(function() {
-			/!*paymethodcon = $(this).data('id');*!/
-			$(this).toggleClass('selected');
-		});*/
-
 		$('.paymethod').on('click', function() {
 			$(this).toggleClass('paymethodselected');
 			const otherPayMethods = $('.paymethod').not(this);
 
-			// 다른 .paymethod 요소들에서 paymethodselected 클래스를 제거합니다.
 			otherPayMethods.removeClass('paymethodselected');
 
 			paymethodcon = $(this).data('id');
@@ -182,22 +170,17 @@
 			let couponDiscount = $('input[name="couponid"]:checked').closest('tr').find('td:nth-child(3)').text();
 			let expectedAmount = $('input[name="couponid"]:checked').closest('tr').find('td:nth-child(4)').text();
 			var id = document.getElementById('sessionID').value;
-			//$.ajax({
-				//url: '/coupon_update/'+id+'/'+couponid,
-				//success: function (result){
-					// 쿠폰 사용 적용 버튼 숨기고, 쿠폰 사용 취소 버튼 표시
+
 					$('#couponBtn').hide();
 					$('#cancelCouponBtn').show();
 					$('#addCouponName').show();
 
 
-					// 최종 금액 업데이트
 					let discountedPrice = ${orderDto.price} - couponDiscount;
 					$('#finalAmount').text(discountedPrice + ' 원');
 					$('#addCouponName').text(couponName);
 					$('#couponid').val(couponid);
-				//}
-			//});
+
 		});
 
 		$('#cancelCouponBtn').click(function() {
@@ -207,19 +190,14 @@
 			let couponDiscount = $('input[name="couponid"]:checked').closest('tr').find('td:nth-child(3)').text();
 			let expectedAmount = $('input[name="couponid"]:checked').closest('tr').find('td:nth-child(4)').text();
 			var id = document.getElementById('sessionID').value;
-			//$.ajax({
-				//url: '/coupon_updateCancel/'+id+'/'+couponid,
-					//success: function (result){
-					// 쿠폰 사용 취소 버튼 숨기고, 쿠폰 사용 적용 버튼 표시
+
 					$('#cancelCouponBtn').hide();
 					$('#couponBtn').show();
 					$('#addCouponName').hide();
 
-					// 최종 금액 초기화
 					$('#finalAmount').text(${orderDto.price} + ' 원');
 					$('#couponid').val("");
-				//	}
-		//   });
+
 		});
 
 			$('.details-link').on('click', function() {
@@ -233,27 +211,6 @@
 
 
 
-
-		/*$('#paymentBtn').click(function() {
-			var oid = $('#oid').val();
-			var couponid = $('#couponid').val();
-			var finalAmount = $('#finalAmount').text();
-			let couponName = $('input[name="couponid"]:checked').closest('tr').find('td:first').text();
-
-			$.ajax({
-				url: '/product_order',
-				type: 'POST',
-				data: {
-					oid: oid,
-					couponid: couponid,
-					finalAmount: finalAmount,
-					couponName: couponName
-				},
-				success: function(orderNumber) {
-					window.location.href = '/productordercon/'+orderNumber;
-				}
-			});
-		});*/
 
 		$("#orderpaymentBtn").click(function() {
 			var oid = $('#oid').val();
@@ -331,8 +288,7 @@
 										merchantuid: merchantuid,
 										paymethodcon: paymethodcon
 									}
-								/*}).done(function () {
-									window.location.href = "http://localhost:9000/ordercon/" + merchantuid + "/";*/
+
 
 								}).done(function () {
 									if(!couponid == null){
@@ -359,14 +315,11 @@
 
 </script>
 <body>
-	<!-- header -->
+
 	<header>
 		<jsp:include page="../header.jsp" />
 	</header>
-	<!-- header -->
-	
-	
-	<!-- content -->
+
 	<div class="container">
 	<section class="productorder">
 		<div id="paytitlediv">
@@ -375,14 +328,14 @@
 			<br>
 		</div>
 
-			<%--<hr style="border-top-width: 4px;"><br>--%>
-			<div id="movieorderdiv">
-				<%--<div class="col-md-6 text-center" >--%>
+
+			<div id="movieOrderDiv">
+
 
 					<img src="http://localhost:9000/images/${orderDto.movieorderposter}.jpg" id="postersize">
 			</div>
-				<%--</div>--%>
-				<div id="movieorderdiv2">
+
+				<div id="movieOrderDiv2">
 					<h2>예매 정보</h2>
 					<br>
 					<input type="hidden" id="oid" value="${orderDto.oid}">
@@ -391,29 +344,20 @@
 						<p>시간 : ${orderDto.otime}</p>
 					<p>가격 : ${orderDto.price} 원</p>
 					<p>좌석 : ${orderDto.seat}</p>
-					<%--<p>할인: 0 원</p>--%>
-					<%--<p>주문 금액: ${productDto.pprice} 원</p><br>--%>
-				<%--</div>--%>
+
 			</div>
 		<div class="jumpdiv"></div>
 		<br>
 			<div class="row" id="discountdiv">
 				<h2>할인/쿠폰</h2>
-				<%--<p>상품 가격: ${orderDto.price} 원</p><br><br>--%>
-				<%--<p>상품 할인: 0 원</p><br><br>--%>
-				<%--<p>주문 금액: ${orderDto.price} 원</p>--%>
+
 				<p>
 					쿠폰 할인:  <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#couponModal" id="couponBtn" style="width: 100px">쿠폰 조회</a>
 					<button type="button" class="btn btn-secondary" id="cancelCouponBtn" style="width: 80px; display: none">취소</button>
 					&nbsp;&nbsp;<span id="addCouponName"></span><input type="hidden" id="couponid" value="">
 				</p>
 				<p>최종 금액: <span id="finalAmount">${orderDto.price} 원</span></p>
-				<%--<p>쿠폰 할인:
-					<button type="button" class="btn btn-secondary" id="couponBtn" style="width: 150px"
-							data-bs-toggle="modal" data-bs-target="#couponModal">쿠폰 조회/적용</button>
 
-				</p>
-				<p>최종 금액: ${productDto.pprice} 원</p>--%>
 			</div>
 
 			<div id="paydiv">
@@ -428,7 +372,7 @@
 			</div>
 		<div class="jumpdiv"></div>
 		<div id="checkdiv">
-			<%--<h2>약관 동의</h2>--%>
+
 			<label>
 				<input type="checkbox" id="check-all" onchange="toggleCheckboxes(this)"><a> 전체 동의하기</a>
 			</label>
@@ -1692,10 +1636,7 @@
 
 	</section>
 	</div>
-	<!-- content -->
 
-
-	<!-- 쿠폰 팝업 모달 -->
 	<div class="modal fade" id="couponModal" tabindex="-1" role="dialog" aria-labelledby="couponModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -1771,14 +1712,14 @@
 
 
 
-	<!-- footer -->
+
 	<footer>
 		<jsp:include page="../footer.jsp" />
 	</footer>
-	<!-- footer -->
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-			crossorigin="anonymous"></script> <!-- 부트스트랩 -->
+			crossorigin="anonymous"></script>
 <script>
 	function toggleCheckboxes(source) {
 		const requiredCheckboxes = document.getElementsByClassName('required-checkbox');

@@ -89,19 +89,11 @@ table#boardMaster tr td:nth-child(2) a{
 </style>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
-			// "mypage_ticket" 클래스를 가진 모든 <a> 요소들을 선택합니다.
-			const mypageTickets = document.querySelectorAll('.mypage_ticket');
-
-			// 현재 날짜를 타임스탬프로 가져옵니다.
+			const mypageTickets = document.querySelectorAll('.myPageTicket');
 			const currentDate = new Date().getTime();
-
 			mypageTickets.forEach(function (ticket) {
-				// 각 요소의 "data-date" 속성 값을 가져옵니다. (형식: "YYYY-MM-DD")
 				const ticketDate = new Date(ticket.getAttribute('data-date')).getTime();
-
-				// "data-date" 값을 현재 날짜와 비교하여 이전이라면 그레이스케일 효과를 적용합니다.
 				if (ticketDate < currentDate) {
-					// 해당 <a> 요소에 있는 이미지를 선택하고 "grayscale" 클래스를 추가합니다.
 					const ticketImage = ticket.querySelector('img');
 					ticketImage.classList.add('grayscale');
 				}
@@ -175,17 +167,16 @@ table#boardMaster tr td:nth-child(2) a{
 <c:if test="${sessionScope.svo != null}">
 	<div class= "content" >
 		<section class= "mypage">
-			<div class= "mypage_header">
+			<div class= "myPageHeader">
 				<img src="http://localhost:9000/images/mypagetitle.png">
 			</div>
 			<br>
-				<div class="mypage_menu_info">
+				<div class="myPageMenuInfo">
 					<span>${sessionScope.svo.name}님</span> <!-- el태그 memberVo.mid -->
 					<input type="hidden" id="mypageNameCheck" value="${sessionScope.svo.name}"> <!-- 본인확인용 -->
 					<input type="hidden" id="mypageSuccess" value="${svo.id}"> <!-- 본인확인용 -->
 					<c:choose>
 						<c:when test="${svo.naverLoginResult == 0}">
-<%--							<a href= "http://localhost:9000/mypage_update/${svo.id}">내 정보 수정</a> <!-- el태그 memberVo.mid -->--%>
 							<a href="#" class="mypageModal">내 정보 수정</a>
 							<a href= "http://localhost:9000/mycoupon">내 쿠폰함</a>
 						</c:when>
@@ -200,24 +191,24 @@ table#boardMaster tr td:nth-child(2) a{
 		<section class="myorder">
 		     <c:choose>
 		     <c:when test="${not empty ticketlist}">
-			<div class="myorder_header">
+			<div class="myOrderHeader">
 				<h1>My예매</h1>
-				<a href="http://localhost:9000/mypage_allticket" class="myorder_all"><h5>전체보기</h5></a>
+				<a href="http://localhost:9000/myPageAllTicket" class="myOrderAll"><h5>전체보기</h5></a>
 			</div>
-			 <c:forEach var="orderconVo" items="${ticketlist}" end="3"> 
+			 <c:forEach var="orderConDto" items="${ticketlist}" end="3">
 				<div class="myorder_add2">
-				<a class="mypage_ticket" data-oconid="${orderconVo.oconid}" data-date="${orderconVo.odate}">
-					<img src="http://localhost:9000/images/${orderconVo.movieorderposter}.jpg">
+				<a class="myPageTicket" data-oconid="${orderConDto.oconid}" data-date="${orderConDto.odate}">
+					<img src="http://localhost:9000/images/${orderConDto.movieorderposter}.jpg">
 				</a>
 				</div>			
 			</c:forEach> 
 		     </c:when>
 		     <c:otherwise>
 		
-			<div class="myorder_header">
+			<div class="myOrderHeader">
 				<h1>My예매</h1>
 			</div>	
-			<div class="myorder_text">
+			<div class="myOrderText">
 			<br>
 			<br>
 			<br>
@@ -225,15 +216,15 @@ table#boardMaster tr td:nth-child(2) a{
 			<br>
 				<p>아직 예매한 영화가 없습니다. 
 				영화를 예매하러 갈까요? <br>(네이버 회원은 통합 회원으로 전환 시 확인 가능합니다)</p>
-				<a id="mypagegoorder" class="orderbtn">
+				<a id="myPageHeader" class="myPageHeader">
 					<img src="http://localhost:9000/images/neworderbtn.png"></a>
 			</div>		
 
 	</c:otherwise>
 		     </c:choose>
 		</section>
-		<section class="myreview">
-			<div class="myreview_header" id="myreview_header_json" data-id="${sessionScope.svo.id}">
+		<section class="myReview">
+			<div class="myReview_header" id="myReview_header_json" data-id="${sessionScope.svo.id}">
 				<h1>My리뷰</h1>
 			</div>
 			
@@ -248,7 +239,7 @@ table#boardMaster tr td:nth-child(2) a{
 				<c:forEach var="boardMaster" items="${boardMaster}">
 				<tr>
 					<td>${boardMaster.rno}</td>
-					<td><a href="board_content.do?bid=${boardMaster.mid }">[${boardMaster.movieName}]${boardMaster.btitle}</a></td>
+					<td><a href="boardContent.do?bid=${boardMaster.mid }">[${boardMaster.movieName}]${boardMaster.btitle}</a></td>
 					<td>${boardMaster.bhits}</td>
 					<td>${boardMaster.bdate}</td>
 				</tr>
@@ -257,7 +248,7 @@ table#boardMaster tr td:nth-child(2) a{
 				<!-- <tr>
 					<td colspan="5">
 					<p>아직 작성한 리뷰가 없습니다. 리뷰를 쓰러 갈까요?</p>
-						<a href="board_write.do" class="writebtn">
+						<a href="boardWrite.do" class="writebtn">
 							<img src="http://localhost:9000/images/writebtn.png">
 						</a>
 					</td>
@@ -288,7 +279,7 @@ table#boardMaster tr td:nth-child(2) a{
 		<div class="container">
 		<hr>
 			<section class="productordercon">
-				<div class="myreview_header">
+				<div class="myReview_header">
 					<br>
 					<h1>My상품구매내역 목록</h1>
 				</div>
@@ -360,7 +351,7 @@ table#boardMaster tr td:nth-child(2) a{
 						<br>
 						<p>아직 구매한 상품이 없습니다.
 							상품을 구매하러 갈까요? <br>(네이버 회원은 통합 회원으로 전환 시 확인 가능합니다)</p>
-						<a href="http://localhost:9000/store/combo" class="orderbtn">
+						<a href="http://localhost:9000/store/combo" class="myPageHeader">
 							<img src="http://localhost:9000/images/buybtn.png"></a>
 					</div>
 

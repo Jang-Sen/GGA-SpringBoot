@@ -19,7 +19,7 @@
     width: 750px;
   }
 }
-.headerorderbtn:hover{
+.headerMyPageHeader:hover{
 	cursor: pointer;
 }
 
@@ -48,7 +48,7 @@
 			  height: 450px;
 			  width: 100%;
 			} 
-			.orderbtn{
+			.myPageHeader{
 			/* margin-left:55px; */
 			height:50px;
 			width:160px;
@@ -64,7 +64,7 @@
 	
 	<!-- content -->
 	<div class="container">
-		<div class="movie_titleimg">
+		<div class="movieTitleImg">
 		<img src="http://localhost:9000/images/movietitle.png">
 			<input type="hidden" id="unLoginCheck" value="${sessionScope.svo.id}">
 		</div>
@@ -81,8 +81,8 @@
 					    <h5 class="card-title">오펜하이머</h5>
 					    <p class="card-text">개봉일 : 2023.08.25<p>
 
-					    <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					    <a class="headerMyPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>
@@ -92,8 +92,8 @@
 					  <div class="card-body">
 					    <h5 class="card-title">콘크리트 유토피아</h5>
 					    <p class="card-text">개봉일 : 2023.08.09</p>
-					   	<a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					   	<a class="headerMyPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>
@@ -104,8 +104,8 @@
 					    <h5 class="card-title">달짝지근해: 7510</h5>
 					    <p class="card-text">개봉일 : 2023.08.15<p>
 					    <!-- <p>🚘🚘🚘🚘</p> -->
-					    <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					    <a class="headerMyPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>
@@ -119,8 +119,8 @@
 					    <h5 class="card-title">밀수</h5>
 					    <p class="card-text">개봉일 : 2023.07.26<p>
 					    <!-- <p>🚘🚘</p> -->
-					    <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					    <a class="headerMyPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>
@@ -131,8 +131,8 @@
 					    <h5 class="card-title">엘리멘탈</h5>
 					    <p class="card-text">개봉일 : 2023.06.14<p>
 					    <!-- <p>🚘🚘</p> -->
-					    <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+					    <a class="headerMyPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 					  </div>
 					</div>
 				</div>
@@ -143,8 +143,8 @@
 				    <h5 class="card-title">메가로돈2</h5>
 				    <p class="card-text">개봉일 : 2023.08.15<p>
 				    <!-- <p>🚘🚘</p> -->
-				   			 <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+				   			 <a class="headerMyPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 				  </div>
 				</div>
 				</div>
@@ -155,8 +155,8 @@
 				    <h5 class="card-title">보호자</h5>
 				    <p class="card-text">개봉일 : 2023.08.15<p>
 				    <!-- <p>🚘🚘</p> -->
-				   			 <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+				   			 <a class="headerMyPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 				  </div>
 				</div>
 				</div>
@@ -166,8 +166,8 @@
 				  <div class="card-body">
 				    <h5 class="card-title">바다 탐험대 옥토넛 어보브 앤 비욘드</h5>
 				    <p class="card-text">개봉일 : 2023.08.10<p>
-				   			 <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+				   			 <a class="myPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 				  </div>
 				</div>
 				</div>
@@ -177,8 +177,8 @@
 				  <div class="card-body">
 				    <h5 class="card-title">비공식작전</h5>
 				    <p class="card-text">개봉일 : 2023.08.02<p>
-				   			 <a class="headerorderbtn">
-							<img class="orderbtn" src="http://localhost:9000/images/neworderbtn.png"></a>
+				   			 <a class="myPageHeader">
+							<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a>
 				  </div>
 				</div>
 				</div>

@@ -16,11 +16,11 @@ header{
 	font-family: 'GangwonEdu_OTFBoldA';
 	background-image:url("http://localhost:9000/images/bgheaderai.png");
 	background-repeat:no-repeat;
-	/* background-size:1000px 150px; */
+
 	background-size: 100%;
-	/* 	background-position:center; */
+
 	height:300px;
-	/* margin-bottom: 70px; */
+
 }
 header a{
 	color:white;
@@ -48,8 +48,7 @@ header button{
 .header_section1 {
 	display: flex;
 	justify-content: space-between;
-	/*   align-items: center; */
-	/* padding: 20px; */
+
 }
 
 .header_section1 img {
@@ -108,9 +107,7 @@ header button{
 
 }
 
-.header_menu2 > li:last-child {
-	/* float:right; */
-}
+
 
 .header_menu2 li:last-child {
 	margin-right: 0;
@@ -132,11 +129,8 @@ header button{
 }
 
 
-/*******************************
- �궡 �젙蹂� �닔�젙 �럹�씠吏�
-*************************************/
 
-.mypage_title img{
+.myPageTitle img{
 	width:350px;
 	height:100px;
 
@@ -144,10 +138,9 @@ header button{
 
 .content {
 	font-family: 'GangwonEdu_OTFBoldA';
-	/* display:flex; */
-	/* padding:20px; */
+
 }
-.mp_update ul li label{
+.mpUpdate ul li label{
 	border:1px solid red;
 	background-color:mediumaquamarine;
 	border:1px solid mediumaquamarine;
@@ -158,15 +151,15 @@ header button{
 	color:white;
 	padding:5px 10px;
 }
-.mp_update ul li:first-child {
+.mpUpdate ul li:first-child {
 	margin-top:40px;
 
 }
-.mp_update ul li {
+.mpUpdate ul li {
 	list-style-type:none;
 	margin-top:15px;
 }
-.mp_update ul li input{
+.mpUpdate ul li input{
 	margin-left:20px;
 	margin-right:20px;
 	width:200px;
@@ -174,34 +167,34 @@ header button{
 	border-radius:4px;
 	padding:5px 10px;
 }
-.mp_update ul li:nth-child(2) input, .mp_update ul li:nth-child(3) input{
+.mpUpdate ul li:nth-child(2) input, .mpUpdate ul li:nth-child(3) input{
 	width:300px;
 }
-.mp_update ul li input[name='gender']{
+.mpUpdate ul li input[name='gender']{
 	margin-left:20px;
 	margin-right:10px;
 	width:15px;
 }
-.mp_update ul li input[name='telCheck']{
+.mpUpdate ul li input[name='telCheck']{
 	margin-left:20px;
 	margin-right:10px;
 	width:15px;
 }
-.mp_update ul li input[name='phone2'], .mp_update ul li input[name='phone3']{
+.mpUpdate ul li input[name='phone2'], .mpUpdate ul li input[name='phone3']{
 	width:100px;
 }
-.mp_update ul li input[name='genre']{
+.mpUpdate ul li input[name='genre']{
 	margin-left:20px;
 	margin-right:10px;
 	width:15px;
 }
-.mp_update ul li textarea{
+.mpUpdate ul li textarea{
 	border:1px solid lightgray;
 	margin-left:20px;
 	width:500px;
 	height:100px;
 }
-.mp_update ul li select {
+.mpUpdate ul li select {
 	margin-left:10px;
 	margin-right:10px;
 	padding:10px 10px;
@@ -209,87 +202,74 @@ header button{
 	border-radius:4px;
 
 }
-.myorder_text a img {
+.myOrderText a img {
 	width:120px;
 	height:50px;
 }
 
 
-/*                            �넚吏��썒 留덉씠�럹�씠吏� �뵒�옄�씤 5�썡19�씪 */
 
-div.content section.mypage { /* section 怨좎젙 */
+div.content section.mypage {
 	width:980px; height:200px;
 	margin:auto;
 	text-align:center;
 	border-bottom: 1px solid lightgray;
 }
-div.content section.mypage div.mypage_header { /* 留덉씠�럹�씠吏� ���씠�� �쁺�뿭  */
-	/* margin:10px; */
-	/* 	float:left; */
+div.content section.mypage div.myPageHeader {
+
 	text-align:left;
 }
 
-div.content section.mypage div.mypage_header img { /* 留덉씠�럹�씠吏� �씠誘몄� �쁺�뿭  */
+.myPageHeader img {
 	width:300px;
 }
 
-div.content section.mypage div.mypage_menu_info { /* 硫붾돱 div �쐞移� �쁺�뿭 */
+div.content section.mypage div.myPageMenuInfo { /
 	margin-left: 20px;
-	/* 	margin:0px 0px 0px 60px; */
+
 	position:relative;
-	/* 	top:40px;
-        left:30px;
-        right:20px; */
 	display:inline-block;
 }
 
-div.content section.mypage div.mypage_menu_info { /* �씤�룷 �삤�뜑 �쐞移� */
+div.content section.mypage div.myPageMenuInfo {
 	font-size:30pt;
 	float:left;
-	/* margin:70px; */
 }
-.mypage_menu_info a{
+.myPageMenuInfo a{
 	margin-left:30px;
 	text-decoration:none;
 	color:gray;
 }
-div.content section.mypage2 { /* section 고정 */
+div.content section.myPageAllTicketSection {
 	width:980px; height:130px;
 	margin:auto;
 	text-align:center;
 	border-bottom: 1px solid lightgray;
 }
-div.content section.mypage2 div.mypage_header { /* 마이페이지 타이틀 영역  */
-	/* margin:10px; */
-	/* 	float:left; */
+div.content section.myPageAllTicketSection div.myPageHeader {
 	text-align:left;
 }
 
-div.content section.mypage2 div.mypage_header img { /* 마이페이지 이미지 영역  */
+div.content section.myPageAllTicketSection div.myPageHeader img {
 	width:300px;
 }
 
-div.content section.mypage2 div.mypage_menu_info { /* 메뉴 div 위치 영역 */
+div.content section.myPageAllTicketSection div.myPageMenuInfo {
 	margin-left: 20px;
-	/* 	margin:0px 0px 0px 60px; */
 	position:relative;
-	/* 	top:40px;
-        left:30px;
-        right:20px; */
 	display:inline-block;
 }
 
-div.content section.mypage2 div.mypage_menu_info { /* 인포 오더 위치 */
+div.content section.myPageAllTicketSection div.myPageMenuInfo {
 	font-size:30pt;
 	float:left;
-	/* margin:70px; */
 }
-.mypage_menu_info a{
+.myPageMenuInfo a{
 	margin-left:30px;
 	text-decoration:none;
 	color:gray;
 }
-.allticket_back{
+.allTicketBack{
 	margin-top:30px;
 	width: 980px; height:200px;
 	margin:auto;
@@ -297,42 +277,39 @@ div.content section.mypage2 div.mypage_menu_info { /* 인포 오더 위치 */
 	display:block;
 }
 
-/*                           내 예매 내역                           */
-
-div.content section.myorder { /* section 고정 */
+div.content section.myorder {
 	margin-top:30px;
 	width: 1200px; height:450px;
 	margin:auto;
 	text-align:center;
-	/* border-bottom: 5px double black; */
 }
-div.content section.myorder2 { /* section 고정 */
+div.content section.myPageAllTicketSection2 {
 	width: 1200px; height:100%;
 	margin:auto;
 	text-align:center;
 	margin-bottom:50px;
-	/* border-bottom: 5px double black; */
+
 }
-div.content section.myorder div.myorder_header h1 { /* My예매  타이틀 영역 */
+div.content section.myorder div.myOrderHeader h1 {
 	position:relative;
 	left:100px;
 	margin:30px;
 	float:left;
 	font-size:20pt;
 }
-div.content section.myorder div.myorder_header h5 { /* My예매  타이틀 영역 */
+div.content section.myorder div.myOrderHeader h5 {
 	position:relative;
 	right:100px;
 	float:right;
 	padding:10px; margin:10px;
 	margin-top:20px;
 }
-div.content section.myorder div.myorder_text { /* My예매 정보 유무 출력 */
+div.content section.myorder div.myOrderText {
 	position:relative;
 	display:inline-block;
 	top: 80px;
 }
-div.content section.myorder div.myorder_text span { /* 정보 유무 글씨  */
+div.content section.myorder div.myOrderText span {
 	text-align:center;
 	color:tomato;
 }
@@ -342,37 +319,37 @@ div.content section.myorder div.myorder_add:nth-child(5) {
 	float:right;
 	bottom:500px;
 }
-div.content section.myorder2 div.myorder_header h1 { /* My예매  타이틀 영역 */
+div.content section.myPageAllTicketSection2 div.myOrderHeader h1 {
 	position:relative;
 	left:100px;
 	margin:30px;
 	float:left;
 	font-size:20pt;
 }
-div.content section.myorder2 div.myorder_header h5 { /* My예매  타이틀 영역 */
+div.content section.myPageAllTicketSection2 div.myOrderHeader h5 {
 	position:relative;
 	right:100px;
 	float:right;
 	padding:10px; margin:10px;
 	margin-top:20px;
 }
-div.content section.myorder2 div.myorder_text { /* My예매 정보 유무 출력 */
+div.content section.myPageAllTicketSection2 div.myOrderText {
 	position:relative;
 	display:inline-block;
 	top: 80px;
 }
-div.content section.myorder2 div.myorder_text span { /* 정보 유무 글씨  */
+div.content section.myPageAllTicketSection2 div.myOrderText span {
 	text-align:center;
 	color:tomato;
 }
 
-div.content section.myorder2 div.myorder_add:nth-child(5) {
+div.content section.myPageAllTicketSection2 div.myorder_add:nth-child(5) {
 	position:relative;
 	float:right;
 	bottom:500px;
 }
 
-div.content section.myorder2 div.myorder_add { /* 영화 포스터 */
+div.content section.myPageAllTicketSection2 div.myorder_add {
 	border:3px groove lightgray;
 	background:lightgray;
 	border-radius:3px;
@@ -385,7 +362,7 @@ div.content section.myorder2 div.myorder_add { /* 영화 포스터 */
 	margin-top:20px;
 	margin-left:20px;
 }
-div.content section.myorder2 div.myorder_add { /* 영화 포스터 */
+div.content section.myPageAllTicketSection2 div.myorder_add {
 	border:3px groove lightgray;
 	background:lightgray;
 	border-radius:3px;
@@ -398,12 +375,12 @@ div.content section.myorder2 div.myorder_add { /* 영화 포스터 */
 	margin-top:20px;
 	margin-left:20px;
 }
-div.content section.myorder div.myorder_add:hover { /* 칸 커서 이벤트  */
+div.content section.myorder div.myorder_add:hover {
 	opacity:0.5;
 }
 
 div.content section.myorder div.myorder_add img ,
-div.content section.myorder div.myorder_add_plus img  { /* 이미지 크기 & 위치 */
+div.content section.myorder div.myorder_add_plus img  {
 
 	border:3px groove lightgray;
 	background:lightgray;
@@ -414,11 +391,11 @@ div.content section.myorder div.myorder_add_plus img  { /* 이미지 크기 & �
 	opacity:1.0;
 	position:relative;
 	width:220px; height:330px;
-	/* top:120px; */
+
 	opacity:1.0;
 }
-div.content section.myorder2 div.myorder_add img ,
-div.content section.myorder2 div.myorder_add_plus img  { /* 이미지 크기 & 위치 */
+div.content section.myPageAllTicketSection2 div.myorder_add img ,
+div.content section.myPageAllTicketSection2 div.myorder_add_plus img  {
 
 	border:3px groove lightgray;
 	background:lightgray;
@@ -429,16 +406,15 @@ div.content section.myorder2 div.myorder_add_plus img  { /* 이미지 크기 & �
 	opacity:1.0;
 	position:relative;
 	width:220px; height:330px;
-	/* top:120px; */
 	opacity:1.0;
 }
 div.content section.myorder div.myorder_add img:hover,
-div.content section.myorder div.myorder_add_plus img:hover { /* 플러스 버튼 커서 이벤트 */
+div.content section.myorder div.myorder_add_plus img:hover {
 	opacity:0.3;
 	cursor:pointer;
 }
 div.content section.myorder div.myorder_add2 img ,
-div.content section.myorder div.myorder_add_plus img  { /* 이미지 크기 & 위치 */
+div.content section.myorder div.myorder_add_plus img  {
 	top:65px;
 	background:lightgray;
 	border-radius:3px;
@@ -454,12 +430,12 @@ div.content section.myorder div.myorder_add_plus img  { /* 이미지 크기 & �
 	margin-left:20px;
 }
 div.content section.myorder div.myorder_add2 img:hover,
-div.content section.myorder div.myorder_add_plus img:hover { /* 플러스 버튼 커서 이벤트 */
+div.content section.myorder div.myorder_add_plus img:hover {
 	opacity:0.3;
 	cursor:pointer;
 }
-div.content section.myorder2 div.myorder_add3 img ,
-div.content section.myorder2 div.myorder_add_plus img  { /* 이미지 크기 & 위치 */
+div.content section.myPageAllTicketSection2 div.myOrderAdd3 img ,
+div.content section.myPageAllTicketSection2 div.myorder_add_plus img  {
 	top:40px;
 	background:lightgray;
 	border-radius:3px;
@@ -469,125 +445,111 @@ div.content section.myorder2 div.myorder_add_plus img  { /* 이미지 크기 & �
 	opacity:1.0;
 	position:relative;
 	width:220px; height:330px;
-	/* top:120px; */
+
 	opacity:1.0;
 	margin-top:50px;
 	margin-left:20px;
 	margin-bottom:10px;
 }
-div.content section.myorder2 div.myorder_add3 img:hover,
-div.content section.myorder2 div.myorder_add_plus img:hover { /* 플러스 버튼 커서 이벤트 */
+div.content section.myPageAllTicketSection2 div.myOrderAdd3 img:hover,
+div.content section.myPageAllTicketSection2 div.myorder_add_plus img:hover {
 	opacity:0.3;
 	cursor:pointer;
 }
-.myorder_all{
+.myOrderAll{
 	color:gray;
 }
 
-/* div.content section.myorder div.myorder_add_plus img { 플러스 이미지 (마지막)
-	position:relative;
-	right:40px; top:115px;
-} */
 
 
-/*                   My review                */
-
-div.content section.myreview { /* section 怨좎젙 */
+div.content section.myReview {
 	border-top:1px solid lightgray;
 	width:980px; height:460px;
 	margin:auto;
 	text-align:center;
 }
 
-div.content section.myreview div.myreview_header h1 { /* My由щ럭  ���씠�� �쁺�뿭 */
+div.content section.myReview div.myReview_header h1 {
 	margin:30px;
 	float:left;
 	font-size:20pt;
 }
 
-div.content section.myreview table {
+div.content section.myReview table {
 	margin-left:60px;
 }
 
-/**************************
-seat
-******************************/
 
-.seatcontainer{
+.seatContainer{
 	justify-content: center;
 	align-items: center;
 
 }
-.seatcontainer > .container, .seatcontainer > .container2{
+.seatContainer > .container, .seatContainer > .container2{
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 }
-.seatcontainer + footer {
+.seatContainer + footer {
 	margin-top:20px;
 	display:block;
 }
 
-.seatbtn{
+.seatBtn{
 	border:1px solid white;
 	background-color:white;
 }
-.seatbtn img{
+.seatBtn img{
 	width:100px;
 	height:50px;
 }
-/*********************************
-mypage ticket
-********************************/
-#allticket_back{
+
+#allTicketBack{
 	background-color:white;
 	border:1px solid white;
 }
-#allticket_back img{
+#allTicketBack img{
 	margin-top:80px;
 	width:150px;
 	height:80px;
 }
-#allticket_back img:hover{
+#allTicketBack img:hover{
 	cursor:pointer;
 }
-.openmypage{
+.openMyPage{
 	margin-top:25px;
 	margin-left:300px;
 	background-color:white;
 	border:1px solid white;
 }
-.openmypage img{
+.openMyPage img{
 	width:150px;
 	height:80px;
 }
-.openmypage img:hover{
+.openMyPage img:hover{
 	cursor:pointer;
 }
-.openallticket{
+.openAllTicket{
 	margin-top:25px;
 	margin-left:300px;
 	background-color:white;
 	border:1px solid white;
 }
-.openallticket img{
+.openAllTicket img{
 	width:150px;
 	height:80px;
 }
-.refundticket{
+.refundTicket{
 	margin-left:25px;
 	background-color:white;
 	border:1px solid white;
 
 }
-.refundticket img{
+.refundTicket img{
 	width:150px;
 	height:80px;
 }
 
-/*******************************
- �뜝�럩�뤂�뜝�럩�쐸�뤆�룊�삕�뜝�럩肉� �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
-*************************************/
 
 .join_title img{
 	width:350px;
@@ -597,8 +559,6 @@ mypage ticket
 
 .join {
 	font-family: 'GangwonEdu_OTFBoldA';
-	/* display:flex; */
-	/* padding:20px; */
 }
 .join ul li label{
 	background-color:mediumaquamarine;
@@ -673,9 +633,7 @@ mypage ticket
 	margin:auto;
 }
 
-/*******************************
- �슖�돦裕꾬옙�쟽�뜝�럩逾� �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
-*************************************/
+
 .container{
 	font-family: 'GangwonEdu_OTFBoldA';
 }
@@ -739,38 +697,32 @@ mypage ticket
 	border:1px solid whitesmoke;
 	border-radius:4px;
 }
-/*******************************
- �뜝�럩援숂춯�엪�삕 �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
-*************************************/
 
-/*                �뜝�룞�삕占쎄슈�뜝�띁�닱筌뤾쑴踰� - �뜝�럥苑딁춯�쉻�삕�뜝�럩�쐪 05-02                            */
-
-/* �뜝�룞�삕占쎄슈�뜝�띁�닱筌뤾쑴踰� - �뜝�럥�걫嶺뚯쉻�삕 */
-div.content section.coron_1 { /* section 占썩뫁伊숋옙�젧  */
+div.content section.coron1 {
 	border:1px solid red;
 	width:1000px; height:600px;
 	margin:auto;
 }
-div.content section.coron_1 div { /* div relative */
+div.content section.coron1 div {
 	clear:both;
 	position:relative;
 }
-div.content section.coron_1 div img {
+div.content section.coron1 div img {
 	width:100%;
 	position:absolute;
 }
-div.content section.coron_1 div.con {
+div.content section.coron1 div.con {
 	color:purple;
 	font-size:50pt;
 	text-align:center;
 	margin-top:130px;
 }
-/* �뜝�룞�삕占쎄슈�뜝�띁�닱筌뤾쑴踰� - �뜝�럡���뜝�럩�뮔 */
-.ask_title img{
+
+.askTitle img{
 	width:280px;
 	height:100px;
 }
-div.container section.coron_2 { /* section 占썩뫁伊숋옙�젧  */
+div.container section.coron2 {
 	width:1000px; height:300px;
 	margin:auto;
 	position:relative;
@@ -779,60 +731,54 @@ div.container section.coron_2 { /* section 占썩뫁伊숋옙�젧  */
 	align-items: center;
 
 }
-/* div.container section.coron_2 div {
-	border:1px solid blue;
-	width:28%; height:30%;
-	display:inline-block;
-	text-align:center;
-	margin:15px;
-} */
 
-div.container section.coron_2 div:nth-child(4) {
+
+div.container section.coron2 div:nth-child(4) {
 	border:1px solid red;
 	margin-left:150px;
 	width:70%;
 	text-align:left;
 }
-div.coron_input {
+div.coronInput {
 	padding-top:50px;
 	margin-left:40px;
 	display:lnline-block;
 }
-.coron_input ul li input{
+.coronInput ul li input{
 	margin-left:15px;
 	margin-right:15px;
 }
-.coron_input ul li input#cname,
-.coron_input ul li input#csize {
+.coronInput ul li input#cname,
+.coronInput ul li input#csize {
 	width:260px;
 }
-.coron_input ul li input#cphone1,
-.coron_input ul li input#cphone2,
-.coron_input ul li input#cphone3 {
+.coronInput ul li input#cphone1,
+.coronInput ul li input#cphone2,
+.coronInput ul li input#cphone3 {
 	width:140px;
 }
-.coron_input ul li:nth-child(4) label {
+.coronInput ul li:nth-child(4) label {
 	position:relative;
 	bottom:78px;
 }
-.coron_input textarea{
+.coronInput textarea{
 	margin-left:15px;
 	width:516px;
 	height:100px;
 	border:1px solid lightgray;
 }
-.corondetail img{
+.coronDetail img{
 	display:block;
 	width:1000px;
 }
-.coronbtn{
+.coronBtn{
 	margin-left:20px;
 	width:200px;
 	height:100px;
 	border:1px solid white;
 	background-color:white;
 }
-.coronbtn img{
+.coronBtn img{
 	width:180px;
 	height:80px;
 	margin:auto;
@@ -1172,9 +1118,7 @@ div.coron_input {
 	border-radius: 10px;
 }
 
-.btn-timeselect.on {
-	/*  background: url("images/icon-Triangle-up.png") center right 14px no-repeat; */
-}
+
 
 .btn-timeselect.on+.list-ordertime {
 	display: block;
@@ -1205,10 +1149,10 @@ div.coron_input {
 .list-ordertime li button:focus {
 	background-color: #F8E4FF;
 }
-.order_title{
+.orderTitle{
 	margin-bottom: 20px;
 }
-.order_title img{
+.orderTitle img{
 	width:160px;
 	height:100px;
 
@@ -1219,7 +1163,7 @@ div.coron_input {
 
 }
 
-.ticket_bac1{
+.ticketBack1{
 	line-height:normal;
 /*margin-top:20px;*/
   display : block;
@@ -1232,10 +1176,10 @@ div.coron_input {
 	background-size: 1000px 300px;
 	height:300px;
 }
-.ticket_bac1 select:first-child{
+.ticketBack1 select:first-child{
 	margin-top:30px;
 }
-.ticket_bac1 select{
+.ticketBack1 select{
 	display:inline-block;
 	height:20pt;
 	border:1px solid #ddd;
@@ -1248,7 +1192,7 @@ div.coron_input {
 }
 
 
-.ticket_bac1 input{
+.ticketBack1 input{
 	width:150px;
 	height:45px;
 	margin-left:40px;
@@ -1257,7 +1201,7 @@ div.coron_input {
 	border-radius:8px;
 	padding:3px;
 }
-.ticket_bac1 input:hover,.ticket_bac1 input:focus{
+.ticketBack1 input:hover,.ticketBack1 input:focus{
 
 	border: 1px solid #9B51E0;
 	outline: 3px solid #F8E4FF;
@@ -1270,7 +1214,7 @@ div.coron_input {
 	margin-top:40px;
 }
 
-.ticket_bac2{
+.ticketBack2{
 	margin-top:50px;
 	display : block;
 	text-decoration : none;
@@ -1283,30 +1227,30 @@ div.coron_input {
 	height:300px;
 }
 
-.ticket_bac2 ul li input{
+.ticketBack2 ul li input{
 	width:30%;
 	border:1px solid #ddd;
 	border-radius:4px;
 
 }
-.ticket_bac2 li{
+.ticketBack2 li{
 	margin-left:60px;
 	margin-top:10px;
 	text-decoration : none;
 	list-style-type:none;
 }
-.ticket_bac2 li:first-child{
+.ticketBack2 li:first-child{
 	margin-top:100px;
 }
-.ticket_bac2 li label{
+.ticketBack2 li label{
 	width:50px;
 }
-.ticket_button {
+.ticketBtn {
 	display:inline-block;
 	margin-left:400px;
 	margin-top:35px;
 }
-.ticket_button img {
+.ticketBtn img {
 	width:180px;
 	height:80px;
 }
@@ -1325,7 +1269,7 @@ div.coron_input {
 
 }
 
-.ticket_button:hover{
+.ticketBtn:hover{
 	cursor:pointer;
 }
 
@@ -1349,22 +1293,22 @@ div.coron_input {
 }
 
 
-.ticket_button> a > img{
+.ticketBtn> a > img{
 	margin-top:30px;
 	width:200px;
 	height:80px;
 
 }
 /**********************************
- �뜝�럩援숂춯�씞�걠占쎈걦占쎈쇀�뜝占� �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
+ 예매 확인 페이지
 *************************************/
 
-.ordercon_title img{
+.orderConTitle img{
 	width:250px;
 	height:100px;
 
 }
-.ticketcon_bac1{
+.ticketConBack1{
 	margin-top:50px;
 	display : block;
 	text-decoration : none;
@@ -1379,7 +1323,7 @@ div.coron_input {
 }
 
 
-.ticketcon_bac2{
+.ticketConBack2{
 	margin-top:50px;
 	display : block;
 	text-decoration : none;
@@ -1392,50 +1336,48 @@ div.coron_input {
 	height:300px;
 
 }
-.ticketcon_bac1 p {
+.ticketConBack1 p {
 	display:inline;
 
 }
-.ticketcon_bac1 label:first-child{
+.ticketConBack1 label:first-child{
 	margin-top:100px;
 
 }
-.ticketcon_bac1 label{
+.ticketConBack1 label{
 	width:100px;
 	margin-left:80px;
 	margin-top:10px;
 
 }
-.ticketcon_bac2 p {
+.ticketConBack2 p {
 	display:inline;
 
 
 }
-.ticketcon_bac2 label:first-child{
+.ticketConBack2 label:first-child{
 	margin-top:100px;
 
 }
-.ticketcon_bac2 label{
+.ticketConBack2 label{
 	width:100px;
 	margin-left:80px;
 	margin-top:15px;
 
 }
 
-/***************************
-	�뇦猿딆뒩占쎈뻣�뜝�럥�냷 �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
-*****************************/
+
 .writebtn img,
 .writebtncancel img{
 	width:110px;
 	height:50px;
 }
 
-.board_title{
+.boardTitle{
 	text-align:left;
 
 }
-.board_title img{
+.boardTitle img{
 	width:300px;
 	height:100px;
 }
@@ -1444,9 +1386,7 @@ section.board div.board_choose {
 	margin-top:20px;
 	display:inline-block;
 }
-/***************************
-	占썩뫀踰듿뜝�룞�삕亦낆���삕�뜮占�
-*****************************/
+
 .notice{
 	margin-top:30px;
 
@@ -1497,39 +1437,35 @@ section.notice form table.table th {
 	margin-bottom:30px;
 
 }
-/***************************
-	faq
-*****************************/
+
 .faq{
 	margin-top:30px;
 }
-/***************************
-	�뜝�룞�삕占쎄슈�뜝�띁�닱筌뤾쑴踰�
-*****************************/
-.coron_2{
+
+.coron2{
 	font-family: 'GangwonEdu_OTFBoldA';
 
 }
-div.coron_input{
+div.coronInput{
 	margin-right:200px;
 	position:relative;
 	right:10px;
 	bottom:30px;
 }
-.coron_input ul li:nth-child(2) input{
+.coronInput ul li:nth-child(2) input{
 	width:100px;
 }
-.coron_input ul li {
+.coronInput ul li {
 	list-style-type:none;
 	margin-top:10px;
 
 }
-.coron_input ul li input {
+.coronInput ul li input {
 	border: 1px solid lightgray;
 	border-radius:4px;
 	padding:5px 10px;
 }
-.coron_input ul li label{
+.coronInput ul li label{
 	background-color:mediumaquamarine;
 	border:1px solid mediumaquamarine;
 	border-radius:4px;
@@ -1539,13 +1475,11 @@ div.coron_input{
 	color:white;
 	padding:5px 10px;
 }
-/***************************
-	�뜝�럩寃ュ뜝�럩�꼨 �뜝�럥�쓡�뜝�럩逾좂춯�쉻�삕
-*****************************/
 
 
 
-.movie_titleimg img{
+
+.movieTitleImg img{
 	width:300px;
 	height:100px;
 }
@@ -1565,9 +1499,7 @@ div.coron_input{
 	margin-bottom:20px;
 
 }
-/***************************
-	index
-*****************************/
+
 .ggamovietitle img{
 	width:400px;
 	height:100px;
@@ -1592,13 +1524,13 @@ div.coron_input{
 /***************************
 	commons style sheet
 *****************************/
-.orderbtn{
+.myPageHeader{
 	width:150px;
 	height:50px;
 
 }
 
-.headerorderbtn img{
+.myPageHeader img{
 	width:150px;
 	height:50px;
 }
@@ -2018,7 +1950,7 @@ div#coron_btn section.enroll button { /* 보내줘야함 */
 
 
 section.board table#board_table div.maxSize,
-section.myreview table#boardMaster div.maxSize{ /* @ */
+section.myReview table#boardMaster div.maxSize{ /* @ */
 	display:inline-block;
 	width:350px;
 	overflow:hidden;
@@ -2085,11 +2017,11 @@ section.board form#commentForm table.comment_box div#commentArea{
 	text-align:center;
 }
 /* mypage - 리뷰 영역 */
-section.myreview table#boardMaster div.maxSize { /* @ */
+section.myReview table#boardMaster div.maxSize { /* @ */
 	text-align:left;
 }
 
-section.myreview table#boardMaster tr td:nth-child(2) {
+section.myReview table#boardMaster tr td:nth-child(2) {
 	text-align:left;
 	word-spacing : 3px;
 }

@@ -35,7 +35,7 @@
 	
 	<!-- content -->
 	<div class="container">
-	<div class="board_title">
+	<div class="boardTitle">
 		<img src="http://localhost:9000/images/faqtitle.png">
 		</div>
 		<section class= "faq">

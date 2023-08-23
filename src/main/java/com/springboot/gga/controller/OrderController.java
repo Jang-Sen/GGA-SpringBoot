@@ -4,7 +4,6 @@ import com.springboot.gga.dto.*;
 import com.springboot.gga.service.CouponService;
 import com.springboot.gga.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,16 +28,16 @@ public class OrderController {
 
 
     @GetMapping("/ordercon/{merchantuid}")
-    public String ordercon(@PathVariable String merchantuid, Model model){
-        OrderconDto orderconDto = new OrderconDto();
-        orderconDto = orderService.selectOrderconuid(merchantuid);
+    public String orderCon(@PathVariable String merchantuid, Model model){
+        OrderConDto orderConDto = new OrderConDto();
+        orderConDto = orderService.selectOrderConUid(merchantuid);
 
-        String seat = orderconDto.getSeat();
+        String seat = orderConDto.getSeat();
         String[] seatList = seat.split(",");
 
         int result = 1;
         for(String seatNumber : seatList) {
-           result = orderService.updateseatstatus(seatNumber);
+           result = orderService.updateSeatStatus(seatNumber);
             if (result == 0) {
                 break;
             }
@@ -48,7 +47,7 @@ public class OrderController {
         }else if(result==1){
             System.out.println("정상적으로 업데이트 됐습니다.");
         }
-        model.addAttribute("orderconDto",orderconDto);
+        model.addAttribute("orderConDto",orderConDto);
         return "/order/ordercon";
     }
 
@@ -57,8 +56,8 @@ public class OrderController {
         return "/order/seat";
     }
 
-    @GetMapping("order_pay/{oid}")
-    public String order_pay(@PathVariable String oid, Model model, HttpSession session){
+    @GetMapping("orderPay/{oid}")
+    public String orderPay(@PathVariable String oid, Model model, HttpSession session){
         OrderDto orderDto = new OrderDto();
         orderDto = orderService.select(oid);
         String id = orderDto.getId();
@@ -73,8 +72,8 @@ public class OrderController {
         param.put("ccategory","movie");
         List<CouponDto> couponList = couponService.list(param);
 
-        ArrayList<OrderconDto> orderconDto = orderService.selectOrderconMypage(id);
-        if (orderconDto.isEmpty()){
+        ArrayList<OrderConDto> orderConDto = orderService.selectOrderConMyPage(id);
+        if (orderConDto.isEmpty()){
             Map param2 = new HashMap<>();
             param2.put("used", used);
             param2.put("id", svo.getId());
@@ -88,7 +87,7 @@ public class OrderController {
         model.addAttribute("couponList", couponList);
         model.addAttribute("userid", svo.getId());
 
-        return "/order/order_pay";
+        return "/order/orderPay";
     }
 
 
@@ -96,7 +95,7 @@ public class OrderController {
     public String orderProc(OrderDto orderDto, Model model){
         int result = orderService.insertOrderDto(orderDto);
         ArrayList<SeatDto> list = new ArrayList<SeatDto>();
-        list = orderService.seatlist();
+        list = orderService.seatList();
         String oid = orderDto.getOid();
         if( result == 1){
             model.addAttribute("list",list);
@@ -105,11 +104,7 @@ public class OrderController {
         }
         return "/order/seat";
     }
- /*   @GetMapping("order/{oid}/")
-    public String order(@PathVariable String oid, Model model){
 
-        return "/order/order";
-    }*/
 
     @GetMapping("order")
     public String order(Model model){
@@ -118,7 +113,7 @@ public class OrderController {
         return "/order/order";
     }
 
-    // 네이버 회원 전용 예매 세션처리
+
     @GetMapping("order/{naverId}/{naverName}")
     public String order(@PathVariable String naverId,@PathVariable String naverName, HttpSession session) {
         SessionDto svo = new SessionDto();
@@ -128,10 +123,6 @@ public class OrderController {
         return "/order/order";
     }
 
-   /* @GetMapping("oidProc")
-    public String oidProc(){
-        return  orderService.getOid();
-    }*/
 
 
 

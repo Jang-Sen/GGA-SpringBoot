@@ -49,10 +49,10 @@
 	
 	<!-- Content -->
 	<div class= "container">
-		<section class= "mp_update">
-			<h1 class= "mypage_title" style="float: left; margin-right: 30px;">내 정보 수정</h1>
+		<section class= "mpUpdate">
+			<h1 class= "myPageTitle" style="float: left; margin-right: 30px;">내 정보 수정</h1>
 			<p style="color: gray; padding-top: 15px;">입력된 정보만 변경됩니다</p>
-			<form name= "mp_updateForm" action="/mypage_update" method= "post">
+			<form name= "myPageHeaderForm" action="/myPageUpdate" method= "post">
 			<input type="hidden" name="id" value="${ memberInfo.id }">
 				<ul>
 					<li>
