@@ -76,7 +76,7 @@
 		<table class="table" style="width: 90%;">
 			<tr>
 				<td colspan="7">
-					<a class="addmoviebtn" href="http://localhost:9000/movie_register">
+					<a class="addmoviebtn" href="http://localhost:9000/admin_movie_register">
 						<button type="button"><img src="http://localhost:9000/images/addmoviebtn.png"></button></a>
 					<br><br>
 				</td>
@@ -94,7 +94,7 @@
 				<tr>
 					<td>${movie.rno}</td>
 					<td>${movie.movieid}</td>
-					<td><a href="/movie_content/${movie.movieid}">${movie.movietitle}</a></td>
+					<td><a href="/admin_movie_content/${movie.movieid}">${movie.movietitle}</a></td>
 					<td>${movie.genre}</td>
 					<td>${movie.moviedday}</td>
 					<td>${movie.runtime}</td>
