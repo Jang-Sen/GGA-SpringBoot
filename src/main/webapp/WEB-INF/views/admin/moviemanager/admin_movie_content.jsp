@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -58,12 +59,18 @@
 		<h1>영화 등록</h1>
 	</div>
 	<section class="moviemanager">
-		<form name="movieDelete" action="/movie_delete/${movie.movieid}" method="post">
+		<form name="movieDelete" action="/movie_delete" method="post">
 			<table class="table table-bordered" style="width: 90%;">
 				<tr>
 					<th>영화제목</th>
 					<td>${movie.movietitle}</td>
-
+					<input type="hidden" name="movieid" value="${movie.movieid}"></td>
+					<input type="hidden" name="gsfiles" value="${movie.gsfiles}"></td>
+					<input type="hidden" name="smainposter" value="${movie.smainposter}"></td>
+					<input type="hidden" name="sstillcut1" value="${movie.sstillcut1}"></td>
+					<input type="hidden" name="sstillcut2" value="${movie.sstillcut2}"></td>
+					<input type="hidden" name="sstillcut3" value="${movie.sstillcut3}"></td>
+					<input type="hidden" name="sstillcut4" value="${movie.sstillcut4}"></td>
 				</tr>
 				<tr>
 					<th>장르</th>
@@ -91,23 +98,23 @@
 				</tr>
 				<tr>
 					<th>메인포스터</th>
-					<td><img src="http://localhost:9000/images/${movie.mainposter}"></td>
+					<td><c:if test="${movie.smainposter != null}"><img src="http://localhost:9000/upload/${movie.smainposter}"></c:if></td>
 				</tr>
 				<tr>
 					<th>스틸컷1</th>
-					<td><img src="http://localhost:9000/images/${movie.stillcut1}"></td>
+					<td><c:if test="${movie.sstillcut1 != null}"><img src="http://localhost:9000/upload/${movie.sstillcut1}"></c:if></td>
 				</tr>
 				<tr>
 					<th>스틸컷2</th>
-					<td><img src="http://localhost:9000/images/${movie.stillcut2}"></td>
+					<td><c:if test="${movie.sstillcut2 != null}"><img src="http://localhost:9000/upload/${movie.sstillcut2}"></c:if></td>
 				</tr>
 				<tr>
 					<th>스틸컷3</th>
-					<td><img src="http://localhost:9000/images/${movie.stillcut3}"></td>
+					<td><c:if test="${movie.sstillcut3 != null}"><img src="http://localhost:9000/upload/${movie.sstillcut3}"></c:if></td>
 				</tr>
 				<tr>
 					<th>스틸컷4</th>
-					<td><img src="http://localhost:9000/images/${movie.stillcut4}"></td>
+					<td><c:if test="${movie.sstillcut4 != null}"><img src="http://localhost:9000/upload/${movie.sstillcut4}"></c:if></td>
 				</tr>
 				<tr>
 					<th>예고편</th>
@@ -115,10 +122,10 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<a href="/movie_update/=${movie.movieid}">
+						<a href="/movie_update/${movie.movieid}">
 							<button type="button" class="btn btn-outline-secondary">수정하기</button></a>
 						<button type="button" id="btnMovieDelete" class="btn btn-outline-secondary">삭제하기</button>
-						<a href="http://localhost:9000/movie_list">
+						<a href="http://localhost:9000/movie_list/1">
 							<button type="button" class="btn btn-outline-secondary">이전으로</button></a>
 					</td>
 				</tr>

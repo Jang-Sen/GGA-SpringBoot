@@ -9,6 +9,9 @@ import java.util.List;
 @Mapper
 public interface MovieMapper {
 
+    int delete(String movieid);
+    int update(MovieDto movieDto);
+    int insert(MovieDto movieDto);
     MovieDto mselect(String movieid);
     List<MovieDto> list(PageDto pageDto);
 
