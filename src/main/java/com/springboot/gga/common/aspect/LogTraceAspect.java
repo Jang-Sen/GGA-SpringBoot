@@ -15,7 +15,7 @@ public class LogTraceAspect {
         this.logTrace = logTrace;
     }
 
-    @Around("execution(* com.springboot.gga.controller..*(..))")
+    @Around("execution(* com.springboot.gga.controller..*(..)) && !execution(* com.springboot.gga.controller.RestController.indexSearch_json_data(..))")
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable{
         TraceStatus status = null;
         try {

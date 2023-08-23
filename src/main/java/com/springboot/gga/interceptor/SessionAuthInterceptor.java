@@ -18,11 +18,11 @@ public class SessionAuthInterceptor extends HandlerInterceptorAdapter {
 								HttpServletResponse response, 
 								Object handler)
 								throws Exception {
-		//Ŭ���̾�Ʈ(������)�� ��û Ȯ�� - ���� ��ü ��������
+
 		HttpSession session = request.getSession();
 
 		String requestURI = request.getRequestURI();
-		
+
 		//sid Ȯ���ϱ�
 		SessionDto svo = (SessionDto)session.getAttribute("svo");
 		
