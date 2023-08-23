@@ -130,7 +130,7 @@
                                 </c:choose>
                                 <c:choose>
                                     <c:when test="${svo == null }">
-                                        <a class="cartbtn2" class="productbuybtn" href="http://localhost:9000/login?redirectURL=/store/popcorn">
+                                        <a class="cartbtn3" class="productbuybtn" href="http://localhost:9000/login?redirectURL=/store/popcorn">
                                             <img src="http://localhost:9000/images/buybtn.png"></a>
                                     </c:when>
                                     <c:otherwise>

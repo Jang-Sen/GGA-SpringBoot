@@ -6,9 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.http.HttpSession;
 
-/**
- * 동시성 문제를 해결하기 위해 쓰레드 로컬 사용
- */
 @Slf4j
 public class ThreadLocalLogTrace implements LogTrace {
 
@@ -28,7 +25,6 @@ public class ThreadLocalLogTrace implements LogTrace {
         syncTraceId();
         TraceId traceId = traceIdHolder.get();
         Long startTimeMs = System.currentTimeMillis();
-        log.info("[{}] {}{}", traceId.getId(), addSpace(START_PREFIX, traceId.getLevel()), message);
 
         return new TraceStatus(traceId, startTimeMs, message);
     }
@@ -68,7 +64,7 @@ public class ThreadLocalLogTrace implements LogTrace {
     private void releaseTraceId() {
         TraceId traceId = traceIdHolder.get();
         if (traceId.isFirstLevel()) {
-            traceIdHolder.remove();//destroy
+            traceIdHolder.remove();
         } else {
             traceIdHolder.set(traceId.createPreviousId());
         }

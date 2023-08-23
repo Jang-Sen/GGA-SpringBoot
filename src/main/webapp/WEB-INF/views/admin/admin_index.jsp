@@ -67,7 +67,7 @@
 				<a href="http://localhost:9000/admin_board_list"><img src="http://localhost:9000/images/reviewedit.png"></a>
 			<br>
 				<a href="http://localhost:9000/admin_notice_list"><img src="http://localhost:9000/images/noticeedit.png"></a>
-				<a href="http://localhost:9000/movie_list/1"><img src="http://localhost:9000/images/movieedit.png"></a>
+				<a href="http://localhost:9000/admin_movie_list/1"><img src="http://localhost:9000/images/movieedit.png"></a>
 			<br>
 			</div>
 			<div class="admin_index_btn1">
