@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지 - 내 예매 내역</title>
+<title>마이페이지 - My예매 내역</title>
 <script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css">

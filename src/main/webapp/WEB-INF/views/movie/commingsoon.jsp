@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GGA</title>
+<title>상영 예정작</title>
 <script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 <script src="http://localhost:9000/js/gga_jquery.js"></script>

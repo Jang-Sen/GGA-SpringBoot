@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>대관문의</title>
 	<script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 	<script src="http://localhost:9000/js/gga_jquery.js"></script>
 	<link rel="stylesheet" href="http://localhost:9000/test_gga/css/mycgv.css" type="text/css">
@@ -61,7 +61,7 @@
 	</div>
 	<div id="coron_btn">
 		<section class="enroll">
-			<a href = "index">
+			<a href = "http://localhost:9000">
 			<button type ="submit" id = "btnConfirm" class="coronBtn"><img src="http://localhost:9000/images/qnabtn.png"></button></a>
 		</section>
 	</div>

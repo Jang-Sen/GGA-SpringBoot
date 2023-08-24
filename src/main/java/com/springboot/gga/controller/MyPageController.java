@@ -110,7 +110,7 @@ public class MyPageController {
         System.out.println(memberDto.getCar2());
         int result = memberService.updateMypage(memberDto);
         // if 문 조건 viewName
-        return "redirect:/mypage/myPage/"+memberDto.getId();
+        return "redirect:/myPage/"+memberDto.getId();
     }
 
     // 내정보 수정탭 진입
@@ -138,6 +138,16 @@ public class MyPageController {
 
         return "/mypage/myPage";
 
+    }
+
+    // My예매 전체보기 기능
+    @GetMapping("myPageAllTicket")
+    public String myPageAllTicket(HttpSession session, Model model){
+        SessionDto svo = (SessionDto) session.getAttribute("svo");
+        ArrayList<OrderConDto> ticketlist = orderService.selectOrderConMyPage(svo.getId());
+        model.addAttribute("ticketlist", ticketlist);
+
+        return "/mypage/myPageAllTicket";
     }
 
     @GetMapping("myPageTicket/{oconid}")

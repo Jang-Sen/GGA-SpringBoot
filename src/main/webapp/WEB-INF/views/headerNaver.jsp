@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>gga_plz 네이버헤더</title>
+<title>GGA</title>
 <link rel="stylesheet" href="http://localhost:9000/css/gga.css"> <!-- gga.css -->
 	<script src="http://localhost:9000/js/naver_login.js"></script> <!-- gga_jquery.js -->
 <script src="http://localhost:9000/js/gga_searchContent.js"></script>

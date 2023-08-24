@@ -91,7 +91,7 @@ $(document).ready(function(){
 				var confirmResult = confirm("수정 하시겠습니까?");
 				if(confirmResult){
 					$.ajax({
-						url:"http://localhost:9000/board_comment_update/" + bcid + "/" + updateComment,
+						url:"http://localhost:9000/boardCommentUpdate/" + bcid + "/" + updateComment,
 						success:function(result) {
 							bid = result;
 							location.replace("http://localhost:9000/boardContent/" + page + "/" + bid);
@@ -122,7 +122,7 @@ $(document).ready(function(){
 				var confirmResult = confirm("수정 하시겠습니까?");
 				if(confirmResult){
 					$.ajax({
-						url:"http://localhost:9000/board_comment_update/" + bcid + "/" + updateComment,
+						url:"http://localhost:9000/boardCommentUpdate/" + bcid + "/" + updateComment,
 						success:function(result) {
 							bid = result;
 							location.replace("http://localhost:9000/boardContent/" + page + "/" + bid);
@@ -153,7 +153,7 @@ $(document).ready(function(){
 				var confirmResult = confirm("수정 하시겠습니까?");
 				if(confirmResult){
 					$.ajax({
-						url:"http://localhost:9000/board_comment_update/" + bcid + "/" + updateComment,
+						url:"http://localhost:9000/boardCommentUpdate/" + bcid + "/" + updateComment,
 						success:function(result) {
 							bid = result;
 							location.replace("http://localhost:9000/boardContent/" + page + "/" + bid);

@@ -76,14 +76,14 @@ img {
 }
 
 /* 검색  */
-section.board div.boardSearch input { /* 검색창 */
+section.board div.boardSearch1 input { /* 검색창 */
 	position:relative;
 	height:30px;width:160px;
 	border-radius: 5px;
 	opacity:80%;
 	border:white;
 }
-section.board div.boardSearch { /* 검색창 영역 */
+section.board div.boardSearch1 { /* 검색창 영역 */
 	float:left;
 	position:relative;
 	margin-top:32px;
@@ -147,7 +147,7 @@ section.board div.boardSearch button:hover { /* 커서이벤트 */
 		<img src="http://localhost:9000/images/adminreviewtitle.png">
 	</div>
 		<section class="board">
-			<div class="boardSearch">
+			<div class="boardSearch1">
 				<input type="text" placeholder=" 게시물 검색" id="btitle" >
 				<button type="submit" id="btnBoardSearch" class = "boardBtn1"><p>검색</p></button>
 				<a href="/admin_board_list"><button type="submit" class = "boardBtn2"><p>처음으로</p></button></a>

@@ -67,14 +67,14 @@ img {
 }
 
 
-section.board div.boardSearch input {
+section.board div.boardSearch1 input {
 	position:relative;
 	height:30px;width:160px;
 	border-radius: 5px;
 	opacity:80%;
 	border:lightgray 1px solid;
 }
-section.board div.boardSearch {
+section.board div.boardSearch1 {
 	float:left;
 	position:relative;
 	margin-top:32px;
@@ -110,7 +110,7 @@ section.board div.boardSearch button:hover {
 		<img src="http://localhost:9000/images/comtitle.png">
 	</div>
 		<section class="board">
-			<div class="boardSearch">
+			<div class="boardSearch1">
 				<input type="text" name = "btitle" placeholder=" 게시물 검색" id="btitle" >
 				<button type="submit" id="btnBoardSearch" class = "boardBtn1"><p>검색</p></button>
 				<a href="/boardList"><button type="submit" class = "boardBtn2"><p>처음으로</p></button></a>

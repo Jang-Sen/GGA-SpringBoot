@@ -73,7 +73,7 @@ public class BoardController {
             fileService.fileSave(boardDto);
         }
 
-        return "redirect:/board/boardList";
+        return "redirect:/boardList";
     }
 
     @GetMapping("boardUpdate/{page}/{bid}")
@@ -98,7 +98,7 @@ public class BoardController {
             }
         }
 
-        return "redirect:/board/boardContent/" + boardDto.getPage() + "/" + boardDto.getBid();
+        return "redirect:/boardContent/" + boardDto.getPage() + "/" + boardDto.getBid();
     }
 
     @PostMapping("boardDelete")
@@ -112,7 +112,7 @@ public class BoardController {
             }
         }
 
-        return "redirect:/board/boardList";
+        return "redirect:/boardList";
     }
 
     @GetMapping("admin_board_list")
@@ -128,7 +128,7 @@ public class BoardController {
         int result = boardService.commentInsert(boardCommentDto);
 
         if (result == 1){
-            return "redirect:/board/boardContent/" + boardCommentDto.getPage() + "/" + boardCommentDto.getBid();
+            return "redirect:/boardContent/" + boardCommentDto.getPage() + "/" + boardCommentDto.getBid();
         } else {
             return "redirect:/errorpage";
         }

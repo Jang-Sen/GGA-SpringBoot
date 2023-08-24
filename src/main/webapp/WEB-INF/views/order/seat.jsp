@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>gga_plz</title>
+	<title>좌석 선택</title>
 	<script src="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 	<script src="http://localhost:9000/js/gga_jquery.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>

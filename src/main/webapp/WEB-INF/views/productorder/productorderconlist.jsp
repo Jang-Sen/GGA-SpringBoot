@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>gga_plz</title>
+<title>GGA 결제 내역</title>
 
 <script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/js/gga_jquery.js"></script>
@@ -213,31 +213,31 @@
 						<ul class="glide__slides">
 							<li class="glide__slide"><img src="http://localhost:9000/images/oppenhelmer.jpg" id="MOVIE_0001" class="mimg"/>
 								<a class="myPageHeader">
-									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
+									<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/concreteutopia.jpg" id="MOVIE_0002" class="mimg"/>
 								<a class="myPageHeader">
-									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
+									<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/honeysweet.jpg" id="MOVIE_0003" class="mimg"/>
 								<a class="myPageHeader">
-									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
+									<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/smugglers.jpg" id="MOVIE_0004" class="mimg"/>
 								<a class="myPageHeader">
-									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
+									<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/elemental.jpg" id="MOVIE_0005" class="mimg"/>
 								<a class="myPageHeader">
-									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
+									<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/meg2.jpg" id="MOVIE_0006" class="mimg"/>
 								<a class="myPageHeader">
-									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
+									<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/amanofreason.jpg" id="MOVIE_0007" class="mimg"/>
 								<a class="myPageHeader">
-									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
+									<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/octonauts.jpg" id="MOVIE_0008" class="mimg"/>
 								<a class="myPageHeader">
-									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
+									<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a></li>
 							<li class="glide__slide"><img src="http://localhost:9000/images/ransomed.jpg" id="MOVIE_0009" class="mimg"/>
 								<a class="myPageHeader">
-									<img class="myPageHeader" src="http://localhost:9000/images/newmyPageHeader.png"></a></li>
+									<img class="myPageHeader" src="http://localhost:9000/images/neworderbtn.png"></a></li>
 						</ul>
 					</div>
 				</div>

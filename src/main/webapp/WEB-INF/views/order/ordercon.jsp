@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>gga_plz</title>
+	<title>영화 결제 내역</title>
 
 	<script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 	<script src="http://localhost:9000/js/gga_jquery.js"></script>

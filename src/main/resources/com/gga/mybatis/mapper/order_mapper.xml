@@ -79,6 +79,7 @@
   VALUES ('OC_'|| DBMS_RANDOM.STRING('X', 15), #{movieid}, #{movieordertitle}, #{price}, #{seat}, #{otime}, #{odate},
     #{oname}, #{ocarnum}, #{oemail}, #{ophone}, #{orderdate}, #{impuid}, #{merchantuid}, #{pgtype}, #{movieorderposter}, #{id}, #{couponid}, #{finalAmount}, #{couponName})
 </insert>
+
 	
 	<select id="selectOrderConDto" parameterType="java.lang.String" resultType="com.springboot.gga.dto.OrderDto">
 	select oid, movieid, price, seat, otime, odate, id, oname, ocarnum, oemail, 

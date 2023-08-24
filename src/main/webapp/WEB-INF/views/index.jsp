@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>gga_plz</title>
+	<title>GGA 자동차 극장</title>
 	<script src ="http://localhost:9000/js/jquery-3.6.4.min.js"></script>
 	<script src="http://localhost:9000/js/gga_jquery.js"></script>
 	<link rel="stylesheet" href="http://localhost:9000/css/gga.css" /> <!-- gga.css -->
@@ -14,12 +15,49 @@
 	<link rel="stylesheet" href="http://localhost:9000/css/glide.theme.min.css">
 	<script src = "http://localhost:9000/js/Movie_api.js"></script>
 	<script src="http://localhost:9000/js/weather_api.js"></script>
+	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 		  rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 	<!-- 부트스트랩 -->
 
 </head>
 
+<script type="text/javascript">
+	var naver_id_login = new naver_id_login("t7Ls7Xci47cHwRs_WQYf", "http://localhost:9000");
+	// 접근 토큰 값 출력
+	// alert(naver_id_login.oauthParams.access_token);
+	// 네이버 사용자 프로필 조회
+	naver_id_login.get_naver_userprofile("naverSignInCallback()");
+	// 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+	function naverSignInCallback() {
+		var id = naver_id_login.getProfileData('id');
+		var email = naver_id_login.getProfileData('email');
+		var name = naver_id_login.getProfileData('name');
+		var gender = naver_id_login.getProfileData('gender');
+		var birthday = naver_id_login.getProfileData('birthday');
+		var mobile = naver_id_login.getProfileData('mobile');
+
+		document.getElementById("naverId").value = id;
+		document.getElementById("naverEmail").value = email;
+		document.getElementById("naverName").value = name;
+		document.getElementById("naverGender").value = gender;
+		document.getElementById("naverBirthday").value = birthday;
+		document.getElementById("naverMobile").value = mobile;
+	}
+</script>
+
+<script>
+	let loginResult = "${loginResult}";
+	let logoutResult = "${logoutResult}"
+	let naverLoginResult = "${naverLoginResult}"
+	if(loginResult == 'ok' || naverLoginResult == "ok"){
+		alert("로그인 성공하였습니다");
+	}
+	if(logoutResult == "ok") {
+		alert("로그아웃 되었습니다.")
+	}
+</script>
 <script>
 	let loginResult = "${loginResult}";
 	if(loginResult == 'ok'){
@@ -302,7 +340,25 @@
 
 <body>
 <!-- header -->
-<jsp:include page="header.jsp" />
+<%--<jsp:include page="header.jsp" />--%>
+<c:choose>
+	<c:when test="${svo.id == null}">
+		<!-- header -->
+		<jsp:include page="headerNaver.jsp" />
+		<input type="hidden" id="naverId" name="id">
+		<input type="hidden" id="naverEmail" name="email" >
+		<input type="hidden" id="naverName" name="name">
+		<input type="hidden" id="naverGender" name="gender">
+		<input type="hidden" id="naverBirthday" name="birthday">
+		<input type="hidden" id="naverMobile" name="mobile">
+		<!-- header -->
+	</c:when>
+	<c:otherwise>
+		<jsp:include page="header.jsp" />
+
+	</c:otherwise>
+</c:choose>
+<!-- header -->
 <!-- header -->
 
 <!-- content -->

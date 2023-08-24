@@ -457,7 +457,6 @@ public class RestController {
         result.put("BoardDto",boardService.boardCommentMaster(param));
         result.put("page",pageDto);
 
-        System.out.println(result);
         return result;
     }
 

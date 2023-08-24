@@ -20,10 +20,10 @@
 	$(document).ready(function(){
 		var pager = $('#ampaginationsm').pagination({
 
-			maxSize: '${maxSize}',	    		// max page size
-			totals: '${totals}',	// total pages	
-			page: '${page}',		// initial page		
-			pageSize: '${pageSize}',			// max number items per page
+			maxSize: '${page.pageCount}',	    		// max page size
+			totals: '${page.dbCount}',	// total pages
+			page: '${page.reqPage}',		// initial page 현제 페이지 reqpage
+			pageSize: '${page.pageSize}',			// max number items per page
 
 			// custom labels		
 			lastText: '&raquo;&raquo;',
@@ -36,7 +36,7 @@
 
 		jQuery('#ampaginationsm').on('am.pagination.change',function(e){
 			jQuery('.showlabelsm').text('The selected page no: '+e.page);
-			$(location).attr('href', "http://localhost:9000/movie_list.do?page="+e.page);
+			$(location).attr('href', "http://localhost:9000/admin_movie_list/" + e.page);
 		});
 
 	});

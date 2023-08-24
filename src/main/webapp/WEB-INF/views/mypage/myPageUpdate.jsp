@@ -133,7 +133,7 @@
 					<span style="margin-left: 175px; color :gray; font-size: 11pt">기존 선택 : ${memberInfo.genre}</span>
 				</ul>
 				<div class="container text-center">
-					<a href="/mypage/${memberInfo.id}">
+					<a href="/myPage/${memberInfo.id}">
 						<button type="button" class="btn btn-outline-secondary">이전으로</button></a>
 					<button type="submit" id="updatebtn" class= "btn btn-outline-secondary">저장</button>
 				</div>

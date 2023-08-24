@@ -6,7 +6,7 @@ $(document).ready(function(){
 	initAjax(1);
 		function initAjax(page) {
 			$.ajax({
-				url:"//" + page + "/",
+				url:"/boardList/" + page + "/",
 				success : function(board) {
 		          	let output = "<table class='table table-bordered' id='board_table'style='width: 90%;'>";
 		          	output += "<tr>";

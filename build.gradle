@@ -37,7 +37,7 @@ dependencies {
     implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.4'
 
     // 휴대폰인증
-//    implementation 'net.nurigo:sdk:4.2.7'
+    implementation 'net.nurigo:sdk:4.2.7'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
