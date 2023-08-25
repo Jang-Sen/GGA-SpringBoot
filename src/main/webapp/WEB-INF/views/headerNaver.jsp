@@ -75,14 +75,14 @@
 								<li><a class="dropdown-item" href="http://localhost:9000/notice_list"
 									>공지사항</a></li>
 								<li><a class="dropdown-item" href="http://localhost:9000/boardList"
-									>커뮤니티</a></li>
+									>리   뷰</a></li>
 								<li><a class="dropdown-item" href="http://localhost:9000/faq"
 									>FAQ</a></li>
 						 </ul>
 						 </li>
 						  <li><a href="http://localhost:9000/coronation">
 						  대관문의</a></li>
-						  <li><a href="http://localhost:9000/store">
+						  <li><a href="http://localhost:9000/store/combo">
 						  스토어</a></li>
 					</ul>
 				</div>

@@ -272,7 +272,7 @@
 
 		});
 
-		$('#paymentListBtn').click(function() {
+		/*$('#paymentListBtn').click(function() {
 			var finalAmount = $('#finalAmount').text();
 			var productOrderDto = {
 				cidArray: [],
@@ -359,16 +359,67 @@
 					}
 				})
 
-				/*$.ajax({
+				/!*$.ajax({
 					url: '/productorderlist',
 					method: 'POST',
 					data: productOrderDto,
 					success: function(orderNumber) {
 						window.location.href = '/productorderconlist/'+orderNumber;
 					}
-				});*/
+				});*!/
 			}
-		});
+		});*/
+        $('#paymentListBtn').click(function() {
+            var finalAmount = $('#finalAmount').text();
+            var productOrderDto = {
+                cidArray: [],
+                couponidArray: [],
+                qtyArray: [],
+                pidArray: []};
+
+            $('select[name="coupon"]').each(function() {
+                productOrderDto.cidArray.push($(this).attr('id'));
+                productOrderDto.couponidArray.push($(this).val());
+                productOrderDto.qtyArray.push($(this).closest('tr').find('td[data-id]').data('id'));
+                productOrderDto.pidArray.push($(this).closest('tr').find('input[name="pid"]').val());
+
+            });
+            const p0Checkbox = document.querySelector('#p0');
+            const p1Checkbox = document.querySelector('#p1');
+            const p2Checkbox = document.querySelector('#p2');
+            const p3Checkbox = document.querySelector('#p3');
+            const p4Checkbox = document.querySelector('#p4');
+
+            if (paymethodcon.length == 0) {
+                alert("결제 수단을 선택해 주세요.");
+            } else if (!p0Checkbox.checked) {
+                alert("필수 항목에 동의해 주세요.");
+                p0Checkbox.focus();
+            } else if (!p1Checkbox.checked) {
+                alert("GGA MOVIE 이용 약관에 동의해 주세요.");
+                p1Checkbox.focus();
+            } else if (!p2Checkbox.checked) {
+                alert("개인정보 수집 및 이용에 동의해 주세요.");
+                p2Checkbox.focus();
+            } else if (!p3Checkbox.checked) {
+                alert("개인정보 제 3자 제공에 동의해 주세요.");
+                p3Checkbox.focus();
+            } else if (!p4Checkbox.checked) {
+                alert("전자결제대행 이용에 동의해 주세요.");
+                p4Checkbox.focus();
+            }else {
+
+
+                $.ajax({
+                    url: '/productorderlist',
+                    method: 'POST',
+                    data: productOrderDto,
+                    success: function(orderNumber) {
+                        window.location.href = '/productorderconlist/'+orderNumber;
+                    }
+                });
+            }
+        });
 
 	});
 </script>

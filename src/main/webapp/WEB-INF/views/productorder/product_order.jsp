@@ -142,7 +142,7 @@
 		});
 
 
-		$('#paymentBtn').click(function() {
+		/*$('#paymentBtn').click(function() {
 			var pid = $('#pid').val();
 			var couponid = $('#couponid').val();
 			var finalAmount = $('#finalAmount').text();
@@ -224,7 +224,7 @@
 					}
 				})
 			}
-			/*$.ajax({
+			/!*$.ajax({
 				url: '/product_order',
 				type: 'POST',
 				data: {
@@ -236,7 +236,54 @@
 				success: function(orderNumber) {
 					window.location.href = '/productordercon/'+orderNumber;
 				}
-			});*/
+			});*!/
+		});*/
+		$('#paymentBtn').click(function() {
+			var pid = $('#pid').val();
+			var couponid = $('#couponid').val();
+			var finalAmount = $('#finalAmount').text();
+			let couponName = $('input[name="couponid"]:checked').closest('tr').find('td:first').text();
+
+			const p0Checkbox = document.querySelector('#p0');
+			const p1Checkbox = document.querySelector('#p1');
+			const p2Checkbox = document.querySelector('#p2');
+			const p3Checkbox = document.querySelector('#p3');
+			const p4Checkbox = document.querySelector('#p4');
+
+			if (paymethodcon.length == 0) {
+				alert("결제 수단을 선택해 주세요.");
+			} else if (!p0Checkbox.checked) {
+				alert("필수 항목에 동의해 주세요.");
+				p0Checkbox.focus();
+			} else if (!p1Checkbox.checked) {
+				alert("GGA MOVIE 이용 약관에 동의해 주세요.");
+				p1Checkbox.focus();
+			} else if (!p2Checkbox.checked) {
+				alert("개인정보 수집 및 이용에 동의해 주세요.");
+				p2Checkbox.focus();
+			} else if (!p3Checkbox.checked) {
+				alert("개인정보 제 3자 제공에 동의해 주세요.");
+				p3Checkbox.focus();
+			} else if (!p4Checkbox.checked) {
+				alert("전자결제대행 이용에 동의해 주세요.");
+				p4Checkbox.focus();
+			}else {
+				$.ajax({
+					url: '/product_order',
+					type: 'POST',
+					data: {
+						pid: pid,
+						couponid: couponid,
+						finalAmount: finalAmount,
+						couponName: couponName
+					},
+					success: function(orderNumber) {
+						window.location.href = '/productordercon/'+orderNumber;
+					}
+				});
+
+			}
+
 		});
 	});
 </script>
